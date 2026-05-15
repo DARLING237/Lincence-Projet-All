@@ -1,0 +1,2764 @@
+onjour à tous alors bienvenue pour cette conférence sur le x design à travers la psychologie on se bat d'abord
+0:07
+se présenter quentin ledoux pire minnelli on est tous les deux les corps effet rendu parcouru x design ici à
+0:12
+l'école multimédia ce qui signifie vous m'entendez au fond c'est bon ok ce qui signifie qu'on se
+0:18
+chargent à d'enseignés de luxe design qui a un nouveau métier du web quand on va vous en parler aujourd'hui ici à l'école multimédia et on sait
+0:24
+charge notamment des formations en alternance alors à côté de ça on est aussi de professionnels de luxe design on a notre
+0:31
+société de conseil pour les tpe et les pme les grands groupes et en charge d'appliquer la méthodologie x pour leur
+0:37
+permettre de mieux comprendre leurs utilisateurs et a de mieux adapter leur interface beaucoup à titre gratuit la
+0:54
+culture la culture de luxe sachant qu'à la base sociale se profile donc c'est
+1:08
+pour ça qu'on va vous parler de psychologie aussi aujourd'hui alors l'idée c'est surtout de vous expliquer et fondamentalement ce qu'est le x design ça c'est vraiment le but et on va
+1:16
+essayer de soubré ça d'un petit peu de psychologie pour vous montrer aussi l'intérêt que peuvent avoir ces deux approches et voilà sans aller très très
+1:23
+loin au niveau de la psychologie puisque sinon il faudrait beaucoup plus qu'une conférence de quelques heures ce matin
+1:29
+on va sûrement faire une pause à mi parcours on vous dira et on va n'organisera ça tranquillement n'hésitez
+1:38
+pas si vous avez des questions nous les poser puis à la fois on débraye fera aussi donc n'hésitez pas à les noter si
+1:44
+on n'a pas le temps d'y répondre du coup première chose que je vais vous
+1:50
+demander pour la suite de la conférence et que vous allez mémorisées le chiffre
+1:55
+46 vous faites comme vous voulez ou juste ou le mémoriser ok on oublie alors
+2:03
+on va parler du x design pourquoi parler aussi d'expérience utilisateur on essaie de voir veut ce que c'est qu'est ce que ce concept représente donc
+2:12
+le design c'est quoi alors luxe design selon karine allemand c'est une forme
+2:17
+spécifique d'expériences humaines qui naît de l'interaction avec une technologie donc dans cette phrase très simple on a déjà tout un tas
+2:23
+d'informations et il va falloir qu'on réfléchisse ensemble comment on peut défaire définir une expérience humaine
+2:28
+une interaction est aussi qu'est ce qui est de technologie aujourd'hui très
+2:34
+intéressante à suivre sur le design qui essayent de comment dire de représenter
+2:41
+le plus simplement possible l'ensemble de l'île design donc n'hésitez pas à suivre cette personne
+2:49
+alors on peut se demander aujourd'hui pourquoi lui le design est devenu nécessaire effectivement c'est un nouveau métier du
+2:55
+web comme on vous l'a dit et l'idée c'est que du coup on s'en passait avant lorsqu'on crée des interfaces et
+3:00
+pourquoi aujourd'hui beaucoup de gens trouvent que c'est nécessaire de s'intéresser à lui ce design alors que ce n'était pas le cas avant en fait ce
+3:11
+qui se passe c'est que ce que veut le concepteur n'est pas toujours ce que veut l'utilisateur ça on est tous bien d'accord on a pris cette photo au centre
+3:18
+hospitalier d'auxerre par exemple on peut voir ici le concepteur d'un chemin qui a voulu
+3:23
+lui faire faire donc toute une boucle pour que les utilisateurs fassent cette boucle et on voit aussi de façon très
+3:28
+claire ici que les utilisateurs avaient d'autres envies et en fait on traversait directement la pelouse en détruisant
+3:34
+donc le gazon un autre exemple ses
+3:50
+portes que vous connaissez sans doute ou va vous tentiez de l'ouvrir évidemment si jamais dans le bon sens que vous
+3:56
+tentez de l'ouvrir vous savez pas s'il faut la retirer ou la poussée et l'idée c'est que la poignée là et dans le sens du il faut
+4:03
+on a l'impression qu'il faut l'attiré et en effet cette porte il faut la pousser et ses portes la ont donné lieu à une
+4:09
+naissance un concept selon john norman qui est un grand penseur de la rixe design depuis des
+4:14
+années on les appelait norman d'or est-ce que c'est comme ça qu'ils les avaient qu'il a définie et qu'il a
+4:20
+montré en fait l'importance aussi de luxe design l'utilisabilité énorme enders une interface dont les éléments
+4:26
+de design fournissent de mauvais signaux sur la façon d'utiliser à tel point que des indications spéciales sont nécessaires pour clarifier son
+4:32
+fonctionnement et on peut se demander
+4:37
+pourquoi finalement une porte aurait besoin d'instructions sur son fonctionnement c'était quand même rien de plus simple qu'une porte pourquoi il pourquoi ne pas
+4:43
+rendre tout cela évident et on voit ici par exemple un exemple de geeks
+4:49
+designers qui s'est dit que tout simplement pour montrer qu'il faut pousser une porte bien et vite on mettre une poignée et pour montrer qu'il faut
+4:55
+l'attiré mettons la poignée à partir du moment où site ou moins respecté cette règle très simple on n'aurait jamais aucun problème à tirer ou à pousser une
+5:02
+porte pour l'ouvrir en tout cas à se poser la question lui le x mais
+5:12
+typiquement quelque chose qu'on interprète entre la différence soit lui le x ennuis designer du coup va
+5:17
+réfléchir à la manière dont on va pouvoir interpréter la représentation par exemple de cette porte là de la
+5:22
+poigne et donc va choisir cette représentation pour pousser cette confrontation pour tirer alors qu'un ennui 10,1 nuit designer lui va essayer
+5:29
+d'apporter d'autres solutions à un problème donné donc a partiellement on met deux poignées de chaque côté va lui designer lui va marc marquez puyol
+5:35
+marquez poule pour qu'on puisse comprendre il a rajouté cette surcouche donc si le travail de nuit designer est très bien fait mais il va devoir
+5:42
+répondre à d'autres questions qui sont pas forcément des questions de fonctionnalités alors que les designers audio aurait dû ils répondent à la base
+5:48
+c'est entre une légère différence truites alors quel est l'objectif de
+5:54
+luxe design aujourd'hui tout simplement rendre l'expérience humaine la plus positive possible en pensant l'expérience avant le produit très
+6:01
+concrètement un mix designer aujourd'hui il veut donner du bonheur aux utilisateurs c'est à dire simplement il veut les empêcher de se prendre la tête
+6:06
+il veut les empêcher de se poser trop de questions et il veut tout simplement leur procurer l'expérience la plus positive possible en simplifiant
+6:13
+la plupart des interactions qu'ils ont avec des produits et des interfaces donc
+6:19
+la méthodologie vix la méthode week celle qu'on appelle la méthode de design d'expérience utilisateur il s'agit simplement de concevoir pour
+6:26
+et avec l'utilisateur ni plus ni moins dites vous bien que vous êtes le porte parole de l'utilisateur en tant qu il y
+6:33
+est d'ailleurs notre objectif c'est seulement de montrer ce que l'utilisateur souhaite et de faire entendre sa voix c'est là le point le
+6:40
+plus important est ce qui permet en fait de décorréler la représentation que une personne pourrait avoir d'un besoin
+6:46
+alors que ce besoin est clairement défini par l'utilisateur et c'est ça qui portent souvent à une
+6:52
+mauvaise conception alors comment le placer dans
+6:57
+l'entreprise en luxe designer en fait si il est donc c'est un nouveau métier qui est pour le moment très variés sur la
+7:05
+manière dont ils veulent travailler en fait le designer lui se place dans un idéal en amont d'un projet il est tout
+7:12
+au tout début du projet ce qui va permettre de dégrossir un peu la vision qu'on va avoir de ce projet là à partir
+7:19
+du moment où on arrive sur une refonte par exemple d'un site web l'utilisateur le lead designer va du coup arriver dès
+7:26
+le début de cette refonte pour prendre en considération les nouveaux besoins des utilisateurs ou les besoins
+7:31
+existants qui n'ont pas été correctement mise en avant par des fonctionnalités donc là lui designer lui va devoir aller
+7:39
+à la source avant même de dire on va concevoir un site l'idée c'est qu'un utilisateur
+7:45
+aujourd'hui dans une entreprise dans une agence il a en fait un rôle transverse par rapport à tous les autres postes traditionnels dont on avait chargé de
+7:51
+projet on a les développeurs web front to back on allait les designers tout
+7:56
+court les commerciaux les marketeurs et c est lui que designer vraiment son rôle
+8:02
+c'est d'être au coeur de tout cet été cet écosystème pour pouvoir fournir des informations à tout le monde et
+8:07
+permettre à tout le monde de marché dans la même direction c'est à dire dans une direction vers l'utilisateur pour donner
+8:12
+le maximum de possibilités à l'utilisateur de s'épanouir et d'avoir des expériences positives avec le produit et du coup c'est une place qui
+8:19
+est un peu particulière puisqu'il est à la fois au coeur de tous les autres tous
+8:24
+les autres métiers il est transverse et ses autres métiers est donc lui et son rôle et son but et
+8:30
+c'est là où ça peut devenir compliqué rapidement c'est d'être à la fois avec tout le monde sans être en dehors des
+8:36
+projets c'est à dire qu'en fait c'est parfois difficile pour un unique designer de réussir à associer pleinement tous les services à la
+8:43
+conception d'un projet pour les utilisateurs et donc avoir une allée alors faire avoir une voix commune et à
+8:50
+porter la voix des utilisateurs et du coup une partie de son rôle et on va y revenir ça va être aussi d'associer
+8:56
+toutes les parties prenantes des projets pour réussir à leur faire concevoir des interfaces qui sont pour les utilisateurs c'est là où le métier est
+9:03
+super intéressant et si vous avez un côté forcément extraverti mais vous avez
+9:09
+envie d'aller vers les autres et doivent comprendre ce que les autres veulent faire donc on est psychologue c'est quelque chose qui nous intéressait de base c'est pour ça qu'on a fait cette
+9:15
+formation est ce pour ça qu'on est devenu designer c'est qu'on va rencontrer tout le monde voulait rencontrer tous types d'utilisateurs vous allez rencontrer tous types de
+9:22
+personnes qui travaillent dans l'entreprise pour mener à bien en fait le projet de l'entreprise et c'est là où c'est intéressant c'est que
+9:27
+vous allez pas forcément traiter avec les communicants et les marketeurs où les développeurs parce que c'est eux qui sont main sur le projet et vous avez
+9:34
+aussi traiter avec les rh vous allez traiter avec des des assistants vous avez traité avec
+9:39
+tout le top management pour qu'on fait toutes ces personnes-là leur vision est importante et leur vision doit être
+9:45
+considéré pour arriver sur une représentation du produit en lui même et en moins tout le monde va avancer sur le
+9:52
+même chemin donc si on a un vrai travail pédagogique en tant qu designer et vous allez voir c'est quelque chose
+9:58
+d'extrêmement important pour réussir à faire comprendre à tout le monde où on va aller mais pas seulement par rapport
+10:03
+à l'entreprise surtout par rapport à l'utilisateur et de faire intégrer tout le monde que l'utilisateur est vraiment
+10:09
+la personne les personnes essentielles à prendre en compte ouais on va essayer et
+10:16
+font un peu trop de photocopier rom et ça marche on va essayer de parler plus fort alors aujourd'hui dont une étude
+10:24
+récente très récente quelques jours un montre quel est le salaire aujourd'hui d'un 8 designer donc pour votre information sachez 15 mx d'ailleurs
+10:31
+junior gagne aujourd'hui entre vintimille et 35000 euros par an en brut annuel 1 confirmée entre 36 milles et 44
+10:38
+mille et un senior entre 45 me laissant et 70000 sachant qu'un freelance facture à la journée en hors taxe de 500 à 800
+10:44
+euros donc ça reste un métier un nouveau métier du web qui est plutôt bien payé qui est beaucoup recherché dans
+10:51
+actuellement c'est surtout les banques et les assurances qui cherchent beaucoup de geeks designer pour pour concevoir
+10:56
+mais tous types de métiers tous types de secteurs promo alors quand elle qu'il
+11:04
+faut appliquer la méthodologie x la méthodologie x on l'appliquent dès le début du cycle de développement d'un système
+11:09
+donc là on vient de le dire on remet une couche c'est important d'associer le x designer dès le début de la conception
+11:14
+du système et on va voir pourquoi plus en détail ensuite alors comment la
+11:20
+psychologie peut nous aider à comprendre l'utilité du design d'expérience grâce à un concept qui s'appelle l'économie
+11:25
+comportementale ce concept c'est que la plupart de nos décisions ne sont pas rationnels car
+11:31
+nous avons une rationalité limitée ça paraît simple mais c'est un concept à 706 700 mille euros pourquoi parce que
+11:38
+c'est le gain d'un prix nobel d'économie et c'est ce qu'a gagné daniel kahneman a
+11:43
+gagné le prix nobel d'économie en montrant qu'il y a deux systèmes de pensée donc la rationalité limitée c'est à dire que nous tous on a deux
+11:50
+systèmes de pensée qu'on va utiliser alternativement pour différentes situations le premier il est intuitif les rapides
+11:56
+il extrêmement biaisé il est très émotionnel et facilement influençable le deuxième il ya analytique il nécessite
+12:02
+de la concentration et un effort de réflexion il est long et profond concrètement on pense en général et surtout quand on
+12:08
+pense à des notions abstraites dans la vie de tous les jours qu'on va réfléchir de façon très rationnelle on va prendre des décisions financières
+12:14
+de façon très rationnelle alors que pas du tout et on a cette impression là qui
+12:19
+nous pousse en fait à ne pas nous rendre compte on utilise notre système de pensée c'est le pied rapide des sucs et facilement biaisé et ce qui nous conduit
+12:26
+à prendre tout un tas de décisions au quotidien bas qui sont parfois basé sur des raisonnements erronée et donc ce
+12:33
+n'est pas forcément en train de maximiser les profits d'une situation constamment tous les jours et il a
+12:38
+montré sa il a écrit un livre là-dessus il a eu le prix nobel d'économie pour ça sachant que c'est le seul psychologue avoir eu un prix nobel d'économie hormis
+12:46
+à pavlov que vous connaissez peut-être qui a montré donc le renforcement avec les chiens qui salive renseignez vous si vous connaissez pas
+12:53
+c'est très intéressant donc du coup en tant que fils designer que vous serez peut-être l'utilité de ces deux systèmes
+12:58
+de pensée est essentielle à partir du moment où on va définir à quel moment on va utiliser mon interface à quel moment
+13:04
+utiliser mon système on va essayer de ça on va tendre à savoir quel système de pensée sera enclenchée à partir du moment où
+13:10
+j'utilise juste pas une application pour me localiser et parcourir mon chemin je vais devoir
+13:18
+faire ça extrêmement rapidement j'ai pas avoir la possibilité d'avoir un système de pensée complexe par contre la part sur le moment où je
+13:23
+vais être posée à un endroit et puis je vais utiliser une application qui permettent de prévoir quelque chose à
+13:29
+long terme la joue alors la possibilité d'avoir un système de pensée beaucoup plus complexe donc en fait l'interface que vous allez créer va devoir
+13:35
+correspondre à cette réflexion que que vous avez par rapport aux systèmes de pensée ça vous verrez à la fin de vous
+13:41
+aurez compris l'entièreté de de la méthodologie x comment ça pourrait être intéressant pour ce qui est très
+13:48
+intéressant du coût pour un utilisateur à partir de ce concept là c'est effectivement de savoir qu'on peut influencer les individus avec des
+13:54
+éléments de design tout comme on peut les influencer avec du marketing etc et du coup il faut savoir les influencer
+14:00
+positivement évidemment on n'est pas du tout en train de parler de manipulation au sens négatif du terme mais très
+14:05
+positivement on peut pousser les utilisateurs d'interface à les utiliser de la façon la plus simple et la plus
+14:11
+intuitive possible cros de grosso modo c'est en se posant le moins de questions possibles et du coup leur procurer une expérience
+14:16
+positive parce que c'est vrai que tous les jours on a une certaine charge cognitive on a tout un tas de décisions à prendre dans notre quotidien
+14:22
+et pourquoi on est en fait ces deux systèmes de pensée c'est pour ça le premier système de pensée ceux qui avaient facilement influençable et
+14:28
+facilement biaisé celui-là nous permet simplement de réagir vite et prend des décisions rapides au quotidien on n'a pas toujours le temps pour toutes les
+14:34
+décisions qu'on prend 10 passer le temps de bien y réfléchir de peser le pour et le contre d'être totalement rationnelle
+14:39
+et il faut se focaliser là dessus aussi en tant que lead designer pour pouvoir proposer des interfaces qu'ils soient
+14:44
+particulièrement adaptées aux envies et à la charge cognitive disponible j'ai envie de dire des utilisateurs je suis
+14:52
+pour faire un tout petit parallèle par exemple on parle on a beaucoup parlé de bryza sion de la société ces dernières
+14:58
+années regardez la description du premier système de pensée qui est clairement fait la manière dont ces
+15:04
+différentes applications telles que rubber essaye de vous présenter en fait leur interface c'est quelque chose d'intuitif de rapides qui va être biaisé
+15:12
+vous allez avoir une émotion dessus ça être facilement influençable mais du coup vous allez pouvoir effectuer
+15:17
+l'action manière extrêmement rapide sans avoir cet aspect analytique qui sera enclenchée donc c'est un peu cette manière là dont
+15:24
+on peut dire que le père isation arrive c'est que en fait on essaie d'appliquer un système de pensée beaucoup plus
+15:30
+simple pour pouvoir amener l'action derrière donc une expérience positive
+15:37
+c'est aussi celle dans laquelle nous n'avons pas à réfléchir celle qui nous permet de faire de l'économie cognitive alors on va parler
+15:45
+maintenant du concept l'expérience utilisateur à partir grosso modo du commencement jusqu'à maintenant on va
+15:54
+partir de l'utilisabilité pour aller jusqu'à le x10 à intel ce qu'il y ait apprécié aujourd'hui l'utilisabilité
+15:59
+vous avez sans doute déjà entendu parler c'est en fait l'aspect pragmatique de luxe design c'est une approche objective
+16:05
+de l'interaction mais c'est une approche qui est plutôt limitée puisqu'elle oublie les aspects émotionnels les
+16:11
+aspects subjectifs et les aspects temporel d'une expérience avec une interface dont john norman dont on a
+16:18
+déjà parlé tout à l'heure avec les normes enders a utilisé pour la première fois l'expression ultime expérience
+16:24
+utilisateur dans les années 90 afin justement d'étendre le champ trop étroit de l'utilisabilité pour couvrir tous les
+16:30
+aspects de l'expérience d'une personne avec un système alors vous pensez peut-être que lui qui en tant que telle ait quelque chose qui
+16:35
+arrive est très récemment alors que c'est une conception au fait qui existe depuis énormément d'année sachez que là la plupart des huiles
+16:43
+designers à l'heure actuelle sont des ergonomes qui est un métier qui existe depuis des années est en fait cette
+16:49
+transformation de certaines cette terminologie en fait arrivé avec le digital et avec le web en général ce qui
+16:55
+a permis du coup donner une deuxième vie de faciliter un peu le l'arrivée d'ergonomes dents
+17:01
+et dans des entreprises et de simplifier leur la compréhension au fait du management pour utiliser des personnes
+17:06
+comme ça et donc du coût normal lui la l'a spécifié dans les années 90 on
+17:12
+admire expérience utilisateur et weeks par derrière mais ce qui a permis de changer un peu ce métier donc on va on
+17:18
+va essayer de vous expliquer la maintenance sans rentrer dans des modèles théoriques un peu complexe voici que vous expliquer le cheminement de
+17:24
+pensée en fait qui a amené à considérer le design tel qu'il est aujourd'hui donc le progrès le propre le premier
+17:29
+constat qui a été fait à part par un premier chercheur en 8 ce design c'est tout simplement celui qu'on a vu tout à
+17:35
+l'heure avec le chemin notamment à l'hôpital d'auxerre c'est que le point de vue du concepteur n'est pas celui de l'utilisateur et ça c'est très important
+17:40
+à garder en tête il faut excès il faut évidemment essayer aujourd'hui créer des interfaces pour l'utilisateur
+17:46
+on s'est rendu compte en fait traditionnellement que les interfaces créé depuis des dizaines d'années pour
+17:51
+le web notamment reflété toujours le point de vue du concepteur c'est à dire qu'on a un commanditaire pour un projet
+17:57
+web qui va vouloir appliquer enfin tu va vouloir des design et une interface qui correspondra à la structure
+18:03
+organisationnelle de sa société ça c'était systématique et on s'est rendu compte notamment et on peut le voir
+18:09
+encore aujourd'hui sur certains sites web que les autres les sites web sont si l'hôte et comme le la société comme les
+18:16
+services de la santé c'est à dire si on a une société où il ya un service commercial bien un service marketing un
+18:22
+service communication un service presse etc admettons et bien en fait vous allez vous retrouver sur un site web où il va
+18:29
+y avoir exactement le même si le thc vous allez avoir une entrée de menus pour le service communication entre menez pour le service marketing une
+18:34
+entrée de manu pour la presse etc sachant que l'utilisateur lui a peut-être déjà qu'il veut pas avoir toutes ses entrées donné là et surtout
+18:40
+il veut qu'on lui propose l'information bas comme lui la charge comme l'huile l'aveu est donc il faut réussir à se
+18:46
+décentrer du point de vue du concepteur pour aller plus vers le point de vue d'utilisateurs et c'est tout l'objet de luxe design
+18:52
+le principe étant d'aller comprendre les besoins il désire des utilisateurs pour ensuite les retranscrire en termes de
+18:59
+design pour une interface afin justement de se décentrer de ce que veut le concept le concepteur c'est à dire le
+19:04
+commanditaire en général ça c'est le premier constat mais c'est la chose la plus importante à garde en
+19:09
+tête si vous faire si vous le souhaitez faire de luxe design vous allez en faire pendant cette semaine là et la semaine d'après pour les chefs de projet c'est
+19:15
+quelque chose d'essentiel de se dire oui moi j'ai ma conception oui moi je sais comment j'ai envie d'amener la chose je
+19:21
+sais que ça pourrait marcher mais on ne vous demande pas vous comment vous allez réfléchir pour que ça marche nous ce qu'on demande c'est que vous
+19:27
+alliez demandé à utilisateurs et que vous compreniez ce que l'utilisateur souhaite votre réflexion est très
+19:33
+intéressante certes mais c'est pas la manière dont l'application devrait être
+19:39
+fait ou la fonctionnalité devrait être mise en place il faut bien comprendre ça c'est à partir du moment où vous arrivez à
+19:44
+décorer les votre vision de celle de l'utilisateur c'est là où vous allez commencer à
+19:49
+répondre réellement en fonction des besoins des personnes qui vont utiliser même si vous vous utilisez cette cette
+19:56
+application de cette fonctionnalité ou ce site web clairement mais vous n'êtes pas forcément les 95 % de personnes qui
+20:03
+vont l'utiliser loin de là ou bien garder ça en tête ouais rien que le fait que vous soyez des professionnels du digital que vous
+20:09
+créez des interfaces fait que vous allez avoir une vision expertes et donc une
+20:14
+vision biaisée de ce qu'il faut donner à l'utilisateur pour vous vous allez vous dire voilà l'utilisateur je peux lui donner l'éventail des possibles c'est
+20:20
+tout ça et en fait non l'utilisateur peut être qu'il veut deux fonctionnalités il en veut pas 30 et ça il faut que vous arriviez vous
+20:26
+même à vous descendrez aussi de votre propre vision d'experts et accepter l'idée que l'utilisateur même s'il n'est pas expert du digital et
+20:33
+experts de ce qu'il veut expert de ses besoins 8 c'est très bien ce qu'il veut et sait comment ils vont pas perdre de temps il
+20:39
+sait ce qu'il en bête sur un site web est au contraire est-ce qu'il adore et donc s'il faut simplement penser à aller
+20:44
+lui demander et à prendre ça comme la priorité il faut que ça soit la priorité de tout projet digital aujourd'hui le
+20:52
+deuxième constat qui a commencé à faire passer de l'utilisabilité vers lévis design c'est que l'attractivité d'une
+20:59
+technologie des pentes de choses à des pans de ce cas nous permet de faire une dépend de ce qu'elle nous permet d'être et ça c'est très importante parce qu'on
+21:04
+a on a tendance à penser aux qualités instrumentales d'une interface web c'est-à-dire 2
+21:10
+d'une appli d'un site qu'est ce qui va me permettre de faire et en fait non pour pour envisager l'expérience d'une
+21:17
+façon plus globale il faut aussi penser à ce qui me permet d'être alors qu'est ce que ça veut dire une technologie me
+21:22
+permet d'être ça veut dire tout simplement vous connaissez tous en tête parmi vous qui le sont les apple addicts
+21:28
+par exemple ceux qui ont carrément adopté apple comme un lifestyle et que le dire qu'ils se mettent en avant dans
+21:36
+la vie au quotidien avec cette marque là et avec cette technologie tout ce qui est orly adopteurs ce que
+21:42
+vous connaissez peut-être c'est toutes ces personnes qui sont extrêmement friands de nouvelles de nouvelles applis de nouveautés et des nouveaux concepts
+21:47
+digitaux et qu'ils vont tout de suite essayé toujours d'adopter les nouveaux produits etc là c'est pareil ce type de personne a
+21:54
+tellement adopté ce style de vie que finalement ça devient une extension de leur propre être c'est très important de
+22:00
+garder ça en tête on n'est pas que sur le faire on est aussi là alors aujourd'hui les professionnels de
+22:07
+l'it design qu'ils soient les les concepteurs ou les chercheurs ne sont d'accord en groupe que sur une seule chose par rapport à vue le design chacun
+22:13
+a sa propre définition mais là où tout le monde est d'accord c'est que luxe design est un lieu entre
+22:18
+les paramètres d'un contexte les propriétés d'un système et les caractéristiques des utilisateurs ça
+22:24
+c'est la seule chose dont tout le monde est d'accord il faut ce bien garder ça en tête parce qu'aujourd'hui je pense
+22:29
+qu'on peut dire sans se tromper qu'il ya autant du vix design qu'il y à du x designer chacun a son propre concept a
+22:35
+sa propre conception certaines parties de la méthodologie week sont davantage intéressante pour certains pour d'autres
+22:41
+et il est toujours très intéressant de se rendre compte que le seul lieu commun c'est celui là ce qui permet aussi
+22:46
+d'avoir une multitude de pratiques qui sont toutes plus intéressantes les unes que les autres multitude approche nous par exemple mais
+22:52
+plus d'une approche issus de la psychologie d'autres seront plus d'une approche issus de l'ergonomie qui est pas si loin de la psychologie quelque part il peut y
+22:58
+avoir aussi plein d'autres la sociologie etc qui sont des paradigmes très différents et qui permettent d'avoir des
+23:04
+résultats très intéressants quelle que soit la méthode utilisée mais si on garde cette vision là avec ces
+23:10
+trois aspects c'est là où c'est vraiment l'essence de f2 de luxe comme on vient de le dire je reviens sur l'aspect d'avant on disait
+23:16
+le premier constat ça a été de faire attention à utilisateurs et d'être en gros son porte parole
+23:22
+si vous ne l'êtes pas ça veut dire en fait vous promet qu'à une seule chose aux propriétés du système donc les
+23:27
+propriétés ici les propos du système sont elles imaginons on revient sur l'application viber l'objectif c'est de
+23:33
+m'amener d'un point a à un point b les propriétés système s'est du coup tous ses fonctionnalités qui sont qui gravitent autour de ça pour me permettre
+23:39
+de faire cette action si je pense qu'à ça je réalise mon application d'une manière complètement désaxé de
+23:47
+l'utilisateur et du contexte aussi parce qu'à partir du moment où vous pensez pas au contexte je suis dans la rue je suis
+23:52
+en panique il faut que ce soit dans 5 minutes à cet endroit là je des gauchos je décroche mon téléphone et je fais mon action et j'y arriverai en ce temps
+23:59
+imparti si vous pensez pas à ça avec vous concevez ça dans un coin en disant bon là je vais avoir le temps de faire
+24:04
+ça je pouvoir appuyer là je vais laïque et là je vais partager ensuite je vais donner des petites informations avant même de faire d'action votre application
+24:11
+une fois qu'elle va sortir sur le marché elle a pas marché parce que l'utilisateur il sera dans un contexte côte totalement différent et il serait
+24:17
+sera pas du tout centrée sur sa personne sur son besoin donc vraiment toutes les étapes qu'on va vous montrer par la
+24:23
+suite qui correspond à la méthodologie du design chaque étape on doit réfléchir à quel est le contexte quels sont les
+24:30
+utilisateurs comment sont-ils et quels sont les propriétés des systèmes et pas seulement les propriétés du système
+24:40
+donc pour aller encore un petit peu plus loin et comprendre encore un peu plus globalement ce qu'est le x design il
+24:46
+faut aussi ajouter l'ex-ps l'aspect émotionnel en effet comme on l'a dit tout à l'heure une
+24:51
+expérience une expérience réussie pour un utilisateur c'est une expérience positive qui lui procure des émotions
+24:57
+positives et cette simple phrase cette phrase qui paraît très simple peut ensuite être décliné en tout un tas de en tout un tas d'interrogations et donc
+25:05
+de réponse qu'est ce que c'est qu'une émotion positive quels sont les différents types d'émotions positives jusqu'à qu'avec la granularité on peut
+25:11
+aller dans l'émotion positive est-ce qu'on peut transformer une expérience négative en expérience positive et ça ce
+25:16
+sont des vraies questions auxquelles beaucoup de chercheurs s'attachent aujourd'hui il ya beaucoup de méthode pour essayer de répondre à ces
+25:21
+différentes questions mais en tout cas aujourd'hui ce qui vient poire de bien garder en tête c'est que l'émotion
+25:26
+évidemment est fondamental pour une expérience positive réussi enfin un
+25:34
+dernier concept dans lequel je dois aussi ajouter à lux design pour avoir cette vision ou bien complète c'est
+25:39
+c'est la dynamique temporelle de luxe design pour évaluer pleinement une expérience on veut la voir dans cette dynamique temporelle
+25:45
+en effet une expérience health anticipe une expérience elle se vit une expérience elle devient ensuite un souvenir et c'est en considérant
+25:52
+l'expérience dans sa globalité qu'on pousse des utilisateurs à intégrer une interface dans leur quotidien c'est à dire qu'il faut pas rester à une vision
+25:57
+de l'expérience qui serait juste un instant t c'est à dire tiens je vais ouvrir l'application au beurre et je
+26:03
+vais pas commander mon taxi et ça y est c'est la fin de mon expérience non pas du tout qu'est ce que j'ai pensé et quelles qu'elles ont été mes attentes et
+26:10
+mes sentiments avant de me dire que j'allais appeler ouvrir l'application muller qu'est-ce que j'en ai pensé même avant la première fois où j'ai ouvert
+26:15
+l'application est ce qu on me l'avait recommandée est ce que c'était positif pour moi ou est-ce que c'est justement pour l'attester parce que je me relis
+26:20
+adopteurs etc il ya aussi tout ce qui est le souvenir qu est-ce qui va me pousser finalement à la réutiliser pourquoi cette expérience
+26:26
+est resté dans ma tête comme une expérience positive et va y rester sans doute à long terme et pourquoi ces questions sont très intéressantes c'est
+26:32
+parce qu'on tend aujourd'hui à design et plus de services que de produits c'est-à-dire des services des produits qu'on va réutiliser systématiquement et
+26:38
+tout l'enjeu est d'intégrer dans le quotidien des utilisateurs les interfaces qui vont leur permettre de vivre régulièrement
+26:44
+annonces positives le design est une expérience utilisateur c'est d'abord
+26:50
+travaillé la probabilité d'un système réfléchir à son indic à son intégration dans le quotidien de l'utilisateur
+26:55
+jusqu'à qui le considèrent comme une extension de son être et c'est là où vraiment en tant dans le domaine de luxe
+27:01
+design on a fidélisé un utilisateur et on pourra remarquer de toute façon et au cours de cette semaine aussi que les
+27:08
+concepts luix design et les objectifs de luxe design sont parfois assez proches
+27:13
+de ceux du marketing en général et ça peut être très intéressant d'avoir cette vision là où on va se rendre compte que
+27:18
+finalement l'utilisateur le satisfaire l'utilisateur c'est aussi le but du marketing d'un certain point de vue même
+27:24
+si là on parle plus de clients que des utilisateurs et les notions sont très proches même si les façons de faire ne
+27:29
+sont pas les mêmes et avoir une vision globale pour vous notamment de ce que peut être la satisfaction d'un
+27:35
+utilisateur eh bien ça peut aussi passer par avoir une vision ux à des problématiques que vous rencontrez alors on va vous parler
+27:43
+maintenant de la méthodologie x en tant que tel alors ici on va vous proposer
+27:48
+une façon d'envisager du x parce que comme vous le dites alors il ya autant du vix design qui a dû x designer c'est
+27:54
+une façon qui nous semble assez à global et je pense voilà on prend pas trop de risque en vous présentant cette façon de faire et
+28:01
+havas composé de cinq étapes la première étape étant une analyse experts de l'interface
+28:08
+donc là on va être sur une analyse de l'utilisabilité de l'ergonomie d'une interface sans forcément aller tout de
+28:14
+suite voir les utilisateurs ça va être la limite c'est pour ça qu'on ne peut pas se contenter de cette simple approche et cette simple première étape
+28:20
+il va falloir forcément passer par une seconde étape qui va être celle de la recherche utilisateurs et c'est celle
+28:26
+dans laquelle on va essayer de comprendre utilisateurs et on va pour ça utilisé beaucoup de technique dans
+28:31
+lesquels on sur lesquelles on va revenir et en tout cas cette phase de recherche utilisateur est fondamentale puisque
+28:36
+comme on vous l'a dit il faut être en empathie avec les utilisateurs il faut chercher à les comprendre pour pouvoir être leur porte-parole auprès des
+28:43
+concepteurs et si on ne cherche pas à comprendre les utilisateurs évidemment ne pourra pas être de bons porte parole
+28:51
+du coup cette phase de recherche vous permettent en fait d'avoir des outils concrets pour arriver dans une phase
+28:57
+d'idéation c'est ce terme d'idéation est assez assez spécial à prendre en compte
+29:03
+le mais l'objectif vraiment c'est de générer des idées à partir du moment où on sait quels sont les besoins de la
+29:11
+fonctionnalité ou la plateforme pour laquelle vous travaillez vous savez quels sont vos utilisateurs vous avez
+29:16
+compris le contexte maintenant vous allez prendre des personnes donc soit des utilisateurs ou des
+29:21
+personnes qui gravitent autour de l'entreprise afin de générer des idées vous permettent vous aidant à la
+29:27
+conception derrière donc la phase suivante qui est une part extrêmement importante à partir du moment où on
+29:33
+demande un travail un du designer on vous avait déjà entendu ce terme de powerframe est on vous demande de faire
+29:38
+des prototypes derrière au final c'est ce qu'on demande basiquement d'un pur ennui x designer sans savoir ce qui peut
+29:45
+y avoir derrière mais vraiment toutes ces étapes qui sont en amont sont essentiels pour vous pour travailler pour arriver sur une réalisation d'un
+29:50
+moyen fremm et d'un prototype qui sera qui marchera en fait et donc on va pouvoir tester auprès des utilisateurs
+29:56
+remodifier re-tester pour derrière proposé à l'équipe audet vous alors au créa directement un
+30:04
+prototype complet approuvé par les utilisateurs qui marchera si vous travaillez en tant que designer et donc
+30:10
+vous oubliez comme on l'a dit tout à l'heure le compte le contexte est l'utilisateur donc ça veut dire que le
+30:15
+contexte l'analyse experte ou l'oublier l'utilisateur la recherche utilisateurs vous l'oubliez ou générer des idées
+30:20
+de votre côté vous arrivez à une conception et un prototype de votre côté donc derrière tout le monde est content
+30:26
+vous avez fait un beau prototype mot ailleurs frais mais derrière il va pas marcher l'utilisateur ne va pas se
+30:32
+contenter et peut-être une fois sur 1000 il va marcher et ce sera quelque chose
+30:37
+qui sera impossible arrêts effectués parce que du coup c'est sorti sortie d'une manière un peu magique et ça a
+30:43
+marché bien sûr par rapport à l'oeil que vous avez le regard que vous avez mais si vous voulez être sûr à 100% à chaque
+30:50
+fois de faire quelque chose qui va fonctionner franchement utiliser cette méthodologie
+30:55
+là et c'est impossible que vous vous plantez vraiment impossible ouais c'est une méthodologie qui est très rigoureuse qui donne nécessite
+31:01
+d'être et rigoureux chaque étape est importante et dans tous les cas l'idée c'est effectivement que
+31:07
+en tant que lead designer aujourd'hui ce qu'on a l'impression que félix designer c'est surtout les attaques 4 et 5
+31:13
+c'est à dire qu'un designer il va créer un prototype il va ensuite le tester voir il va même effectué simplement des
+31:18
+tests sur un site qui existe déjà ou s'ils ont une application mobile qui existe déjà pourquoi finalement sa pathologie est si
+31:24
+importante déjà pour pas déjà pour montrer que le x design c'est c'est
+31:29
+avant tout une pratique rigoureuse et une méthode c'est à dire que les utilisateurs on peut ne vont pas sortir
+31:35
+leurs résultats de leur chapeau - appliquer une méthode qui va pouvoir être répliqué au fur et à mesure des projets et surtout au fur et à mesure
+31:41
+des étapes des projets dans le temps c'est à dire à j + 1 an etc on va pouvoir reprendre la méthode l'art
+31:48
+est appliquée réutiliser les outils qu'on a déjà développé via huit design pour aller plus loin et proposer une
+31:54
+interface qui sera encore plus intéressant donc le grand concept en parallèle de cette méthodologie savez
+32:00
+fils itération l'itération c'est le principe de réfection une étape afin de modifier son contenu à partir du moment
+32:07
+où vous avez classiquement réussi à faire un prototype vous allez tester ce
+32:12
+prototype auprès des utilisateurs et bien sûr il ya différentes choses que vous n'avez pas réfléchi de la bonne manière qui du coup les utilisateurs
+32:20
+vont trouver des solutions autres vont avoir des points de blocage pour vous vous allez juste heureux de voir repartir en arrière sur une étape de
+32:26
+conception pour modifier votre prototype et revenir effectuer des tests jusqu'à ce que le prototype en question marche
+32:33
+et fonctionne sur la grande majorité de vos utilisateurs et donc ce principe d'itérations pour revenir jusqu'à de
+32:39
+l'idéation donc on va essayer de jeu de tourner en fait une réponse d'une autre manière
+32:44
+la réponse que vous avez trouvé grâce à l'idéation n'était pas forcément la bonne vous êtes partis sur le prototypage qui a été mauvais les tests
+32:50
+utilisateurs se sont plantés donc on repart sur cet état de l'idéation pour générer une autre manière de réfléchir
+32:56
+et de donner une réponse ce qui va fournir un nouveau prototype et de nouveaux tests qui espérons le marcheur
+33:02
+ouais pourquoi aujourd'hui c'est si important de mettre de l'huile design dans un projet web tout simplement parce que ça permet de
+33:09
+gagner du temps et de gagner de l'argent alors pourquoi gagner du temps à gagner de l'argent gagnez du temps parce que déjà on va en
+33:15
+fait non simplement cool je vais prendre le problème différemment c'est qu'est ce qui coûte le plus cher dans un projet web aujourd'hui qu'est ce qui prend le
+33:21
+plus de temps c'est le développement la plupart du temps c'est le développement de l'interface et c'est toute la partie technique extrêmement technique et très
+33:27
+coûteuse parce que les personnes qui le font pas sont des vrais experts et du coup il va ils ont ils appliquent des tarifs qui reflète leur expertise et
+33:34
+aussi parce que ça prend du temps parce qu'effectivement faire quelque chose qui marche à tous les coups avec des phases
+33:40
+de recettage bas qui monte tout un tas de problèmes donc il faut recommencer et c'est ça coûte extrêmement cher et le
+33:46
+luxe design permet de se placer en amont du développement web c'est à dire qu'on va imaginer à un produit on va essayer
+33:52
+de comprendre ses utilisateurs on va donc aller loin dans cette compréhension va générer des idées on va créer justement ce prototype est ce prototype
+33:59
+va pouvoir être testées mais tout ça c'est très rapide et c'est efficace et surtout on peut tout de suite tester
+34:04
+quelque chose qui ressemble à ce que va ressembler l'interface une fois qu'elle sera développé mais surtout on va
+34:09
+pouvoir les tester et du coup créer un prototype qui va être très fidèle à ce que sera finalement l'interface est donc
+34:15
+une fois qu'on a qu'on engage râler des des souks on engagera de l'argent auprès des développeurs web et même pour eux ce
+34:22
+sera fait plus simple de ne pas avoir à reprendre leur travail dix fois eh ben on va pouvoir de cette façon de gagner
+34:27
+du temps et d'argent parce qu'on sait que le prototype on sait que l'interface on sait que le système qu'on va leur demander de concevoir fonctionne déjà et
+34:34
+déjà suffisamment adapté aux utilisateurs et à leurs besoins pour avoir un impact suffisamment bon au
+34:41
+niveau aussi commercial et marketing du coup on va vous présenter ses
+34:47
+différentes phases les différents outils que qu'on utilise en tant que designer pour chacune de ces phases et comment la
+34:52
+psychologie derrière pour nous aider à répondre et avoir un nouveau regard par rapport à ces à ces axes bien sûr un
+34:59
+usineur ne vous présenterai pas forcément ces axes psychologique mais vous allez voir tout l'intérêt est
+35:04
+pourquoi nous actuellement on travaille de cette manière là donc la première phase avec l'analyse experte c'est là où du coup vous recevez le
+35:11
+debrief on va partir sur un cas où on veut faire une refonte n'importe quoi d'un site de e-commerce et du coup vous
+35:16
+votre objectif ça va être vous dire sur quelle base je vais fonctionner donc d'une part le
+35:22
+brief et le système en lui-même vous allez avoir cette phase d'analysé experte dans laquelle on peut utiliser
+35:30
+différents outils donc un aspect des audits ergonomique des heuristiques
+35:35
+d'avoir c'est un terme un peu barbare vous allez comprendre ce que c'est derrière des check list et bien sûr un
+35:40
+benchmark audit benchmark des choses que normalement vous comprenez vous utilisez déjà d'une manière très très fréquentes
+35:48
+mais vous allez voir la manière dont on les utilise comment on peut faire
+36:00
+l'analyse experte avant de connaître l'utilisateur alors c'est une excellente
+36:17
+question à laquelle justement on va répondre en expliquant ce que c'est que le dit ergonomique lui même mais grosso modo pour te répondre tout de suite sur
+36:25
+l'aspect justement finalement un audit ergonomique comment on peut le faire avant comment on peut faire une analyse experte avant de connaître les
+36:30
+utilisateurs et c'est justement la limite de cette pratique là c'est qu'elle est faite sans utilisateurs donc
+36:35
+il ne peut pas c'est à la fois un passage obligé parce que c'est important d'avoir une idée de ce que donne l'ergonomie d'une interface et d'un
+36:41
+système mais c'est toujours une analyse faite par un expert et donc elle n'est pas suffisante on doit forcément passer ensuite par
+36:47
+être phase de recherche utilisateurs comme on l'a montré dans laquelle on va aller sonder les besoins on va les connaître les besoins des utilisateurs
+36:53
+mais ce n'est pas le but d'une analyse experte de comprendre l'interface et le système selon les besoins des
+36:59
+utilisateurs puisque par définition c'est un expert qui le fait quand tu vas juste on revoit ses différents éléments
+37:05
+quand on va parler des eaux ristic et des check list tu vas comprendre un peu plus comment on s'axe sur l'accessibilité pur juste un petit
+37:12
+exemple par exemple il ya des normes européennes actuelles qui cadre le
+37:18
+quatre différents éléments de sites de e-commerce par exemple des obligations vous avez tous vu à partir du moment où
+37:25
+vous faites un achat vous avez une case cgv les conditions générales de vente que vous devez cocher ou pas la présence
+37:30
+de cette case doit être détruite effective typiquement on n'a pas le droit de prêt cochez cette case c'est une norme européenne donc ça c'est
+37:37
+des questions d'accessibilité qui du coup sont arrivés à un niveau où on a statué il faut faire comme ça pour le
+37:43
+bien de l'utilisateur et pour ne pas du coup essayer de les autres logos on va dire ça c'est des micros aspects on va
+37:50
+dire qu'il soit intéressant à prendre en compte et sur lesquelles on va déjà en fête se dire ok on balaye tout ça une
+37:55
+fois qu'on a balayé tout ça on a on a ça et on sait qu'on va devoir faire des légères modifications pour être aux
+38:00
+normes en gros et ensuite on va pouvoir travailler d'une manière différente sur comment l'utilisateur on pourrait
+38:06
+l'aider à répondre aux besoins qui actuellement n'est pas faire la réponse n'est pas forcément bien apporter c'est
+38:14
+pour ça qu'on va devoir effectuer un travail en tant que designer de sa moto
+38:22
+c'est aussi une façon de cadrer le projet dans ce sens là de fitting effectivement de ceux basés d'abord sur
+38:27
+les contraintes qui peuvent être des contraintes légales comme vient de lever le dire pierre et c'est très important de les garder en tête puisque ça fait
+38:33
+partie des contraintes du projet de luxe il ya une image qui est assez c'est assez parlante même si c'est assez parlant si vous êtes
+38:40
+tous aller je pense déjà dans un magasin ikea si vous arrivez si vous aussi vous vous
+38:46
+posez la question en termes d'utilisation lité et de satisfaction d'ex qui est le mieux pour l'utilisateur d'un magasin et qui a donc un client du
+38:52
+caire tout simplement ça va être sans doute d'arrivée de pouvoir rêver de retrouver par exemple la référence de
+38:58
+son produit ou compte comme lui propose juste les produits qui sont les plus adaptés à ses besoins et ensuite qui puisse arriver en gros en caisse au bout
+39:04
+de cinq minutes et pouvoir acheter ces produits a pu repartir concrètement dedans ça aurait été une expérience très rapide très satisfaisante il leur a eu
+39:10
+exactement ce qu'il veut et c'est donc c'est une expérience positive globalement effectivement donc dans les
+39:15
+projets vix on ne peut pas rester que sur ce que veut l'utilisateur non plus il ya toutes les contraintes du projet mais c'est là aussi où l'analyse
+39:21
+expertes et très utile c'est à dire qu'il ya des besoins d contraintes aussi en matière de marketing typiquement pouvoir ikea et
+39:27
+tout le compte ou le challenge d'un magasin ikea c'est donc de faire passer une ex de vivre une expérience positive
+39:32
+en cheminant dans les différents dans les différentes pièces en voyant l'étendue des possibles et l'étendue des articles et s'imaginant peut être se
+39:39
+projetant dans notre appartement de demain en voyant tous les meubles etc mais on est du coup il faut vraiment se
+39:44
+dire que la faire une interface un système où un magasin par exemple comme un magasin ikea c'est oui à la fois
+39:50
+faire ce que veut l'utilisateur donne exactement ce que veut l'utilisateur mais aussi bas selon les contraintes des
+39:56
+contrats de marketing des contraintes légales elle va aussi proposer une expérience globale soit raccord avec ses
+40:02
+contraintes là et donc il faut toujours essayer d'équilibrer entre toutes ces problématiques là et c'est là où l'analyse expertes et extrêmement
+40:07
+importantes et notamment pour l'exemple qu'a dit pierre c'est à dire tous les aspects légaux sont en fait des passages obligés on ne peut pas peut-être que
+40:13
+l'utilisateur typiquement là les cgv c'est moi c'est un super exemple parce que peut-être que l'utilisateur lui voudrait que la casa soit précochée passe comme ça et perd pas de temps
+40:19
+taton a été en 99 % des cas on est d'accord qu'il ne lira jamais les cgv donc c'est une perte de temps lui
+40:24
+demander de faire un clic en plus mais légalement voilà on est obligé de le faire et donc là il faut quand même qu'un expert au pouvoir le dire là
+40:29
+encore sur l'aspect des cgv ses traits c'est quelque chose d extrêmement fluide et très facile à comprendre
+40:35
+il ya beaucoup d'autres petites problématiques sur lesquelles il faut de toute façon un expert pour pouvoir dire voilà voici la liste des contraintes de
+40:42
+nos systèmes enfin de la conception d'un système
+40:48
+alors est-ce que ça risque de limiter à la créativité oui frais concrètement oui effectivement
+40:57
+sauf que comme et c'est pour ça que je prenais cet exemple des cas c'est que en fait
+41:02
+créative par rapport aux seuls utilisateurs aux salles besoins d'utilisateurs essayer de faire l'expérience la plus parfaite pour l'utilisateur lui-même c'est souvent peu
+41:08
+réaliste par rapport aux contraintes du projet et par rapport aussi aux contraintes légales etc et même pour
+41:14
+réfléchir à une expérience positive une expérience créé un pack design expérience qui soit positive il faut
+41:20
+d'abord prendre en compte ces contraintes de projets pour ensuite pouvoir les utilisateurs et c'est là où ta question est très bonne pourquoi
+41:26
+parce que finalement quand on cherche à comprendre d'utilisateurs derrière on n'essaie pas de comprendre dans la limite des contraintes qui ont été
+41:33
+déterminées par la partie analyse expertes donc si tu veux c'est comme si ces deux phases et c'est pour ça que vous avez
+41:39
+quand vous proposer une approche méthodologique en cinq étapes et qui peut être tout à fait discuter c'est que
+41:45
+ces deux faces en fait sont elles doivent être faites en parallèle c'est à dire qu'on est une phase on va essayer
+41:50
+de comprendre en profondeur les utilisateurs et ses besoins et là il va falloir effectivement être le plus créatif possible créatif dans le
+41:55
+sens ne pas se poser de contrainte ne pas se poser de limites et va pas se dire rôle at elle besoin du style adore façon il réalisable sur mon interface
+42:01
+donc en fait je prends pas en compte et je n'écoute même pas va falloir faire une analyse globale et précise de l'utilisateur mais d'un autre côté il va falloir aussi
+42:07
+connaître très bien à part via l'analyse experts tout ce qui est laid toutes les contraintes du projet pour pouvoir
+42:13
+ensuite au début de la phase idéation notamment ou à la fin de la phase de recherche chacun le place où il veut et
+42:19
+faire ces espèces de bilan avec certains outils comme les personnels les expériences pape dont on va vous parler qui permettent en fait de faire d'être
+42:27
+une synthèse de tout ce que veulent les utilisateurs dans la limite des contraintes des projets de rester en empathie avec les utilisateurs là pour
+42:32
+pouvoir aller jusqu'au bout du cycle de métiers de la méthode au de louis xi sign justifie aussi par exemple toute
+42:40
+cette phase en fait d'analysé experte qu'on vous connaissez très bien et terme d'audits et benchmark à partir du moment où du coup on va faire l'analyse
+42:45
+ergonomique d'un site en question bien sûr derrière on a la possibilité de repérer l'ensemble des concurrents et de
+42:52
+faire des analyses ergonomique aussi le ces sites là ce qui nous permet de gagner du temps et derrière si bien sûr
+42:58
+en utilisateurs nous propose une nouvelle porte d'entrée avec un nouveau site quelque chose qu'on n'a pas repéré
+43:03
+parmi les concurrents réels de la fonctionnalité du site qu'on effectue revient en arrière on réitère et donc du
+43:10
+coup on revient pour effectuer une analyse économique comparé et avancer pas à pas au fur et à mesure avec toute
+43:17
+cette connaissance est en fait cette analyse experts c'est surtout avoir une connaissance la plus complète de
+43:23
+l'environnement dans lequel on va on va travailler ce qui nous permet d'avoir un sens quand même un cadre du coup cette
+43:31
+première étape does it ergonomique donc on va avoir d'un côté des great
+43:39
+d'aquitaine de critères ergonomiques dont qui nous permettent en fait de répondre à une accessibilité offrir une
+43:44
+accessibilité la plus la plus efficiente possible et à côté de ça on a les éléments constitutifs de l'interface
+43:50
+donc le produit d'un côté l'ergonomie l'autre de ces deux réflexions va
+43:55
+réussir à faire une analyse ergonomique chez du site et du coup pouvoir à terme
+44:01
+comparé cette analyse à d'autres analyses qu'on effectuera auprès de concurrents je suis rassuré face
+44:07
+benchmark du coup pourquoi faire un audit
+44:12
+ça vient compléter donc l'évaluation des utilisateurs donc encore une fois comme quand on vient de le dire
+44:18
+l analyse experte recherche utilisateurs des choses qui sont vraiment en parallèle donc qu'on doit considérer
+44:25
+l'ensemble très important on vous l'a expliqué juste avant on va supprimer
+44:30
+énormément de problèmes d'utilisabilité pour que du coup ces éléments en fait ne
+44:35
+biaise pas aussi notre réflexion parce qu'à partir du moment où on va avoir ça en considération tout au long de la
+44:40
+phase d'idéation de conception qu'on va devoir avancer pour proposer quelque chose de plus intéressant à utilisateurs
+44:46
+si on est obligé de se concentrer sur ces éléments là on va on va arriver à les résoudre mais c'est pas l'essence même d'une
+44:53
+évolution ou d'un projet réellement centrée sur l'utilisateur là sera un projet centré sur la
+44:59
+fonctionnalité en elle-même où on va essayer du coup de boucher les trous et proposer quelque chose d'un peu plus intéressant est derrière donc ou du coup
+45:06
+c'est de pouvoir arbitrer entre plusieurs alternatives de conception ce qui vous permettra d'avoir une vision extrêmement globale du champ du possible
+45:13
+ça vous allez voir par la suite finalement quand on crée plusieurs prototypes en fait à la fin de
+45:18
+certains ateliers d'idéation on a vraiment des prototypes papiers qui sont pas directement exploitables mais qui
+45:24
+permet d'avoir des conceptions différentes de ce que va être le système à la fin et notamment l'analyse experte
+45:29
+vous permet de faire des choix entre ces différentes alternatives de conception puisqu'on va prendre évidemment
+45:34
+l'alternative qui a le moins de problèmes ergonomie qui est la mieux fait au niveau là même dont quatre
+45:44
+étapes pour faire un audit et ergonomique tout d'abord on va analyser le contexte de la demande c'est à dire on va aussi
+45:50
+réfléchir à tout ce qui est contexte d' usage tout ce qui et quels sont les différents paramètres du système et tout ce qu'ils aient toutes les
+45:55
+caractéristiques des utilisateurs qu on peut aussi prendre en compte on peut tout à fait demandé à des experts qui vont réaliser un audit ergonomique de se
+46:01
+mettre déjà en empathie avec les utilisateurs pour essayer d'avoir déjà une analyse qui soit orientée vers
+46:06
+l'utilisateur même si elle ne peut pas être considérée comme un test utilisateur lui même mais voilà tout ça
+46:12
+il va falloir y réfléchir en se posant un certain nombre de questions ensuite il va falloir créer une grille
+46:17
+de critères dont créer une grille de critères c'est quoi c'est prendre en fait les grands principes ergonomie qui sont les plus cohérents avec avec le
+46:24
+système avec l'interface combat à tester qu'on va évaluer et créer notre propre
+46:29
+grille de critères notre propre grille d analyse qui va nous permettre de tirer des conclusions sur l'ergonomie du système
+46:34
+ensuite on va recueillir au de façon opérationnelle les problèmes ergonomique donc là tout simplement on va se balader
+46:40
+sur l'interface est et on va et on va récupérer les problèmes alors deux
+46:45
+façons de faire la première c'est de prendre un grand principe ergonomique et de balayer page par page de regarder si
+46:50
+ce principe est respectée sur l'ensemble des pages par exemple du site d'e-commerce si on reprend cet exemple là nous on va faire pour la page
+46:56
+d'accueil ensuite on va regarder pour les fiches produits par exemple pour le final de conversion ça peut être une méthode l'autre méthode
+47:01
+c'est de regarder cette fois encore page par page mais cette fois sur chaque page déroulé l'ensemble des principes
+47:07
+ergonomique et repérer la plupart des systèmes pour chaque page de méthodes de
+47:12
+recueil des problèmes qui sont tout aussi efficaces l'une que l'autre dépend du projet qui est devant vous et enfin
+47:19
+on va passer à une phase de présentation des résultats donc on va créer un livrable sur lequel on va présenter les résultats détaillés mais gardez bien en
+47:28
+tête que cet objectif en fait c'est pas forcément une fin en soi on vous demande pas un travail rendu puis c'est fini
+47:33
+puis on passe à l'étape d'après c'est vraiment tout ça ça va vous permettre d'avancer et d'avoir en fait la
+47:39
+possibilité de revenir dans une sorte sorte de bible en fait vous avez du coup vous avez toute l'analyse qui a été faite
+47:45
+et vous n'allez pas être obligé de retourner à chaque fois sur le site allait voir les petits points de détail c'est vraiment on a un problème le
+47:51
+problème c'est répondre aux besoins de l'utilisateur d'une meilleure manière et derrière on va utiliser plein d'éléments qui vont nous permettre en fait de
+47:57
+simplifier notre travail est de pouvoir arriver rapidement à une conception vraiment centré utilisateurs pourront
+48:05
+donc cette grille que vous allez effectuer gris très simple donc vous
+48:11
+avez le numéro deux le nombre de problèmes que vous avez identifié vous la définissez vous le décrivez derrière
+48:17
+vous allez voir on a des critères heuristique qui sont associés et ensuite on va le prioriser donc ça vous
+48:24
+permettra vous une fois vous avez effectué la finalité de votre analyse que vous avez l'ensemble de ces problèmes-là imaginons que vous avez une
+48:30
+centaine de problèmes représenter au moins cette priorisation vous permettra de savoir qu'est-ce qu'il faut mettre en place tout de suite qu'est-ce qu'on va
+48:36
+changer grâce à notre conception à nous qu est ce qu on a changé d'emblée en envoyant directement ces
+48:42
+informations à l'entreprise en leur disant mal à un gros problème sur 28 mois difficiles à modifier sa modifier sa déjà l'expérience va être amélioré et
+48:49
+derrière donc vous vous expliquer chaque recommandation que vous vous souhaitez apporter ses recommandations bien sûr
+48:55
+elles vont devoir être retravaillé re spécifié accès en fonction de l'oeil de l'utilisateur mais s'avoue prem permet
+49:01
+déjà d'avoir un premier élément de réponse sur lequel vous allez pouvoir travailler
+49:08
+typiquement quand vous allez à analyser un site voici ce que vous pouvez faire alors là
+49:13
+c'est une source qu'on vous montrent ces captures donc c'est une extension en fait qui est déjà présente sur google chrome qui vous permet de faire ça vous
+49:20
+avez qui va faire directement un screenshot de bahts site vous allez pouvoir du coup indiqué très rapidement le lieu du problème la manière dont vous
+49:28
+souhaitez y répondre la recommandation vous avez caractérisée par rapport un critère holistique qui existent déjà
+49:34
+montré dans la suite et le prioriser et ça en cinq secondes en 5 secondes vous
+49:40
+avez mis en évidence le problème que vous avez repéré et hop on passe au suivant donc derrière l'analyse va être
+49:45
+extrêmement rapide grâce à des systèmes comme celui là ce qui vous permettra d'avoir un rendu assez ces
+49:52
+professionnels derrière centre au centre on va vous prendre la tête sur une mise en page sachant que c'est vraiment pas
+49:58
+l'élément le plus important de cette étape là vraiment l'étape c'est vraiment de ressortir les principaux problèmes est d'avoir une lisibilité la plus
+50:05
+fluide qui soit du coup qu'est ce que sont les heuristique et donc ça c'est
+50:12
+les éléments les plus importants de cette analyse experte donc des oris tic
+50:19
+alors ça va être des règles qu'on va devoir respecter dans le cadre d'une conception d'interfaces donc ces règles
+50:27
+là on était décrite par plusieurs chercheurs plusieurs plusieurs têtes pensantes de l' os x donc on a deux
+50:33
+grandes ristic qui existent quand est une des deux une grande ristic qui a été
+50:38
+fait par bastia scapin et une autre qui a été fait par norman du coup on va vous présenter le pont vinh san on va vous
+50:46
+présenter les deux premières heures et sikhs de nielsen qui sont au nombre de dix donc comme l'a dit quentin tout à
+50:51
+l'heure c'est vraiment quelque chose qui vous permet d'avoir un regard axé sur un site par rapport à cette a7 heuristique
+50:58
+par exemple la première ristic ce avec la visibilité du statut du système donc
+51:03
+vous quand vous allez balayé le site vous allez garder ça en tête dans un premier temps vous allez essayer de comprendre ce que c'est un peu plus
+51:09
+donc la description en elle-même est que le système doit toujours informé l'utilisateur sur ce qu'il se passe à
+51:14
+l'aide de retour d'informations appropriées ok donc à partir du moment où avait un site devant vous vous allez
+51:21
+vous demander est-ce qu'à chacune des étapes à chacune des pages le système m'informe sur son statut
+51:28
+comment comment à quel état le système est imaginons un site de e-commerce à
+51:35
+partir du moment où je me suis baladée j'ai trouvé un produit le produit les tops il m'intéresse je la joue au panier est-ce que sur toutes les étapes que je
+51:42
+vais faire par la suite donc continuer à me balader sur le site avant même d'aller valider mon produit est ce que
+51:48
+le site informe toujours que j'ai un élément dans mon panier est ce que j'ai un petit plus un à côté de mon logo
+51:54
+panier si j'ai pas cet élément là le système me dis pas que j'ai effectué quelque chose avec lui donc du coup je
+52:00
+vais être je ne vais pas être informés sur ces différentes étapes et ça c'est un élément très simple que je vous
+52:07
+décris mais extrêmement important à garder en tête à partir du moment où j'ai effectué une information avec ce système là ça va
+52:14
+changer la donne un autre élément très simple à partir du moment où vous êtes sur n'importe quel site internet vous cliquer sur un lien
+52:19
+qu'est ce qui se passe quand vous cliquez sur un lien vous avez soit une barre de chargement soit ce qu'on vous êtes sur un navigateur en bas à gauche
+52:25
+vous avez l'url qui a été indiquée et a marqué en attente ou il ya marqué vous allez pouvoir du coup accéder à cet
+52:31
+élément si le système ne vous informe pas que vous avez effectué une action qui a engendré quelque chose vous allez
+52:37
+continuer à cliquer et vous allez vous dire mais jusqu'à quand ça se vend jusqu'à quand ça se lance vous êtes toujours tomber 20 à 30 personnes sont
+52:43
+entrées dans des cas comme ça plus ou moins plus ou moins faciles à comprendre mais cet élément est extrêmement
+52:48
+important donc ça c'est vraiment une des dix plus grandes au récit qu une deuxième érotique qui a été présentée
+52:54
+donc la numéro deux donc ça va être la correspondance entre les systèmes et le monde réel pour être plus concret le
+53:02
+système doit parler le même langage que l'utilisateur en utilisant des mots des concepts qui sont familiers en suivant
+53:08
+des conventions dans le monde réel à partir du moment où j'arrive sur un système qui me parlent avec des termes
+53:14
+qui sont complètement désaxé de ma réalité ça va pas marcher
+53:19
+à partir du moment où vous allez créer je vais pas vous avez créé un slapshot vous allez vous savez que votre population les cibles que vous allez
+53:26
+avoir l ont pas plu 25 ans dans un premier temps que vous avez créé vous avez créé l'application
+53:32
+si vous parlez avec un français qui va être très compliqué avec des termes très technique vous n'allez pas simplifié en
+53:38
+fait cette accessibilité vous allez devoir du coup prendre en considération cet élément et ses hauts risques sont des éléments assez simple
+53:45
+assez compréhensible et assez intuitif mais ce qui est important en fait quand vous allez faire cette analyse experte c'est d'avoir cette liste de ristic qui
+53:51
+au final couvre l'ensemble de l'ergonomie et de l'accessibilité et qui vous permet de ne pas rater des éléments
+53:58
+clés d'amélioration que vous pouvez proposer oui alors une petite précision au niveau
+54:05
+du vocabulaire dont on parle d euros stick dennis olsen qui sont pour notamment tous les sites internationaux parce qu'il s'applique très bien dans
+54:11
+toutes les langues on parle aussi des critères ergonomiques de bastien et scapin elles sont une autre grande grande grande liste de
+54:18
+principe ergonomique sur laquelle on peut s'appuyer car aujourd'hui les cessonnais 2 les plus connus il y en a il en existe d'autres
+54:24
+ces deux les plus connus sachez aussi que vous avez pu le voir je vais revenir
+54:30
+sur un point c'est simplement que vous voyez ici à travers c'est à travers ces
+54:36
+règles ergonomique elles sont en fait soumises interprétation un clairement à moi quand je lis par exemple la première règle ça va peut-être pas être la même
+54:42
+chose que ce que pierre comprend et chacun va avoir sa propre rentrée interprétation de ces principes ergonomique et c'est pas grave ces mêmes
+54:47
+recommandent c'est pour ça qu'il faut toujours visage et l'analyse experte comme une analyse qui est extrêmement
+54:52
+subjective ça veut dire que ça va être aussi leur expertise de l'expert le niveau d
+54:58
+expertise de l'expert qui va être très qui va être un vrai indicateur de la réussite ou pas de l'analyse experte
+55:03
+puisque ces règles sont particulièrement soumise à interprétation et que surtout elle a correspondant fin pour pouvoir
+55:10
+les exploiter au maximum il faut aussi avoir une grande expérience de l'ergonomie de ce qui existe au niveau économique notamment pour faire des
+55:16
+recommandations qui sont qui soit intéressante donc il faut avoir une grande connaissance maniement du digital et des interfaces en général et de
+55:22
+l'ergonomie ce qui est intéressant lorsqu'on fait des analyses comme ça alors c'est pas du tout toujours le cas parce qu'évidemment il ya aussi des contraintes de budget
+55:28
+dans tous les projets et ce qui est intéressant quand on fait une analyse experts c'est d'avoir plusieurs experts pour pouvoir comparer les points de vue
+55:34
+comparez les subjectivités et ensuite pouvoir rpt prioriser les différents problèmes et différentes recommandations
+55:39
+pour donner mal à la vision la plus précise de ce que ce qui peut ressortir
+55:46
+d'une analyse experts c'est comment vous le disais au début il ya différentes et attendu lead designer quelle manière de
+55:51
+faire de lui un design est typiquement ça c'est une variation extrêmement importante pour laquelle nous typiquement c'est c'est un élément qui
+55:58
+nous gêne de faire une analyse experte seulement effectué par une seule personne son regard du coup totalement
+56:03
+biaisé l'analyse en question donc de quoi partir du moment où nous on effectue des analyses expertes on a un
+56:08
+minimum de deux trois personnes qui effectuent sadali jusqu'à 5 personnes en d'autres designers vont prendre le
+56:13
+parti pris de dire non regarder tellement experts que je vais pouvoir du coup me fier seulement ma propre
+56:19
+perception des choses et c'est souvent des dca à partir du moment où on a énormément d'année expérience on se dit
+56:25
+bah du coup j'ai tout vu dans ma vie moi je peux vous faire une analyse experte sans aucun souci je n'ai pas besoin d'avoir un regard neuf un regard de
+56:32
+quelqu'un d'autre je vais jouer du coup on réussira ressortir l'ensemble des problèmes et effectuer les
+56:38
+recommandations de la manière la plus saine possible et c'est là où l'on commença à se planter mon commence du coup a à perdre l'objectif qui était le
+56:45
+nôtre qui était du coup d'avoir une vision la plus large possible sans se centrer sur la nôtre comment la
+56:54
+psychologie du coup va vous permettre de comprendre ces hérétiques ça c'est une manière d accès qui
+57:01
+pourrait être intéressante nous pousse à être l' influence une influence sur le web alors l' influence sur le web a été
+57:07
+décrite par robert chez ciel dini je vous invite très fortement à essayer de de regarder un petit peu plus ces
+57:13
+aspects là et du coup il décrit l'influencé faisons six aspects différents donc six aspects
+57:21
+différents en influence sur le web notamment sap s'applique évidemment très bien le web donc on a grillé tous la preuve social
+57:27
+vous en avez sans doute déjà entendu parler l'engagement la réciprocité alors liking qui a pas vraiment de traduction
+57:34
+en français mais qui peut être ça peut être traduit très simplement par l'amour mais en fait c'est la façon de se
+57:40
+présenter en tant qu'humain à une personne qui on se présente en tant qu'être humain et c'est notamment vrai
+57:45
+sur le web plus on va avoir de chance d'influencer la personne en face plutôt que si on se
+57:50
+montre comme un système froid est donc un site web froid etc vous connaissez peut-être mailchimp que
+57:56
+le le programme enfin l'application web de meiling qui est notamment très facile
+58:03
+à complet avec wordpress et qui est bien à personnifier systématiquement par un petit singe qui est mignon et qui
+58:09
+n'arrête pas de nous dire voilà il ya une erreur dans le formulaire à tel endroit là tu peux lancer sa campagne de mails etc et c'est une façon par exemple
+58:15
+d'employer le lightning on a aussi tout ce qui est l'autorité donc le fait de se présenter sous tutelle comme une figure
+58:21
+d'autorité bas nous pousse à plus influencé et enfin la rareté vous connaissez tous évidemment les les
+58:27
+vous avez tous déjà réservé un billet pour un concert ou une place dans un avion où il ya une petite petite copine qui vous dit il ya déjà quarante trois
+58:33
+personnes qui sont en train de réserver ou alors il reste plus que trois places il reste plus que deux articles en stock etc tout ça c'est des basée sur la notion de
+58:40
+rareté décrite par ciani qui est un des moteurs de l'influent sur le web pour ce qui est de la rareté de la preuve social aujourd'hui c'est vraiment
+58:45
+les deux leviers les plus sûres utilisés notamment dans le domaine du e-commerce donc plein d'exemples que vous avez déjà vu il faut savoir que ça peut être aussi
+58:53
+une façon d'envisager là justement une analyse experte au niveau investigue
+58:58
+puisque finalement on peut utiliser la grille de critères qu'on souhaite c'est à dire on peut utiliser ristic denis
+59:04
+seine les critères de bastien scapin qui ne sont pas exactement le même écart eux qui sont sur une même réalité qui
+59:09
+regroupe une même réalité on pourrait aussi utiliser les critères de si la ténine influence de sylla dénis pour décrire si un système est efficace
+59:15
+dans l'affluence justement des utilisateurs à mettre en lien avec ce qu'on disait tout à l'heure sur l'économie comportementale et les deux
+59:21
+systèmes de pensée on va nathan à prendre des décisions automatique est très rapide par rapport à tout un tas de choses dans la vie
+59:27
+eh ben c'est petit chaussée petit levier peuvent nous permettre peuvent nous influencer dans le sens où il nous pousse à réaliser un comportement
+59:33
+puisque puisque on a l'impression que c'est nécessaire et notamment par exemple un art et un tout simplement je
+59:40
+veux acheter mon biais de ma place de concert j'hésite c'est peut-être pas forcément bon moment j'ai pas le temps et puis peut-être que je voudrais voir
+59:46
+après voir si finalement tu es là il va venir avec moi ou pas et la bible le popping va arriver il va me dire que non finalement il presque à 35 places à tel
+59:53
+tarif et du coup bah oui ça va me pousser à réaliser finalement le comportement ça va influencer ça peut être aussi une façon d'envisager
+59:58
+une analyse ask experte une interface et d'un système vous allez voir la
+1:00:03
+psychologie en question la psychologie sociale des choses qui sont extrêmement utilisez pas forcément par des huiles
+1:00:10
+designer beaucoup dans le marketing beaucoup dans la communication dans le commerce paix commerciaux commencé des
+1:00:17
+chevaux des éléments qu'on retrouve un peu partout dans le monde entrepreneurial et qui ont été terrorisés en fait part des grands
+1:00:22
+chercheurs donc c'est pour ça c'est très intéressant pour vous peut-être de repartir sur des regards comme ça plus
+1:00:28
+universitaire plus théorique plus scientifiques qui permettent de comprendre un peu les enjeux globaux mais à partir du moment où comme quentin
+1:00:35
+lundi sur un site de e-commerce ou ainsi de réserver des réservations de places de concerts par exemple vous avez tous ces éléments qui sont
+1:00:40
+présents dessus là vous êtes sûr que vous allez pouvoir influencer le comportement de l'utilisateur et ça vous
+1:00:46
+ouvrir de nouvelles perspectives de nouveaux regards nouveaux éléments de réponse donc n'hésitez pas à revenir sur
+1:00:51
+des bases comme ça qu'ils sont très très simpliste mais qui ont été terrorisés et testés
+1:00:59
+du coup la majorité des comportements vous allez faire sur le web sont automatiques on utilise continuellement cette juriste
+1:01:06
+hic donc c'est quelque chose qui est vous l'avez compris sont inculquées déjà dans mon comportement très classique et
+1:01:13
+donc du coup voilà cette déduction produit pendant l'expérience par exemple pour les déductions produite
+1:01:19
+par l'expérience on a on a très classiquement je t'ai parlé tout à l'heure de la preuve sociale sans donner un exemple qu'est ce que c'est que la
+1:01:25
+preuve sociale c'est simplement le fait que si vous arrivez en face de deux restaurants l'un qui est blindé de monde et l'autre
+1:01:30
+où il n'y absolument personne bizarrement vous allez aller où vous allez y aller dans celui où il ya du monde c'est ça en fait le principe de
+1:01:35
+preuves sociale c'est cette impression qu'on a du fait que si beaucoup de gens au moins comportement beaucoup de gens
+1:01:41
+ont une envie d y arrivons et ça veut dire que c'est un bon comportement c'est une bonne envie et du coup je vais aller plutôt dans le restaurant où il ya du
+1:01:46
+monde que dans le restaurant où il ya personne parce que je vais me baser sur ce que j'ai l'impression que les autres font je vais trouver une légitimité à
+1:01:54
+mon comportement et à ce que je vais faire par la preuve sociale la preuve d autres par autrui pour ça que facebook
+1:02:00
+marche très bien sa guitare marche très bien c'est pour ça que tripadvisor marche très bien tous ces éléments là qui se base que sur
+1:02:06
+la preuve essentielle au niveau de l'affluence quand vous voyez qu'on pourra l'être encore plus long way to ce qui est globalement les avis sur les sites
+1:02:12
+e-commerce notamment par exemple c'est systématiquement de la preuve social le fait de noter donner un avis sur un produit c'est de la preuve social dans
+1:02:18
+le simple sur la cd simple aspect que finalement si on a zéro avis sur un produit là ça va pas forcément d
+1:02:24
+influencer par contre si on a quatre mille avis positifs notamment des avis positifs sur un produit évidemment on va se dire là bas tient
+1:02:29
+celui-là il a l'air quand même vachement bien on trouve que c'est une vraie preuve de la qualité du produit
+1:02:36
+alors un deuxième aspect après ses heures ici que ça va être des aspects check-in liste donc c'est quelque chose
+1:02:41
+que maintenant vous allez vous allez en entendre parler parce que vous allez traiter vous allez être vous allez
+1:02:47
+apprendre l'une de ces de ses méthodes donc en gros ça est un ensemble de critères un peu de la manière dont je
+1:02:52
+vous ai précisé valeur sur la présence ccgv qu'il faut cocher qui défunt king qui ne faut pas avoir pré cochées que
+1:02:57
+l'utilisateur doit cocher et donc ça va faire référence à la qualité à l'accessibilité et à l'ergonomie d'un
+1:03:03
+site c'est une liste là typiquement vous allez avoir un coin est qui
+1:03:08
+une liste de critères qui correspond à plus de 226 critère c'est quelque chose
+1:03:14
+d'extrêmement large donc tout c'est tous ces points là vous permettre du coup de vérifier la présence ou de l'absence de
+1:03:21
+ces éléments sur un site et de se dédouaner de tous ses aspects d'accessibilité et d'ergonomie et à
+1:03:26
+partir du moment où on aura déjà pris en compte qu'il va falloir travailler sur ces éléments là ça va aller ça va être une pierre supplémentaire
+1:03:32
+une brique qu'on va rajouter dans l'étape de conception ou dans l'étape d'idéation où on va dire ben voilà déjà
+1:03:37
+il faut qu'on répondre à ce besoin là mais n'oubliez pas que ces éléments là doivent être reconsidérées et doivent
+1:03:43
+être présents dans le prototype final pour du coup simplifiée l'accessibilité et l'ergonomie de votre site
+1:03:50
+donc normalement auprès c'est quelque chose que qui nous sera elle qui vous sera présenté durant votre formation et
+1:03:57
+donc il existe énormément d'autres listes de cette manière là j'ai pas le
+1:04:02
+temps non plus trop sur ce sujet donc de manière générale comment on fait la
+1:04:08
+psychologie va vous aider dans cette analyse est experte un aspect pour être
+1:04:13
+la mémorisation de savoir comment les individus vont effectuer la mémorisation
+1:04:18
+de différents éléments vous avez vu juste avant grâce à des
+1:04:23
+aspects de ciel génie on va coupler ce à la mémorisation va vous présenter du coup les différentes phases de
+1:04:29
+mémorisation vous pouvez avoir ce qui se détache aussi du système de pensée qu'on vous a montré donc les deux manières de
+1:04:35
+d'analysé d'analysé des éléments donc premier petit exercice vous avez 10
+1:04:43
+secondes pour interpréter les différents personnages qui est sur cette image je
+1:04:48
+vous laisse regarder
+1:05:09
+allez c'est fini est ce que quelqu'un pourrait me dire que tient le petit garçon en bas du dessin clé à molette
+1:05:18
+qui n'est pas d'accord lance pierre non c'est à dire que la
+1:05:25
+molette c'était une clé à molette que fait l'homme situé au milieu du dessin
+1:05:31
+temps au milieu du terrain et le journal
+1:05:38
+quelques uns à avoir une haute idée et journal et le journal dans l'angle en
+1:05:47
+bas à droite la poignée de parapluie de la femme est tourné vers la droite ou vers la gauche la droite droite qui
+1:05:55
+pensent droite on pense gauche qu'il pense pas plus de gens que je pense pas
+1:06:03
+qu'ils font ce que je n'ai tourné vers la droite donc ça c'est une représentation pour
+1:06:09
+vous faire comprendre ce qui était la mémoire à court terme cette mémoire à court terme à vous permettre de traiter
+1:06:15
+les informations que vous êtes en train de percevoir pendant approximativement une vingtaine de secondes à partir du
+1:06:21
+moment que vous avez eus ces informations en tête 20 secondes plus tard vous allez les oublier c'est très
+1:06:26
+important à réfléchir lorsque vous allez concevoir une interface si vous avez besoin qu'un
+1:06:31
+élément soit retenue d'une page à l'autre vous allez pouvoir essayé d'activer la
+1:06:37
+mémoire à court terme si cet élément doit être retenu pendant trois minutes
+1:06:42
+quatre minutes cinq minutes puisque à ce que le parcours soit fini vous allez voir nadeau type de mémoire qu'on va essayer de simuler
+1:06:50
+qu'est ce que vous voyez là le canard ou à la part effectivement
+1:06:58
+canards oies lapins ça ça va être la mémoire à long terme donc ils
+1:07:03
+plancheront extrême de la mémoire à court terme pour cette mémoire à long terme en fait vous avez un système de
+1:07:08
+pensée qui est structurée et organisée de manière hiérarchique à partir du moment où vous voyez tout en
+1:07:14
+haut vous avez les animaux donc les animaux pour vous ça à une pause à une bouche tu as mangé ça respire ça c'est
+1:07:20
+une caractérisation classique dans votre esprit de ce qu'est un animal de là vous
+1:07:25
+allez pouvoir du coup le diviser en deux à partir du moment où vous laisse pour c'est un oiseau vous pensez un poisson
+1:07:31
+le poisson lui et nage alors que l'oiseau lui vole donc la cs caractéristiques vont complètement
+1:07:36
+changer et à partir du moment où vous avez continué dans cette représentation mentale de manière beaucoup plus fine vous allez avoir des caractéristiques
+1:07:42
+précises qui vont déterminer si c'est plutôt tel type d'animal ou telle issue d'animaux
+1:07:47
+quand on revient du coup sûr le le canard ou le lapin du coup vous avez activé la
+1:07:54
+compréhension de ses deux oreilles ou la compréhension de ces un mec et du coup vous allez plutôt répondre l'un ou
+1:07:59
+l'autre des éléments partir du moment où vous présente une représentation du coût d'un objet vous allez le décoder au fur
+1:08:06
+et à mesure vous allez le compartimentée pour vous dire bassila tels éléments ça représente sa sylla tel élément ça
+1:08:12
+représente ça ce qui vous permettra du coup de d'activer votre mémoire à long terme
+1:08:20
+donc du coup c'est ce que l'utilisateur va se souvenir et pour atteindre la mémoire à long terme il faut que les
+1:08:26
+interventions soient obligatoirement être passé dans les autres types de mémoire la courte la moyen terme
+1:08:33
+du coup vous avez vu ce qu'est la mémoire à court terme ce qui est la mémoire à long terme et maintenant
+1:08:38
+qu'est ce que la mémoire à moyen terme donc où la mémoire de travail sa mémoire que j'ai essayé de vous
+1:08:44
+activer depuis le début qui se souvient du chiffre 46 c'est votre mémoire à
+1:08:50
+court terme a permis de se souvenir de ce chiffre là par contre dans deux jours vous sent bien dans plus de 7 ce
+1:08:57
+chiffre-là à partir du moment où vous avez eu des représentations mentales si vous l'avez calais du coup sûr des
+1:09:03
+représentations plus plus précises imaginons que vous avez représenté le 4 sur moi et le 6 sur sûr content vous
+1:09:08
+avez essayé d'activer du coup votre mémoire de votre mémoire à long terme qui du coup et qui du coup et même des
+1:09:14
+représentations plus concrètes sur des éléments donc moi je serai toujours 1,4 pour vous quand on sera toujours 1 6
+1:09:19
+pour vous et c'est quelque chose qui est qui arrivera à rentrer dans cet accord à long terme donc la mémoire de travail 7
+1:09:29
+pour stocker des informations pour une tarte courte donc si vous comparez des caractéristiques
+1:09:34
+plusieurs utilisateurs plusieurs ordinateurs par exemple vous les utilisez votre mémoire de travail vous
+1:09:39
+souvenir du prix de la taille des disques d'ordinateur que vous avez consulté précédemment donc vous faire
+1:09:46
+dire dans le choix sur un site web par exemple sur un site de e-commerce donc ça c'est quelque chose qui était
+1:09:54
+intéressant à prendre en compte pour vous on va pas forcément il ya les uns pas vous représenter ces aspects là beaucoup plus manière beaucoup plus
+1:10:01
+complexe mais n'hésitez pas à faire des recherches là dessus ouais donc pour en
+1:10:06
+finir sur l'analyse experte on va vous parler de certaines représentations du benchmark et vous allez pouvoir vous rendre compte à quel point dans ce
+1:10:12
+domaine là notamment le marketing est très proche de luxe design puisque finalement on cherchait à montrer les
+1:10:17
+mêmes choses c'est-à-dire des caractéristiques communes ou pas et des problèmes communs ou pas entre les différents systèmes concurrents
+1:10:22
+donc là par exemple sur les axes qu'on a un exemple c'est par rapport à des sites de contenu on a un axe qui va d'une
+1:10:29
+audience spécifiques à une audience large pour les contenus et un axe qui va d'une information spécifiques à une informations diverses
+1:10:35
+et variées et en place les différents sites de contenu les uns par rapport aux autres donc on a par exemple à le signer
+1:10:41
+qui va avoir une information très spécifique et une audience à la fois spécifiques et l'argent qui va plutôt vers le milieu on va voir universaliste
+1:10:48
+junior qui est plutôt donc en haut à droite nous voyais en haut à droite qui a une audience très spécifiques et qui
+1:10:54
+me donne des informations diverses et variées etc etc sachant que là sur ce schéma peut-être pas très bien mais donc
+1:11:00
+le la l'interface qui est qui et enfin
+1:11:07
+le système dont vous occuperez pas comme si vous étiez un utilisateur se serait haguenau donc appareil un site de contenu et là on peut c'est un petit
+1:11:14
+point rouge sais pas si c'est du fond le voit peut-être pas très bien mais effectivement on peut le placer rapidement de façon très visuelle par
+1:11:20
+rapport à ses concurrents une autre façon de représenter les différentes les
+1:11:27
+différents principes ergonomique donc on a analysé à travers un audit puis un benchmark ça va être tout simplement vad est
+1:11:32
+proposée sous la forme d'un radar donc on a là par exemple un site qui va avoir enfin du site qui s'est appelé le leader
+1:11:39
+du marché à qui va avoir la maîtrise du procédé une implantation sur le marché un approvisionnement en matières
+1:11:44
+premières très fort et au contraire un service après vente et des relations commerciales assez faible le contraire
+1:11:51
+est temps pour le site de votre société et donc des représentations graphiques très utile sachant que celle-ci est
+1:11:56
+utile quand on compare deux concurrents mais évidemment enfin un site et son concurrent si on commence à eau qui paraît plus de monde avec cette
+1:12:02
+représentation graphique là on va commencer à plus rien comprendre du tout donc là une autre façon de faire très
+1:12:07
+basique du coup tous ces éléments là ça vous permet de cadrer la représentation
+1:12:14
+vous pouvez avoir d'un site l'état actuel du site que ce soit en ergonomie en accessibilité et ça va être des
+1:12:20
+éléments de base qui vont vous permettre d'aller sur les prochaines face mais cette phase là du
+1:12:26
+coup les recherches utilisateurs qu'on l'ait fait comprendre au début elle s'effectue du coup en parallèle est extrêmement importante et pour ça on a
+1:12:33
+plusieurs outils à notre disposition donc on allait les principaux outils que
+1:12:40
+vous connaissez très bien le questionnaire des choses que vous avez déjà effectué en deux fois je l'espère commandes de fois on a un
+1:12:47
+aspect d'observation un aspect d'entretien et de ça on va pouvoir
+1:12:52
+derrière constituer des outils qui s'appelle de persona et l'expérience maps vous avez sûrement déjà effectué
+1:12:58
+des personnages c'est des choses qu'on utilise énormément marketing bien que la
+1:13:04
+représentation du personnel soit à peu près assez proche de ce que vous avez effectué remarketing son utilisation ne
+1:13:10
+sera pas du tout la même vous allez comprendre les enjeux de ces deux c'est aussi donc du coup
+1:13:17
+l'observation l'observation quelque chose qui se rapproche énormément de la
+1:13:23
+technologie à partir du moment où je vais avoir une utilisation d'une interface d'utilisation d'un système je
+1:13:29
+vais devoir comprendre le contexte souvenez au début nous ennuyer design on s'intéresse au contexte à utilisateurs
+1:13:35
+et aux systèmes l'observation me donne énormément d'informations sur ce contexte là vous avez plusieurs manières
+1:13:42
+d'effectuer des observations mais on va pouvoir les diviser en deux grandes de
+1:13:48
+grandes de grands aspects qui rentrent en contradiction avec les observations intrusive vs les observations non
+1:13:56
+intrusive donc une observation non intrusive salut observations ou du coup l'utilisateur ne sera pas que je serais
+1:14:02
+perdant par exemple un type d'observation non intrusive très classique qui est extrêmement
+1:14:08
+intéressante qui nous apporte beaucoup beaucoup d'informations donc on appelle ça le fly and the wall donc vraiment
+1:14:13
+l'objectif c'est juste je suis caché je suis d'une petite bouche dans un coin et personne ne me voit et je vais pouvoir du coup réussir à faire une observation
+1:14:19
+d'une manière de la plus pure qui soit donc voilà son objectif ça va être de se fondre dans le contexte la position
+1:14:25
+jette on observa tom jeu je serai jeu sera une observation de mon
+1:14:30
+participantes et du coup on va effectuer peu d'interférences avec le comportement de l'utilisateur et vraiment c'est la
+1:14:36
+manière la plus saine qui puisse être effectué pour avoir les informations les plus les plus nombreuses et les moins
+1:14:44
+biaisée par contre quand vous allez effectuer de lille design si vous partez
+1:14:50
+dans ce métier là tout n'est pas possible d'être effectué vous allez voir toutes les techniques on va vous montrer
+1:14:55
+que ce soit l'observation de l'entretien ou du questionnaire chaque cas chaque projet jacques brief vous permettra pas
+1:15:00
+forcément de faire toutes ces étapes là ce qui est très important c'est de là-bas d'avoir l'ensemble de ses étapes en tête donc ça va être d une grosse
+1:15:07
+boîte à outils que vous allez pouvoir utiliser une observation non intrusive comme ça n'est pas forcément possible
+1:15:12
+parce que du coup l'utilisateur aura pas pouvoir forcément le regard des danses ont dans ce contexte sans s'en prendre
+1:15:19
+part à cette observation imaginons une application de réveil j'ai pas pouvoir réussir à trouver des
+1:15:25
+utilisateurs je me cachais derrière leurs fenêtres j'ai regardé comme les utilisent leur réveil le matin là du coup on va être dans une observation intrusif
+1:15:31
+il va falloir qu'on le sache et ont du coup on pallie en fait à ce biais qu'on
+1:15:38
+va créer grâce à nos entretiens grâce à nos questionnaires pour obtenir des informations qu'ils sont
+1:15:43
+de l'ordre de l'intimité par une autre manière en remportant savoir une
+1:15:49
+observation du coup intrusive ça va être le chat doing donc là on va en fait dans le ja doing on va demander
+1:15:55
+à l'utilisateur d'utiliser notre interface d'utiliser notre système et on va rester à côté lui on va lui poser
+1:16:01
+quelques questions pendant cette utilisation donc déjà le contexte vous avez peut-être réussi à le retranscrire pour
+1:16:07
+que l'utilisateur effectue ses actions d'une manière classique on va dire mais
+1:16:12
+l'utilisateur n'a pas l'habitude d'avoir une personne à côté de lui une personne qui va lui poser des questions donc c'est des paramètres qui sont
+1:16:18
+extrêmement importants à prendre en considération et qui vont se modifier la manière dont l'utilisateur va effectuer
+1:16:24
+sa tâche vraiment prenez en compte les
+1:16:30
+questionnaires qui est son énergie tout se fait dans votre vie vous permettre d'avoir énormément d'informations
+1:16:35
+qu'elles soient qualitatives ou quantitatives vous allez du couvre à votre disposition des modalités de
+1:16:43
+question donc qu'elles soient ouvertes fermées ou semi ouverte ça vous permettent d'avoir différentes informations que vous à les retranscrire
+1:16:51
+j'appelle mettant de plus sur comment construire construire un questionnaire où on en parlera sûrement plus tard mais
+1:16:57
+du coup une question juste ouverte vous permettra d'avoir un géant du vocabulaire de savoir comment les
+1:17:03
+personnes parlent de savoir comment ils ont quel est leur représentation mentale d'un élément vous souvenez qu'on a vu le
+1:17:09
+canard ou là où le l'oiseau à partir du moment où je vais montrer cet élément là une question ouverte me permettra
+1:17:14
+d'avoir beaucoup plus de données une question fermée elle donnera juste une information de lax ou
+1:17:19
+du choix de la personne et que le meilleur mode de questions on va dire le
+1:17:25
+plus intéressant à terme et la question semi-ouverte pensez-vous ceci oui ou non si oui expliquez moi ça va ça vous
+1:17:33
+donnera beaucoup plus d'informations sur l'utilisateur en lui même comment la
+1:17:38
+psycho du coup pourrait vous aider dans vos questionnaires en fait ça va être grâce à des échelles
+1:17:44
+en psychologie psychologie sociale particulièrement on essaye de définir la
+1:17:50
+représentation de de l'humain de certaine manière et on avait défini énormément d'échelle des échelles de
+1:17:57
+mesure d'une part qui peuvent être utilisées donc de type d'échelle l'échelle de likert tu es et l'échelle
+1:18:04
+différentiel sémantique d'osgood c'est des éléments que vous allez pouvoir utiliser pour du coup dans un premier
+1:18:09
+temps l'échelle de l'île carte savoir si une personne est en accord ou en désaccord par rapport à un sentiment par rapport à une action par rapport à un
+1:18:15
+besoin l'objectif principal de l'échelle de la carte c'est du coup d'avoir une échelle
+1:18:22
+qui est entre qui contient entre cinq et sept éléments ce qui permet du coup de
+1:18:29
+se positionner au milieu de cette échelle et du coup d'avoir une symétrie
+1:18:34
+quasi parfaite entre les entre les points de vue vous avez peut-être l'impression que c'est quelque chose de
+1:18:40
+lambda de dire je suis tout à fait d'accord ou tout à fait en tout à fait en accord ou tout à fait en désaccord
+1:18:45
+clairement c'est des choses que vous avez déjà vu l'échelle de l'écarter a été testé depuis des années est en fait
+1:18:52
+juste cette représentation d'une symétrie a été a été fait tester un
+1:18:58
+nombre de fois incalculable ce qui permet de savoir en fait que l'utilisation de ces termes là ne va pas biaiser la le choix de l'individu
+1:19:05
+surtout sur le terme du milieu le terme central de savoir que je suis ni un
+1:19:10
+accord ni en désaccord ce terme là en fait effectué et propose une neutralité qui permet vraiment à l'individu de se
+1:19:17
+positionner à cet endroit là sans se dire ah mais j'ai plutôt tendre vers un côté ou plutôt de temps de vers l'autre c'est ces bourses et des aspects qui on
+1:19:24
+est et qui ont été largement rue chercher en psychologie et donc du coup c'est intéressant de se dire voilà je me base sur ces éléments là c'est en fait
+1:19:30
+ça marche je vais pas du coup biaiser la manière dont je vais écrire mon questionnaire pareil sur l'échelle des
+1:19:36
+scouts du coup elle son utilisation c'est juste voilà je vais utiliser deux termes deux adjectifs des adjectifs qui sont du
+1:19:44
+coup opposé ce qui permettra à l'individu de se situer au milieu de ses 15 heures ce qui est intéressant
+1:19:50
+utilisés dans les chenaux seconde c'est que vous allez pouvoir avoir une réponse très rapide vous n'allez pas avoir cinq
+1:19:56
+questions qui vont s'enchaîner à chaque fois je vais relire la la question je vais essayer de comprendre comment je vais devoir répondre
+1:20:01
+là on une formulation vous allez pouvoir avoir cinq avis différent c'est quelque
+1:20:07
+chose qui est très rapide est-ce qu'il faut réfléchir quand on effectue un questionnaire c'est je veux pas là c'est la personne qui va devoir
+1:20:12
+répondre à mes questions parce que si elle veut réussir on en a marre et que c'est trop long et bavard a quitté le questionnaire et moi je vois
+1:20:18
+pas de questions j'aurais pas de réponse très important du coup vous en psychologie vous avez débuté celle qui
+1:20:23
+existe déjà des cimes de soi de stress des ciels de bonheur des choses qui ont été validées
+1:20:30
+scientifiquement donc très intéressante à utiliser pourquoi je vous montre ça parce qu'à partir du moment où vous allez plus tard
+1:20:35
+on va dire dans la méthodologie arrivée sur des tests utilisateurs vous allez avoir intérêt à savoir
+1:20:40
+comment l'interface et utilisation des interfaces fait évoluer le sentiment de l'utilisateur
+1:20:46
+nous notre objectif c'est que l'utilisateur se sentent mieux et que les utilisateurs et du coup une une
+1:20:51
+émotion qui soit la plus positive possible donc du coup je peux faire une test grâce à une échelle d'estimé de soi
+1:20:58
+avant de faire essayer mon interface simon interface permet à l'utilisateur de se sentir plus en confiance dans son
+1:21:04
+quotidien je refais un test à la fin avec la même où une autre échelle d'estimé de soi ce qui me permettra de savoir comment mon
+1:21:10
+interface comment l'utilisation de mon application a changé la vie d'une personne donc c'est des choses qui sont
+1:21:16
+intéressantes à long terme à utiliser trouver revenant par un petit peu avec le journal de bord un autre au petit
+1:21:25
+notre manière de faire cette recherche utilisateurs ça va être les entretiens
+1:21:31
+alors les entretiens on a trois types globalement d'entretien donc on peut on
+1:21:36
+va aller à lui plus tu plus large au moins large on à l'entretien d'abord qui est non directifs donc c'est celui en
+1:21:42
+fait il va y avoir un seul thème il va pas y avoir des questions posées par le l'interviewer c'est l'interviewer qui
+1:21:48
+parle d'elle uniquement l'interviewer qui parle cet entretien là et permet d'aller très en profondeur dans le système de pensée de l'interviewer et de
+1:21:55
+comprendre le mieux et le plus profondément possible mais c'est un entretien qui est beaucoup plus beaucoup
+1:22:01
+trop technique et a surtout acquis n'est pas forcément utile dans le cadre de lévis design puisqu'il est surtout
+1:22:07
+utilisé pour les psychothérapies hinfray globalement entretiens semi directifs est lui beaucoup plus intéressant dans
+1:22:13
+le sens où il ya un certain nombre de thèmes dont qui sont des vrais déterminer ici aussi le l'interviewer va
+1:22:19
+beaucoup parler il va y avoir très peu d'interactions avec l'interviewer interviewer son seul rôle va être de recadrer sur les thèmes
+1:22:25
+apprécié du guide d'entretien et donc de récupérer des réponses profondes
+1:22:30
+respondents profondément au système de pensée de l'ain v et enfin il ya le entretien directif
+1:22:36
+qui lui en fait est très proche d'un questionnaire administré c'est à dire vous aurez un questionnaire avec des
+1:22:41
+questions ouvertes ou fermées et voulait poseriez directement un individu lors d'un entretien permet aussi d'avoir des
+1:22:47
+réponses assez intéressante même si le fait d'en fait de cadres et ah les questions et d'avoir a du coup enfin on
+1:22:53
+va orienter le propos d'utilisateurs donc on va baisser son niveau de liberté il va pas pouvoir nous dire exactement ce que tout ce que lui veut dire sur le
+1:22:59
+sujet il va être forcé de répondre à nos questions donc ça peut être parfois un peu dommageable aujourd'hui dans la pratique
+1:23:05
+professionnelle la plupart des huit ce designer junior en tout cas pas totalement experts vont plutôt faire des
+1:23:11
+entretiens directif avec du coup ils vont construire un guide d'entretien qui sera plus proche du questionnaire et ils
+1:23:17
+vont poser des questions directement aux interviewés et au contraire à thé xx
+1:23:22
+designer un peu plus experts de cette technique confère des entretiens semi directifs sachant que comme je voulais dit le non directif et réservée à la
+1:23:28
+psychothérapie et donc n'a pas d'utilité en occident alors comment la psychologie
+1:23:36
+peut vous aider dans vos entretiens mais là on va encore vous parler de notions de psychologie notamment la selle qui
+1:23:42
+permettent une meilleure compréhension des utilisateurs notamment les faits au turn qui est en effet particulièrement
+1:23:47
+venu en psychologie qui dit qu'une les résultats d'une expérience se sont pas dus au facteur expérimentaux mais au
+1:23:53
+fait que les sujets ont pris conscience ont conscience de participer à une expérience dans laquelle ils sont testés ce qui se traduit généralement par une
+1:23:59
+plus grande motivation et cet effet et particulièrement en retrouver dans le cadre d'entretiens mais aussi dans le
+1:24:04
+cadre des tests utilisateurs puisque effectivement le simple fait de savoir qu'on est testée et qu'on ait fait partie d'une expérience de test va nous
+1:24:11
+pousse à être plus motivés et donc avoir de meilleurs résultats ce qui signifie de façon très concrète en fait à chaque fois qu'on réalise des
+1:24:17
+tests utilisateurs sur une interface les utilisateurs vont avoir tendance à être un peu meilleur que les i ce que
+1:24:22
+les utilisateurs qui ne serait pas testé qui serait dans l'utilisation un contexte d' usage quotidien de l'interface donc il faut toujours savoir
+1:24:28
+simplement qu' on va avoir tendance à avoir des résultats dans nos tests utilisateurs qui seront un peu meilleurs
+1:24:34
+que ceux ce que réussir à faire les utilisateurs au quotidien ce que je vous présente à
+1:24:40
+l'heure où l'observation intrusive et s non intrusive l'intérêt de ne pas être
+1:24:45
+considéré par l'utilisateur comme un observateur n'enclenche sera pas en fait cet effet là donc l'utilisateur va du
+1:24:52
+coup effectué sa tâche d'une manière totalement naturelle partir du moment où il sera qui sera observée du coût jugé sa la réalisation de sa tâche augmente
+1:25:00
+enfin la motivation augmentera et donc du coup il va pas réaliser sa tâche d'une manière aussi naturel qu'il faudra
+1:25:07
+le faire habituellement et donc du coup vous allez observer quelque chose qui au final ne correspond pas à la réalité et du coup vous allez
+1:25:13
+pouvoir vous dire bah ça marche très bien mais en fait il a tellement une motivation pour effectuer sa tâche que will a réussi oui c'est marie oui ça a
+1:25:19
+marché alors que si vous faisiez fait que cette observation alors que vous n'êtes pas compris par l'utilisateur ou n'est pas
+1:25:26
+intrusif dans la situation il a du coup il va y avoir un point de blocage et puis il va arrêter votre présence va
+1:25:33
+changer totalement les choses tout à fait par rapport à l'observation évident et j'ai effectivement si on est non
+1:25:39
+intrusif et 20 par exemple il n'ya pas du goût des faits au turn et si on est intrusif il peut y avoir un effet automne comme bien le dire pierre pour
+1:25:45
+vous faire simplement un résumé très rapide de ce qu'était cette expérience pour que vous compreniez un peu mieux en fait cédé des ouvrières dans une usine
+1:25:51
+aux états unis qui devait qui faisait partie d'un projet pilote pour en fait
+1:25:57
+déterminer quelles sont leurs conditions de travail idéales du coup les avait isolé des autres ouvrières et il leur avait fait il
+1:26:03
+faisait varier les conditions de travail c'est à dire est-ce que vous avez plus de pose est ce qu il faisait plus chaud ou plus froid dans la salle etc
+1:26:09
+en fait il a le chercheur a commencé par faire à part améliorer leurs conditions de travail
+1:26:15
+plus de buzz plus de temps etc puis des conditions là plus de meilleure qualité
+1:26:22
+pour travailler effectivement leur motivation à augmenter leurs performances à augmenter leur productivité augmenter et là où ça a été
+1:26:28
+très surprenant et c'est pour ça que c'est resté aujourd'hui l'effet auteurs c'est finalement ensuite il a fait baisser toutes les conditions de travail
+1:26:33
+donc il à dégrader fortement leurs conditions de travail et elles sont restées aussi motivées elles ont eu autant de productivité que lorsque les
+1:26:38
+avez des très bonnes conditions de travail et du coup pour expliquer ça le chercheur a expliqué que c'était en fait
+1:26:44
+le simple fait qu'elle soit la cible d'une expérimentation qu'elle se sente particulière puisqu'elle faisait partie elle de son projet pilote est bien là
+1:26:52
+traduit une meilleure motivation quel que soit en fait les conditions effectives de travail c'était quand même plus productives un autre effet de l'est
+1:27:01
+particulièrement connue et surtout très très intéressant en psychologie sociale et du coup aussi en huile design
+1:27:06
+notamment dans le cas des questionnaires à des entretiens pour la citation ce
+1:27:11
+processus permet de s'exercer peut s'exercer pardon de façon implicite sans qu'on en ait conscience ou au contraire
+1:27:17
+être le résultat d'une volonté consciente de manipuler son image aux yeux des autres ou de ne pas les stigmatiser stigmatiser socialement
+1:27:23
+d'être conformes aux attentes sociales en fait la désirabilité sociale c'est quoi c'est mon penchant naturel notre
+1:27:29
+penchant naturel à nous conformer à ce qu'on pense que les autres attendent de nous c'est à dire et je vais vous donner
+1:27:37
+un exemple qui va permettre de comprendre ça beaucoup plus simplement notamment dans une situation d'entretien la désirabilité sociale peut avoir un
+1:27:45
+vrai problème lorsqu'on veut comprendre pleinement un utilisateur non pas un utilisateur d'un degré d'expertisé
+1:27:52
+précis mais vraiment un être humain on veut comprendre l'être humain et la façon de fonctionner de cet être humain avec le système
+1:27:58
+on va avoir besoin de d'éviter le biais désirabilité sociale je vais vous donner un exemple c'est par
+1:28:04
+exemple si une personne en début d'entretien si vous lui demander ce qu'elle fait dans la vie et que cette personne vous ou moi je suis avocate
+1:28:11
+le problème c'est qu'après toutes les questions que vous allez lui poser que ce soit par rapport au système ou même en général dans un entretien elle
+1:28:18
+va formuler des réponses d'avocate parce que vous aura dit qu'elle est avocate et du coup elle va très naturellement va voir ce penchant naturel à se conformer
+1:28:24
+à ce qu'elle pense que vous attendait d'elle c'est à dire que l vous savez maintenant qu'elle est avocate et vous avez elle
+1:28:30
+pense donc que vous attendez des réponses d'avocate alors que non vous attendez pas des réponses d'avocats nous attendait des réponses d'êtres humains
+1:28:35
+qui teste un système qui donne son avis sur tel aspect sur telle problématique c'est pour ça par exemple que dans les questionnaires et dans les entretiens on
+1:28:42
+pose toujours les questions socio démographiques à la fin alors évidemment il ya certaines certaines choses qu'on
+1:28:47
+peut pas cacher le sélect ne peut pas le cacher l'âge globalement on peut pas le cacher non plus mais tout ce qui est question précise du type métier ou
+1:28:54
+autres questions qui peuvent être au niveau de salaire etc on va les opposer à la fin pour justement éviter de biaiser l'entretien
+1:29:00
+dès le début en posant ces questions là alors que si on les pose enfin montré hier évidemment il n'y a plus aucun problème puisque les questions sont déjà
+1:29:05
+fin d'entretien s'est déjà déroulée donc on a déjà eu des réponses de qualité
+1:29:11
+du coup là vous avez fait une vue les différents outils qu'on peut avoir pour la recherche utilisateurs et vous allez
+1:29:18
+remonter en fait tout ce que l'utilisateur pouvait penser qu'elle besoin il avait quels moyens de répondre
+1:29:24
+il pouvait offrir donc du coup vous avez fait l'observation vous avez fait de l'entretien vous avez fait des
+1:29:30
+questionnaires ou alors vous avez fait que de l'entretien ou alors vous avez fait que du questionnaire tout est possible tout va changer en fonction du
+1:29:36
+projet du brief que vous avez et de la possibilité d'aller choper l'utilisateur faudrait jour d'aller récupérer des
+1:29:43
+informations des utilisateurs de là en fait il va falloir que concrètement comme l'analyse expertes
+1:29:48
+on vous a dit à la fin de l'analyse experte on va avoir un compte rendu et des résultats qui me seront utiles du coup derrière pour effectuer de la
+1:29:54
+conception effectué l'idéation avoir ça en tête là du coup on a des outils donc qui sont le personnel est l'expérience map qu'on
+1:30:00
+va vous montrer qu'ils vous me permettrez qui vont vous permettre de centraliser en fait toutes ces informations là pour les avoir en un
+1:30:06
+seul et même mieux et créer du coup un aspect empathique qui est l'objectif
+1:30:11
+primordial du personnage pouvoir du coup me mettre à la place de l'utilisateur
+1:30:17
+le personnage nous vous l'avez déjà vu manière dont vous allez le concevoir sûrement vous allez avoir du coup une
+1:30:23
+citation un nom une description et différents aspects qui vont du coup caractérisé cette personne vous avez
+1:30:29
+avoir des variables qui sont communes à l'ensemble des personnes des personnages qui vont permettre du coup de les comparer les unes à lever des unes aux
+1:30:35
+autres mais vraiment l'enjeu principal c'est de se dire bah voilà la cible de mon
+1:30:41
+d'applications par exemple se peut se découper en fonction de trois
+1:30:47
+personnages qui vont être des entités totalement abstraite et du coup qui vont
+1:30:53
+revenir récupérer des caractéristiques que vous avez présenté dans vos entretiens que vous avez récupéré grâce
+1:30:59
+à vos questionnaires que vous avez observé et que vous avez du coup accumulés au sein d'une représentation
+1:31:07
+qui est celle du père cela voilà donc l'idée comme vient de dire pierre j'ai
+1:31:12
+simplement résumé essayé de faire est de reprendre ça de façon un petit peu plus globale est dans la logique en fait de la conception centrés utilisateurs et de
+1:31:18
+la méthode de luxe design en général en fait il s'agit de quoi il s'agit d'abord de faire une analyse experts pour déterminer les différents problèmes
+1:31:24
+du système au niveau ergonomique donc là on est vraiment sûr l'utilisabilité notamment l'accessibilité une fois qu'on a listé ces problèmes là
+1:31:30
+ça c'est bon c'est réglé maintenant il s'agit de s'intéresser aux utilisateurs on va faire cette phase de recherche utilisateurs et tout l'intérêt de la
+1:31:36
+phase de recherche utilisateurs va être de se mettre en empathie avec les utilisateurs pourquoi parce que lorsqu'on va chercher à concevoir une
+1:31:42
+interface il va falloir la concevoir pour l'utilisateur donc il faut rester en empathie avec l'utilisateur et ses
+1:31:47
+phases évidemment ne sont pas au même moment on fait pas toutes les phases en même temps notamment après il y aura une phase situation et aurait une phase de
+1:31:53
+conception on va commencer à créer un prototype après on va vouloir le tester et ses deux faces peuvent être très décalé dans le temps il faut pouvoir
+1:31:59
+rester en empathie avec les utilisateurs c'est pour ça qu'on va faire des persona et c'est pour ça qu'on va faire des
+1:32:04
+expériences maps et ses outils qu'ils sont c'est vraiment des outils ils vont permettre de synthétiser l'ensemble des données qu'on a récupéré sur les
+1:32:11
+utilisateurs en des archétypes d'utilisateurs des personnages fictifs les personnages les personnages sont des personnages fictifs mais ils sont une
+1:32:18
+synthèse de choses réelles des formations réel récupérés sur les utilisateurs pareil pour les expériences mavs n'ont
+1:32:24
+pas parlé oui comment faire ensemble moyenne s'ils s'éloignent des personnages
+1:32:32
+choisir une tactique pas juste voilà comment ne pas tomber
+1:32:40
+dans le piège entre guillemets de faire juste une moyenne de ce que sont les utilisateurs en général déjà ça va être
+1:32:45
+de mettre en avant leurs caractéristiques communes donc pour éviter justement d'avoir que des personnes à qui et qui soit différent
+1:32:51
+extrême ça va être de les regrouper selon des caractéristiques communes et c'est pour ça qu'on va faire différents types de personnages en fait en général
+1:32:57
+on va voir un personnage principal donc ça va être la cible principale du système pourquoi on a un tout simplement si on
+1:33:03
+veut s'adresser à tout le monde on s'adressera à personne n'aurait pas on va y arriver donc il va falloir avoir une personne à
+1:33:09
+principal celui là en fait il va être la synthèse de tous des personnages qui ont
+1:33:15
+un comportement identique qui ont des caractéristiques identiques et on va en créer un personnage et ensuite on va le
+1:33:20
+différencier d'autres personnages qui ont des caractéristiques différentes qui vont être parent c'est par exemple des personnages secondaires ce qui va nous
+1:33:26
+permettre de les garder quand même en tête même si on sait que c'est pas eux qu'on s'adresse en priorité est donc en fait c'est là où l'idée effectivement
+1:33:32
+c'est une bonne question parce que l'idée ce n'est pas de synthétiser de faire une moyenne tout ce que sont les
+1:33:37
+utilisateurs l'idée ça va être de regrouper les utilisateurs et différents types d'utilisateurs selon leurs caractéristiques communes et de
+1:33:44
+déterminer des archétypes des profils qui correspondent à ses caractéristiques communes donc grosso modo ce qu'on va
+1:33:50
+faire c'est qu'on va prendre l'ensemble des utilisateurs tous les utiliser on va déterminer certaines caractéristiques qui vont être les points communs de ces utilisateurs
+1:33:55
+et on va du coup regrouper ses utilisateurs on va faire des paquets d'utilisateurs va les voir les plus utilisateurs de ce fait de ses
+1:34:02
+caractéristiques là les utilisateurs de ces caractéristiques là et les utilisateurs de sécurité par exemple ça
+1:34:07
+peut être les utilisateurs technophiles les utilisateurs en non technophiles tout simplement garder un petit peu en tête c'est que cela remarque que tu nous
+1:34:14
+as fait tout à l'heure l'analyse experte en fait on va le faire en fonction de notre regard et vous vous avez un regard qui est extrêmement fin vous allez finir
+1:34:21
+vos études vous allez arriver sur le marché du métier sur le marché du travail avec un regard d'expert dans le
+1:34:27
+digital clairement vous êtes un peu hors norme par rapport à n'importe quel type d'utilisateur et ne réfléchissez pas ne
+1:34:33
+dit vous ne vous dites pas que vous êtes comme une tous les utilisateurs non vous avez un regard qui est affûté donc du coup quand on pense à par exemple
+1:34:40
+comment on va représenter thème quelles références on va utiliser vous en tête
+1:34:45
+vous avez les cafards vous savez comment google fait vous savez comment amazon fait comment un peu le fait comment facebook fait vous savez aussi comment
+1:34:51
+des grands noms arrivent donc vous savez comment marche spotify vous savez comment marche snap chad vous savez comment marche
+1:34:58
+sûrement mythique mange tous et toutes ces applications là vous votre regard il est super fin et vous avez vous allez
+1:35:04
+pouvoir du coup tiré tous ces éléments récupérer tous ses codes tous et toutes ces références pour les amener dans
+1:35:11
+votre interface et du coup proposer quelque chose qui selon vous serait le plus optimale possible sauf que votre
+1:35:18
+utilisateur à vous il est très spécifique et votre utilisateur vous avez le caractérise et grâce aux
+1:35:24
+personnages et peut-être que votre utilisateur lui il connaît que facebook en fait ils n'utilisent aucun autre réseau social que facebook donc du coup
+1:35:30
+vous allez prendre une référence de twitter référence de staps chat une influence d'un match d'une autre chose qui pour vous vous entrez naturel vous
+1:35:36
+avez l'habitude de voir ça vous a l'habitude de soigner sur le côté parce que vous savez sur les sites de rencontres ça se passe comme ça et puis pour vous c'est quelque chose que vous
+1:35:43
+avez l'habitude de faire alors que votre utilisateur connaît pas ça il a pas l'habitude d'utiliser ce système là donc
+1:35:48
+vous avez vous dira c'est plus simple c'est plus moderne le plus naturel à faire mais l'utilisateur il va tomber
+1:35:54
+face à ça il va pas comprendre comment faire donc du coup grâce au personnage vous allez pouvoir avoir du coup comme
+1:35:59
+disait content le niveau d expertise avec la technologie mais un personnage aussi vous pouvez représenter les applications
+1:36:04
+qu'il utilise les device qu'ils utilisent sinon il n'utilise que du blackberry c'est possible vous faites
+1:36:10
+une application sur blackberry vous avez une représentation vous savez comment apple marche savait comment rendre une marche vous savez les codes
+1:36:16
+vous avez plein de deux kits qui existent que vous vous allez et souhaitait utiliser appliquée et votre
+1:36:22
+utilisateur vous il connaît pas ça mais qu'est ce qu'ils connaissent et blackberry et il connaît le l'écosystème la halle berry et donc du coup vous
+1:36:27
+allez créer une application qui ne marchera jamais parce que vous avez réfléchi en fonction de vos codes de votre analyse en pensant que en fait ça
+1:36:34
+va être la manière la plus optimale d'effectuer cette conception alors quelle solution pas donc les
+1:36:40
+personnages sont là pour nous remettre sûreté en fait cette empathie va nous remettre sur terre et va nous faire comprendre pour qui on travaille et que
+1:36:48
+la conception que j'ai envie de faire ne doit pas être centré sur ma vision loin de là elle doit être centré sur la vision de lui
+1:36:53
+that way est en fait il ya des semaines qu'on n'a pas mis mon oreille les mettre
+1:36:59
+là je viens d'y penser par rapport à justement la notion d'empathie pourquoi la psychologie peut être intéressante pour comprendre le personnage sur cette
+1:37:05
+notion notamment d'empathie et peut-être que c'est intéressant que je fasse un petit rappel de ce qu'est l'empathie alors général pour on dit qu'il faut
+1:37:11
+être en empathie avec les personnages en fait être en empathie c'est se mettre à la place de semaine la façon la plus
+1:37:17
+fine possible parce que quand je suis si je suis par exemple en empathie avec pierre je vais comprendre ce qu'il ressent je vais comprendre ces
+1:37:22
+comportements ses buts dans la vie et je vais vraiment faire en sorte de ne pas mettre de filtres dans mon regard
+1:37:29
+pour pouvoir me mettre le plus purement possible à sa place mais je ne vais pas me faire contaminer émotionnellement par
+1:37:36
+lui alors désolé pour l'expression un peu barbare mais on appelle la contagion émotionnelle le moment où on passe dans
+1:37:41
+le mauvais versant de l'empathie la contagion émotionnelle c'est quoi c'est notre notre cerveau à tous notre cerveau
+1:37:46
+de l'homme de néandertal qui reste c'est ce qu'on appelle aussi le cerveau reptilien parfois qui nous pousse en
+1:37:53
+fait à appliquer a les mêmes émotions que le groupe ou que globalement l'individu autour de nous c'est à dire
+1:37:58
+que par exemple c'est ce cerveau là qui va s'activer lorsque vous êtes au milieu d'une foule qui va se mettre à courir
+1:38:03
+dans une direction qui va se mettre à fuir l'atout votre tour votre cerveau de façon ça a été montré au niveau
+1:38:09
+neuroanatomie que votre cerveau va s'activer pour pour copier le comportement des autres et tout votre
+1:38:14
+corps va se mettre en branle j'ai envie de dire tout votre système va se mettre en moins pour vous mettre à courir voici et sera extrêmement difficile si vous
+1:38:21
+êtes au milieu d'une foule qui courent de ne pas courir et de rester sur place s'en suivent la foule là on parle de
+1:38:26
+contagion émotionnelle c'est globalement le groupe d'oiseaux où il ya un oiseau qui s'envole et tous les oiseaux s'envolent dans la seconde c'est
+1:38:31
+exactement ça la contagion émotionnelle et on a tous se penchant là sauf que quand tu dois être en empathie il faut garder quand même différent une
+1:38:37
+distance il ne faut pas s'identifier à l'autre il faut simplement savoir se mettre à la place de l'autre et c'est exactement à quoi ça sert à quoi servent
+1:38:43
+les personnages c'est à dire qu'on veut rester en empathie avec les personnages ne veut pas confondre est persona comme
+1:38:49
+étant des partis nous comme étant quelque chose qui nous ressemble et c'est qu'on garde quand même cette distance par rapport au personnage l'utilisateur n'est pas nous nous on
+1:38:55
+fait partie de l'équipe de conception on veut concevoir des interfaces on n'est absolument pas l'utilisateur et
+1:39:00
+on ne doit pas considérer l'interface comme étant quelque chose qui doit répondre à nos besoins nous et comme le disait pierre extrêmement justement à
+1:39:06
+l'instant nous sommes par définition des professionnels du talent et donc des experts des interfaces digital et donc
+1:39:13
+essayer de se mettre essayez se considérer soi même comme un utilisateur alors oui certes vous êtes peut-être partie du taser une partie des
+1:39:20
+utilisateurs mais des gens qui sont des professionnels du digital c'est quand même pas la majorité des gens en france du coup il faut toujours garder cette
+1:39:26
+distance et réussir à être en empathie avec des jambes a qui n'ont pas un même profil que nous on sait se mettre à leur place on se met très précisément à leur
+1:39:32
+place mais on ne se confond pas avec eux du coup on peut créer plein de types de
+1:39:38
+personnages vous représentez les trois principaux mais on a pour décrire une
+1:39:44
+dizaine très très facilement vous avoir le personnel primaire donc ses empreintes l'utilisateur principal du
+1:39:50
+futur produit ce qui est intéressant du coup c'est d'avoir une compréhension du sa représentation donc savoir par
+1:39:57
+exemple que personne à primaire peut être peut représenter 60% de notre cible donc c'est très important c'est d'avoir cette
+1:40:03
+compréhension derrière parce que du coup derrière vous avez utilisé un personnes à négatif aux exclus donc ça il
+1:40:09
+représente l'utilisateur qui n'est pas cible de votre système il faut comprendre cette personne il faut savoir que l'on ne va pas
+1:40:14
+travailler pour elle quand je vais effectuer une conception ça ne sera pas pour des personnes qui sont par exemple technophiles et qui ont une
+1:40:19
+représentation dans le peut-être accès selon tel ou tel device je ne prends pas ces gens là et vous avez un troisième
+1:40:25
+type de personnage qui s'appelle le proto persona donc là c'est quand vous avez un utilisateur final l'utilisateur vous n'avez pas réussir à le chauffer
+1:40:31
+vous n'allez pas réussir à lui faire des entretiens vous n'avez pas pouvoir faire des questionnaires vous allez essayer de remonter cette information là grâce à ce
+1:40:37
+qu'on appelle une recherche secondaires donc recherche primaire en fait c'est l'observation d'entretien les questionnaires de recherche secondaire
+1:40:42
+ça serait du coup de la remontée d'information qui a été fait par des instituts des recherches qui ont pu
+1:40:48
+avoir lieu vous essayez de comprendre la personne grâce des manières externes vous pouvez pas la voir donc du coup ce
+1:40:55
+proto persona en fait vous allez simuler la personne c'est un outil enfin c'est une manière de faire qui nous permettent
+1:41:01
+d'avoir un outil derrière pour l'idéation et la conception mais très clairement c'est c'est un peu compliqué
+1:41:08
+de travailler avec ces représentations là parce que sont énormément biaisé c'est quelque chose du coup que vous allez essayer de rationaliser au maximum
+1:41:14
+sans pour autant avoir eu l'utilisateur en face de vous et j'espère qu'elle soit à la fin de sa conférence ou même déjà
+1:41:19
+maintenant vous avez compris l'utilité d'avoir un utilisateur est de scinder en
+1:41:24
+un seul outil ou d'avoir une compréhension une empathie vous allez changer en fait la manière
+1:41:30
+dont vous allez vous recevoir pour lui donc le proto persona ça vous permettra de d'effectuer sa grâce à ça
+1:41:41
+alors les utilisateurs donc c'est ça c'est quand vous avez montré à quel endroit de l'entreprise de travail du
+1:41:47
+designer et travailler au milieu en fait travaillé au milieu de tout le monde donc en fait vous allez voir le service marketing ils ont déjà plein de d'utilisateurs
+1:41:54
+qu'ils ont essayé de toucher pour faire des entretiens vous avez la compréhension de
+1:41:59
+l'entreprise elle même c'est qu'ils aient ça s'il vaut le coup vous allez pouvoir essayer de passer par elle mais derrière vous allez les chercher soit
+1:42:06
+dans la rue vous allez les recrutés sur sur le web vous allez il ya énormément
+1:42:11
+de manière de recruter les utilisateurs et le mieux c'est de les recruter delà d'une manière très personnelle et de se
+1:42:17
+décorréler totalement de l'entreprise pour ne pas avoir des utilisateurs qui vont de la faire énormément de sondages avec avec l'entreprise elle-même qui a
+1:42:24
+été récompensée plein de fois par leur action qui a un sens qu'il ya un lien avec l'entreprise qui est très différent
+1:42:29
+en fait très très très spécifiques mais du coup il ya énormément de manière de
+1:42:35
+les récupérer donc la question était où trouver les utilisateurs effectivement il ya beaucoup de manières de trouver ses utilisateurs notamment effectivement
+1:42:42
+en utilisant des panels déjà constitués par des équipes par exemple marketing entreprises qui sont souvent le service qui est le plus proche des clients et
+1:42:49
+qui les connaît le mieux ou alors par le service après-vente aussi fonctionne très bien ou alors tout simplement il ya des prestataires qui
+1:42:55
+constituent des panels on peut très bien chargé un prestataire d'une mission il va se charger de constituer un panel
+1:43:02
+selon les caractéristiques on souhaite qu'ils aient les utilisateurs et est donc on va pouvoir les recruter de cette
+1:43:08
+façon là ou alors le faire nous mêmes par par exemple des questionnaires de recrutement de l'utilisateur on va
+1:43:14
+demander simplement investigateurs de décrire quels produits utiliser etc pour trouver des gens qui sont notamment proche de ce qu'il faut chercher par en
+1:43:22
+se basant sur les personnes a évidemment puisque comme vous l'avez compris les personnages se font après la recherche donc on a déjà vu les utilisateurs quand on a créé les personnages ce qui est
+1:43:29
+intéressant de considérer c'est que l'on vous montre une méthode la méthode globale de lille design actuellement leur métier en tant que telle a été très
+1:43:36
+segmenté et en fait on a des professionnels qui travaillent à différents moments de cette méthodologie est typiquement comme des accords tania
+1:43:43
+des entreprises qui travaillent seulement sur de la sptr recherche utilisateurs au nom du groupe sont des endroits où on fait des entretiens et
+1:43:48
+avec des bleus et ils vont chercher pour vous ces utilisateurs là ça peut être intéressant en fonction de votre budget vous moyens
+1:43:55
+d'utiliser en fait c'est ses compétences la externaliser ses compétences ce qui vont permettre du coup de simplifier un
+1:44:00
+peu le traitement de votre méthodologie
+1:44:14
+alors pourquoi perdre du temps à faire des personnes a exclu ou négatif et
+1:44:20
+alors prenons l'exemple de par exemple sa personne à la je sais qu'au niveau technologie il a cette compétence sur
+1:44:27
+internet il a assez de compétences sur des logiciels et sur les applications et au niveau social donc je sais que sa représentation au
+1:44:33
+niveau technologique et celle ci imaginons ça c'est mon personne a exclu mon personnage principal lui il a une
+1:44:40
+très bonne connaissance d'internet il a aucune connaissance sur des logiciels aucune sur des applications et une conne
+1:44:46
+très bonnes connaissances sur les réseaux sociaux les ces deux personnages juste avec ces variables là je peux les
+1:44:52
+distinguer donc quand je vais effectuer ma conception je vais me dire que ben en fait mon utilisateurs promu utilisateur principal
+1:44:59
+n'aura pas les mêmes références comportementaux de ses anciennes actions
+1:45:05
+sera pas du tout les mêmes que ce personnage et donc du coup on va complètement différencier
+1:45:17
+ouais alors effectivement se caler sur le personnage primaire est suffisant c'est le but des persona d'avoir un
+1:45:24
+archétype de l'utilisateur cible et c'est vraiment dans certains cas il faut se dire que l'on fait pas toujours des
+1:45:29
+personnes à négatif mais dans certains cas on peut avoir des personnages qui vont à des archétypes d'utilisateurs
+1:45:34
+très proche notre utilisateur primaires et on veut vraiment garder en tête et notamment aussi pour mon cours d'ateliers par exemple d'idéation quand
+1:45:40
+on va présenter les personnages aux personnes pour essayer de aux participants des ateliers pour qu'il soit aussi on en pâtit en quelque sorte
+1:45:46
+avec les utilisateurs vous présenter aux équipes en interne etc ça peut être intéressant dans certains
+1:45:51
+cas de distinguer le personnage primaire d'un autre personnage qui sera négatif ou exclue puisque finalement on pourrait
+1:45:57
+confondre les deux et le but c'est justement de bien différent mais c'est pas du tout systématique on va pas s'amuser effectivement à faire des personnes à négative pour tous les
+1:46:03
+postes tous les utilisateurs ok donc s'adresse pas c'est vraiment que dans certains cas cet homme mais aussi
+1:46:10
+par exemple pour des tests par exemple une fois qu'une fois qu'on a déjà fait des personnages si on veut simplement
+1:46:16
+ont mandaté un prestataire pour qu'ils nous recrute un panel et qu'on veut effectivement qu'il évite un certain type et on se dit que là vraiment la
+1:46:21
+différence entre ce qu'on veut et ce qu'on veut pas peut être parfois très poreuse très ténu mais du coup ce qu'on va faire c'est qu'on va lui présenter on
+1:46:27
+va lui donner voilà ce qu'on veut c'est celui-là le personnes a pris hier par contre il en veut pas ça peut permettre de distinguer
+1:46:35
+le produit alors justement en fait c'est
+1:46:41
+aujourd'hui on peut appliquer la méthode vix à tous on peut appeler ça aux produits innovants et à d'innovante mais
+1:46:48
+en général quand même on a vu en appui on applique ça à des interfaces qui existe déjà et donc dans ce sens là on peut quand même déterminer un certain
+1:46:54
+nombre de caractéristiques ensuite qu'il faut aussi savoir c'est ce qu'on a dit au début par rapport aux caractéristiques du projet lui-même c'est-à-dire qu'on a tout un tas de
+1:47:00
+contraintes qu'on va en tout début de projet par le brief etc ces contraintes là aussi nous permettre de déterminer des utilisateurs cible des utilisateurs
+1:47:06
+type évidemment le degré de précision avec lequel on va pouvoir faire les personnages dépend fortement du projet
+1:47:11
+aussi à dire par exemple si on a déjà une interface qui existe et qu'on a des utilisateurs bien déterminer où on connaît déjà leurs caractéristiques et
+1:47:18
+on peut facilement les retrouver pour faire des entretiens par exemple avec lui ou des questionnaires et du coup on va pouvoir faire un personnage très
+1:47:23
+détaillée très précis qui sera une synthèse très précise de ce qu'on veut il peut y avoir aussi des personnages où on ne sait pas exactement qui sait et
+1:47:29
+c'est exactement ce que disait pierre juste avant sur les proto personnes qui sont en fait une proto persona c'est une
+1:47:35
+conception abstraite d'un personnage s'est pas appliqué sur des connaissances qu'on a directement on va rechercher l'information indirectement en regardant
+1:47:41
+par exemple des statistiques de l'insee ah j'en sais rien si je veux aussi ma population c'est des professeurs des écoles bah je vais essayer de trouver des
+1:47:46
+statistiques sur quel est le taux de pénétration des smartphones chez les professeurs et ce qu'ils ont beaucoup de smartphones sur un très concrètement et
+1:47:52
+du coup je vais pouvoir en tirer des premières conclusions sur ma population professeurs des écoles par exemple s'ils sont technophiles ou pas et tout ça
+1:47:57
+c'est très abstrait ça vient pas d'entretien en direct c'est pas des informations et à récupérer en direct sur sept et six auteurs et du coup tu
+1:48:05
+vas faire des proto persona qu'ils sont du coup pas basé sur le réel basées sur des déductions indirects sur des études
+1:48:11
+etc mais pas vraiment sur le réel parce que toi tu as pu tu as pu prendre comme
+1:48:16
+information les déclencheurs dans vie ou d'attentes
+1:48:23
+alors oui tout à fait mais là on est déjà en plus parce que effectivement vous avez bien voyez tous noté qu' on
+1:48:28
+est sur un personnage c'est aussi un outil qui est extrêmement utilisé en marketing mais qui n'a pas exactement le même but et en fait j'aurais tendance à
+1:48:34
+dire ad personam où on va comme ça caractérisé tout les déclencheurs dans vie et c est très intéressant mais n'est
+1:48:40
+pas forcément le fondement du personnel pour lui que design mais ça peut aussi rentrer dedans et en général d'ailleurs
+1:48:45
+sur les projets quand on est à dix designers et qu'on fait partie d'une grande dans un projet on va voir souvent
+1:48:50
+les services marketing notamment qui va nous présenter ces personnages de présence et présenter ses archétypes de
+1:48:56
+clients et ça va être très très intéressant d'utiliser ça comme base pour refaire des personnes athées d'y aller avec ce design n'a utilisé ça
+1:49:03
+quand même comme base puisque on va pouvoir récupérer votre tas d'informations incroyable grâce aux services marketing et c'est là où la
+1:49:08
+différence peut être parfois ténue et dans certains projets effectivement ça va être important de caractériser les déclencheurs notamment par exemple de
+1:49:14
+l'achat quand dans d'autres projets ce sera beaucoup moins intéressant de toute façon il n'ya pas de méthode parfaite
+1:49:20
+j'ai envie de dire de faire des persona tout dépend d'eux des contraintes du projet et de la substance que vous
+1:49:26
+mettez derrière
+1:49:32
+le du coup le deuxième élément très important ça est l'expérience map
+1:49:38
+beaucoup de noms à ça on a l'espérance maps on a la une que sommer de journée
+1:49:43
+enfin différentes manières de le faire l'avantagent est l'intérêt de cette méthode en fait on va savoir qui va
+1:49:49
+effectuer ses différentes étapes il va avoir différentes actions à chaque fois on va avoir différentes pensée
+1:49:56
+aspect très important on va représenter son expérience l'émotion qui va
+1:50:01
+ressortir de cette expérience qu'elle soit positive négative et vous allez pouvoir du coup calais les différentes
+1:50:06
+opportunités que vous avez en fonction des différentes étapes ce qui est très important d'en prendre en compte c'est que quand vous avez
+1:50:12
+constitué un certain nombre de personnes à chaque personnage va avoir une représentation en terme d'expérience
+1:50:18
+maps différentes que je sois tel utilisateur ou tel utilisateur mon
+1:50:23
+niveau d'expérience mais la qualité de mon expérience ne sera pas la même à chacune des étapes parce que la
+1:50:28
+représentation que j'ai du monde on va dire de manière très large n'est pas la même et donc du coup une étape numéro 3
+1:50:36
+ne sera pas ressentie de la même manière qu'un autre personnage une deuxième manière très intéressante d'utiliser ces
+1:50:41
+expériences nappe c'est de se dire bah du coup si j'ai plein d'expériences différentes en fonction de mes personnages je vais
+1:50:47
+pouvoir peut-être les regrouper en une seule et me dire du coup l'ensemble de mes cibles dont celle vision sur une
+1:50:54
+moyenne assez générales et par exemple peut-être que cette expérience 3g quelque chose de très négatif à cet endroit là
+1:51:00
+cette représentation en terme d'expérience va vous permettre du coup de savoir à quel endroit vous allez du
+1:51:06
+coup travailler dans un premier temps pour changer ce qui pose un énorme
+1:51:11
+problème là on voit typiquement là ça pose un très gros problème donc peut-être qu'en fait l'étape une c'est
+1:51:18
+quelque chose que je vais pas forcément devoir traiter dans un premier temps et je vais me focaliser vraiment sur le
+1:51:23
+travail sur cette étape 2 qui peut entacher totalement l'expérience et voire même faire quitter
+1:51:29
+un personnage non utilisateurs sur mon interface donc ça c'est quelque chose que vous
+1:51:35
+allez constitué grâce à l'ensemble des entretiens et des questionnaires que vous avez fait de la même manière que que les personnages qui sera un multi
+1:51:41
+extrêmement important pour vous par la suite
+1:51:50
+après c'est après ça avoue le choisir ça c'est en fonction du projet est ce que
+1:51:56
+je dois me brider au fait que maman utilisateurs il arrivait sur ma page produit et il a acheté mon produit où
+1:52:02
+est ce que je dois du cours remonter sur des expériences passées qu'il a eue ou alors me dire bah en fait l'utilisateur bailly s'est baladé sur
+1:52:08
+les réseaux sociaux il a vu ma pub il est arrivé de ma pub sur mon site et ainsi de suite et il a acheté ça c'est
+1:52:14
+vraiment en fonction du besoin spécifique de ce que vous avez à créer ces il n'y a pas de norme là dessus c'est vraiment à vous de le définir et à
+1:52:21
+vous grâce à votre regard c'est vraiment le l'enjeu principal de
+1:52:26
+votre de votre conception qui va qui va déterminer sa la typiquement sur 1 c'est
+1:52:32
+une expérience de réservation de billets pour pour des trains j'ai une première
+1:52:38
+étape qui au final est transverse donc je vais me balader sur des sites je vais aller parler avec des personnes de mon
+1:52:46
+entourage pour savoir comment ils ont effectué cette réservation je vais prendre connaissance sur internet des ressentis que les autres
+1:52:52
+utilisateurs ont lu j'ai eu de la nécessité de matérialiser ça parce que derrière ça a provoqué un certain type
+1:52:57
+d'émotions et ça me permet d'avoir des opportunités en fait la création et du coup à la suite on va créer le parcours
+1:53:04
+donc on utilise souvent des symboles pour des symboles pour savoir si le parcours est fermée donc cycliques ou si
+1:53:10
+au final c'est un tunnel de conversion très simple donc ça c'est un type d'expérience map qui est assez complexe mais qui vous
+1:53:17
+permet du coup de savoir un peu tous les tous les éléments que vous allez pouvoir mettre en avant on rentrera dans le
+1:53:23
+détail bientôt bien sûr plus tard on va
+1:53:29
+faire une toute petite pause du coup avant de passer sur les deux dernières phases l'idéation et la conception et il est assis da tarde donc troisième phase
+1:53:35
+de l'idéation on a fini du coup de faire notre analyse expertes on a remonté tout ce qui était issu de
+1:53:41
+la recherche utilisateurs qu'on a formalisé dans un personnage dans une expérience 9 qui nous seront utiles du coup pour cette phase d'hésitation
+1:53:46
+idéation on va du coup générer des idées on a énormément de type de méthode
+1:53:54
+dix nations qui existent les principales qu'on va vous présenter du coup c'est le brainstorming que vous connaissez des
+1:54:00
+cards idéation qui sont très spécifiques luix la méthode du tri de cartes et le design studio donc pourquoi l'idéation
+1:54:07
+du coût généré des idées grâce à la participation d'utilisateurs et grâce à
+1:54:13
+la participation des parties prenantes dans l'entreprise donc en fonction du de l'atelier vous allez effectuer vous
+1:54:19
+allez plutôt nécessité de tels types de participants de tels types de participants c'est à vous de le construire et à vous de prendre en
+1:54:25
+contre donc le brainstorming le brainstorming c'est un outil très
+1:54:33
+simple qui vous permet de générer un maximum d'idées d'améliorer la cohésion d'un groupe c'est pour ça qu'il est très
+1:54:38
+souvent utilisé dans un premier temps et ça vous permet de développer la créativité de l'entreprise ouais alors
+1:54:44
+ici on parle d'un brainstorming un vrai brainstorming donc on n'est pas sur le format brainstorming qu'on connaît tous membres on se met tous autour d'une
+1:54:50
+table de réunion et puis on réfléchit ensemble là ça va être un vrai atelier d'idéation avec une méthode qui va avec
+1:54:55
+du coup qui dit méthode dix règles en gros rapidement quatre grandes règles
+1:55:01
+pour le brainstorming qu'il faut absolument garantir et donc c'est le rôle de l'animateur de lui que designer qui va animer l'atelier de garantir ces
+1:55:07
+règles là non seulement les affichés au mur peut être une très bonne idée aussi d'abord il faut garantir la spontanéité
+1:55:12
+des idées la suspension du jugement encourager les idées extravagants 2 et la fertilisation croisée sert
+1:55:19
+chacun doit rebondir sur les idées des autres et les améliorer au fur à mesure
+1:55:24
+simplement avant de venir sur la psychologie on va revenir sur les grandes étapes du brainstorming en fait en général un brainstorming donc
+1:55:32
+on a une première étape de présentation d'ateliers tout simplement donc là c'est logique ce designer qui s'en occupe ensuite on va passer par une phase de
+1:55:38
+génération libre donc là qui correspond en fait à ce qu'on connaît du brainstorming
+1:55:43
+le brainstorming que vous connaissez déjà c'est à dire que là simplement tout le monde va dire toutes les idées qui lui passe par la tête personne ne doit se contredire ou
+1:55:49
+critiquer le but c'est de générer le maximum d'idées on va ensuite passer par une autre phase qui va être une phase de génération guidées ou là on devait faire
+1:55:55
+un mini atelier au sein même de l'atelier et avoir différentes choses pour faire par exemple le brainstorming inversée qui peut être intéressant c'est
+1:56:02
+à dire au lieu de se poser la question comment on va améliorer l'expérience utilisateur sur telle interface on va se demander comment on va dégrader
+1:56:07
+l'expérience utilisateur sur cette interface l'utiliser aussi des cartes d'idéation pardon on va voir juste après la table de petit atelier que l'on
+1:56:14
+pourra faire et vous verrez un peu plus en profondeur un peu plus tard est vraiment l'objectif c'est que l'entente cuisse designers vous êtes là pour gérer l'ensemble du
+1:56:22
+brainstorming vous pouvez être partie prenante du bain de sang remis mais principalement vous allez du coup gérer grâce à ces au respect de ces règles là
+1:56:29
+que les participants avance dans un bon chemin comment la psychologie elle va
+1:56:34
+pouvoir nous aider grâce à ça donc on a les modèles mentaux donc c'est ce que je vous ai représenter
+1:56:40
+un petit peu tout à l'heure dans la mémorisation la manière dont on caractériser un un animal et ensuite comment
+1:56:46
+caractériser les différences entre les oiseaux et en passant par exemple donc du coup le modèle mentale à nouveau
+1:56:53
+permettre de comprendre le lien qui peut y avoir entre deux choses donc là par exemple ce qui serait
+1:56:59
+intéressant de savoir c'est comment représente comment le modèle mental est représentée en fonction du lien entre
+1:57:06
+mon ordinateur et internet ça vous avez chacun votre réponse qui
+1:57:11
+est classiquement différentes est typiquement un novice va représenter ce
+1:57:18
+lien là entre bages et mon ordinateur j'ai mon fournisseur d'accès au milieu donc orange sfr free n'importe quoi qui
+1:57:25
+me permet d'avoir internet un informaticien beaucoup plus technique ben vous représentez ça avec un panel de
+1:57:32
+lien qui vous permettra à terme d'avoir pas forcément qu internet mais d'avoir
+1:57:37
+accès à un nom de domaine d'avoir accès à wordpress d'avoir accès à des fichiers sa conception ne sera pas pareil ces
+1:57:43
+représentations mentales sera totalement différente cette saine compréhension de la représentation mentale vous aidera dans
+1:57:49
+la conception vous allez faire par la suite et ce qui est très important du coup c'est pendant un bref hormis de faire
+1:57:54
+ressortir ses représentations de l'ensemble des individus et de les poser
+1:57:59
+noir sur blanc les théoriser les utiliser par la suite pour vous en tant que designer pour effectuer la
+1:58:05
+conception par exemple comme sur les
+1:58:11
+modèles mentaux vous avez l'objectif des utilisateurs qui va vous permettre de faire ressortir
+1:58:16
+du coût des expériences antérieures d'écrire un niveau de compétence derrière vous allez du coup caractérisé
+1:58:22
+le parcours qui va faire sur site l'organisation du site que vous allez effectuer et la mise en forme de l'information dans des coulées très
+1:58:29
+naturellement derrière vous avez vu au milieu on va pouvoir insérer le tri de cartes ont représenté par la suite qui
+1:58:34
+vous permettra du coup de passer d'une représentation des expériences antérieures et du niveau de compétence à
+1:58:40
+un parcours sur le site est une organisation
+1:58:46
+donc parallèlement au brainstorming on utilise des cartes d'idéation c-17 de cartes qui vont vous permettre de cadrer
+1:58:53
+la pensée néo utilisateurs partir du moment où je présente vous allez
+1:58:58
+effectuer une réflexion sur une application imaginons re imaginons rubber de quelle manière on peut rendre
+1:59:06
+sa personnel par exemple ça va être du coup le sujet en euros du brainstorming qui permet de me cadrer cette réflexion
+1:59:12
+là si en fonction de mon besoin de grâce à mes personnages chez décrit en amont
+1:59:17
+je vais devoir orienter cette réflexion de telle ou telle manière l'écart d'idéation vous permettent
+1:59:23
+d'agrémenter en fête et de contextualiser clairement la réflexion que vous allez engendré énormément de 7
+1:59:30
+10 des actions qui existent on vous montrera sa part par la suite et spécifiquement là je vous montrais juste
+1:59:37
+un 7/10 délation qui a été qu'ils étaient nés de l'analyse psychologique qui s'appelle les weeks card donc de
+1:59:42
+karine l'allemand a présenté au début donc qui a été qu'ils ont été effectués mais on a fait cet de cartes qui par
+1:59:51
+exemple typiquement là c'est là le relationnel et l'apparence et donc on va caractériser en fait cette réflexion grâce cet axe là et vous entrerez dans
+1:59:59
+les détails et par la suite sur ces six card qui sont extrêmement intéressante
+2:00:06
+ouais donc on va assez rapidement en passer essayez de réfléchir quelques secondes et vous demandez à quoi peut
+2:00:12
+bien servir cet objet qu'est ce qu'elle est et quel est cet objet qu'est ce que c'est un plaisir pour un jeu non c'est
+2:00:24
+pas nos clients un buzzer en scène une lampe c'est non c'est une lancée d'une
+2:00:32
+pas des stats mais c'est humain du coup
+2:00:38
+c'est une lampe à quels besoins pensez vous que cette lampe pourrait répondre
+2:00:43
+plaisir la stimulation à l'apparence à l'autonomie à réalisation de soi
+2:00:55
+la sécurité la sécurité la popularité des sifflements
+2:01:01
+typiquement ça c'est ce qu'on ressort des différentes cartes quand on va avoir un set de cartes on va avoir du coup ces différents
+2:01:07
+objectifs qui vont être mis devant nous et on va dire ben ok on va faire une lampe derrière qu'est ce qu'on veut quel
+2:01:14
+besoin on souhaite avec les besoins de cette répondre l'utilisation de cette lampe là
+2:01:19
+typiquement imaginons à la sécurité la sécurité du coup on va se dire bah hockey balle
+2:01:24
+en fête elle va cibler les enfants et va être utile pour la nuit et va du coup
+2:01:31
+satisfaire ce besoin de sécurité donc du coup la conception on parle d'un principe on va dire voilà il faut une
+2:01:36
+lampe sécurisant pour mes enfants pour être utile de la nuit est derrière mais du coup on va créer cet objet qui permet
+2:01:43
+d'aider ce sentiment de sécurité donc là typiquement cette lampe à la poire le coût est repris par les enfants
+2:01:49
+et vous pouvoir garder les boules pendant qu'ils vont dormir la nuit et ils vont avoir une veilleuse qui sera du
+2:01:54
+coup utilisé quand ils le souhaitent comme il le souhaite donc la c7 les wild cards ont été utilisés pour cette
+2:02:01
+réflexion et du coup pour simplifier et répondre aux besoins de l'utilisateur
+2:02:10
+une aux techniques donc on a vu le vrai sens ming les weeks carmes voici le tri
+2:02:15
+de cartes entre nos cartes c'est peut-être quelque chose que j'avais déjà effectué l'objectif du trinket en fait c'est de ce tir bas j'étais besoin donc
+2:02:23
+le besoin par exemple ces besoin de sécurité et j'ai envie du coup de lister toutes les fonctionnalités possibles que je pourrais créer grâce à
+2:02:30
+mon application par exemple pour simplifier sa et donc vous allez créer énormément de cartes toutes ses cartes vous avez ensuite les regrouper vous
+2:02:36
+allez les classes et vous allez nommé et vous allez du coup derrière pouvoir avoir une vision beaucoup plus globale
+2:02:42
+de ce que vous avez quand on parlait de représentation mentale tout à l'heure cette architecture mental donc cette
+2:02:47
+représentation d'un site internet vous souvenez de l'exemple qu'on avait dit au début les sites sont souvent construits la manière dont l'entreprise est créée
+2:02:52
+en interne donc avec les différents réseaux nous ce qu'on veut c'est savoir comment l'utilisateur lui représente rsa
+2:02:57
+et donc on va demander à l'utilisateur de lister tous les pages qui souhaiteraient avoir sur un site une
+2:03:02
+fois qui les a listé on va lui demander de les regrouper de les nommer et ça va vous faire au final votre menu avec
+2:03:08
+lille ses entrées au niveau 1 au niveau 2 au niveau 3 derrière vous avez la possibilité de faire énormément de tri
+2:03:14
+de cartes et d'analyser tous ces traits carte pour du coup avoir une proposition représentation la plus globale en fonction de tous vos utilisateurs de là
+2:03:24
+on verra plus dans les détails mais vous avez des free carte ouvert ou fermé ouvert c'est-à-dire vous choisissez les catégories que vous voulez le nombre de
+2:03:30
+catégories que vous voulez les ti des catégories que vous voulez l'utilisateur fait les choix qu'ils souhaitent tricarde fermé vous avez un nombre de
+2:03:37
+catégories limitées vous avez un nombre de catégories qui est déjà nommée et vous demander aux utilisateurs de classer ses cartes dans les catégories
+2:03:43
+bien sûr votre objectif doit être défini avant même de choisir le tr carte que vous allez effectuer
+2:03:49
+alors comment mexico pourrait vous aider pour comprendre le tri de cartes comme
+2:03:55
+on l'avait alors présenté grâce à représentation mentale et c'est grâce à cette architecture de l'information
+2:04:00
+en fait quand vous allez à voir un sitemap qui peut être représenté par
+2:04:08
+le site en lui-même donc le site va représenter va se représenter de cette manière là donc vous avez déjà vu ce
+2:04:13
+bouton sitemap sur différents sites web donc ça ça va être l'architecturé de l'information représenté par le site
+2:04:20
+bien sûr nous on s'intéressera à la représentation de l'individu qui devra être beaucoup plus épuré parce que l'individu lui ne va pas faire tous ces
+2:04:26
+liens de cette manière là du même de la même manière que vous l'avez effectués
+2:04:33
+du coup bien représenté à l'information c'est réduire la charge cognitive l'effort global de l'internaute pour
+2:04:39
+représenter l'information qu'il recherche la charge cognitive est extrêmement important nous ce qu'on souhaite c'est de simplifier constamment
+2:04:46
+le parcours de l'utilisateur pour son expérience soit la meilleure possible à partir du moment où vous avez vu dans la
+2:04:53
+mémorisation vous avez vu dans le dans dans les différents aspects de ce dîner l'autre objectif c'est de simplifier le
+2:05:00
+comportement et dans tout ce qui est charge cognitive supplémentaires qui empêcherait d'avoir une résolution du
+2:05:05
+problème rapide je vais essayer de les évincer quand vous vous souvenez des deux modèles de pensée un modèle intuitif on va dire est
+2:05:12
+un modèle plutôt complexe de réflexion moi j'ai envie de tendre vers un modèle intuitif pour simplifier la tâche et
+2:05:18
+simplifier la réflexion de ma tâche donc du coup je vais devoir réduire cette charge cognitive
+2:05:28
+enfin en ce qui concerne donc un dernier atelier d'idéation le design studio donc
+2:05:34
+qui est basée sur une approche très courte et très intense c'est un atelier
+2:05:39
+qui est très court et très intense pourquoi en fait ils appellent aussi le design charrette parce qu'il est basé sur le concept de être charrette que
+2:05:46
+vous devez tous connaître et qui correspond à l'époque à la charrette des beaux-arts c'est à dire que le vendredi midi quand les étudiants devaient livrer
+2:05:52
+leurs leurs oeuvres aux beaux-arts il traversait paris avec des charrettes tirées par les étudiants les plus
+2:05:58
+novices et du coup on voyait juste avant midi dans paris d'état d'étudiants courir avec leurs charrettes pour
+2:06:03
+arriver à midi et pouvoir rendre à temps leurs travaux et c'est de là que vient l'expression être charrette et ces deux
+2:06:09
+là aussi que vient l'idée de l'atelier qui est le design studio où le design charrette donc l'idée c'est de demander dans un
+2:06:15
+temps très court à des utilisateurs et aux parties prenantes de concevoir tout
+2:06:21
+un tas d'écran plusieurs écrans qui peuvent correspondre ou pas un parcours utilisateur chacun va devoir individuellement
+2:06:26
+concevoir des écrans en moins de cinq minutes globalement et ensuite on va faire des différentes phases d'itérations on va
+2:06:33
+regrouper les travaux des uns et des autres c'est à dire qu'en fait ils vais d'abord y avoir un travail individuel chacun va faire ses écrans chacun va
+2:06:39
+ensuite présenté ses écrans aux autres et va se faire critiquer on va dire ce qui est bien et ce qui n'est pas bien sur les écrans puis on va passer à une
+2:06:44
+phase de mise en commun par groupe par petits groupes ils vont mettre en commun ils vont recréer une suite d'écran en mettant en commun leur
+2:06:49
+travail et en piquant les idées des autres évidemment qui ont déjà présenté les bonnes idées des autres et ensuite ils vont représenter aux autres groupes
+2:06:56
+qui vont re critiqué à nouveau etc et on va continuer jusqu'à avoir ensuite d'écran issue en fait il sera la
+2:07:02
+synthèse de toutes les idées de tout le monde et de voir qui pourra être classiquement un premier à une première
+2:07:08
+maquette de ce que devrait être le site donc c'est c'est un atelier qui est très efficace parce qu'en fait le fait qu'il
+2:07:15
+soit court et intense en fait il est très creux chronométrés et le rôle de l'animateur et aussi de stresser entre guillemets les participants pour les
+2:07:21
+faire travailler le plus vite possible et qu'ils ne prennent pas le temps de réfléchir qu'ils se mettent tout de suite de travail qui posent leurs idées
+2:07:26
+sur le papier et donc il peut aussi ne pas être forcément adapté à tout le monde
+2:07:32
+il ya des profits des vies certaines personnes ne supportent pas bien les situations de stress donc il faut dans ce cas là éviter ce type d'atelier alors
+2:07:42
+exactement lui que ça intervient en animateur c'est une très bonne question ça va me permettre de préciser justement parce que je voulais préciser c'est ça
+2:07:47
+c'est à dire le rôle de l'ue x change en fonction des étapes de la de la méthodologie et la méthodologie pardon
+2:07:53
+il passe d'abord en tant qu'analyste experts ensuite il va être un chercheur il va chercher à rencontrer à comprendre
+2:07:59
+les utilisateurs pour comprendre leurs problèmes et les synthétiser en des persona puis il va enfiler une autre
+2:08:04
+casquette qui va être la casquette d'animateur pour les ateliers d'idéation lui son rôle ça va être vraiment d'être l'animateur est le garant du respect des
+2:08:10
+règles pendant les ateliers c'est à dire que ceux qui vont travailler luix peut travailler il peut y avoir des outils des équipes mixtes
+2:08:16
+qui travaillent mais ceux qui travaillent classiquement dans les ateliers d'idéation ce sont des utilisateurs et des parties prenantes du projet c'est-à-dire les équipes
+2:08:22
+marketing les équipes ça peut être le dirigeant ça peut être plein de monde et tout l'idée de l'atelier d'idéation c'est à la fois de générer de générer
+2:08:28
+des idées les mettre sur le papier mais aussi de permettre d'une façon un peu indirecte de faire que les équipes
+2:08:34
+internes rencontre les utilisateurs puisqu'ils vont devoir travailler ensemble dans le cadre des ateliers et
+2:08:40
+du coup ça leur permet d'être confronté aux utilisateurs et aussi de faire accepter à mieux la méthode unix en général est là dans cette phase là le
+2:08:47
+rôle de louis xv va être d'animer effectivement dans la phase d'après la face qu'on appelle celle de conception
+2:08:53
+le rôle de louis xv à être de concevoir un prototype donc là on va être plus proche de lui donc du design d'interface lui-même et
+2:09:00
+non plus de recherche et de design d'expérience et enfin on va falloir toute la phase de test où là encore le
+2:09:07
+liquidateur va avoir plutôt un rôle d'animateur des tests et d'encadrement des tests
+2:09:53
+alors c'est une très bonne question et qui est très large donc ça va être difficile d'y répondre très rapidement
+2:09:58
+alors la question c'était qui prend la décision au final à la fin d'un atelier par exemple qui choisit qui décide
+2:10:04
+en fait la plupart des ateliers déjà dans leurs méthodes dans la façon de les conduire font que l'on part du plus
+2:10:09
+large et on va au plus précis donc en fait la décision se prend au cours de l'atelier ce soit dans le brainstorming avec les différentes étapes que je vous
+2:10:15
+ai décrit dans le design studio avec le fait que les écrans sont regroupés et c'est ça c'est pour la partie dont qui
+2:10:20
+prend la décision c'est-à-dire qu'on arrive en fin d'atelier on a déjà un certain nombre d'idées qui ont qui sont dominantes par rapport aux autres mais
+2:10:27
+il y avait aussi dans ta question c'était justement par rapport notamment au niveau hiérarchique qui va prendre la décision c'est à dire qu'effectivement si vous êtes dans les parties si les
+2:10:34
+parties prenantes que vous invitez vous inviter par exemple directeur général de l'entreprise qui se sent très impliqué et qui pense que son avis a beaucoup
+2:10:39
+plus d'importance que la vie des autres il va déjà avoir pendant sa va faire que tous les autres n'ont pas osé s'exprimer parce qu'ils vont poser contredire leurs
+2:10:46
+patrons on peut comprendre et aussi bas du coup il va orienter les décisions il va vouloir qu'on fasse comme lui et tout
+2:10:52
+le rôle de lui que designer et dieu sait que ça peut être très difficile va être de déjà déterminer qui sont les acteurs
+2:10:59
+comme ça les participants qui pourrait poser problème pour essayer d'une façon ou d'une autre de ne pas les convier ou alors de les convier mais de bien faire
+2:11:06
+un premier entretien avec eux en fin d'entretien c'est à dire des simplement les briefer pour leur dire effectivement que là pendant l'atelier ce n'est pas le
+2:11:12
+but il n'est pas ils n'ont pas vocation à avoir une voix qui a plus de poids que les autres sont là pour participer tout le monde a le même poids extrêmement ça
+2:11:19
+peut être super compliqué et parfois on se retrouve dans des ateliers ou assez compliqué à gérer deux d'avoir un directeur qui va donner son avis et qui
+2:11:25
+va prendre des décisions concrètement pour le groupe alors que ce n'est pas le but de l'atelier contrat temps mais c'est justement le rôle de l'animateur
+2:11:30
+aussi de déterminer les rôles de bien expliquer les règles des règles à respecter et de bien cadrer l'atelier
+2:11:36
+pour que tout le monde puisse travailler ensemble est arrivé jusqu'au bout sachant que la personne qui à la fin
+2:11:42
+analyse les résultats de l'atelier la personne qui quitte riz et qui analyse donc ces résultats va être lui que
+2:11:47
+designer l'atelier c'est un moment où tout le monde participe on génère des idées etc mais à la fin à la faim par exemple d'un brainstorming ça va être un luxe design
+2:11:53
+heures de regarder à tête reposée les différentes idées qui ont été qui ont été trouvés qu'elle vote ont été pour
+2:11:58
+telles idées etc quelle idée en fait trop éloignés des contraintes du projet n'allait pas n'étaient pas
+2:12:04
+conformes à la liste des contraintes donc il va falloir que lui-même il est là il va falloir qu'ils avec sélectionne certaines idées par rapport à ceux donc
+2:12:11
+si tu veux dans ce sens là c'est lui qui steiner qui a dernier mot mais effectivement enfin ta question était
+2:12:16
+une très bonne question parce que parfois c'est difficile de gérer et c'est pour ça qu'aujourd'hui on dit classiquement que dans le mix design la
+2:12:21
+compétence la plus recherchée pour un mix designers professionnels c'est justement l'animation d'ateliers parce que c'est effectivement difficile
+2:12:27
+c'est difficile il faut avoir de l'expérience et puis il faut savoir aussi à répéter toujours les règles il faut savoir ne pas prendre par exemple
+2:12:33
+un rôle de leader par rapport au groupe parce que faire respecter les règles c'est pas être un leader c'est pas être quelqu'un qui va imposer à les règles
+2:12:40
+dont les explique au début et puis ensuite on les fait appliquer mais c'est pas pour ça qu'il faut être autoritaire et tout ça c'est des notions qui peuvent
+2:12:45
+être assez compliqué il faut avoir des notions de leadership etc mais c'est les choses aussi vous verrez un petit peu plus en détails vous
+2:12:50
+pendant la semaine et c'est effectivement un des gros sujets de la partie idéation dans la méthodologie 8
+2:12:56
+donc du coup là on vous a montré quelques ateliers il en existe énormément il ya les
+2:13:02
+ateliers viennent de beaucoup de deux centres de réflexion différente ça
+2:13:07
+peut venir du marketing ça venir de vraiment du développement des gens qui continuent à effectuer de nouvelles
+2:13:14
+recherches là dedans donc les ateliers ça va continuer à changer et donc là c'était les principaux qu'on vous a
+2:13:19
+montré donc derrière on va arriver sur la conception réel donc on va arriver sur quelque chose de très concret ou du
+2:13:27
+coup vous avez différentes manières de concevoir différents degrés de fidélisation de fidélisation de 2,2
+2:13:35
+enfin monde finalité de détails on va dire donc vous avez de le sketch le
+2:13:42
+storyboard le zoning et le wire fremm va entrer dans le détail chacun a un objectif différent et du
+2:13:47
+coup se place à un moment autres de la conception donc le sketch ça va être quelque chose
+2:13:52
+d'assez basique qui est assez simple c'est une utilisation dans souvent papier crayon ou du coup vous allez
+2:13:58
+décrire très rapidement ce que vous allez faire donc imaginons ici nous
+2:14:04
+avons fait un calendrier et du coup on va faire des différents petits écrans pour caractériser les différentes étapes
+2:14:10
+qui vont avoir lieu à partir du moment où on clique sur tel ou tel bouton ça va vous permettre du coup de rentrer un peu
+2:14:15
+dans le détail sans pour autant créer l'ensemble des écrans mais du coup vous avez déjà le parcours que vous avez
+2:14:20
+définies en avant en amont grâce à l'expérience map sûrement donc voilà pour le storyboard c'est avec
+2:14:26
+quelque chose qui est va être utilisable en parallèle et qui va vous permettre d'agrémenter un peu la compréhension de
+2:14:32
+votre prototype et surtout l'interface que vous avez effectués donc voilà le sketch le storyboard on a des éléments
+2:14:38
+assez simple que vous avez possibilité de faire sur papier crayon bien sûr ce
+2:14:44
+qu'on va vous montrer derrière donc ça ça va être des choses que vous connaissez peut être déjà un petit peu
+2:14:49
+où vous avez des outils qui existent mais comprenez bien qu'un prototype c'est juste la manière dont on va
+2:14:56
+décrire les écrans un voyeur fremm on va rendre sa fonctionnel juste on
+2:15:01
+remplace le papier et le crayon par des outils informatiques vous avez sûrement déjà entendu
+2:15:07
+peut-être parler d'action reparler de sketches qui est aussi un logiciel parler d'hadopi xd et de photoshop qu'on
+2:15:13
+peut utiliser pour faire des prototypes plein de gens vous présentez vont vous dire bonjour j'utilise ça c'est ça les
+2:15:18
+meilleurs utilise ça ok c'est sa vision lui la remplacer le papier crayon par ce logiciel là vous vous allez utiliser
+2:15:24
+peut-être un autre le jeu faisait peut-être utiliser un autre logiciel ça va être votre manière de remplacer le papier et le crayon on se limite pas à
+2:15:30
+un outil un outil est seulement là pour répondre à un besoin et le besoin que vous avez c'est de faire un prototype
+2:15:35
+est donc là du coup on va remplacer le papier crayon par différents logiciels quand on va remplacer ça pour faire du
+2:15:41
+zoning vous pouvez faire des zonings sur du papier crayon ça va prendre un peu plus de temps le zoning ça va être juste la manière de représenter la page grâce
+2:15:49
+à des variations de gris plus ou moins foncée quand on va avoir un cri limite tendant
+2:15:55
+vers le vers le noir il va du coup montrer que l'interaction qui va avoir lieu sera extrêmement importante et donc
+2:16:01
+là on voit par exemple sur la droite que le leader ait été si monial sont des choses qui sont extrêmement importantes dans la conception de cette page là
+2:16:07
+alors que du coup le compte est au milieu sera un peu moins visible c'est juste pour se projeter pour savoir
+2:16:13
+que ces éléments là seront présents on les a définis dans les ateliers et maintenant on va se dire mais comment on va les représenter
+2:16:19
+quelle importance on doit avoir sur cet effet rang éléments quand on voit ici sur le côté on voit que ben voilà on a
+2:16:25
+représenté le champ le plus important qui était vraiment en gris à très foncée de différentes manières et le choix
+2:16:31
+était portait plutôt sur l'un ou l'autre des des prototypes au mode zombie
+2:16:36
+et enfin on arrive au wire frame donc c'est là où il ya énormément de chicchi existe et c'est là où falloir faire un
+2:16:43
+choix pour vous dans votre projet dans l'utilité que vous allez faire donc le wire fremm on va arriver sur une manière très aboutie de la conception
+2:16:50
+la seule différence avec un prototype finalisé qu'on montera pas forcément là
+2:16:56
+c'est que la couleur doit être le plus fin le prototype doit être le plus neutre possible
+2:17:01
+on essaye de ne pas mettre de couleurs parce qu'à partir du moment où vous mettez une couleur l'individu et l'utilisateur que vous allez
+2:17:07
+qu'elle faisait présenté va se fixer sur sa donc vous votre objectif c'est vraiment de tester à terme la
+2:17:13
+fonctionnalité vous avez créé ou la manière dont vous avez présenté le site donc moins on aura d'éléments qui vont
+2:17:19
+amener le comportement à être bloqués sur des aspects très graphique plus vous
+2:17:25
+aurez des réponses intéressantes et derrière l'aspect graphique va apporter de nouvelles réponses et chacun aura
+2:17:31
+grâce à son métier le designer et le créa apporter une résolution au problème et donc c'est
+2:17:37
+aussi à vous de définir quelles questions doivent se poser aussi les cra derrière pour apporter de nouvelles
+2:17:43
+réponses parce que vous c'est clairement pas votre métier donc comment en psycho on pourra vous
+2:17:50
+aider à réaliser des protéines des prototypes c'est ce que je vais un peu d'aborder c'est la complexité visuel typiquement
+2:17:56
+quand vous avez un site qui est comme ça vous avez l'incapacité de hiérarchiser
+2:18:02
+l'information vous n'arriverez pas à détailler où est le contenu et où et la publicité
+2:18:08
+vous allez devoir du coude lors de votre conception prendre en compte ces différents éléments là comme moi je vais
+2:18:13
+devoir segmenté ma page comment je vais devoir l'architecturé pour avoir une
+2:18:19
+représentation et une compréhension qui sera la plus simple possible ouais et un autre détail justement par
+2:18:27
+rapport à l' approche psychologique c'est sur la notion d' attention donc comme on en parlait tout à l'heure sur la charge cognitive on a tous une charge limitée au
+2:18:32
+quotidien de d'attention et une charge cognitive limités à mettre dans les différentes activités qu'on fait est
+2:18:39
+typiquement quand une information et noyer comme celle là on a vraiment du mal à trouver dans la formation qui nous intéresse et du coup ça nous demande
+2:18:44
+trop de ressources par rapport au but recherché est en général son affaire c'est qu'on va laisser tomber si on trouve pas tout de suite l'information
+2:18:50
+sur cette page là on va aller voir ailleurs où on va va quitter la page parce qu'effectivement c'est tellement compliqué dossier retrouvé que l'on va
+2:18:57
+pas pouvoir aller jusqu'au bout et douce et à quel est leur sort au fait au final a très rapidement vous savez qu à la base on est tous des
+2:19:03
+chasseurs cueilleurs on est des êtres des néandertaliens on avait besoin de chasser et cueillir pour manger et du
+2:19:10
+coup on a été habitué très tôt à repérer les variations de bruit les variations de couleurs dans la nature pour bah déjà
+2:19:18
+identifié les prédateurs potentiels et aussi les opportunités de chasse et de pêche etc
+2:19:23
+et du coup on est né très distractives blanc fait n'importe quelle petite
+2:19:28
+variation de notre environnement que ce soit de couleur ou de son va tout de suite nous distraire et va réduire
+2:19:34
+fortement notre attention disponible donc va augmenter notre charge cognitive et du coup tous les sites qui utilisent
+2:19:40
+ce type de méthode après là ça fait partie de leur stratégie de marque mais ça à ce
+2:19:45
+problème là c'est que ça demande une surcharge cognitive aux utilisateurs c'est absolument ce qu'il faut éviter l'ennui x design et c'est pareil pour
+2:19:53
+les vidéos qui se déclenche tout seul les sons qui se déclenche tout seul sur les sites externes on a beaucoup de mal à se présenter là si je vous si on vous
+2:19:59
+projeter tout un tas de gifs animés avec plein de choses différentes de couleur différente extra vous auriez aussi
+2:20:04
+beaucoup plus de mal à vous concentrer sur ce qu'on est en train de vous dire parce que tout simplement vous seriez distrait simplement cette notion là qui
+2:20:11
+est aussi très importante il faut c'est évidemment savoir proposer des contenus suffisamment bien hiérarchisées et est
+2:20:17
+assez neutre aussi pour ne pas demander une charge cognitive trop élevé nous
+2:20:24
+dépouiller un prototype de toute information non nécessaires et encombrantes permet dirigé consciemment l'attention limité de vos utilisateurs
+2:20:29
+sur les éléments importants tout simplement en cinquième phase on va
+2:20:35
+passer aux tests utilisateurs donc différents outils pour effectuer les tests utilisateurs
+2:20:40
+alors on a les scénarios grille d'évaluation entretien on peut refaire aussi des entretiens des questionnaires
+2:20:46
+des abbés testing peut pas faire passer des échelles fixées d'utilisabilité aux utilisateurs de faire un journal de bord
+2:20:52
+le test des cinq secondes c'est une calotte protocole d'évaluation des émotions eye tracking faith reader
+2:20:57
+etc
+2:21:02
+voilà sachez que c'est tout voilà tout un tas de méthodes très diverses et variées qui existe globalement on a
+2:21:09
+certaines méthodes qui sont des entretiens à les questionnaires par exemple en direct avec l'utilisateur des tests en direct avec les utilisateurs dont on a vu tout à l'heure le chat
+2:21:15
+domine on a tout ce qui est à b testing pour 18 pour tester différentes versions des dunes propre interface ou d'une page
+2:21:22
+etc c'est chez lui que c'est d'utilisabilité c est ce qu on a vu tout à l'heure aussi par rapport aux questionnaires sur tout
+2:21:27
+ce qui est à l'évaluation donc de l'utilisateur lui-même avec par exemple l'échelle d'estimé de soi dont a parlé
+2:21:32
+ça pourrait ça pourrait rentrer en ligne de compte voilà le petit comme le eye-tracking
+2:21:39
+fait ce reader que vous connaissez qui permettent de capter donc les mouvements oculaires ou de capter les émotions sur le visage de l'utilisateur
+2:21:44
+au moment où il utilise un système d'interface et donc comment la
+2:21:50
+psychologie peut vous aider à réaliser vos tests utilisateurs grâce à l'attention sélective dont on vient de parler on va conclure d'ailleurs sur
+2:21:58
+cette vidéo je pense alors essayé de compter combien de passes fait l'équipe blanche mais en grand
+2:22:42
+il arrive à faire des smartphones milieu
+2:22:48
+et repart en moonwalk
+2:23:03
+voilà vous pouvez maintenant comprendre très simplement que grâce à l'attention sélective un utilisateur qui ne veut pas
+2:23:08
+voir un élément ne le verra pas et voilà pourquoi un tel site is that her doit être conçue avec le moins dix tracteurs possible donc voilà on a fait le tour de
+2:23:19
+lui qui en général ne présentait pas mal de concepts comme on l'est comme la psychologie pour vous aider a dû
+2:23:25
+comprendre un peu mieux ces concepts là n'hésitez pas à aller plus loin vous allez vous même allé plus loin pendant les semaines qui vont arriver mais c'est
+2:23:32
+un vaste sujet et sachez que lui que c'est quelque chose qui continue à évoluer et qui est une compétence et une
+2:23:39
+matière très jeune et très intéressante donc n'hésitez pas si vous avez question va en parler tout de suite en tout cas
+2:23:46
+merci de votre attention c'était très gentil merci à tous
+

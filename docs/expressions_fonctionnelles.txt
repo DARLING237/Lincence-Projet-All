@@ -1,0 +1,306 @@
+# Expressions Fonctionnelles - BarResto Manager
+
+## EF1 : Le système doit permettre à l'utilisateur de
+
+1. se connecter avec un email et mot de passe
+2. changer son mot de passe lors du premier accès
+3. visualiser les produits du menu sans authentification (vue client)
+4. créer, modifier et supprimer des catégories de produits
+5. créer, modifier et supprimer des produits du menu avec photo
+6. marquer un produit comme bestseller ou indisponible
+7. créer, modifier et supprimer des tables de la salle
+8. affecter une table à une zone (Salle principale, Terrasse, VIP, Bar, Privé)
+9. créer des commandes (staff ou via QR client)
+10. modifier le statut d'une commande (en attente → préparation → servie → payée)
+11. modifier le statut individuel de chaque item d'une commande
+12. sélectionner un mode de paiement (espèces, Orange Money, MTN MoMo, carte, virement)
+13. intégrer les paiements via CamPay (OM/Momo)
+14. gérer le stock des produits (matières premières)
+15. créer des alertes de stock minimum
+16. effectuer des ravitaillements (réapprovisionnement)
+17. créer, modifier et supprimer des fournisseurs
+18. gérer les transactions financières (entrées/sorties)
+19. payer les impôts et taxes
+20. créer, modifier et supprimer des employés
+21. gérer les présences (pointage arrivée/départ)
+22. générer et payer les salaires mensuels
+23. créer des inventaires (stock théorique vs réel)
+24. télécharger les QR codes des tables en PNG
+
+---
+
+## EF2 : Le système doit afficher
+
+1. la liste des produits avec leur catégorie, prix et disponibilité
+2. les images des produits uploadées
+3. la liste des tables avec leur statut (libre/occupée/réservée) et zone
+4. les QR codes actifs par table
+5. les commandes en cours avec leur statut et temps écoulé
+6. le détail des items par commande (produit, quantité, prix)
+7. les tickets du bar (items à préparer par le barman)
+8. le menu au client via QR code (produits disponibles uniquement)
+9. le suivi de commande en temps réel (envoyée → préparation → prête)
+10. le stock actuel et le stock minimum de chaque produit
+11. les alertes de stock (produits sous le seuil minimum)
+12. l'historique des mouvements de stock (entrées/sorties)
+13. les informations complètes des fournisseurs
+14. l'historique des livraisons par fournisseur
+15. le bilan financier mensuel (CA, dépenses, bénéfice)
+16. la progression vs mois précédent
+17. les transactions par catégorie et par date
+18. les impôts à payer avec leurs échéances
+19. les statistiques du jour (commandes, CA, panier moyen)
+20. les statistiques mensuelles (CA, bénéfices, commandes)
+21. le CA par catégorie de produit
+22. les-top 10 des produits les plus vendus
+23. les commandes groupées par heure
+24. la liste des employés avec leur poste et salaire
+25. les présences du personnel par date
+26. les salaires du mois avec leur statut (payé/non payé)
+27. les inventaires avec l'écart (théorique vs réel)
+28. les KPIs du dashboard (CA, bénéfice, commandes, tables)
+29. les graphiques d'évolution du CA
+30. les rapports détaillés (journalier/mensuel/annuel)
+
+---
+
+## EF3 : Le système doit enregistrer
+
+1. les utilisateurs avec leurs informations (nom, prénom, email, rôle, poste)
+2. les mots de passe de manière sécurisée (bcrypt avec hash)
+3. la première connexion pour forcer le changement de mot de passe
+4. la dernière activité de l'utilisateur (last_seen)
+5. les catégories avec leur ordre d'affichage
+6. les produits avec toutes leurs caractéristiques (nom, description, prix, catégorie, type_poste)
+7. les photos des produits (chemin vers fichier uploadé)
+8. les tables avec numéro, places, zone et statut
+9. les commandes avec tous leurs détails (table, serveur, total, date, source)
+10. les items de commande (produit, quantité, prix unitaire, type_poste)
+11. les paiements avec mode, référence et montant
+12. les transactions financières (type entrée/sortie, catégorie, montant, référence)
+13. les produits en stock avec quantité actuelle et quantité minimum
+14. les ravitaillements avec fournisseur, date, montant, numéro de facture
+15. les détails de chaque ravitaillement (produit, quantité, prix)
+16. les mouvements de stock (entrée/sortie, quantité, raison)
+17. les fournisseurs avec leurs coordonnées
+18. les salaires mensuels par employé
+19. les paiements de salaire avec date
+20. les présences (arrivée et départ du personnel)
+21. les inventaires avec stock théorique, stock réel et écart
+22. les impôts et taxes avec montant et échéance
+23. les paiements d'impôts avec date
+
+---
+
+## EF4 : Le système doit envoyer
+
+1. le token JWT lors de la connexion (valide 7 jours)
+2. les en-têtes d'authentification à chaque requête API
+3. les requêtes de paiement vers l'API CamPay
+4. les codes USSD pour les paiements mobile money
+5. les notifications de statut de paiement
+6. les logs de chaque requête avec UUID et durée
+7. les logs d'audit sur les opérations sensibles (paiement, création utilisateur)
+8. les erreurs de validation avec messages clairs
+9. les réponses d'erreur 401 (token expiré/invalide)
+10. les réponses d'erreur 403 (accès interdit selon le rôle)
+
+---
+
+## EF5 : Le système doit générer
+
+1. des tokens JWT pour l'authentification
+2. des QR codes uniques par table (encodant l'URL du menu client)
+3. des reçuspour les paiements effectués
+4. des graphiques d'évolution du CA (chartes)
+5. des fichiers CSV pour les rapports exportables
+6. des initiales pour les avatars des utilisateurs
+7. des IDs uniques pour chaque enregistrement
+8. des numéros de commande (CMD-XXX)
+9. des alertes quand le stock passe sous le minimum
+10. des bilans mensuels automatiques (calcul CA - dépenses)
+11. des salaires mensuels automatiquement si non créés
+12. des rapports journaliers/mensuels/annuels complets
+13. des statistiques agrégées (totaux, moyennes, pourcentages)
+14. des UUID pour le traçage des requêtes
+
+---
+
+# Améliorations et Perspectives d'Avenir
+
+## 1. Gestion Avancée des Commandes
+
+- Commandes gruppées (commander plusieurs tables en une fois)
+- Transfert de commande d'une table à une autre
+- Annulation partielle de commande (retirer des items)
+- Modification de commande en cours (ajouter/retirer des items)
+- Commandes différées (planifier une commande pour plus tard)
+- Réservation de tables avec acompte
+- Commandes à emporter (takeaway) avec suivi
+- Commandeslivrées (delivery) avec géolocalisation
+
+---
+
+## 2. Module Cuisine
+
+- Tickets cuisine séparés des tickets bar
+- Impression automatique des tickets en cuisine
+- Suivi du temps de préparation par plat
+- Alertes pour commandes en retard
+- Gestion des priorités de préparation
+- Menu avec temps de préparation estimé
+
+---
+
+## 3. Paiements et Finance
+
+- Facturation avec TVA détaillée
+- Notes de crédit et remboursements
+- Gestion des pourboires (distribution automatique au staff)
+- Multi-devises (XAF, USD, EUR)
+- Intégration avec d'autres opérateurs de paiement mobile
+- Facturation client avec génération PDF
+- Prélèvement automatique pour les abonnements
+- Gestion des acomptes et avancees
+
+---
+
+## 4. Gestion du Personnel
+
+- Planning des équipes (scheduler)
+- Gestion des congés et absences
+- Calcul des heures supplémentaires
+- Évaluation de la performance
+- Formation du personnel
+- Gestion des uniformes
+- Système de primes et bonus
+- Rotation des postes
+- Gestion des pourboires par employé
+
+---
+
+## 5. Stock et Inventaire
+
+- Code-barres pour les produits en stock
+- Scan des produits à réception
+- Recettes avec calcul automatique des besoins
+- Alertes de péremption
+- Gestion des pertes et gaspillages
+- Inventaire tournant (partiel)
+- Commande automatique aux fournisseurs (stock bas)
+- Suivi des coûts matière par produit
+
+---
+
+## 6. Marketing et CRM
+
+- Programme de fidélité (points, remises)
+- Carte de fidélité digitale
+- Promotion et offres spéciales
+- Envoi de SMS/WhatsApp aux clients
+- Enquêtes de satisfaction post-commande
+- Réservation de table en ligne
+- Pré-commande depuis chez soi
+- Gamification (défis, badges)
+
+---
+
+## 7. Analytique et BI
+
+- Tableaux de bord personnalisés
+- Prévisions de ventes (IA/ML)
+- Analyse de la profitability par produit
+- Heatmap des tables (occupation)
+- Analyse du comportement client
+- Benchmark avec le secteur
+- Alertes anomalies (fraude, perte)
+- Reporting automatisé par email
+
+---
+
+## 8. Interface et Expérience Utilisateur
+
+- Application mobile native (iOS/Android)
+- Mode hors-ligne (sync quand connexion)
+- Interface en plusieurs langues
+- Thèmes personnalisables (jour/nuit)
+- Mode sombre
+- Accessibilité (lecteur d'écran)
+- Animations et micro-interactions
+- Notifications push
+
+---
+
+## 9. Intégrations
+
+- API publique pour partenaires
+- Integration avec les systèmes comptables (Sage, QuickBooks)
+- Connection avec les réseaux sociaux
+- Google Analytics / Facebook Pixel
+- Integration IoT (balance connectée, imprimante cloud)
+-Webhook pour automatisations
+- Zapier / Make (Integromat) integration
+- Portail fournisseur (commandes, factures)
+
+---
+
+## 10. Sécurité et Infra
+
+- Authentification à deux facteurs (2FA)
+- Connexion via réseaux sociaux
+- Chiffrement des données sensibles
+- Journalisation complète des actions
+- Sauvegarde automatique géo-répétée
+- Mode demo avec données anonymisées
+- Gestion des consentement RGPD
+- Export des données utilisateur (droit à la portabilité)
+
+---
+
+## 11. Fonctionnalités Diverses
+
+- Gestion des événements privés (anniversaires, mariages)
+- Salle privative avec configuration flexible
+- Gestion des happy hours
+- Menu du jour / specials
+- Allergies et régimes alimentaires (filtres)
+- Suggestion de plats/boissons
+- Partage d'addition (split bill)
+- Gestion des pourboires par service
+- Carnet d'adresses clients
+- Notes клиентов (préférences, anniversaires)
+
+---
+
+## 12. Performance et Évolutivité
+
+- Pagination infinie pour les listes longues
+- Cache des requêtes fréquentes
+- Optimisation des images (WebP, lazy loading)
+- Chargement paresseux (lazy loading)
+- WebSockets pour les mises à jour temps réel
+- Architecture microservices (future preuve)
+- Conteneurisation (Docker)
+- CI/CD automatique
+
+---
+
+## Priorités d'implémentation suggérées
+
+### Court terme (0-3 mois)
+- Module cuisine (tickets cuisine)
+- Transfert de commande
+- Programme de fidélité
+- Application mobile PWA
+
+### Moyen terme (3-6 mois)
+- Planning du personnel
+- Recettes et calcul des besoins
+- Facturation PDF
+- Analytics avancés
+
+### Long terme (6-12 mois)
+- IA pour prévisions de ventes
+- Intégration comptable
+- Mode hors-ligne
+- Place de marché (API partenaires)
