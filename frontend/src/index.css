@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-lounge-950: #0C0A09;
+  --color-lounge-900: #1A1714;
+  --color-lounge-800: #231F1B;
+  --color-lounge-700: #2E2822;
+  --color-lounge-600: #3D342B;
+  --color-lounge-500: #4A3F34;
+  --color-lounge-400: #6B5D50;
+  --color-lounge-300: #9A8B7A;
+  --color-lounge-200: #C4B5A4;
+  --color-lounge-100: #E2D8CC;
+  --color-lounge-50: #F0EBE3;
+  --color-gold-500: #D4A853;
+  --color-gold-400: #DDBA6A;
+  --color-gold-600: #C49742;
+  --color-gold-300: #E8CC87;
+  --color-glow: #D4A853;
+  --font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: var(--color-lounge-950);
+  color: #E2D8CC;
+}
+
+/* ── Unified dark theme for all components ── */
+::selection {
+  background: var(--color-gold-500);
+  color: var(--color-lounge-950);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-lounge-600);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-lounge-500);
+}
