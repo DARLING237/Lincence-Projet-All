@@ -15,7 +15,7 @@ const {
 } = process.env;
 
 if (!DB_HOST || !DB_USER || !DB_NAME) {
-  console.error("❌ Variables DB manquantes dans .env (DB_HOST, DB_USER, DB_NAME)");
+  console.error("❌ Variables DB manquantes (DB_HOST, DB_USER, DB_NAME)");
   process.exit(1);
 }
 
@@ -30,6 +30,11 @@ const pool = mysql.createPool({
   queueLimit: 0,
   timezone: "+00:00",
   dateStrings: true,
+  // ✅ Ajouts pour Railway
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 0,
+  connectTimeout: 30000,
+  ssl: { rejectUnauthorized: false },
 });
 
 // Test de connexion
@@ -41,6 +46,7 @@ pool
   })
   .catch((err) => {
     console.error("❌ Erreur connexion MySQL:", err.message);
+    process.exit(1);
   });
 
 module.exports = pool;
