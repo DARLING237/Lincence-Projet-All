@@ -25,14 +25,34 @@ if (!fs.existsSync(backupsDir)) fs.mkdirSync(backupsDir, { recursive: true });
 
 // ── Initialisation Express ──
 const app = express();
+app.set('trust proxy', 1); 
 const PORT = process.env.PORT || 3000;
 
 // ── Middlewares globaux ──
 app.use(helmet({ crossOriginResourcePolicy: false }));
-app.use(cors({ origin: true, credentials: true }));
+// Configuration CORS sécurisée
+const allowedOrigins = process.env.FRONTEND_URL 
+  ? [process.env.FRONTEND_URL, "http://localhost:5173", "http://localhost:5174"] 
+  : ["http://localhost:5173", "http://localhost:5174"];
+
+app.use(cors({ 
+  origin: function (origin, callback) {
+    // Autorise l'accès si pas d'origine (ex: Postman), si dans la liste, ou si en dev
+    if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== "production") {
+      callback(null, true);
+    } else {
+      console.warn(`CORS bloqué pour l'origine : ${origin}`);
+      callback(new Error("Accès bloqué par CORS"));
+    }
+  }, 
+  credentials: true 
+}));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
+
+
+// ... reste de ton code (cors, routes, etc.)
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 min
@@ -130,6 +150,7 @@ process.on("SIGTERM", () => {
     process.exit(0);
   });
 });
+
 
 process.on("SIGINT", () => {
   logger.info("SIGINT reçu — fermeture du serveur...");
