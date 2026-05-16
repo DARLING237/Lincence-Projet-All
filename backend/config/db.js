@@ -20,20 +20,9 @@ if (!DB_HOST || !DB_USER || !DB_NAME) {
 }
 
 const pool = mysql.createPool({
-  host: DB_HOST,
-  user: DB_USER,
-  password: DB_PASSWORD,
-  database: DB_NAME,
-  port: parseInt(DB_PORT, 10),
+  uri: process.env.DATABASE_URL,
   waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-  timezone: "+00:00",
-  dateStrings: true,
-  // ✅ Ajouts pour Railway
-  enableKeepAlive: true,
-  keepAliveInitialDelay: 0,
-  connectTimeout: 30000,
+  connectionLimit: 5,
   ssl: { rejectUnauthorized: false },
 });
 
