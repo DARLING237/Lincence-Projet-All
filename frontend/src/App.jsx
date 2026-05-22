@@ -18,7 +18,7 @@ import { StaffTables } from "./pages/StaffTables";
 import { StaffCommandes } from "./pages/StaffCommandes";
 import { StaffPlaceholder } from "./pages/StaffPlaceholders";
 
-import { StaffBar } from "./pages/StaffBar";
+import { StaffCuisine } from "./pages/StaffCuisine";
 import { ConnectionHistory } from "./pages/ConnectionHistory";
 
 // ── Route guards ──
@@ -83,8 +83,7 @@ function App() {
           <Route index element={<StaffDashboard />} />
           <Route path="tables" element={<StaffTables />} />
           <Route path="commandes" element={<StaffCommandes />} />
-          <Route path="kitchen" element={<Navigate to="/staff" replace />} />
-          <Route path="bar" element={<StaffBar />} />
+          <Route path="kitchen" element={<StaffCuisine />} />
         </Route>
 
         {/* ── Client QR (no auth needed) ── */}

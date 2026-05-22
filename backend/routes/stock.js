@@ -36,7 +36,20 @@ const createRavitaillementSchema = z.object({
 // GET /api/stock — tous les produits du stock + alertes
 router.get("/", async (req, res) => {
   try {
-    const [rows] = await pool.query("SELECT * FROM produits_stock ORDER BY nom");
+    const [rows] = await pool.query(`
+      SELECT p.*, 
+             COALESCE(
+               (SELECT CASE WHEN rd.quantite > 0 THEN rd.prix / rd.quantite ELSE 0 END
+                FROM ravitaillement_details rd 
+                JOIN ravitaillements r ON rd.ravitaillement_id = r.id 
+                WHERE rd.produit_stock_id = p.id 
+                ORDER BY r.date DESC, r.id DESC 
+                LIMIT 1), 
+               0
+             ) AS dernier_prix_achat
+      FROM produits_stock p
+      ORDER BY p.nom
+    `);
     res.json({ success: true, stock: rows });
   } catch (err) {
     console.error("Erreur get stock:", err);
@@ -47,9 +60,21 @@ router.get("/", async (req, res) => {
 // GET /api/stock/alertes — produits sous le stock minimum
 router.get("/alertes", async (req, res) => {
   try {
-    const [rows] = await pool.query(
-      "SELECT * FROM produits_stock WHERE stock_actuel < stock_min ORDER BY nom"
-    );
+    const [rows] = await pool.query(`
+      SELECT p.*, 
+             COALESCE(
+               (SELECT CASE WHEN rd.quantite > 0 THEN rd.prix / rd.quantite ELSE 0 END
+                FROM ravitaillement_details rd 
+                JOIN ravitaillements r ON rd.ravitaillement_id = r.id 
+                WHERE rd.produit_stock_id = p.id 
+                ORDER BY r.date DESC, r.id DESC 
+                LIMIT 1), 
+               0
+             ) AS dernier_prix_achat
+      FROM produits_stock p
+      WHERE p.stock_actuel < p.stock_min
+      ORDER BY p.nom
+    `);
     res.json({ success: true, alertes: rows });
   } catch (err) {
     console.error("Erreur get alertes stock:", err);
@@ -148,11 +173,17 @@ router.post("/ravitaillements", validate(createRavitaillementSchema), async (req
 
     const ravId = ravResult.insertId;
 
+    // Comptabilité : Créer une transaction de sortie pour le ravitaillement fournisseur
+    await conn.query(
+      "INSERT INTO transactions (type_op, categorie, montant, reference, description, date) VALUES ('sortie', 'Ravitaillement', ?, ?, ?, COALESCE(?, CURDATE()))",
+      [montant, `RAV-${ravId}`, `Ravitaillement Facture ${nb_facture || 'N/A'}`, date || null]
+    );
+
     for (const det of details) {
-      // Insérer détail
+      // Insérer détail (avec enregistrement du prix unitaire/total de l'ingrédient)
       await conn.query(
-        "INSERT INTO ravitaillement_details (ravitaillement_id, produit_stock_id, quantite) VALUES (?, ?, ?)",
-        [ravId, det.produit_stock_id, det.quantite]
+        "INSERT INTO ravitaillement_details (ravitaillement_id, produit_stock_id, quantite, prix) VALUES (?, ?, ?, ?)",
+        [ravId, det.produit_stock_id, det.quantite, det.prix || 0]
       );
 
       // Mise à jour automatique du stock

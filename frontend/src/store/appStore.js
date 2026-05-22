@@ -36,6 +36,7 @@ function toCamelStock(item) {
     stockActuel: item.stock_actuel,
     stockMin: item.stock_min,
     dernierRavitaillement: item.dernier_ravitaillement,
+    dernierPrixAchat: item.dernier_prix_achat,
   };
 }
 function toCamelPersonnel(item) {
@@ -441,6 +442,38 @@ export const useAppStore = create((set, get) => ({
     }).then((d) => {
       if (d.success) {
         get().fetchRavitaillements();
+        get().fetchStock();
+        get().fetchAlertesStock();
+      }
+      return d;
+    }),
+
+  updateStockIngredient: (id, data) =>
+    apiFetch(`/stock/${id}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        stock_actuel: data.stockActuel,
+        stock_min: data.stockMin,
+      }),
+    }).then((d) => {
+      if (d.success) {
+        get().fetchStock();
+        get().fetchAlertesStock();
+      }
+      return d;
+    }),
+
+  createStockIngredient: (data) =>
+    apiFetch("/stock", {
+      method: "POST",
+      body: JSON.stringify({
+        nom: data.nom,
+        unite: data.unite,
+        stock_actuel: data.stockActuel || 0,
+        stock_min: data.stockMin || 0,
+      }),
+    }).then((d) => {
+      if (d.success) {
         get().fetchStock();
         get().fetchAlertesStock();
       }

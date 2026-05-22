@@ -15,13 +15,13 @@ export function AdminPlaceholder({ page }) {
 
   return (
     <div className="p-6 lg:p-8 flex flex-col items-center justify-center min-h-[60vh]">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
-        <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-100 to-violet-100 text-indigo-600 mb-6 mx-auto">
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center bg-zinc-900/50 backdrop-blur-md border border-white/5 p-12 rounded-3xl shadow-xl max-w-md w-full">
+        <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-brand-500/10 border border-brand-500/20 text-brand-500 mb-6 mx-auto shadow-inner">
           <Icon size={36} />
         </div>
-        <h1 className="text-2xl font-bold text-gray-900">{c.title}</h1>
-        <p className="mt-2 text-gray-500 max-w-md mx-auto">{c.desc}</p>
-        <p className="mt-6 text-sm text-gray-400">Page en attente de développement</p>
+        <h1 className="text-2xl font-black text-zinc-50">{c.title}</h1>
+        <p className="mt-3 text-sm font-medium text-zinc-400 mx-auto">{c.desc}</p>
+        <p className="mt-8 text-xs font-bold text-zinc-600 uppercase tracking-widest">Page en attente de développement</p>
       </motion.div>
     </div>
   );

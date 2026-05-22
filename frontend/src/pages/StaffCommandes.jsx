@@ -11,9 +11,6 @@ import {
 
 const API_URL = import.meta.env.VITE_API_URL || "/api";
 
-const GOLD_FG = "#D4A853";
-const BG_CARD = "#1A1714";
-
 export function StaffCommandes() {
   const commandes = useAppStore((s) => s.commandesEnCours);
   const produits = useAppStore((s) => s.produits);
@@ -121,21 +118,21 @@ export function StaffCommandes() {
       if (d?.success) {
         setCartItems([]); setNewOrderTable(""); setShowNew(false);
       } else {
-        alert("Erreur: " + (d?.message || "Impossible de creer la commande"));
+        alert("Erreur: " + (d?.message || "Impossible de créer la commande"));
       }
-    }).catch(() => { alert("Erreur de connexion. Verifiez le serveur."); });
+    }).catch(() => { alert("Erreur de connexion. Vérifiez le serveur."); });
   };
 
   const statutFlow = {
-    "en attente": { next: "en preparation", label: "Preparer", color: "from-[#D4A853] to-[#C49742]" },
-    "en preparation": { next: "servie", label: "Servie", color: "from-[#D4A853] to-[#C49742]" },
-    "servie": { action: "payer", label: "Paiement", color: "from-[#D4A853] to-[#C49742]" },
+    "en attente": { next: "en preparation", label: "Préparer", color: "bg-brand-500 hover:bg-brand-400 text-black" },
+    "en preparation": { next: "servie", label: "Servie", color: "bg-emerald-500 hover:bg-emerald-400 text-black" },
+    "servie": { action: "payer", label: "Paiement", color: "bg-brand-500 hover:bg-brand-400 text-black" },
   };
 
   const paymentModes = [
-    { id: "especes", label: "Especes", icon: Receipt },
-    { id: "orange_money", label: "Orange Money", icon: Smartphone, accent: "text-orange-400" },
-    { id: "mtn_momo", label: "MTN MoMo", icon: Smartphone, accent: "text-yellow-400" },
+    { id: "especes", label: "Espèces", icon: Receipt },
+    { id: "orange_money", label: "Orange Money", icon: Smartphone, accent: "text-orange-500" },
+    { id: "mtn_momo", label: "MTN MoMo", icon: Smartphone, accent: "text-yellow-500" },
     { id: "carte", label: "Carte bancaire", icon: CreditCard },
     { id: "transfert", label: "Transfert", icon: Repeat },
   ];
@@ -213,7 +210,7 @@ export function StaffCommandes() {
 
   const handleUpdateItem = () => {
     if (!editItemModal || editQuantite < 0) return;
-    modifierItemCommande(editItemModal.commande__id, editItemModal.id, editQuantite).then((d) => {
+    modifierItemCommande(editItemModal.commande_id, editItemModal.id, editQuantite).then((d) => {
       if (d.success) {
         setEditItemModal(null);
         fetchCommandesEnCours();
@@ -265,16 +262,16 @@ export function StaffCommandes() {
   };
 
   return (
-    <div className="p-6 lg:p-8">
+    <div className="max-w-7xl mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-lounge-100">Commandes</h1>
-          <p className="text-sm text-lounge-400">{commandes.length} commandes actives</p>
+          <h1 className="text-3xl font-bold text-zinc-50 tracking-tight">Commandes</h1>
+          <p className="text-sm text-zinc-400 mt-1">{commandes.length} commandes actives</p>
         </div>
         <motion.button whileTap={{ scale: 0.96 }} onClick={() => setShowNew(true)}
-          className="flex items-center gap-2 h-10 px-4 rounded-xl bg-gradient-to-r from-[#D4A853] to-[#C49742] text-lounge-950 text-sm font-bold shadow-lg shadow-[#D4A853]/20">
-          <Plus size={16} />
+          className="inline-flex items-center gap-2 h-11 px-5 rounded-lg bg-brand-500 text-black text-sm font-bold shadow-[0_0_15px_rgba(212,168,83,0.3)] hover:shadow-[0_0_20px_rgba(212,168,83,0.5)] transition-all">
+          <Plus size={18} />
           Nouvelle commande
         </motion.button>
       </div>
@@ -283,93 +280,101 @@ export function StaffCommandes() {
       <div className="flex flex-wrap gap-2 mb-6">
         {["Tout", "en attente", "en preparation", "servie", "payee"].map((s) => (
           <button key={s} onClick={() => setFilterStatut(s)}
-            className={`h-9 px-3 rounded-lg text-sm font-medium transition-all ${
+            className={`h-10 px-4 rounded-lg text-sm font-medium transition-all ${
               filterStatut === s
-                ? "bg-[#D4A853] text-lounge-950 font-bold"
-                : "bg-[#1A1714] border border-[#D4A853]/15 text-lounge-300 hover:border-[#D4A853]/30"
+                ? "bg-brand-500 text-black font-bold shadow-md shadow-brand-500/20"
+                : "bg-zinc-800/50 border border-white/5 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-50"
             }`}>
-            {s === "en attente" ? "En attente" : s === "en preparation" ? "En prep." : s === "servie" ? "Servie" : s === "payee" ? "Payee" : "Tout"}
+            {s === "en attente" ? "En attente" : s === "en preparation" ? "En prép." : s === "servie" ? "Servie" : s === "payee" ? "Payée" : "Tout"}
           </button>
         ))}
       </div>
 
       {/* Orders List */}
-      <div className="space-y-3">
+      <div className="grid gap-4 grid-cols-1">
         {filtered.length === 0 ? (
-          <div className="bg-[#1A1714] rounded-2xl border border-[#D4A853]/10 p-12 text-center shadow-sm">
-            <UtensilsCrossed size={40} className="mx-auto text-lounge-600 mb-3" />
-            <p className="text-lounge-400">Aucune commande</p>
+          <div className="col-span-full bg-zinc-900/50 backdrop-blur-md rounded-xl border border-white/5 p-12 text-center shadow-lg">
+            <div className="h-16 w-16 mx-auto bg-zinc-800/50 rounded-full flex items-center justify-center mb-4 border border-white/5">
+                <UtensilsCrossed size={32} className="text-zinc-500" />
+            </div>
+            <p className="text-base font-medium text-zinc-300">Aucune commande</p>
+            <p className="text-sm text-zinc-500 mt-1">Il n'y a aucune commande correspondant à ces critères.</p>
           </div>
         ) : filtered.map((cmd) => (
           <motion.div key={cmd.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-            className="bg-[#1A1714] rounded-2xl border border-[#D4A853]/10 p-5 shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex items-start justify-between mb-3">
+            className="bg-zinc-900/50 backdrop-blur-md rounded-xl border border-white/5 p-5 shadow-lg card-hover flex flex-col">
+            <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#D4A853]/10 text-[#D4A853]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500 border border-brand-500/20">
                   <Receipt size={18} />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-lounge-100">#{cmd.id}</p>
-                  <p className="text-xs text-lounge-400">Table {cmd.table_nom || cmd.table} · {cmd.heure}</p>
+                  <p className="text-sm font-bold text-zinc-50">#{cmd.id}</p>
+                  <p className="text-xs text-zinc-400">Table {cmd.table_nom || cmd.table}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1 text-xs text-lounge-400">
+              <div className="text-right flex flex-col items-end gap-1.5">
+                <Badge variant={cmd.statut}>{cmd.statut}</Badge>
+                <div className="flex items-center gap-1 text-xs font-medium text-zinc-400">
                   <Clock size={12} />
                   {cmd.temps} min
                 </div>
-                <Badge variant={cmd.statut}>{cmd.statut}</Badge>
-                <p className="text-lg font-bold text-lounge-100">{formatMontant(cmd.total)}</p>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-3">
-              {cmd.items.map((item, i) => (
-                <button key={i} onClick={() => openEditItemModal({ ...item, commande_id: cmd.id })}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-[#D4A853]/5 px-3 py-1 text-xs text-lounge-300 hover:bg-[#D4A853]/15 transition-colors">
-                  <GlassWater size={11} className="text-[#D4A853]" />
-                  x{item.qte} {item.nom}
-                </button>
-              ))}
+            <div className="mb-4 text-center">
+              <p className="text-2xl font-bold text-zinc-50">{formatMontant(cmd.total)}</p>
             </div>
 
-            <div className="flex items-center justify-between border-t border-[#D4A853]/8 pt-3">
-              <p className="text-xs text-lounge-400">Serveur: {cmd.serveur}</p>
+            <div className="flex-1">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {cmd.items.map((item, i) => (
+                    <button key={i} onClick={() => openEditItemModal({ ...item, commande_id: cmd.id })}
+                      className="inline-flex items-center gap-1.5 rounded-md bg-zinc-800/50 border border-white/5 px-2.5 py-1 text-xs font-medium text-zinc-300 hover:bg-zinc-800 transition-colors">
+                      <GlassWater size={11} className="text-brand-500" />
+                      <span className="text-zinc-500">x{item.qte}</span> {item.nom}
+                    </button>
+                  ))}
+                </div>
+            </div>
+
+            <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
+              <p className="text-xs text-zinc-500">Serveur: <span className="font-medium text-zinc-300">{cmd.serveur}</span></p>
               <div className="flex gap-2">
                 {/* Boutons avancés - Transfert et Différer */}
                 {cmd.statut !== "payee" && cmd.statut !== "annulee" && (
                   <>
                     <button onClick={() => openTransferModal(cmd)}
-                      className="flex items-center gap-1 h-8 px-2.5 rounded-lg bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-colors text-xs"
+                      className="flex items-center justify-center h-8 w-8 rounded-lg bg-zinc-800 text-blue-400 hover:bg-blue-500/20 border border-white/5 transition-colors"
                       title="Transférer vers une autre table">
-                      <ArrowRightLeft size={12} />
+                      <ArrowRightLeft size={14} />
                     </button>
                     <button onClick={() => openDiffererModal(cmd)}
-                      className="flex items-center gap-1 h-8 px-2.5 rounded-lg bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors text-xs"
+                      className="flex items-center justify-center h-8 w-8 rounded-lg bg-zinc-800 text-purple-400 hover:bg-purple-500/20 border border-white/5 transition-colors"
                       title="Différer la commande">
-                      <Calendar size={12} />
+                      <Calendar size={14} />
                     </button>
                   </>
                 )}
                 {/* Bouton Activer si commande différée */}
                 {cmd.est_differee === 1 && (
                   <button onClick={() => handleActiver(cmd.id)}
-                    className="flex items-center gap-1 h-8 px-2.5 rounded-lg bg-green-500/10 text-green-400 hover:bg-green-500/20 transition-colors text-xs"
+                    className="flex items-center justify-center h-8 w-8 rounded-lg bg-green-500/10 text-green-400 hover:bg-green-500/20 border border-green-500/20 transition-colors"
                     title="Activer la commande">
-                    <Play size={12} />
+                    <Play size={14} />
                   </button>
                 )}
                 {statutFlow[cmd.statut] && statutFlow[cmd.statut].next && (
                   <button onClick={() => updateStatut(cmd.id, statutFlow[cmd.statut].next)}
-                    className={`flex items-center gap-1.5 h-8 px-3 rounded-lg bg-gradient-to-r ${statutFlow[cmd.statut].color} text-lounge-950 text-xs font-bold shadow-sm`}>
-                    {statutFlow[cmd.statut].label === "Preparer" ? <FlaskConical size={12} /> : <Check size={12} />}
+                    className={`flex items-center gap-1.5 h-8 px-3 rounded-lg ${statutFlow[cmd.statut].color} text-xs font-bold shadow-sm transition-colors`}>
+                    {statutFlow[cmd.statut].label === "Préparer" ? <FlaskConical size={14} /> : <Check size={14} />}
                     {statutFlow[cmd.statut].label}
                   </button>
                 )}
                 {statutFlow[cmd.statut] && statutFlow[cmd.statut].action === "payer" && (
                   <button onClick={() => openPayment(cmd)}
-                    className={`flex items-center gap-1.5 h-8 px-3 rounded-lg bg-gradient-to-r ${statutFlow[cmd.statut].color} text-lounge-950 text-xs font-bold shadow-sm`}>
-                    <CreditCard size={12} />
+                    className={`flex items-center gap-1.5 h-8 px-3 rounded-lg ${statutFlow[cmd.statut].color} text-xs font-bold shadow-sm transition-colors`}>
+                    <CreditCard size={14} />
                     {statutFlow[cmd.statut].label}
                   </button>
                 )}
@@ -390,29 +395,29 @@ export function StaffCommandes() {
         {showNew && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 cursor-pointer" onClick={() => setShowNew(false)} />
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="fixed inset-y-0 right-0 w-full md:w-[640px] bg-lounge-900 border-l border-[#D4A853]/15 z-50 shadow-2xl flex flex-col">
-              <div className="flex items-center justify-between border-b border-[#D4A853]/8 px-6 py-4">
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 cursor-pointer" onClick={() => setShowNew(false)} />
+            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }}
+              className="fixed inset-y-0 right-0 w-full md:w-[640px] bg-zinc-950 border-l border-white/10 z-50 shadow-2xl flex flex-col">
+              <div className="flex items-center justify-between border-b border-white/5 px-6 py-5">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#D4A853] to-[#C49742] text-lounge-950">
-                    <Plus size={18} />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500 text-black shadow-lg shadow-brand-500/20">
+                    <Plus size={20} />
                   </div>
-                  <h3 className="text-lg font-bold text-lounge-100">Nouvelle Commande</h3>
+                  <h3 className="text-xl font-bold text-zinc-50">Nouvelle Commande</h3>
                 </div>
-                <button onClick={() => setShowNew(false)} className="text-lounge-400 hover:text-lounge-200"><X size={20} /></button>
+                <button onClick={() => setShowNew(false)} className="h-8 w-8 flex items-center justify-center rounded-lg bg-zinc-900 text-zinc-400 hover:text-zinc-50 hover:bg-zinc-800 transition-colors"><X size={20} /></button>
               </div>
 
               {/* Table Select */}
-              <div className="px-6 py-3 border-b border-[#D4A853]/8">
-                <label className="text-xs font-medium text-lounge-400 mb-2 block">Table</label>
+              <div className="px-6 py-4 border-b border-white/5 bg-zinc-900/30">
+                <label className="text-xs font-semibold text-zinc-400 mb-3 block uppercase tracking-wider">Table</label>
                 <div className="flex flex-wrap gap-2">
                   {tables.filter((t) => t.statut !== "reservee").map((t) => (
                     <button key={t.id} onClick={() => setNewOrderTable(t.numero)}
-                      className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                      className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${
                         newOrderTable === t.numero
-                          ? "bg-[#D4A853] text-lounge-950"
-                          : "bg-[#231F1B] text-lounge-300 hover:bg-[#2E2822]"
+                          ? "bg-brand-500 text-black shadow-md shadow-brand-500/20"
+                          : "bg-zinc-800 border border-white/5 text-zinc-300 hover:bg-zinc-700"
                       }`}>
                       {t.numero}
                     </button>
@@ -421,15 +426,15 @@ export function StaffCommandes() {
               </div>
 
               {/* Product Search */}
-              <div className="px-6 py-3 border-b border-[#D4A853]/8">
+              <div className="px-6 py-4 border-b border-white/5 bg-zinc-900/30">
                 <input value={prodSearch} onChange={(e) => setProdSearch(e.target.value)}
                   placeholder="Rechercher un produit..."
-                  className="h-9 w-full rounded-lg border border-[#D4A853]/15 bg-[#1A1714] px-3 text-sm text-lounge-100 focus:outline-none focus:ring-1 focus:ring-[#D4A853]/30" />
-                <div className="flex flex-wrap gap-1.5 mt-2">
+                  className="h-11 w-full rounded-xl border border-white/10 bg-zinc-900 px-4 text-sm text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 transition-all" />
+                <div className="flex flex-wrap gap-2 mt-3">
                   {categories.map((c) => (
                     <button key={c} onClick={() => setProdCat(c)}
-                      className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
-                        prodCat === c ? "bg-[#D4A853] text-lounge-950" : "bg-[#231F1B] text-lounge-400 hover:bg-[#2E2822]"
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                        prodCat === c ? "bg-brand-500 text-black" : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100"
                       }`}>
                       {c}
                     </button>
@@ -438,23 +443,25 @@ export function StaffCommandes() {
               </div>
 
               {/* Products */}
-              <div className="flex-1 overflow-y-auto px-6 py-3">
-                <div className="grid grid-cols-2 gap-2">
+              <div className="flex-1 overflow-y-auto px-6 py-4 bg-zinc-950">
+                <div className="grid grid-cols-2 gap-3">
                   {allProds.map((p) => {
                     const inCart = cartItems.find((i) => i.id === p.id);
                     return (
                       <button key={p.id} onClick={() => addToCart(p)}
-                        className={`flex items-center justify-between rounded-xl p-3 text-left transition-all ${
-                          inCart ? "bg-[#D4A853]/10 border border-[#D4A853]/20" : "bg-[#231F1B] hover:bg-[#2E2822] border border-transparent"
+                        className={`flex items-center justify-between rounded-xl p-4 text-left transition-all border ${
+                          inCart ? "bg-brand-500/10 border-brand-500/30 shadow-md" : "bg-zinc-900 border-white/5 hover:border-white/20 hover:bg-zinc-800"
                         }`}>
-                        <div className="min-w-0">
-                          <p className="text-xs font-medium text-lounge-100 truncate">{p.nom}</p>
-                          <p className="text-xs text-lounge-400">{formatMontant(p.prix)}</p>
+                        <div className="min-w-0 pr-2">
+                          <p className="text-sm font-bold text-zinc-50 truncate mb-1">{p.nom}</p>
+                          <p className="text-xs font-medium text-brand-500">{formatMontant(p.prix)}</p>
                         </div>
                         {inCart ? (
-                          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#D4A853] text-lounge-950 text-xs font-bold flex-shrink-0">{inCart.qte}</span>
+                          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-500 text-black text-sm font-bold flex-shrink-0">{inCart.qte}</span>
                         ) : (
-                          <Plus size={14} className="text-lounge-500 flex-shrink-0" />
+                          <div className="h-7 w-7 rounded-lg bg-zinc-800 flex items-center justify-center text-zinc-400 flex-shrink-0">
+                            <Plus size={16} />
+                          </div>
                         )}
                       </button>
                     );
@@ -464,30 +471,30 @@ export function StaffCommandes() {
 
               {/* Cart Summary */}
               {cartItems.length > 0 && (
-                <div className="border-t border-[#D4A853]/8 px-6 py-4 bg-[#1A1714]">
-                  <div className="space-y-2 mb-3">
+                <div className="border-t border-white/10 px-6 py-5 bg-zinc-900 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+                  <div className="space-y-3 mb-4 max-h-40 overflow-y-auto pr-2">
                     {cartItems.map((item) => (
-                      <div key={item.id} className="flex items-center justify-between text-sm">
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-bold text-lounge-500 w-6">x{item.qte}</span>
-                          <span className="text-lounge-200">{item.nom}</span>
+                      <div key={item.id} className="flex items-center justify-between text-sm bg-zinc-950 p-3 rounded-lg border border-white/5">
+                        <div className="flex items-center gap-3">
+                          <span className="flex items-center justify-center h-6 w-6 rounded-md bg-zinc-800 text-xs font-bold text-zinc-300">{item.qte}</span>
+                          <span className="font-medium text-zinc-100">{item.nom}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium text-lounge-100">{formatMontant(item.prix * item.qte)}</span>
-                          <button onClick={() => removeFromCart(item.id)} className="h-5 w-5 flex items-center justify-center rounded bg-red-500/10 text-red-400 hover:bg-red-500/20">
-                            <Minus size={10} />
+                        <div className="flex items-center gap-4">
+                          <span className="font-bold text-zinc-50">{formatMontant(item.prix * item.qte)}</span>
+                          <button onClick={() => removeFromCart(item.id)} className="h-7 w-7 flex items-center justify-center rounded-lg bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition-colors">
+                            <Minus size={14} />
                           </button>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-semibold text-lounge-200">Total</span>
-                    <span className="text-lg font-bold text-lounge-100">{formatMontant(cartTotal)}</span>
+                  <div className="flex items-center justify-between mb-4 px-1">
+                    <span className="text-base font-medium text-zinc-400">Total</span>
+                    <span className="text-2xl font-bold text-brand-500">{formatMontant(cartTotal)}</span>
                   </div>
                   <button onClick={submitOrder}
                     disabled={!newOrderTable}
-                    className="w-full h-11 rounded-xl bg-gradient-to-r from-[#D4A853] to-[#C49742] text-lounge-950 text-sm font-bold disabled:opacity-40 shadow-lg shadow-[#D4A853]/20">
+                    className="w-full h-12 rounded-xl bg-brand-500 text-black text-base font-bold disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(212,168,83,0.3)] hover:shadow-[0_0_20px_rgba(212,168,83,0.5)] transition-all">
                     Valider la commande
                   </button>
                 </div>
@@ -502,52 +509,54 @@ export function StaffCommandes() {
         {payModal && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 cursor-pointer"
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 cursor-pointer"
               onClick={() => { if (!payModal.paymentPending) setPayModal(null); }} />
             <motion.div initial={{ opacity: 0, scale: 0.95, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inset-x-4 md:w-[440px] bg-lounge-900 border border-[#D4A853]/15 rounded-2xl shadow-2xl z-50">
-              <div className="flex items-center justify-between border-b border-[#D4A853]/8 px-6 py-4">
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inset-x-4 md:w-[460px] bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden">
+              <div className="flex items-center justify-between border-b border-white/5 px-6 py-5 bg-zinc-900/50">
                 <div>
-                  <h3 className="text-lg font-bold text-lounge-100">Paiement Commande #{payModal.cmd.id}</h3>
-                  <p className="text-xs text-lounge-400">Table {payModal.cmd.table_nom || payModal.cmd.table} · {payModal.cmd.heure}</p>
+                  <h3 className="text-lg font-bold text-zinc-50">Paiement Commande #{payModal.cmd.id}</h3>
+                  <p className="text-sm text-zinc-400 mt-0.5">Table {payModal.cmd.table_nom || payModal.cmd.table} · {payModal.cmd.heure}</p>
                 </div>
-                <button onClick={() => { if (!payModal.paymentPending) setPayModal(null); }} className="text-lounge-400 hover:text-lounge-200"><X size={20} /></button>
+                <button onClick={() => { if (!payModal.paymentPending) setPayModal(null); }} className="h-8 w-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-400 hover:text-zinc-50 hover:bg-zinc-700 transition-colors"><X size={20} /></button>
               </div>
 
               <div className="p-6">
-                <div className="text-center mb-6">
-                  <p className="text-sm text-lounge-400">Montant total</p>
-                  <p className="text-3xl font-bold text-lounge-100">{formatMontant(payModal.cmd.total)}</p>
+                <div className="text-center mb-8 bg-zinc-900 rounded-xl py-6 border border-white/5">
+                  <p className="text-sm font-medium text-zinc-400 mb-1">Montant total</p>
+                  <p className="text-4xl font-bold text-brand-500">{formatMontant(payModal.cmd.total)}</p>
                 </div>
 
-                <label className="text-xs font-medium text-lounge-400 mb-3 block">Mode de paiement</label>
-                <div className="grid grid-cols-2 gap-3 mb-4">
+                <label className="text-xs font-semibold text-zinc-400 mb-3 block uppercase tracking-wider">Mode de paiement</label>
+                <div className="grid grid-cols-2 gap-3 mb-6">
                   {paymentModes.map((pm) => (
                     <button key={pm.id} onClick={() => setPayModal((prev) => ({ ...prev, mode: pm.id }))}
-                      className={`flex flex-col items-center gap-2 rounded-xl border-2 p-4 transition-all ${
+                      className={`flex flex-col items-center gap-3 rounded-xl border-2 p-4 transition-all ${
                         payModal.mode === pm.id
-                          ? "border-[#D4A853] bg-[#D4A853]/10"
-                          : "border-lounge-600/30 hover:border-lounge-600/50 bg-[#1A1714]"
+                          ? "border-brand-500 bg-brand-500/10"
+                          : "border-white/5 hover:border-white/20 bg-zinc-900"
                       }`}>
-                      <pm.icon size={24} className={payModal.mode === pm.id && pm.accent ? pm.accent : payModal.mode === pm.id ? "text-[#D4A853]" : "text-lounge-500"} />
-                      <span className={`text-xs font-semibold ${payModal.mode === pm.id ? "text-[#D4A853]" : "text-lounge-300"}`}>{pm.label}</span>
+                      <pm.icon size={24} className={payModal.mode === pm.id && pm.accent ? pm.accent : payModal.mode === pm.id ? "text-brand-500" : "text-zinc-500"} />
+                      <span className={`text-sm font-bold ${payModal.mode === pm.id ? "text-brand-500" : "text-zinc-300"}`}>{pm.label}</span>
                     </button>
                   ))}
                 </div>
 
                 {["orange_money", "mtn_momo"].includes(payModal.mode) && (
-                  <div className="mb-3">
-                    <label className="text-xs font-medium text-lounge-400 mb-1.5 block">Numero du client</label>
+                  <div className="mb-4">
+                    <label className="text-xs font-semibold text-zinc-400 mb-2 block uppercase tracking-wider">Numéro du client</label>
                     <div className="relative">
-                      <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-lounge-500" />
+                      <div className="absolute left-0 top-0 bottom-0 w-12 flex items-center justify-center border-r border-white/5 bg-zinc-900 rounded-l-xl">
+                          <Phone size={18} className="text-zinc-500" />
+                      </div>
                       <input
                         value={payModal.numClient || ""}
                         onChange={(e) => setPayModal((prev) => ({ ...prev, numClient: e.target.value }))}
                         placeholder="2376XXXXXXXX"
-                        className="w-full h-10 rounded-lg border border-[#D4A853]/15 bg-[#1A1714] pl-9 pr-3 text-sm text-lounge-100 focus:outline-none focus:ring-1 focus:ring-[#D4A853]/30"
+                        className="w-full h-12 rounded-xl border border-white/10 bg-zinc-950 pl-14 pr-4 text-base font-medium text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 transition-all"
                       />
                     </div>
-                    <p className="text-xs text-lounge-400 mt-1">
+                    <p className="text-xs text-zinc-500 mt-2">
                       {payModal.mode === "orange_money" ? "Format: 23761XXXXXX (Orange)" : "Format: 23767XXXXXX (MTN)"}
                     </p>
                   </div>
@@ -555,39 +564,41 @@ export function StaffCommandes() {
 
                 {!payModal.campayAsync && (
                   <input value={payModal.ref || ""} onChange={(e) => setPayModal((prev) => ({ ...prev, ref: e.target.value }))}
-                    placeholder="Reference (optionnel)"
-                    className="w-full h-10 rounded-lg border border-[#D4A853]/15 bg-[#1A1714] px-3 text-sm text-lounge-100 mb-4 focus:outline-none focus:ring-1 focus:ring-[#D4A853]/30" />
+                    placeholder="Référence (optionnel)"
+                    className="w-full h-12 rounded-xl border border-white/10 bg-zinc-900 px-4 text-sm font-medium text-zinc-100 placeholder:text-zinc-600 mb-6 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 transition-all" />
                 )}
 
                 {payModal.paymentPending ? (
-                  <div className="space-y-3 mb-4">
-                    <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center">
-                      <Clock size={32} className="mx-auto text-amber-400 mb-2 animate-pulse" />
-                      <p className="text-sm font-semibold text-amber-400">En attente de confirmation</p>
-                      <p className="text-xs text-lounge-300 mt-1">Le client doit approuver le paiement sur son telephone</p>
+                  <div className="space-y-4 mb-2">
+                    <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-5 text-center">
+                      <Clock size={36} className="mx-auto text-amber-500 mb-3 animate-pulse" />
+                      <p className="text-base font-bold text-amber-500">En attente de confirmation</p>
+                      <p className="text-sm text-amber-500/80 mt-1">Le client doit approuver le paiement sur son téléphone</p>
                       {payModal.campayUssd && (
-                        <p className="text-xs text-lounge-300 mt-2">Composez : <strong className="text-lounge-100">{payModal.campayUssd}</strong></p>
+                        <div className="mt-3 py-2 bg-amber-500/10 rounded-lg inline-block px-4">
+                           <p className="text-xs text-amber-500/80">Composez : <strong className="text-amber-400 font-bold ml-1">{payModal.campayUssd}</strong></p>
+                        </div>
                       )}
                     </div>
                     <button onClick={verifyCampayPayment}
-                      className="w-full h-11 rounded-xl bg-gradient-to-r from-[#D4A853] to-[#C49742] text-lounge-950 text-sm font-bold shadow-lg flex items-center justify-center gap-2">
-                      <CircleCheck size={16} />
-                      Verifier le paiement
+                      className="w-full h-12 rounded-xl bg-amber-500 text-black text-base font-bold shadow-lg hover:bg-amber-400 transition-colors flex items-center justify-center gap-2">
+                      <CircleCheck size={18} />
+                      Vérifier le paiement
                     </button>
                   </div>
                 ) : (
                   <button onClick={confirmPayment}
                     disabled={!payModal.mode || (["orange_money", "mtn_momo"].includes(payModal.mode) && !payModal.numClient)}
-                    className="w-full h-11 rounded-xl bg-gradient-to-r from-[#D4A853] to-[#C49742] text-lounge-950 text-sm font-bold disabled:opacity-40 shadow-lg shadow-[#D4A853]/20 flex items-center justify-center gap-2">
-                    <CircleCheck size={16} />
+                    className="w-full h-12 rounded-xl bg-brand-500 text-black text-base font-bold disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(212,168,83,0.3)] hover:shadow-[0_0_20px_rgba(212,168,83,0.5)] transition-all flex items-center justify-center gap-2">
+                    <CircleCheck size={18} />
                     Confirmer le paiement
                   </button>
                 )}
 
                 {payModal.campayStatus === "FAILED" && (
-                  <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 text-center mt-3">
-                    <p className="text-sm font-semibold text-red-400">Echec du paiement</p>
-                    <p className="text-xs text-lounge-300 mt-1">Le client n'a pas confirme ou le paiement a ete refuse</p>
+                  <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-center mt-4">
+                    <p className="text-sm font-bold text-red-500">Échec du paiement</p>
+                    <p className="text-xs text-red-400 mt-1">Le client n'a pas confirmé ou le paiement a été refusé.</p>
                   </div>
                 )}
               </div>
@@ -600,13 +611,13 @@ export function StaffCommandes() {
       <AnimatePresence>
         {paySuccess && (
           <motion.div initial={{ opacity: 0, y: -20, x: "-50%" }} animate={{ opacity: 1, y: 0, x: "-50%" }} exit={{ opacity: 0, y: -20, x: "-50%" }}
-            className="fixed top-4 left-1/2 z-[60] bg-[#D4A853] text-lounge-950 px-6 py-3 rounded-xl shadow-2xl flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-lounge-950/20">
-              <CircleCheck size={18} />
+            className="fixed top-6 left-1/2 z-[60] bg-emerald-500 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/20">
+              <CircleCheck size={20} />
             </div>
             <div>
-              <p className="text-sm font-bold">Paiement confirme</p>
-              <p className="text-xs text-lounge-700">Commande #{paySuccess.id} · {formatMontant(paySuccess.montant)} · {paySuccess.mode}</p>
+              <p className="text-base font-bold">Paiement confirmé</p>
+              <p className="text-sm font-medium text-white/90 mt-0.5">Commande #{paySuccess.id} · {formatMontant(paySuccess.montant)} · {paySuccess.mode}</p>
             </div>
           </motion.div>
         )}
@@ -616,13 +627,13 @@ export function StaffCommandes() {
       <AnimatePresence>
         {transferSuccess && (
           <motion.div initial={{ opacity: 0, y: -20, x: "-50%" }} animate={{ opacity: 1, y: 0, x: "-50%" }} exit={{ opacity: 0, y: -20, x: "-50%" }}
-            className="fixed top-4 left-1/2 z-[60] bg-blue-500 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-              <CircleCheck size={18} />
+            className="fixed top-6 left-1/2 z-[60] bg-blue-500 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/20">
+              <CircleCheck size={20} />
             </div>
             <div>
-              <p className="text-sm font-bold">Commande transferee</p>
-              <p className="text-xs text-white/80">{transferSuccess.table}</p>
+              <p className="text-base font-bold">Commande transférée</p>
+              <p className="text-sm font-medium text-white/90 mt-0.5">{transferSuccess.table}</p>
             </div>
           </motion.div>
         )}
@@ -633,46 +644,50 @@ export function StaffCommandes() {
         {transferModal && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 cursor-pointer" onClick={() => setTransferModal(null)} />
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 cursor-pointer" onClick={() => setTransferModal(null)} />
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full md:w-[400px] bg-lounge-900 border border-[#D4A853]/15 rounded-2xl shadow-2xl z-50 p-6">
-              <h3 className="text-lg font-bold text-lounge-100 mb-1 flex items-center gap-2">
-                <ArrowRightLeft size={18} className="text-blue-400" />
-                Transférer la commande #{transferModal.cmd?.id}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full md:w-[420px] bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl z-50 p-6">
+              <h3 className="text-xl font-bold text-zinc-50 mb-2 flex items-center gap-3">
+                <div className="p-2 bg-blue-500/10 rounded-lg">
+                    <ArrowRightLeft size={20} className="text-blue-500" />
+                </div>
+                Transférer #{transferModal.cmd?.id}
               </h3>
-              <p className="text-sm text-lounge-400 mb-4">Table actuelle: {transferModal.cmd?.table}</p>
-              <label className="text-xs font-medium text-lounge-400 mb-2 block">Nouvelle table</label>
-              <div className="grid grid-cols-3 gap-2 mb-4 max-h-48 overflow-y-auto">
+              <p className="text-sm font-medium text-zinc-400 mb-6">Table actuelle: <strong className="text-zinc-200">{transferModal.cmd?.table}</strong></p>
+              
+              <label className="text-xs font-semibold text-zinc-400 mb-3 block uppercase tracking-wider">Sélectionner une nouvelle table</label>
+              <div className="grid grid-cols-3 gap-3 mb-6 max-h-48 overflow-y-auto pr-1">
                 {tables.filter((t) => t.id !== transferModal?.cmd?.table_id).map((t) => {
-                  const statusColor = t.statut === "libre" ? "bg-green-500" : t.statut === "occupee" ? "bg-red-500" : "bg-amber-500";
+                  const statusColor = t.statut === "libre" ? "bg-emerald-500" : t.statut === "occupee" ? "bg-red-500" : "bg-amber-500";
                   const statusLabel = t.statut === "libre" ? "L" : t.statut === "occupee" ? "O" : "R";
                   return (
                     <button
                       key={t.id}
                       onClick={() => setTransferModal((prev) => ({ ...prev, nouvelleTableId: t.id }))}
                       disabled={t.statut === "reservee"}
-                      className={`relative px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                      className={`relative px-3 py-3 rounded-xl text-base font-bold transition-all border ${
                         transferModal.nouvelleTableId === t.id
-                          ? "bg-blue-500 text-white"
+                          ? "bg-blue-500 text-white border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
                           : t.statut === "reservee"
-                            ? "bg-[#231F1B] text-lounge-600 opacity-50 cursor-not-allowed"
-                            : "bg-[#231F1B] text-lounge-300 hover:bg-[#2E2822]"
+                            ? "bg-zinc-900 border-white/5 text-zinc-600 opacity-50 cursor-not-allowed"
+                            : "bg-zinc-900 border-white/5 text-zinc-300 hover:bg-zinc-800 hover:border-white/10"
                       }`}>
-                      <span className={`absolute top-1 right-1 h-2 w-2 rounded-full ${statusColor}`} title={t.statut} />
+                      <span className={`absolute top-2 right-2 h-2.5 w-2.5 rounded-full ${statusColor} shadow-[0_0_8px_currentColor] opacity-80`} title={t.statut} />
                       {t.numero}
-                      <span className="block text-[10px] opacity-60">{statusLabel}</span>
                     </button>
                   );
                 })}
               </div>
               {tables.filter((t) => t.statut === "libre" && t.id !== transferModal.cmd?.table_id).length === 0 &&
                 tables.some((t) => t.statut === "occupee" && t.id !== transferModal.cmd?.table_id) && (
-                  <p className="text-xs text-lounge-500 mb-4 italic">Seules les tables occupees sont disponibles — le echange sera possible</p>
+                  <div className="p-3 bg-zinc-900 rounded-lg border border-white/5 mb-6">
+                    <p className="text-xs font-medium text-zinc-400">Seules les tables occupées sont disponibles — un échange sera possible.</p>
+                  </div>
                 )}
-              <div className="flex gap-3">
-                <button onClick={() => setTransferModal(null)} className="flex-1 h-10 rounded-xl bg-[#231F1B] text-lounge-300 text-sm font-medium">Annuler</button>
+              <div className="flex gap-3 mt-auto">
+                <button onClick={() => setTransferModal(null)} className="flex-1 h-12 rounded-xl bg-zinc-800 border border-white/5 text-zinc-300 text-sm font-bold hover:bg-zinc-700 transition-colors">Annuler</button>
                 <button onClick={handleTransfer} disabled={!transferModal.nouvelleTableId}
-                  className="flex-1 h-10 rounded-xl bg-blue-500 text-white text-sm font-bold disabled:opacity-40">Transférer</button>
+                  className="flex-1 h-12 rounded-xl bg-blue-500 text-white text-sm font-bold disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">Confirmer</button>
               </div>
             </motion.div>
           </>
@@ -684,29 +699,31 @@ export function StaffCommandes() {
         {differerModal && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 cursor-pointer" onClick={() => setDiffererModal(null)} />
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 cursor-pointer" onClick={() => setDiffererModal(null)} />
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full md:w-[400px] bg-lounge-900 border border-[#D4A853]/15 rounded-2xl shadow-2xl z-50 p-6">
-              <h3 className="text-lg font-bold text-lounge-100 mb-4 flex items-center gap-2">
-                <Calendar size={18} className="text-purple-400" />
-                Différer la commande #{differerModal.cmd?.id}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full md:w-[420px] bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl z-50 p-6">
+              <h3 className="text-xl font-bold text-zinc-50 mb-6 flex items-center gap-3">
+                <div className="p-2 bg-purple-500/10 rounded-lg">
+                    <Calendar size={20} className="text-purple-500" />
+                </div>
+                Différer #{differerModal.cmd?.id}
               </h3>
-              <div className="space-y-4 mb-4">
+              <div className="space-y-5 mb-8">
                 <div>
-                  <label className="text-xs font-medium text-lounge-400 mb-2 block">Date prévue</label>
+                  <label className="text-xs font-semibold text-zinc-400 mb-2 block uppercase tracking-wider">Date prévue</label>
                   <input type="date" value={differerModal.date} onChange={(e) => setDiffererModal((prev) => ({ ...prev, date: e.target.value }))}
-                    className="w-full h-10 rounded-lg border border-[#D4A853]/15 bg-[#1A1714] px-3 text-sm text-lounge-100" />
+                    className="w-full h-12 rounded-xl border border-white/10 bg-zinc-900 px-4 text-sm font-medium text-zinc-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all [color-scheme:dark]" />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-lounge-400 mb-2 block">Heure prévue</label>
+                  <label className="text-xs font-semibold text-zinc-400 mb-2 block uppercase tracking-wider">Heure prévue</label>
                   <input type="time" value={differerModal.heure} onChange={(e) => setDiffererModal((prev) => ({ ...prev, heure: e.target.value }))}
-                    className="w-full h-10 rounded-lg border border-[#D4A853]/15 bg-[#1A1714] px-3 text-sm text-lounge-100" />
+                    className="w-full h-12 rounded-xl border border-white/10 bg-zinc-900 px-4 text-sm font-medium text-zinc-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all [color-scheme:dark]" />
                 </div>
               </div>
-              <div className="flex gap-3">
-                <button onClick={() => setDiffererModal(null)} className="flex-1 h-10 rounded-xl bg-[#231F1B] text-lounge-300 text-sm font-medium">Annuler</button>
+              <div className="flex gap-3 mt-auto">
+                <button onClick={() => setDiffererModal(null)} className="flex-1 h-12 rounded-xl bg-zinc-800 border border-white/5 text-zinc-300 text-sm font-bold hover:bg-zinc-700 transition-colors">Annuler</button>
                 <button onClick={handleDifferer} disabled={!differerModal.date || !differerModal.heure}
-                  className="flex-1 h-10 rounded-xl bg-purple-500 text-white text-sm font-bold disabled:opacity-40">Différer</button>
+                  className="flex-1 h-12 rounded-xl bg-purple-500 text-white text-sm font-bold disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] transition-all">Confirmer</button>
               </div>
             </motion.div>
           </>
@@ -718,26 +735,28 @@ export function StaffCommandes() {
         {editItemModal && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 cursor-pointer" onClick={() => setEditItemModal(null)} />
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 cursor-pointer" onClick={() => setEditItemModal(null)} />
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full md:w-[350px] bg-lounge-900 border border-[#D4A853]/15 rounded-2xl shadow-2xl z-50 p-6">
-              <h3 className="text-lg font-bold text-lounge-100 mb-4 flex items-center gap-2">
-                <Edit size={18} className="text-amber-400" />
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full md:w-[380px] bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl z-50 p-6">
+              <h3 className="text-xl font-bold text-zinc-50 mb-6 flex items-center gap-3">
+                <div className="p-2 bg-amber-500/10 rounded-lg">
+                    <Edit size={20} className="text-amber-500" />
+                </div>
                 Modifier {editItemModal.nom}
               </h3>
-              <div className="mb-4">
-                <label className="text-xs font-medium text-lounge-400 mb-2 block">Quantité (0 = supprimer)</label>
-                <div className="flex items-center gap-3">
-                  <button onClick={() => setEditQuantite((q) => Math.max(0, q - 1))} className="h-10 w-10 rounded-lg bg-[#231F1B] text-lounge-300">-</button>
+              <div className="mb-8 bg-zinc-900 rounded-xl p-6 border border-white/5">
+                <label className="text-xs font-semibold text-zinc-400 mb-4 block uppercase tracking-wider text-center">Quantité (0 = supprimer)</label>
+                <div className="flex items-center justify-center gap-4">
+                  <button onClick={() => setEditQuantite((q) => Math.max(0, q - 1))} className="h-12 w-12 flex items-center justify-center rounded-xl bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors border border-white/5"><Minus size={20} /></button>
                   <input type="number" min="0" value={editQuantite} onChange={(e) => setEditQuantite(Math.max(0, parseInt(e.target.value) || 0))}
-                    className="flex-1 h-10 rounded-lg border border-[#D4A853]/15 bg-[#1A1714] px-3 text-center text-lg font-bold text-lounge-100" />
-                  <button onClick={() => setEditQuantite((q) => q + 1)} className="h-10 w-10 rounded-lg bg-[#231F1B] text-lounge-300">+</button>
+                    className="w-24 h-14 rounded-xl border border-white/10 bg-zinc-950 px-3 text-center text-2xl font-bold text-zinc-100 focus:outline-none focus:border-amber-500 transition-colors" />
+                  <button onClick={() => setEditQuantite((q) => q + 1)} className="h-12 w-12 flex items-center justify-center rounded-xl bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors border border-white/5"><Plus size={20} /></button>
                 </div>
               </div>
               <div className="flex gap-3">
-                <button onClick={() => setEditItemModal(null)} className="flex-1 h-10 rounded-xl bg-[#231F1B] text-lounge-300 text-sm font-medium">Annuler</button>
+                <button onClick={() => setEditItemModal(null)} className="flex-1 h-12 rounded-xl bg-zinc-800 border border-white/5 text-zinc-300 text-sm font-bold hover:bg-zinc-700 transition-colors">Annuler</button>
                 <button onClick={handleUpdateItem}
-                  className="flex-1 h-10 rounded-xl bg-amber-500 text-lounge-950 text-sm font-bold">Valider</button>
+                  className="flex-1 h-12 rounded-xl bg-amber-500 text-black text-sm font-bold shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_20px_rgba(245,158,11,0.5)] transition-all">Enregistrer</button>
               </div>
             </motion.div>
           </>

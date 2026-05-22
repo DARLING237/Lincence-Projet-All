@@ -26,7 +26,7 @@ const updateProduitSchema = z.object({
   nom: z.string().optional(),
   description: z.string().nullable().optional(),
   prix: z.number().min(0, "Prix doit etre >= 0").optional(),
-  type_poste: z.enum(["bar"], { message: "Type invalide" }).optional(),
+  type_poste: z.enum(["cuisine", "tous"], { message: "Type invalide" }).optional(),
   dispo: z.boolean().optional(),
   bestseller: z.boolean().optional(),
   photo: z.string().nullable().optional(),
@@ -80,7 +80,7 @@ router.post("/produits", async (req, res) => {
         if (!nom || !nom.trim()) return res.status(400).json({ success: false, message: "Nom du produit requis" });
         const prixNum = parseFloat(prix);
         if (isNaN(prixNum) || prixNum < 0) return res.status(400).json({ success: false, message: "Prix invalide" });
-        if (type_poste !== "bar") return res.status(400).json({ success: false, message: "Type invalide, doit etre 'bar'" });
+        if (type_poste !== "cuisine" && type_poste !== "tous") return res.status(400).json({ success: false, message: "Type invalide, doit etre 'cuisine' ou 'tous'" });
 
         let cid = categorie_id ? parseInt(categorie_id) : null;
         if (categorie && !cid) {
@@ -107,7 +107,7 @@ router.post("/produits", async (req, res) => {
     let { categorie_id, categorie, nom, description, prix, type_poste, dispo, bestseller, photo } = req.body || {};
     if (!nom || !nom.trim()) return res.status(400).json({ success: false, message: "Nom du produit requis" });
     if (!prix || typeof prix !== "number" || isNaN(prix) || prix < 0) return res.status(400).json({ success: false, message: "Prix invalide" });
-    if (!type_poste || type_poste !== "bar") return res.status(400).json({ success: false, message: "Type invalide, doit etre 'bar'" });
+    if (!type_poste || (type_poste !== "cuisine" && type_poste !== "tous")) return res.status(400).json({ success: false, message: "Type invalide, doit etre 'cuisine' ou 'tous'" });
 
     if (categorie && !categorie_id) {
       const [catRows] = await pool.query("SELECT id FROM categories WHERE nom = ?", [categorie]);
@@ -212,7 +212,7 @@ router.put("/produits/:id", validate(updateProduitSchema), async (req, res) => {
       fields.push("prix = ?"); values.push(prix);
     }
     if (type_poste !== undefined) {
-      if (type_poste !== "bar") return res.status(400).json({ success: false, message: "Type invalide, doit etre 'bar'" });
+      if (type_poste !== "cuisine" && type_poste !== "tous") return res.status(400).json({ success: false, message: "Type invalide, doit etre 'cuisine' ou 'tous'" });
       fields.push("type_poste = ?"); values.push(type_poste);
     }
     if (dispo !== undefined)           { fields.push("dispo = ?"); values.push(dispo ? 1 : 0); }

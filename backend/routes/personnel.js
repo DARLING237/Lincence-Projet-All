@@ -114,7 +114,7 @@ router.get("/salaires", async (req, res) => {
   for (const u of actifs) {
     if (!existingIds.has(u.id)) {
       const posteL = u.poste.toLowerCase();
-      const salaireParDefaut = posteL.includes("manageur") || posteL.includes("gerant") ? 500000 : posteL.includes("barman") ? 250000 : 200000;
+      const salaireParDefaut = posteL.includes("manageur") || posteL.includes("gerant") ? 500000 : (posteL.includes("cuisine") || posteL.includes("chef")) ? 350000 : 200000;
       await pool.query(
         "INSERT INTO salaires (personnel_id, mois_annee, montant, statut, date_generation) VALUES (?, ?, ?, 'en attente', CURDATE())",
         [u.id, moisAnnee, salaireParDefaut]
@@ -135,7 +135,7 @@ router.get("/salaires", async (req, res) => {
   for (const s of rows) {
     if (!s.montant || s.montant === 0) {
       const posteL = s.poste.toLowerCase();
-      const defaut = posteL.includes("manageur") || posteL.includes("gerant") ? 500000 : posteL.includes("barman") ? 250000 : 200000;
+      const defaut = posteL.includes("manageur") || posteL.includes("gerant") ? 500000 : (posteL.includes("cuisine") || posteL.includes("chef")) ? 350000 : 200000;
       await pool.query("UPDATE salaires SET montant = ? WHERE id = ? AND montant = 0", [defaut, s.id]);
     }
   }

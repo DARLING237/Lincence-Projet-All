@@ -7,7 +7,7 @@ export const users = [
   { id: 3, nom: "Traoré", prenom: "Moussa", email: "moussa@barresto.ci", password: "staff123", role: "serveur", poste: "Serveur", avatar: "TM" },
   { id: 4, nom: "Koné", prenom: "Fatou", email: "fatou@barresto.ci", password: "staff123", role: "caissier", poste: "Caissière", avatar: "KF" },
   { id: 5, nom: "Coulibaly", prenom: "Ibrahim", email: "ibrahim@barresto.ci", password: "staff123", role: "cuisinier", poste: "Cuisinier", avatar: "CI" },
-  { id: 6, nom: "Sylla", prenom: "Oumar", email: "oumar@barresto.ci", password: "staff123", role: "barman", poste: "Barman", avatar: "SO" },
+  { id: 6, nom: "Sylla", prenom: "Oumar", email: "oumar@barresto.ci", password: "staff123", role: "serveur", poste: "Serveur", avatar: "SO" },
 ];
 
 // ── Tables ──
@@ -141,7 +141,7 @@ export const personnel = [
   { id: 2, nom: "Traoré", prenom: "Moussa", poste: "Serveur", email: "moussa@barresto.ci", telephone: "+225 07 02 03 04", salaire: 150000, statut: "present", dateEmbauche: "2025-07-01", heureArrivee: "08:15", heureDepart: null },
   { id: 3, nom: "Koné", prenom: "Fatou", poste: "Caissière", email: "fatou@barresto.ci", telephone: "+225 05 01 02 03", salaire: 180000, statut: "present", dateEmbauche: "2025-05-10", heureArrivee: "07:45", heureDepart: null },
   { id: 4, nom: "Coulibaly", prenom: "Ibrahim", poste: "Cuisinier", email: "ibrahim@barresto.ci", telephone: "+225 05 02 03 04", salaire: 250000, statut: "present", dateEmbauche: "2025-03-01", heureArrivee: "07:30", heureDepart: null },
-  { id: 5, nom: "Sylla", prenom: "Oumar", poste: "Barman", email: "oumar@barresto.ci", telephone: "+225 07 03 04 05", salaire: 180000, statut: "absent", dateEmbauche: "2025-08-20", heureArrivee: null, heureDepart: null },
+  { id: 5, nom: "Sylla", prenom: "Oumar", poste: "Serveur", email: "oumar@barresto.ci", telephone: "+225 07 03 04 05", salaire: 180000, statut: "absent", dateEmbauche: "2025-08-20", heureArrivee: null, heureDepart: null },
   { id: 6, nom: "Diarra", prenom: "Aïssatou", poste: "Serveuse", email: "aissata@barresto.ci", telephone: "+225 07 04 05 06", salaire: 150000, statut: "conge", dateEmbauche: "2025-09-01", heureArrivee: null, heureDepart: null },
 ];
 
@@ -150,7 +150,7 @@ export const salariesMois = [
   { id: 2, employe: "Traoré Moussa", poste: "Serveur", montant: 150000, statut: "en attente", dateGeneration: "2026-01-01" },
   { id: 3, employe: "Koné Fatou", poste: "Caissière", montant: 180000, statut: "paye", dateGeneration: "2026-01-01", datePaiement: "2026-01-05" },
   { id: 4, employe: "Coulibaly Ibrahim", poste: "Cuisinier", montant: 250000, statut: "en attente", dateGeneration: "2026-01-01" },
-  { id: 5, employe: "Sylla Oumar", poste: "Barman", montant: 180000, statut: "en attente", dateGeneration: "2026-01-01" },
+  { id: 5, employe: "Sylla Oumar", poste: "Serveur", montant: 180000, statut: "en attente", dateGeneration: "2026-01-01" },
 ];
 
 export const alertesStock = [

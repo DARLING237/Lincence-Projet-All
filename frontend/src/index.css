@@ -1,28 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-lounge-950: #0C0A09;
-  --color-lounge-900: #1A1714;
-  --color-lounge-800: #231F1B;
-  --color-lounge-700: #2E2822;
-  --color-lounge-600: #3D342B;
-  --color-lounge-500: #4A3F34;
-  --color-lounge-400: #6B5D50;
-  --color-lounge-300: #9A8B7A;
-  --color-lounge-200: #C4B5A4;
-  --color-lounge-100: #E2D8CC;
-  --color-lounge-50: #F0EBE3;
-  --color-gold-500: #D4A853;
-  --color-gold-400: #DDBA6A;
-  --color-gold-600: #C49742;
-  --color-gold-300: #E8CC87;
-  --color-glow: #D4A853;
-  --font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-zinc-800: #27272a;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-600: #52525b;
+  --color-zinc-500: #71717a;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-50: #fafafa;
+  
+  --color-brand-500: #d4a853; /* Keep a sharp amber/gold for accents */
+  --color-brand-400: #e5b966;
+  --color-brand-600: #b38b42;
+  
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-background: var(--color-zinc-950);
+  --color-foreground: var(--color-zinc-50);
+  --color-card: var(--color-zinc-900);
+  --color-card-foreground: var(--color-zinc-50);
+  --color-border: var(--color-zinc-800);
+  --color-input: var(--color-zinc-800);
+  --color-primary: var(--color-brand-500);
+  --color-primary-foreground: #000000;
+  --color-muted: var(--color-zinc-800);
+  --color-muted-foreground: var(--color-zinc-400);
+  --color-accent: var(--color-zinc-800);
+  --color-accent-foreground: var(--color-zinc-50);
 }
 
 html {
@@ -33,26 +45,42 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-lounge-950);
-  color: #E2D8CC;
+  background: var(--color-background);
+  color: var(--color-foreground);
 }
 
-/* ── Unified dark theme for all components ── */
 ::selection {
-  background: var(--color-gold-500);
-  color: var(--color-lounge-950);
+  background: rgba(212, 168, 83, 0.2);
+  color: var(--color-brand-500);
 }
 
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-lounge-600);
+  background: var(--color-zinc-800);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-lounge-500);
+  background: var(--color-zinc-700);
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(24, 24, 27, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-hover {
+  transition: all 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(212, 168, 83, 0.3);
 }

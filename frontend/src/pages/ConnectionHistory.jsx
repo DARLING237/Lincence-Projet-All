@@ -31,14 +31,17 @@ import {
   Line,
 } from "recharts";
 
+const GOLD = "#D4A853";
+
 function CustomTooltip({ active, payload, label }) {
   if (!active || !payload) return null;
   return (
-    <div className="rounded-xl border border-lounge-600 bg-lounge-900 p-3 shadow-lg">
-      <p className="mb-2 font-semibold text-lounge-100">{label}</p>
+    <div className="rounded-xl border border-white/10 bg-zinc-950 p-4 shadow-xl backdrop-blur-md">
+      <p className="mb-2 font-bold text-zinc-50">{label}</p>
       {payload.map((entry, i) => (
-        <p key={i} className="text-sm" style={{ color: entry.color }}>
-          {entry.name}: {entry.value}
+        <p key={i} className="text-sm font-semibold flex items-center justify-between gap-4" style={{ color: entry.color }}>
+          <span>{entry.name}</span>
+          <span>{entry.value}</span>
         </p>
       ))}
     </div>
@@ -178,60 +181,65 @@ export function ConnectionHistory() {
   const connexionsParHeure = preparerDonneesHeures();
   const statsUtilisateurs = preparerDonneesUtilisateurs();
 
+  const itemVariants = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } };
+
   return (
-    <div className="p-6 lg:p-8">
+    <motion.div className="max-w-7xl mx-auto" initial="hidden" animate="show" variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.08 } } }}>
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
         <div>
-          <div className="flex items-center gap-2 mb-1">
-            <Activity className="text-[#D4A853]" size={22} />
-            <h1 className="text-2xl font-bold text-lounge-100">Historique des Connexions</h1>
+          <div className="flex items-center gap-3 mb-1">
+             <div className="bg-brand-500/10 p-2 rounded-xl">
+               <Activity className="text-brand-500" size={24} />
+             </div>
+            <h1 className="text-3xl font-bold text-zinc-50 tracking-tight">Historique des Connexions</h1>
           </div>
-          <p className="text-sm text-lounge-400">Suivi des sessions utilisateur et statistiques</p>
+          <p className="text-sm font-medium text-zinc-400 mt-1 ml-[52px]">Suivi des sessions utilisateur et statistiques</p>
         </div>
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           onClick={exportToCSV}
-          className="flex items-center gap-2 h-10 px-4 rounded-xl bg-[#1A1714] border border-[#D4A853]/10 text-sm font-medium text-lounge-200 hover:border-[#D4A853]/15 transition-colors shadow-sm"
+          className="flex items-center gap-2 h-11 px-5 rounded-xl bg-zinc-900/80 backdrop-blur-md border border-white/10 text-sm font-bold text-zinc-200 hover:border-brand-500/50 hover:bg-zinc-800 transition-all shadow-sm"
         >
-          <Download size={16} />
+          <Download size={18} />
           Exporter CSV
         </motion.button>
-      </div>
+      </motion.div>
 
       {/* Filtres */}
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="bg-[#1A1714] rounded-2xl border border-[#D4A853]/10 p-5 mb-8 shadow-sm"
+        variants={itemVariants}
+        className="bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 mb-8 shadow-lg"
       >
-        <h3 className="text-sm font-semibold text-lounge-100 mb-4">Filtres</h3>
-        <div className="grid gap-4 sm:grid-cols-3">
+        <h3 className="text-base font-bold text-zinc-50 mb-5 flex items-center gap-2">
+           <Filter size={18} className="text-zinc-400" /> Filtres de recherche
+        </h3>
+        <div className="grid gap-5 sm:grid-cols-3">
           <div>
-            <label className="text-xs text-lounge-400 mb-1 block">Date de début</label>
+            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Date de début</label>
             <input
               type="date"
               value={filters.dateDebut}
               onChange={(e) => setFilters({...filters, dateDebut: e.target.value})}
-              className="w-full h-10 px-3 rounded-lg bg-lounge-800 border border-[#D4A853]/10 text-sm text-lounge-100 focus:border-[#D4A853]/30 focus:outline-none"
+              className="w-full h-11 px-4 rounded-xl bg-zinc-950 border border-white/10 text-sm font-medium text-zinc-50 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/50 transition-all shadow-inner"
             />
           </div>
           <div>
-            <label className="text-xs text-lounge-400 mb-1 block">Date de fin</label>
+            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Date de fin</label>
             <input
               type="date"
               value={filters.dateFin}
               onChange={(e) => setFilters({...filters, dateFin: e.target.value})}
-              className="w-full h-10 px-3 rounded-lg bg-lounge-800 border border-[#D4A853]/10 text-sm text-lounge-100 focus:border-[#D4A853]/30 focus:outline-none"
+              className="w-full h-11 px-4 rounded-xl bg-zinc-950 border border-white/10 text-sm font-medium text-zinc-50 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/50 transition-all shadow-inner"
             />
           </div>
           <div>
-            <label className="text-xs text-lounge-400 mb-1 block">Utilisateur</label>
+            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Utilisateur</label>
             <select
               value={filters.utilisateur}
               onChange={(e) => setFilters({...filters, utilisateur: e.target.value})}
-              className="w-full h-10 px-3 rounded-lg bg-lounge-800 border border-[#D4A853]/10 text-sm text-lounge-100 focus:border-[#D4A853]/30 focus:outline-none"
+              className="w-full h-11 px-4 rounded-xl bg-zinc-950 border border-white/10 text-sm font-medium text-zinc-50 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/50 transition-all shadow-inner appearance-none"
             >
               <option value="">Tous les utilisateurs</option>
               {personnel.map(p => (
@@ -240,15 +248,15 @@ export function ConnectionHistory() {
             </select>
           </div>
         </div>
-        <div className="mt-4 flex justify-end">
+        <div className="mt-6 flex justify-end">
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={handleFilter}
-            className="flex items-center gap-2 h-10 px-4 rounded-xl bg-[#D4A853]/10 text-sm font-medium text-[#D4A853] hover:bg-[#D4A853]/15 transition-colors"
+            className="flex items-center gap-2 h-11 px-6 rounded-xl bg-brand-500/10 text-sm font-bold text-brand-500 border border-brand-500/20 hover:bg-brand-500/20 transition-colors shadow-sm"
           >
-            <Filter size={16} />
-            Appliquer les filtres
+            <Search size={18} />
+            Rechercher
           </motion.button>
         </div>
       </motion.div>
@@ -256,13 +264,11 @@ export function ConnectionHistory() {
       {/* Alertes sessions longues */}
       {sessionsLongues.length > 0 && (
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.05 }}
+          variants={itemVariants}
           className="mb-8"
         >
-          <h3 className="text-sm font-semibold text-lounge-100 mb-4 flex items-center gap-2">
-            <AlertTriangle className="text-red-400" size={18} />
+          <h3 className="text-sm font-bold text-red-400 mb-4 flex items-center gap-2 uppercase tracking-wider">
+            <AlertTriangle className="text-red-500" size={18} />
             Sessions anormalement longues
           </h3>
           <div className="space-y-3">
@@ -274,162 +280,180 @@ export function ConnectionHistory() {
       )}
 
       {/* Statistiques */}
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 mb-8">
-        <StatCard
-          title="Connexions totales"
-          value={stats.totalConnexions}
-          icon={<Activity size={20} />}
-          trend={null}
-          color="amber"
-        />
-        <StatCard
-          title="Durée moyenne"
-          value={`${Math.round(stats.moyenneDuree / 60)} min`}
-          icon={<Clock size={20} />}
-          trend={null}
-          color="stone"
-        />
-        <StatCard
-          title="Sessions longues"
-          value={stats.sessionsLongues}
-          icon={<AlertTriangle size={20} />}
-          trend={null}
-          color="red"
-        />
-        <StatCard
-          title="Utilisateurs actifs"
-          value={stats.utilisateursActifs}
-          icon={<User size={20} />}
-          trend={null}
-          color="emerald"
-        />
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4 mb-8">
+        <motion.div variants={itemVariants}>
+           <StatCard
+             title="Connexions totales"
+             value={stats.totalConnexions}
+             icon={<Activity size={20} />}
+             trend={null}
+             color="amber"
+           />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <StatCard
+            title="Durée moyenne"
+            value={`${Math.round(stats.moyenneDuree / 60)} min`}
+            icon={<Clock size={20} />}
+            trend={null}
+            color="stone"
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <StatCard
+            title="Sessions longues"
+            value={stats.sessionsLongues}
+            icon={<AlertTriangle size={20} />}
+            trend={null}
+            color="red"
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <StatCard
+            title="Utilisateurs actifs"
+            value={stats.utilisateursActifs}
+            icon={<User size={20} />}
+            trend={null}
+            color="emerald"
+          />
+        </motion.div>
       </div>
 
       {/* Graphiques */}
-      <div className="grid gap-4 xl:grid-cols-5 mb-8">
+      <div className="grid gap-5 xl:grid-cols-5 mb-8">
         {/* Connexions par jour */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="xl:col-span-3 bg-[#1A1714] rounded-2xl border border-[#D4A853]/10 p-6 shadow-sm"
+          variants={itemVariants}
+          className="xl:col-span-3 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg"
         >
-          <h3 className="text-sm font-semibold text-lounge-100 mb-1">Évolution des connexions</h3>
-          <p className="text-xs text-lounge-400 mb-4">Nombre de sessions par jour</p>
-          <ResponsiveContainer width="100%" height={260}>
-            <AreaChart data={connexionsParJour}>
-              <defs>
-                <linearGradient id="gradConnexions" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#D4A853" stopOpacity={0.3} />
-                  <stop offset="100%" stopColor="#D4A853" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 4" strokeOpacity="0.1" />
-              <XAxis dataKey="date" tick={{ fontSize: 11, fill: "#6B5D50" }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 11, fill: "#6B5D50" }} axisLine={false} tickLine={false} />
-              <Tooltip content={<CustomTooltip />} />
-              <Area type="monotone" dataKey="connexions" stroke="#D4A853" strokeWidth={2.5} fill="url(#gradConnexions)" />
-            </AreaChart>
-          </ResponsiveContainer>
+          <h3 className="text-base font-bold text-zinc-50 mb-1">Évolution des connexions</h3>
+          <p className="text-sm font-medium text-zinc-400 mb-6">Nombre de sessions par jour</p>
+          <div className="bg-zinc-950/30 p-4 rounded-xl border border-white/5">
+             <ResponsiveContainer width="100%" height={260}>
+               <AreaChart data={connexionsParJour} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                 <defs>
+                   <linearGradient id="gradConnexions" x1="0" y1="0" x2="0" y2="1">
+                     <stop offset="0%" stopColor={GOLD} stopOpacity={0.4} />
+                     <stop offset="100%" stopColor={GOLD} stopOpacity={0} />
+                   </linearGradient>
+                 </defs>
+                 <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
+                 <XAxis dataKey="date" tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
+                 <YAxis tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dx={-10} />
+                 <Tooltip content={<CustomTooltip />} cursor={{stroke: 'rgba(255,255,255,0.1)'}} />
+                 <Area type="monotone" dataKey="connexions" name="Connexions" stroke={GOLD} strokeWidth={3} fill="url(#gradConnexions)" />
+               </AreaChart>
+             </ResponsiveContainer>
+          </div>
         </motion.div>
 
         {/* Connexions par heure */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="xl:col-span-2 bg-[#1A1714] rounded-2xl border border-[#D4A853]/10 p-6 shadow-sm"
+          variants={itemVariants}
+          className="xl:col-span-2 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg"
         >
-          <h3 className="text-sm font-semibold text-lounge-100 mb-1">Heures d'activité</h3>
-          <p className="text-xs text-lounge-400 mb-4">Connexions par heure</p>
-          <ResponsiveContainer width="100%" height={180}>
-            <BarChart data={connexionsParHeure}>
-              <CartesianGrid strokeDasharray="3 4" strokeOpacity="0.1" vertical={false} />
-              <XAxis dataKey="heure" tick={{ fontSize: 10, fill: "#6B5D50" }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 10, fill: "#6B5D50" }} axisLine={false} tickLine={false} tickCount={4} />
-              <Tooltip />
-              <Bar dataKey="connexions" radius={[4, 4, 0, 0]} fill="#D4A853" fillOpacity={0.8} />
-            </BarChart>
-          </ResponsiveContainer>
+          <h3 className="text-base font-bold text-zinc-50 mb-1">Heures d'activité</h3>
+          <p className="text-sm font-medium text-zinc-400 mb-6">Connexions par heure</p>
+          <div className="bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[292px] flex items-center">
+             <ResponsiveContainer width="100%" height="100%">
+               <BarChart data={connexionsParHeure} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                 <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
+                 <XAxis dataKey="heure" tick={{ fontSize: 11, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
+                 <YAxis tick={{ fontSize: 11, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} tickCount={4} dx={-10} />
+                 <Tooltip cursor={{fill: 'rgba(255,255,255,0.05)'}} contentStyle={{backgroundColor: '#09090b', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '0.75rem', fontWeight: 'bold', color: '#fafafa'}} itemStyle={{color: '#fafafa'}} />
+                 <Bar dataKey="connexions" name="Connexions" radius={[4, 4, 0, 0]} fill={GOLD} fillOpacity={0.9} maxBarSize={30} />
+               </BarChart>
+             </ResponsiveContainer>
+          </div>
         </motion.div>
       </div>
 
       {/* Top utilisateurs */}
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-        className="bg-[#1A1714] rounded-2xl border border-[#D4A853]/10 p-6 mb-8 shadow-sm"
+        variants={itemVariants}
+        className="bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 mb-8 shadow-lg"
       >
-        <h3 className="text-sm font-semibold text-lounge-100 mb-1">Top des utilisateurs</h3>
-        <p className="text-xs text-lounge-400 mb-4">Nombre de sessions par utilisateur</p>
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={statsUtilisateurs} layout="horizontal">
-            <CartesianGrid strokeDasharray="3 4" strokeOpacity="0.1" horizontal={false} />
-            <XAxis type="number" tick={{ fontSize: 11, fill: "#6B5D50" }} axisLine={false} tickLine={false} />
-            <YAxis
-              dataKey="nom"
-              type="category"
-              tick={{ fontSize: 11, fill: "#6B5D50" }}
-              axisLine={false}
-              tickLine={false}
-              width={100}
-            />
-            <Tooltip
-              formatter={(value, name) => [value, name === "connexions" ? "Sessions" : "Durée moyenne (min)"]}
-              labelFormatter={(label) => `Utilisateur: ${label}`}
-            />
-            <Bar dataKey="connexions" radius={[0, 4, 4, 0]} fill="#D4A853" fillOpacity={0.8} />
-          </BarChart>
-        </ResponsiveContainer>
+        <h3 className="text-base font-bold text-zinc-50 mb-1">Top des utilisateurs</h3>
+        <p className="text-sm font-medium text-zinc-400 mb-6">Nombre de sessions par utilisateur</p>
+        <div className="bg-zinc-950/30 p-4 rounded-xl border border-white/5">
+           <ResponsiveContainer width="100%" height={300}>
+             <BarChart data={statsUtilisateurs} layout="horizontal" margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+               <CartesianGrid strokeDasharray="3 4" stroke="#27272a" horizontal={false} />
+               <XAxis type="number" tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} />
+               <YAxis
+                 dataKey="nom"
+                 type="category"
+                 tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }}
+                 axisLine={false}
+                 tickLine={false}
+                 width={120}
+               />
+               <Tooltip
+                 cursor={{fill: 'rgba(255,255,255,0.05)'}}
+                 contentStyle={{backgroundColor: '#09090b', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '0.75rem', fontWeight: 'bold', color: '#fafafa'}}
+                 formatter={(value, name) => [value, name === "connexions" ? "Sessions" : "Durée moyenne (min)"]}
+                 labelFormatter={(label) => `Utilisateur: ${label}`}
+               />
+               <Bar dataKey="connexions" radius={[0, 4, 4, 0]} fill={GOLD} fillOpacity={0.9} maxBarSize={20} />
+             </BarChart>
+           </ResponsiveContainer>
+        </div>
       </motion.div>
 
       {/* Tableau des connexions */}
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="bg-[#1A1714] rounded-2xl border border-[#D4A853]/10 shadow-sm overflow-hidden"
+        variants={itemVariants}
+        className="bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 shadow-lg overflow-hidden"
       >
-        <div className="px-6 py-4 border-b border-[#D4A853]/8">
-          <h3 className="text-sm font-semibold text-lounge-100">Détail des connexions</h3>
-          <p className="mt-0.5 text-xs text-lounge-400">Liste complète des sessions utilisateur</p>
+        <div className="px-6 py-5 border-b border-white/5 bg-zinc-950/30 flex items-center justify-between">
+           <div>
+             <h3 className="text-lg font-bold text-zinc-50">Détail des connexions</h3>
+             <p className="mt-0.5 text-sm font-medium text-zinc-400">Liste complète des sessions utilisateur</p>
+           </div>
+           <div className="bg-brand-500/10 p-2 rounded-xl">
+               <FileSpreadsheet size={20} className="text-brand-500" />
+           </div>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="text-left text-xs text-lounge-400 border-b border-[#D4A853]/8">
-                <th className="px-6 py-3">Utilisateur</th>
-                <th className="px-6 py-3">Rôle</th>
-                <th className="px-6 py-3">Date</th>
-                <th className="px-6 py-3">Heure</th>
-                <th className="px-6 py-3 text-right">Durée</th>
-                <th className="px-6 py-3">IP</th>
-                <th className="px-6 py-3">Appareil</th>
+              <tr className="text-left text-xs font-bold uppercase tracking-wider text-zinc-400 bg-zinc-950/50 border-b border-white/5">
+                <th className="px-6 py-4">Utilisateur</th>
+                <th className="px-6 py-4">Rôle</th>
+                <th className="px-6 py-4">Date</th>
+                <th className="px-6 py-4">Heure</th>
+                <th className="px-6 py-4 text-right">Durée</th>
+                <th className="px-6 py-4">IP</th>
+                <th className="px-6 py-4">Appareil</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="divide-y divide-white/5">
               {connectionHistory.map((h) => (
-                <tr key={h.id} className="text-xs text-lounge-300 border-b border-[#D4A853]/5 hover:bg-[#D4A853]/5 transition-colors">
-                  <td className="px-6 py-3 font-medium">{h.utilisateur_nom}</td>
-                  <td className="px-6 py-3">
+                <tr key={h.id} className="text-sm font-medium text-zinc-300 hover:bg-zinc-800/50 transition-colors">
+                  <td className="px-6 py-4 font-bold text-zinc-100">{h.utilisateur_nom}</td>
+                  <td className="px-6 py-4">
                     <Badge variant={h.utilisateur_role === "admin" ? "default" : "secondary"}>
                       {h.utilisateur_role}
                     </Badge>
                   </td>
-                  <td className="px-6 py-3">{h.date_connexion}</td>
-                  <td className="px-6 py-3">{h.heure_connexion}</td>
-                  <td className="px-6 py-3 text-right">
+                  <td className="px-6 py-4">{h.date_connexion}</td>
+                  <td className="px-6 py-4">{h.heure_connexion}</td>
+                  <td className="px-6 py-4 text-right font-black text-zinc-50">
                     {Math.round((h.duree_session || 0) / 60)} min
                   </td>
-                  <td className="px-6 py-3">{h.adresse_ip}</td>
-                  <td className="px-6 py-3">{h.appareil}</td>
+                  <td className="px-6 py-4 text-zinc-500 font-mono text-xs">{h.adresse_ip}</td>
+                  <td className="px-6 py-4 text-zinc-400 max-w-[200px] truncate" title={h.appareil}>{h.appareil}</td>
                 </tr>
               ))}
+              {connectionHistory.length === 0 && (
+                <tr>
+                  <td colSpan="7" className="px-6 py-12 text-center text-zinc-500 font-bold bg-zinc-950/20">Aucun historique trouvé</td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

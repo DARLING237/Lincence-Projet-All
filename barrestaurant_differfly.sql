@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.4.7, for Win64 (x86_64)
 --
--- Host: localhost    Database: barrestaurant_db
+-- Host: localhost    Database: barrestaurant_differfly
 -- ------------------------------------------------------
 -- Server version	8.4.7
 
@@ -16,14 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `barrestaurant_db`
+-- Current Database: `barrestaurant_differfly`
 --
 
 
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `barrestaurant_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `barrestaurant_differfly` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
-USE `barrestaurant_db`;
+USE `barrestaurant_differfly`;
 
 --
 -- Table structure for table `campay_solde`
@@ -751,10 +751,10 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
--- Current Database: `barrestaurant_db`
+-- Current Database: `barrestaurant_differfly`
 --
 
-USE `barrestaurant_db`;
+USE `barrestaurant_differfly`;
 
 --
 -- Final view structure for view `v_ca_mensuel`

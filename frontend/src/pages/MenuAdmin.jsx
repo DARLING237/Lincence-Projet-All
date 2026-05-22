@@ -9,94 +9,93 @@ import {
 
 const API_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:3000/api`;
 
-function ProductFormModal({ product, onSave, onClose }) {
+function ProductFormModal({ product, categories = [], onSave, onClose }) {
   const [form, setForm] = useState(() => product || {
-    nom: "", prix: 0, categorie_id: 1, type_poste: "bar",
+    nom: "", prix: 0, categorie_id: categories[0]?.id || 1, type_poste: "cuisine",
     desc: "", bestseller: false, dispo: true,
     photo: null,
   });
   return (
     <>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40" onClick={onClose} />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40" onClick={onClose} />
       <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-        className="fixed md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 inset-x-4 md:inset-x-auto md:w-[520px] bg-[#1A1714] rounded-2xl shadow-2xl z-50">
-        <div className="flex items-center justify-between border-b border-[#D4A853]/8 px-6 py-4">
-          <h3 className="text-lg font-bold text-lounge-100">{product ? "Modifier le produit" : "Nouveau produit"}</h3>
-          <button onClick={onClose} className="text-lounge-400 hover:text-lounge-300"><X size={20} /></button>
+        className="fixed md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 inset-x-4 md:inset-x-auto md:w-[560px] bg-zinc-950 rounded-2xl border border-white/10 shadow-2xl z-50">
+        <div className="flex items-center justify-between border-b border-white/5 px-6 py-5 bg-zinc-900/50">
+          <h3 className="text-lg font-bold text-zinc-50">{product ? "Modifier le produit" : "Nouveau produit"}</h3>
+          <button onClick={onClose} className="text-zinc-500 hover:text-zinc-300 transition-colors"><X size={20} /></button>
         </div>
-        <div className="p-6 space-y-4">
+        <div className="p-6 space-y-6">
           <div>
-            <label className="text-sm font-medium text-lounge-200 block mb-1">Nom du produit</label>
+            <label className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2">Nom du produit</label>
             <input value={form.nom} onChange={(e) => setForm({ ...form, nom: e.target.value })}
-              className="h-9 w-full rounded-xl border border-[#D4A853]/15 bg-[#1A1714] px-3 text-sm text-lounge-100 focus:outline-none focus:ring-2 focus:ring-[#D4A853]/30" />
+              className="h-11 w-full rounded-xl border border-white/10 bg-zinc-900 px-4 text-sm font-medium text-zinc-100 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all" />
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="text-sm font-medium text-lounge-200 block mb-1">Prix (F CFA)</label>
+              <label className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2">Prix (F CFA)</label>
               <input type="number" value={form.prix} onChange={(e) => setForm({ ...form, prix: +e.target.value })}
-                className="h-9 w-full rounded-xl border border-[#D4A853]/15 bg-[#1A1714] px-3 text-sm text-lounge-100 focus:outline-none focus:ring-2 focus:ring-[#D4A853]/30" />
+                className="h-11 w-full rounded-xl border border-white/10 bg-zinc-900 px-4 text-sm font-bold text-zinc-100 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all" />
             </div>
             <div>
-              <label className="text-sm font-medium text-lounge-200 block mb-1">Categorie</label>
+              <label className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2">Categorie</label>
               <select value={form.categorie_id} onChange={(e) => setForm({ ...form, categorie_id: +e.target.value })}
-                className="h-9 w-full rounded-xl border border-[#D4A853]/15 bg-[#1A1714] px-3 text-sm text-lounge-100 focus:outline-none focus:ring-2 focus:ring-[#D4A853]/30">
-                <option value={1}>Cocktails</option>
-                <option value={2}>Bieres</option>
-                <option value={3}>Vins &amp; Spiritueux</option>
-                <option value={4}>Softs &amp; Jus</option>
-                <option value={5}>Eaux</option>
+                className="h-11 w-full rounded-xl border border-white/10 bg-zinc-900 px-4 text-sm font-medium text-zinc-100 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all">
+                {categories.map((c) => (
+                  <option key={c.id} value={c.id}>{c.nom}</option>
+                ))}
               </select>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-4">
             <div>
-              <label className="text-sm font-medium text-lounge-200 block mb-1">Type</label>
+              <label className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2">Type</label>
               <select value={form.type_poste} onChange={(e) => setForm({ ...form, type_poste: e.target.value })}
-                className="h-9 w-full rounded-xl border border-[#D4A853]/15 bg-[#1A1714] px-3 text-sm text-lounge-100 focus:outline-none focus:ring-2 focus:ring-[#D4A853]/30">
-                <option value="bar">Bar</option>
+                className="h-11 w-full rounded-xl border border-white/10 bg-zinc-900 px-4 text-sm font-medium text-zinc-100 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all">
+                <option value="cuisine">Cuisine (Restaurant)</option>
+                <option value="tous">Tous (Menu &amp; Boissons)</option>
               </select>
             </div>
             <div>
-              <label className="text-sm font-medium text-lounge-200 block mb-1">Best-seller</label>
+              <label className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2">Best-seller</label>
               <button onClick={() => setForm({ ...form, bestseller: !form.bestseller })}
-                className="flex items-center gap-1 mt-1 text-sm cursor-pointer">
-                {form.bestseller ? <ToggleRight size={20} className="text-[#D4A853]" /> : <ToggleLeft size={20} className="text-lounge-500" />}
-                <span className={form.bestseller ? "text-[#D4A853]" : "text-lounge-500"}>
+                className="flex items-center gap-2 mt-2 text-sm font-bold cursor-pointer transition-colors">
+                {form.bestseller ? <ToggleRight size={24} className="text-brand-500" /> : <ToggleLeft size={24} className="text-zinc-500" />}
+                <span className={form.bestseller ? "text-brand-500" : "text-zinc-500"}>
                   {form.bestseller ? "Oui" : "Non"}
                 </span>
               </button>
             </div>
             <div>
-              <label className="text-sm font-medium text-lounge-200 block mb-1">Disponible</label>
+              <label className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2">Disponible</label>
               <button onClick={() => setForm({ ...form, dispo: !form.dispo })}
-                className="flex items-center gap-1 mt-1 text-sm cursor-pointer">
-                {form.dispo ? <ToggleRight size={20} className="text-[#D4A853]" /> : <ToggleLeft size={20} className="text-lounge-500" />}
-                <span className={form.dispo ? "text-[#D4A853]" : "text-lounge-500"}>
+                className="flex items-center gap-2 mt-2 text-sm font-bold cursor-pointer transition-colors">
+                {form.dispo ? <ToggleRight size={24} className="text-brand-500" /> : <ToggleLeft size={24} className="text-zinc-500" />}
+                <span className={form.dispo ? "text-brand-500" : "text-zinc-500"}>
                   {form.dispo ? "Oui" : "Non"}
                 </span>
               </button>
             </div>
           </div>
           <div>
-            <label className="text-sm font-medium text-lounge-200 block mb-1">Description</label>
+            <label className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2">Description</label>
             <textarea value={form.desc} onChange={(e) => setForm({ ...form, desc: e.target.value })} rows={2}
-              className="w-full rounded-xl border border-[#D4A853]/15 bg-[#1A1714] px-3 py-2 text-sm text-lounge-100 focus:outline-none focus:ring-2 focus:ring-[#D4A853]/30" />
+              className="w-full rounded-xl border border-white/10 bg-zinc-900 px-4 py-3 text-sm font-medium text-zinc-100 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all" />
           </div>
           {/* Photo upload — stores a File object, not base64 */}
           <div>
-            <label className="text-sm font-medium text-lounge-200 block mb-1">Photo</label>
-            <div className="flex items-center gap-3">
+            <label className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2">Photo</label>
+            <div className="flex items-center gap-4">
               {form.photo instanceof File ? (
-                <img src={URL.createObjectURL(form.photo)} alt="Apercu" className="h-16 w-16 rounded-xl object-cover border border-[#D4A853]/15" />
+                <img src={URL.createObjectURL(form.photo)} alt="Apercu" className="h-16 w-16 rounded-xl object-cover border border-white/10 shadow-md" />
               ) : product && product.photo ? (
-                <img src={`http://${window.location.hostname}:3000${product.photo}`} alt="Actuelle" className="h-16 w-16 rounded-xl object-cover border border-[#D4A853]/15" />
+                <img src={`http://${window.location.hostname}:3000${product.photo}`} alt="Actuelle" className="h-16 w-16 rounded-xl object-cover border border-white/10 shadow-md" />
               ) : (
-                <div className="h-16 w-16 rounded-xl bg-[#2E2822] border border-dashed border-[#D4A853]/8 flex items-center justify-center">
-                  <Camera size={20} className="text-lounge-400" />
+                <div className="h-16 w-16 rounded-xl bg-zinc-900 border border-dashed border-white/20 flex items-center justify-center">
+                  <Camera size={20} className="text-zinc-500" />
                 </div>
               )}
-              <label className="h-9 px-3 rounded-xl border border-[#D4A853]/10 bg-[#231F1B] text-lounge-300 hover:bg-[#2E2822] text-xs font-medium flex items-center cursor-pointer transition-colors">
-                Choisir...
+              <label className="h-11 px-5 rounded-xl border border-white/10 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white text-sm font-bold flex items-center cursor-pointer transition-all shadow-sm">
+                Choisir une photo...
                 <input type="file" accept="image/*" className="hidden"
                   onChange={(e) => {
                     const file = e.target.files?.[0];
@@ -105,10 +104,12 @@ function ProductFormModal({ product, onSave, onClose }) {
               </label>
             </div>
           </div>
-          <button onClick={() => { onSave(form); onClose(); }}
-            className="w-full h-10 rounded-xl bg-gradient-to-r from-[#D4A853] to-[#C49742] text-lounge-950 text-sm font-medium shadow-lg shadow-[#D4A853]/20">
-            {product ? "Modifier" : "Ajouter"}
-          </button>
+          <div className="pt-2">
+            <button onClick={() => { onSave(form); onClose(); }}
+              className="w-full h-12 rounded-xl bg-brand-500 text-black text-base font-bold shadow-[0_0_15px_rgba(212,168,83,0.3)] hover:shadow-[0_0_20px_rgba(212,168,83,0.5)] transition-all">
+              {product ? "Modifier le produit" : "Ajouter le produit"}
+            </button>
+          </div>
         </div>
       </motion.div>
     </>
@@ -127,9 +128,22 @@ export function MenuAdmin() {
   const [showAdd, setShowAdd] = useState(false);
   const [editForm, setEditForm] = useState(null);
   const [uploadingId, setUploadingId] = useState(null);
+  const [dbCategories, setDbCategories] = useState([]);
 
   useEffect(() => {
     fetchProduits();
+    
+    const token = localStorage.getItem("token");
+    fetch(`${API_URL}/menu/categories`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setDbCategories(data.categories);
+        }
+      })
+      .catch((err) => console.error("Error fetching categories:", err));
   }, [fetchProduits]);
 
   const categories = [...new Set(produits.map((p) => p.categorie_nom || p.categorie))];
@@ -192,16 +206,16 @@ export function MenuAdmin() {
   };
 
   return (
-    <div className="p-6 lg:p-8">
+    <div className="max-w-7xl mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-lounge-100">Menu</h1>
-          <p className="text-sm text-lounge-400">Gestion des produits et categories</p>
+          <h1 className="text-3xl font-bold text-zinc-50 tracking-tight">Menu</h1>
+          <p className="text-sm text-zinc-400 mt-1">Gestion des produits et categories</p>
         </div>
         <motion.button whileTap={{ scale: 0.96 }} onClick={() => setShowAdd(true)}
-          className="flex items-center gap-2 h-10 px-4 rounded-xl bg-gradient-to-r from-[#D4A853] to-[#C49742] text-lounge-950 text-sm font-medium shadow-lg shadow-[#D4A853]/20">
-          <Plus size={16} />
+          className="flex items-center gap-2 h-11 px-5 rounded-lg bg-brand-500 text-black text-sm font-bold shadow-[0_0_15px_rgba(212,168,83,0.3)] hover:shadow-[0_0_20px_rgba(212,168,83,0.5)] transition-all">
+          <Plus size={18} />
           Ajouter produit
         </motion.button>
       </div>
@@ -213,39 +227,39 @@ export function MenuAdmin() {
           { label: "Best-sellers", value: counts.bestsellers, icon: Star },
           { label: "Categories", value: categories.length, icon: Filter },
         ].map((s) => (
-          <motion.div key={s.label} variants={itemVariants} initial="hidden" animate="show" className="bg-[#1A1714] rounded-2xl border border-[#D4A853]/10 p-4 shadow-sm">
+          <motion.div key={s.label} variants={itemVariants} initial="hidden" animate="show" className="bg-zinc-900/50 backdrop-blur-md rounded-xl border border-white/5 p-5 shadow-lg">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-medium text-lounge-400">{s.label}</span>
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#231F1B]">
-                <s.icon size={14} className="text-lounge-400" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">{s.label}</span>
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-800 border border-white/5">
+                <s.icon size={16} className="text-zinc-400" />
               </div>
             </div>
-            <p className="text-2xl font-bold text-lounge-100">{s.value}</p>
+            <p className="text-3xl font-bold text-zinc-50">{s.value}</p>
           </motion.div>
         ))}
       </div>
 
       {/* Search + Filters */}
-      <div className="flex flex-wrap gap-3 mb-6">
-        <div className="relative flex-1 max-w-xs">
-          <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-lounge-400" />
-          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Rechercher..." className="h-9 w-full rounded-lg border border-[#D4A853]/15 bg-[#1A1714] pl-10 pr-3 text-sm text-lounge-100 focus:outline-none focus:ring-2 focus:ring-[#D4A853]/30" />
+      <div className="flex flex-wrap gap-3 mb-8">
+        <div className="relative flex-1 max-w-sm">
+          <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" />
+          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Rechercher un produit..." className="h-11 w-full rounded-xl border border-white/10 bg-zinc-900 pl-11 pr-4 text-sm font-medium text-zinc-100 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all shadow-sm" />
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 bg-zinc-900/50 backdrop-blur-md p-1 rounded-xl border border-white/5">
           <button key="all" onClick={() => setFilterCat("Tout")}
-            className={`px-3 py-2 rounded-lg text-xs font-medium transition-all ${filterCat === "Tout" ? "bg-[#D4A853] text-lounge-950" : "bg-[#231F1B] border border-[#D4A853]/10 text-lounge-300"}`}>
+            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${filterCat === "Tout" ? "bg-brand-500 text-black shadow-md shadow-brand-500/20" : "text-zinc-400 hover:text-zinc-100"}`}>
             Tout
           </button>
           {categories.map((cat, i) => (
             <button key={`${cat}-${i}`} onClick={() => setFilterCat(cat)}
-              className={`px-3 py-2 rounded-lg text-xs font-medium transition-all ${filterCat === cat ? "bg-[#D4A853] text-lounge-950" : "bg-[#231F1B] border border-[#D4A853]/10 text-lounge-300"}`}>
+              className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${filterCat === cat ? "bg-brand-500 text-black shadow-md shadow-brand-500/20" : "text-zinc-400 hover:text-zinc-100"}`}>
               {cat}
             </button>
           ))}
         </div>
         <button onClick={() => setShowBest(!showBest)}
-          className={`flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium transition-all ${showBest ? "bg-[#D4A853] text-lounge-950" : "bg-[#231F1B] border border-[#D4A853]/10 text-lounge-300"}`}>
-          <Star size={12} className={showBest ? "fill-white" : "text-[#D4A853]"} />
+          className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all border ${showBest ? "bg-brand-500/10 border-brand-500/30 text-brand-500" : "bg-zinc-900/50 border-white/5 text-zinc-400 hover:bg-zinc-800"}`}>
+          <Star size={16} className={showBest ? "fill-brand-500 text-brand-500" : "text-zinc-500"} />
           Best-sellers
         </button>
       </div>
@@ -253,10 +267,10 @@ export function MenuAdmin() {
       {/* Invisible upload helper — dynamically attached per product click */}
 
       {/* Products Grid */}
-      <motion.div variants={containerVariants} initial="hidden" animate="show" className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <motion.div variants={containerVariants} initial="hidden" animate="show" className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {filtered.map((prod, idx) => (
           <motion.div key={prod.id != null ? `${prod.id}-${prod.nom}` : idx} variants={itemVariants}
-            className="bg-[#1A1714] rounded-2xl border border-[#D4A853]/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            className="bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden shadow-lg card-hover flex flex-col group">
             {/* Image area — click to upload */}
             <div
               onClick={() => {
@@ -266,59 +280,67 @@ export function MenuAdmin() {
                 input.onchange = (e) => handlePhotoUpload(e, prod.id);
                 input.click();
               }}
-              className={`h-32 relative bg-gradient-to-br flex items-center justify-center cursor-pointer ${prod.dispo ? "from-[#231F1B] to-[#2E2822]" : "from-red-500/5 to-red-500/10"}`}
+              className={`h-40 relative flex items-center justify-center cursor-pointer transition-colors ${prod.dispo ? "bg-zinc-800 group-hover:bg-zinc-700" : "bg-red-950/20"}`}
             >
               {uploadingId === prod.id ? (
-                <span className="text-xs text-lounge-400">Chargement...</span>
+                <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider animate-pulse">Chargement...</span>
               ) : prod.photo ? (
                 <>
-                  <img src={imageUrl(prod.photo)} alt={prod.nom} className="h-full w-full object-cover" />
+                  <img src={imageUrl(prod.photo)} alt={prod.nom} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2"><Camera size={16} /> Changer</span>
+                  </div>
                   <button title="Supprimer photo"
                     onClick={(e) => { e.stopPropagation(); deleteProduitPhoto(prod.id); }}
-                    className="absolute top-2 right-2 h-6 w-6 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60">
-                    <X size={12} />
+                    className="absolute top-2 right-2 h-8 w-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-red-500 transition-colors z-10 backdrop-blur-md">
+                    <X size={14} />
                   </button>
                 </>
               ) : (
-                <div className="flex flex-col items-center justify-center gap-1 text-lounge-400">
-                  <span className="text-xs font-medium">Cliquer pour ajouter</span>
+                <div className="flex flex-col items-center justify-center gap-2 text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                  <Camera size={24} />
+                  <span className="text-xs font-bold uppercase tracking-wider">Ajouter photo</span>
                 </div>
               )}
             </div>
-            <div className="p-4">
-              <div className="flex items-start justify-between mb-2">
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-1.5">
-                    {prod.bestseller && <Star size={12} className="text-[#D4A853] fill-amber-500" />}
-                    <h3 className="text-sm font-semibold text-lounge-100 truncate">{prod.nom}</h3>
+            <div className="p-5 flex flex-col flex-1">
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1 min-w-0 pr-2">
+                  <div className="flex items-center gap-2">
+                    {prod.bestseller && <Star size={14} className="text-brand-500 fill-brand-500 shrink-0" />}
+                    <h3 className="text-base font-bold text-zinc-50 truncate">{prod.nom}</h3>
                   </div>
-                  <p className="text-xs text-lounge-400 mt-0.5 line-clamp-1">{prod.description}</p>
+                  <p className="text-xs font-medium text-zinc-400 mt-1 line-clamp-2">{prod.description}</p>
                 </div>
-                <button onClick={() => setEditForm(prod)} className="text-lounge-400 hover:text-lounge-300 flex-shrink-0 ml-2">
+                <button onClick={() => setEditForm(prod)} className="h-8 w-8 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 flex items-center justify-center transition-colors flex-shrink-0">
                   <Pencil size={14} />
                 </button>
               </div>
-              <div className="flex items-center justify-between mt-3">
-                <span className="text-base font-bold text-lounge-100">{formatMontant(prod.prix)}</span>
-                <div className="flex items-center gap-2">
-                  <button onClick={() => toggleBestseller(prod.id, prod.bestseller)}
-                    className="flex items-center gap-1 text-xs cursor-pointer">
-                    {prod.bestseller ? <ToggleRight size={20} className="text-[#D4A853]" /> : <ToggleLeft size={20} className="text-lounge-500" />}
-                  </button>
-                  <button onClick={() => updateProduit(prod.id, { dispo: !prod.dispo })}
-                    className="flex items-center gap-1 text-xs cursor-pointer">
-                    {prod.dispo ? <ToggleRight size={20} className="text-[#D4A853]" /> : <ToggleLeft size={20} className="text-lounge-500" />}
-                    <span className={`font-medium ${prod.dispo ? "text-[#D4A853]" : "text-lounge-500"}`}>
-                      {prod.dispo ? "Dispo" : "Indispo"}
-                    </span>
-                  </button>
+              <div className="mt-auto">
+                <div className="flex items-center justify-between pt-3 border-t border-white/5">
+                  <span className="text-lg font-black text-brand-500">{formatMontant(prod.prix)}</span>
+                  <div className="flex items-center gap-3">
+                    <button onClick={() => toggleBestseller(prod.id, prod.bestseller)}
+                      className="flex items-center gap-1 text-xs cursor-pointer group/toggle" title="Best-seller">
+                      {prod.bestseller ? <ToggleRight size={24} className="text-brand-500" /> : <ToggleLeft size={24} className="text-zinc-600 group-hover/toggle:text-zinc-400" />}
+                    </button>
+                    <button onClick={() => updateProduit(prod.id, { dispo: !prod.dispo })}
+                      className="flex items-center gap-1.5 text-xs font-bold cursor-pointer group/toggle">
+                      {prod.dispo ? <ToggleRight size={24} className="text-emerald-500" /> : <ToggleLeft size={24} className="text-red-500/50 group-hover/toggle:text-red-500" />}
+                      <span className={`${prod.dispo ? "text-emerald-500" : "text-red-500/80"}`}>
+                        {prod.dispo ? "Dispo" : "Rupture"}
+                      </span>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-1.5 mt-2">
-                <span className="inline-flex items-center gap-1 bg-[#D4A853]/5 rounded-full px-2 py-0.5 text-[10px] font-medium text-lounge-400">
-                  {prod.type_poste || prod.categorie_type || "bar"}
-                </span>
-                <span className="bg-[#D4A853]/10 text-[#D4A853] rounded-full px-2 py-0.5 text-[10px] font-medium">{prod.categorie_nom || prod.categorie || "—"}</span>
+                <div className="flex gap-2 mt-4">
+                  <span className="inline-flex items-center rounded-md bg-zinc-800 px-2 py-1 text-xs font-bold text-zinc-400 border border-white/5">
+                    {prod.type_poste || prod.categorie_type || "bar"}
+                  </span>
+                  <span className="inline-flex items-center rounded-md bg-brand-500/10 px-2 py-1 text-xs font-bold text-brand-500 border border-brand-500/20 truncate">
+                    {prod.categorie_nom || prod.categorie || "—"}
+                  </span>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -330,6 +352,7 @@ export function MenuAdmin() {
         {editForm && (
           <ProductFormModal
             product={editForm}
+            categories={dbCategories}
             onSave={(data) => updateProduit(editForm.id, data)}
             onClose={() => setEditForm(null)}
           />
@@ -341,6 +364,7 @@ export function MenuAdmin() {
         {showAdd && (
           <ProductFormModal
             product={null}
+            categories={dbCategories}
             onSave={(data) => createProduit(data)}
             onClose={() => setShowAdd(false)}
           />
