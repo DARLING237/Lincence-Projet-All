@@ -19,7 +19,7 @@
 -- Current Database: `barrestaurant_db`
 --
 
-
+/*!40000 DROP DATABASE IF EXISTS `barrestaurant_db`*/;
 
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ `barrestaurant_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
@@ -699,7 +699,7 @@ CREATE TABLE `utilisateurs` (
 
 LOCK TABLES `utilisateurs` WRITE;
 /*!40000 ALTER TABLE `utilisateurs` DISABLE KEYS */;
-INSERT INTO `utilisateurs` VALUES (1,'Admin','RestoPlus','admin@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','admin','Administrateur','677112233','2025-01-10','A',1,0,'2026-05-22 07:39:05','2026-05-18 09:52:04','2026-05-22 07:39:05'),(2,'Dupont','Jean','serveur@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','serveur','Serveur principal','677223344','2025-02-15','J',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04'),(3,'Martin','Luc','luc.serveur@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','serveur','Serveur de salle','677334455','2025-02-15','L',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04'),(8,'Ndi','Paul','paul.cuisine@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','cuisinier','Chef de cuisine','677889900','2025-03-01','P',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04'),(9,'Eto','Samuel','samuel.manager@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','manager','Manager Général','699887766','2025-01-01','S',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04'),(10,'Kamga','Alice','alice.caisse@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','caissier','Caissière','655112233','2025-04-10','A',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04');
+INSERT INTO `utilisateurs` VALUES (1,'Admin','RestoPlus','admin@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','admin','Administrateur','677112233','2025-01-10','A',1,0,'2026-05-22 10:58:49','2026-05-18 09:52:04','2026-05-22 10:58:49'),(2,'Dupont','Jean','serveur@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','serveur','Serveur principal','677223344','2025-02-15','J',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04'),(3,'Martin','Luc','luc.serveur@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','serveur','Serveur de salle','677334455','2025-02-15','L',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04'),(8,'Ndi','Paul','paul.cuisine@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','cuisinier','Chef de cuisine','677889900','2025-03-01','P',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04'),(9,'Eto','Samuel','samuel.manager@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','manager','Manager Général','699887766','2025-01-01','S',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04'),(10,'Kamga','Alice','alice.caisse@barresto.com','$2a$10$mD5S6tLvJ9gK3XbH0B8uUeW5cR9v1L2mK4jH8gY3V6N1oP5qA0bB7C','caissier','Caissière','655112233','2025-04-10','A',1,0,'2026-05-18 09:52:04','2026-05-18 09:52:04','2026-05-18 09:52:04');
 /*!40000 ALTER TABLE `utilisateurs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -768,7 +768,7 @@ USE `barrestaurant_db`;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `v_ca_mensuel` AS select date_format(`transactions`.`date`,'%Y-%m') AS `periode`,date_format(`transactions`.`date`,'%b %Y') AS `periode_label`,coalesce(sum((case when (`transactions`.`type_op` = 'entree') then `transactions`.`montant` else 0 end)),0) AS `ca`,coalesce(sum((case when (`transactions`.`type_op` = 'sortie') then `transactions`.`montant` else 0 end)),0) AS `depenses`,(coalesce(sum((case when (`transactions`.`type_op` = 'entree') then `transactions`.`montant` else 0 end)),0) - coalesce(sum((case when (`transactions`.`type_op` = 'sortie') then `transactions`.`montant` else 0 end)),0)) AS `benefice` from `transactions` where (`transactions`.`date` is not null) group by date_format(`transactions`.`date`,'%Y-%m') order by `periode` desc */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -786,7 +786,7 @@ USE `barrestaurant_db`;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `v_commandes_en_cours` AS select `c`.`id` AS `id`,`c`.`table_id` AS `table_id`,`c`.`serveur_id` AS `serveur_id`,`c`.`total` AS `total`,`c`.`heure` AS `heure`,`c`.`date` AS `date`,`c`.`statut` AS `statut`,`c`.`source` AS `source`,`c`.`note` AS `note`,`c`.`mode_paiement` AS `mode_paiement`,`c`.`est_differee` AS `est_differee`,`c`.`date_prevue` AS `date_prevue`,`c`.`heure_prevue` AS `heure_prevue`,`c`.`created_at` AS `created_at`,`c`.`updated_at` AS `updated_at`,`t`.`numero` AS `table_nom`,`t`.`numero` AS `table_numero`,`u`.`prenom` AS `serveur`,`u`.`prenom` AS `serveur_prenom`,`u`.`nom` AS `serveur_nom` from ((`commandes` `c` left join `tables_salle` `t` on((`c`.`table_id` = `t`.`id`))) left join `utilisateurs` `u` on((`c`.`serveur_id` = `u`.`id`))) where (`c`.`statut` in ('en attente','en preparation','servie')) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -801,4 +801,4 @@ USE `barrestaurant_db`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-22  9:32:09
+-- Dump completed on 2026-05-22 17:16:50

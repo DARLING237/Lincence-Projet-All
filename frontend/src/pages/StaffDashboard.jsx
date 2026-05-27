@@ -19,6 +19,7 @@ import { Badge } from "../components/ui/badge";
 
 export function StaffDashboard() {
   const user = useAppStore((s) => s.user);
+  const role = user?.role;
   const stats = useAppStore((s) => s.statsStaff);
   const commandes = useAppStore((s) => s.commandesEnCours);
   const tables = useAppStore((s) => s.tables);
