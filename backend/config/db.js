@@ -37,7 +37,7 @@ const pool = mysql.createPool({
   ssl: { rejectUnauthorized: false },
 });
 
-// Test de connexion
+// Test de connexion (ne pas terminer l'application en production serverless)
 pool
   .getConnection()
   .then((conn) => {
@@ -46,7 +46,7 @@ pool
   })
   .catch((err) => {
     console.error("❌ Erreur connexion MySQL:", err.message);
-    process.exit(1);
+    console.warn("Le pool MySQL est initialisé, mais la connexion de test a échoué. Les requêtes ultérieures renverront une erreur si le backend ne peut pas atteindre la base de données.");
   });
 
 module.exports = pool;
