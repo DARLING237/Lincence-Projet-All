@@ -36,6 +36,8 @@ const changePasswordSchema = z.object({
  */
 router.post("/login", validate(loginSchema), async (req, res) => {
   try {
+    console.log('[LOGIN] Request headers:', { origin: req.headers.origin, auth: req.headers.authorization });
+    console.log('[LOGIN] Request body:', req.body);
     const { email, mot_de_passe } = req.body;
     if (!email || !mot_de_passe) {
       return res.status(400).json({ success: false, message: "Email et mot de passe requis" });
