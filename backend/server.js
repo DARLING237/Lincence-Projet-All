@@ -2,25 +2,32 @@ require("dotenv").config();
 const express = require("express");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
+const cors = require("cors");
 
 const app = express();
 
-// --- CORS manuel ---
-app.use((req, res, next) => {
-  const allowedOrigins = [
-    "https://lincence-projet.vercel.app",
-    "http://localhost:5173",
-  ];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  if (req.method === "OPTIONS") return res.status(204).end();
-  next();
-});
+// --- CORS ---
+const allowedOrigins = [
+  "https://lincence-projet.vercel.app",
+  "http://localhost:5173",
+  "https://lincence-projet-15eo76aj5-darlingamza-gmailcoms-projects.vercel.app"
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`Origin ${origin} not allowed by CORS`));
+    }
+  },
+  credentials: true,
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"],
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 // --- Middlewares standards ---
 app.set("trust proxy", 1);
@@ -42,10 +49,16 @@ app.use((req, res, next) => {
   next();
 });
 
+const authRouter = require("./routes/auth");
+
 // --- Routes principales ---
 app.get("/", (req, res) => {
   res.json({ message: "Backend BarResto actif", environment: process.env.NODE_ENV });
 });
+
+// Auth routes
+app.use("/api/auth", authRouter);
+app.use("/auth", authRouter);
 
 // Heartbeat (GET et POST)
 app.get("/api/auth/heartbeat", (req, res) => {
@@ -79,7 +92,17 @@ app.get("/api/stats/rapport", (req, res) => {
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
-
+// Historique des connexions (admin)
+app.get("/api/connection-history/admin", (req, res) => {
+  // À implémenter avec votre logique (ex: récupération depuis MySQL)
+  res.json({
+    success: true,
+    data: [
+      // tableau d'historique
+    ],
+    message: "Historique des connexions - à compléter"
+  });
+});
 // --- 404 pour toutes les routes non définies ---
 app.use((req, res) => {
   res.status(404).json({ success: false, message: `Route non trouvée : ${req.method} ${req.url}` });
