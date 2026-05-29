@@ -512,7 +512,7 @@ export function StaffCommandes() {
               className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 cursor-pointer"
               onClick={() => { if (!payModal.paymentPending) setPayModal(null); }} />
             <motion.div initial={{ opacity: 0, scale: 0.95, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inset-x-4 md:inset-x-auto md:w-[460px] max-h-[calc(100dvh-2rem)] bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col">
+              className="fixed inset-x-4 top-4 bottom-4 md:left-1/2 md:right-auto md:w-[460px] md:-translate-x-1/2 bg-zinc-950 border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col">
               <div className="flex shrink-0 items-center justify-between border-b border-white/5 px-6 py-5 bg-zinc-900/50">
                 <div>
                   <h3 className="text-lg font-bold text-zinc-50">Paiement Commande #{payModal.cmd.id}</h3>
@@ -521,7 +521,7 @@ export function StaffCommandes() {
                 <button onClick={() => { if (!payModal.paymentPending) setPayModal(null); }} className="h-8 w-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-400 hover:text-zinc-50 hover:bg-zinc-700 transition-colors"><X size={20} /></button>
               </div>
 
-              <div className="overflow-y-auto p-6">
+              <div className="min-h-0 flex-1 overflow-y-auto p-6">
                 <div className="text-center mb-8 bg-zinc-900 rounded-xl py-6 border border-white/5">
                   <p className="text-sm font-medium text-zinc-400 mb-1">Montant total</p>
                   <p className="text-4xl font-bold text-brand-500">{formatMontant(payModal.cmd.total)}</p>
