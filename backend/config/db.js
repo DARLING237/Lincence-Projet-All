@@ -20,7 +20,7 @@ if (!DB_HOST || !DB_USER || !DB_NAME) {
   process.exit(1);
 }
 
-// La ligne en double a été supprimée ici !
+
 
 const pool = mysql.createPool({
   host: DB_HOST, // Utilisation directe des variables destructurées au-dessus

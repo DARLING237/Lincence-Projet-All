@@ -20,7 +20,14 @@ function apiFetch(path, options = {}) {
   };
   return fetch(`${API_URL}${path}`, { ...options, headers })
     .then(async (res) => {
-      const data = await res.json();
+      let data;
+      try {
+        data = await res.json();
+      } catch (e) {
+        // Si le JSON parse échoue (ex: HTML "Too many requests"), créer une réponse d'erreur
+        console.warn(`⚠️ JSON parse failed for ${path}: ${res.status}`, e.message);
+        data = { message: `Erreur serveur (${res.status}): Impossible de traiter la réponse` };
+      }
       if (!res.ok) {
         console.error(`apiFetch ${path}: ${res.status}`, data);
         return { success: false, message: data?.message || "Erreur serveur", status: res.status, errors: data?.errors };
@@ -159,7 +166,15 @@ export const useAppStore = create((set, get) => ({
     })),
 
   heartbeat: () =>
-    apiFetch("/auth/heartbeat", { method: "POST" }),
+    apiFetch("/auth/heartbeat", { method: "POST" }).catch((err) => {
+      // Ignorer silencieusement les erreurs 429 (rate limit) pour ne pas bloquer l'app
+      if (err?.status === 429) {
+        console.warn("⚠️ Rate limit atteint, heartbeat skippé");
+        return null;
+      }
+      console.error("❌ Heartbeat error:", err);
+      throw err;
+    }),
 
   fetchSalaires: () =>
     apiFetch("/personnel/salaires").then((d) => d.success && set({

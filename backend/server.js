@@ -47,8 +47,10 @@ app.use(express.urlencoded({ extended: true }));
 // Limiteur de requêtes (Rate Limiter)
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 10, // Limite chaque IP à 100 requêtes par fenêtre
-  skip: (req) => req.method === "OPTIONS" // Ne pas limiter les requêtes Preflight
+  max: 500, // Augmenté de 100 à 500 requêtes par fenêtre (pour éviter le 429)
+  skip: (req) => req.method === "OPTIONS", // Ne pas limiter les requêtes Preflight
+  standardHeaders: true, // Retourner les limites en headers RateLimit-*
+  legacyHeaders: false // Désactiver les headers X-RateLimit-*
 });
 app.use(limiter);
 
@@ -83,9 +85,7 @@ app.get("/api/health", (req, res) => {
 app.get("/api/auth/heartbeat", (req, res) => {
   res.json({ success: true, message: "Heartbeat OK (GET)" });
 });
-app.post("/api/auth/heartbeat", (req, res) => {
-  res.json({ success: true, message: "Heartbeat OK (POST)" });
-});
+
 
 // --- 5. ENREGISTREMENT DES ROUTES API ---
 app.use("/api/auth", authRouter);

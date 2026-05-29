@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     if (user) {
       heartbeat();
-      const interval = setInterval(heartbeat, 10000);
+      const interval = setInterval(heartbeat, 30000); // Augmenté de 10s à 30s
       return () => clearInterval(interval);
     }
   }, [user?.id]); // ne restart que si l'utilisateur change
