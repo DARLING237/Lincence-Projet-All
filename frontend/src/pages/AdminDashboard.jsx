@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useAppStore } from "../store/appStore";
 import { StatCard } from "../components/ui/statCard";
 import { Badge } from "../components/ui/badge";
+import { SafeResponsiveContainer as ResponsiveContainer } from "../components/ui/SafeResponsiveContainer";
 import { formatMontant, formatPourcentage } from "../data/mockData";
 import {
   TrendingUp,
@@ -25,7 +26,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
   PieChart,
   Pie,
   Cell,

@@ -4,6 +4,7 @@ import { useAppStore } from "../store/appStore";
 import { StatCard } from "../components/ui/statCard";
 import { Badge } from "../components/ui/badge";
 import { ConnectionAlert } from "../components/ui/ConnectionAlert";
+import { SafeResponsiveContainer as ResponsiveContainer } from "../components/ui/SafeResponsiveContainer";
 import {
   Calendar,
   Download,
@@ -24,7 +25,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
   BarChart,
   Bar,
   LineChart,
@@ -320,16 +320,16 @@ export function ConnectionHistory() {
       </div>
 
       {/* Graphiques */}
-      <div className="grid gap-5 xl:grid-cols-5 mb-8">
+      <div className="grid min-w-0 gap-5 xl:grid-cols-5 mb-8">
         {/* Connexions par jour */}
         <motion.div
           variants={itemVariants}
-          className="xl:col-span-3 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg"
+          className="min-w-0 xl:col-span-3 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg"
         >
           <h3 className="text-base font-bold text-zinc-50 mb-1">Évolution des connexions</h3>
           <p className="text-sm font-medium text-zinc-400 mb-6">Nombre de sessions par jour</p>
-          <div className="bg-zinc-950/30 p-4 rounded-xl border border-white/5">
-             <ResponsiveContainer width="100%" height={260}>
+          <div className="min-w-0 bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[260px]">
+             <ResponsiveContainer width="100%" height="100%" minWidth={0}>
                <AreaChart data={connexionsParJour} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                  <defs>
                    <linearGradient id="gradConnexions" x1="0" y1="0" x2="0" y2="1">
@@ -350,12 +350,12 @@ export function ConnectionHistory() {
         {/* Connexions par heure */}
         <motion.div
           variants={itemVariants}
-          className="xl:col-span-2 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg"
+          className="min-w-0 xl:col-span-2 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg"
         >
           <h3 className="text-base font-bold text-zinc-50 mb-1">Heures d'activité</h3>
           <p className="text-sm font-medium text-zinc-400 mb-6">Connexions par heure</p>
-          <div className="bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[292px] flex items-center">
-             <ResponsiveContainer width="100%" height="100%">
+          <div className="min-w-0 bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[292px]">
+             <ResponsiveContainer width="100%" height="100%" minWidth={0}>
                <BarChart data={connexionsParHeure} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                  <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
                  <XAxis dataKey="heure" tick={{ fontSize: 11, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
@@ -371,12 +371,12 @@ export function ConnectionHistory() {
       {/* Top utilisateurs */}
       <motion.div
         variants={itemVariants}
-        className="bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 mb-8 shadow-lg"
+        className="min-w-0 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 mb-8 shadow-lg"
       >
         <h3 className="text-base font-bold text-zinc-50 mb-1">Top des utilisateurs</h3>
         <p className="text-sm font-medium text-zinc-400 mb-6">Nombre de sessions par utilisateur</p>
-        <div className="bg-zinc-950/30 p-4 rounded-xl border border-white/5">
-           <ResponsiveContainer width="100%" height={300}>
+        <div className="min-w-0 bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[300px]">
+           <ResponsiveContainer width="100%" height="100%" minWidth={0}>
              <BarChart data={statsUtilisateurs} layout="horizontal" margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                <CartesianGrid strokeDasharray="3 4" stroke="#27272a" horizontal={false} />
                <XAxis type="number" tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} />

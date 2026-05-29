@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useAppStore } from "../store/appStore";
 import { StatCard } from "../components/ui/statCard";
+import { SafeResponsiveContainer as ResponsiveContainer } from "../components/ui/SafeResponsiveContainer";
 import { Badge } from "../components/ui/badge";
 import { formatMontant, formatPourcentage } from "../data/mockData";
 import {
@@ -26,7 +27,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
   PieChart as RPieChart,
   Pie,
   Cell,

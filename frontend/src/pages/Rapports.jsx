@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAppStore } from "../store/appStore";
 import { formatMontant } from "../data/mockData";
 import { Badge } from "../components/ui/badge";
+import { SafeResponsiveContainer as ResponsiveContainer } from "../components/ui/SafeResponsiveContainer";
 import {
   BarChart3, Calendar, TrendingUp, TrendingDown, Receipt, CreditCard,
   Smartphone, Banknote, Repeat, GlassWater, Download, Clock,
@@ -10,7 +11,7 @@ import {
 } from "lucide-react";
 import {
   BarChart as RBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
-  ResponsiveContainer, PieChart as RPieChart, Pie, Cell, Legend,
+  PieChart as RPieChart, Pie, Cell, Legend,
 } from "recharts";
 
 const periodTabs = [
