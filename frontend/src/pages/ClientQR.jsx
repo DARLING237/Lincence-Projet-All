@@ -343,43 +343,45 @@ export function ClientQRPage() {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 className="fixed inset-0 bg-black/80 z-50 backdrop-blur-sm" onClick={() => setPayModal(false)} />
               <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 50 }}
-                className="fixed inset-x-4 bottom-4 max-w-lg mx-auto bg-zinc-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl z-50 p-6">
-                <div className="flex items-center justify-between mb-6">
+                className="fixed inset-x-4 bottom-4 max-h-[calc(100dvh-2rem)] max-w-lg mx-auto bg-zinc-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col">
+                <div className="flex shrink-0 items-center justify-between border-b border-white/5 px-6 py-5 bg-zinc-950/30">
                   <h3 className="text-xl font-bold text-zinc-50">Paiement</h3>
                   <button onClick={() => setPayModal(false)} className="text-zinc-400 hover:text-zinc-200 bg-zinc-800 p-1.5 rounded-lg">
                     <X size={20} />
                   </button>
                 </div>
 
-                <div className="text-center mb-6 bg-zinc-950 rounded-xl p-4 border border-white/5 shadow-inner">
-                  <p className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-1">Montant à payer</p>
-                  <p className="text-4xl font-black text-brand-500">{formatMontant(orderTotal)}</p>
-                </div>
-
-                <div className="grid grid-cols-3 gap-3 mb-6">
-                  {paymentModes.map((mode) => (
-                    <button key={mode.id} onClick={() => setSelectedPaymentMode(mode.id)}
-                      className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${
-                        selectedPaymentMode === mode.id ? "border-brand-500 bg-brand-500/10 shadow-[0_0_10px_rgba(212,168,83,0.2)]" : "border-white/5 bg-zinc-950 hover:bg-zinc-800"
-                      }`}>
-                      <mode.icon size={28} className={selectedPaymentMode === mode.id ? "text-brand-500 drop-shadow-[0_0_5px_rgba(212,168,83,0.5)]" : mode.color || "text-zinc-400"} />
-                      <span className={`text-xs font-bold ${selectedPaymentMode === mode.id ? "text-brand-500" : "text-zinc-400"}`}>{mode.label}</span>
-                    </button>
-                  ))}
-                </div>
-
-                {(selectedPaymentMode === "orange_money" || selectedPaymentMode === "mtn_momo") && (
-                  <div className="mb-6">
-                    <label className="text-xs font-bold text-zinc-400 mb-2 block uppercase tracking-wider">Numéro de téléphone</label>
-                    <input type="tel" value={clientPhone} onChange={(e) => setClientPhone(e.target.value)}
-                      placeholder="6XX XXX XXX" className="w-full h-12 rounded-xl bg-zinc-950 border border-white/10 px-4 text-zinc-50 font-bold focus:outline-none focus:border-brand-500 shadow-inner" />
+                <div className="overflow-y-auto p-6">
+                  <div className="text-center mb-6 bg-zinc-950 rounded-xl p-4 border border-white/5 shadow-inner">
+                    <p className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-1">Montant à payer</p>
+                    <p className="text-4xl font-black text-brand-500">{formatMontant(orderTotal)}</p>
                   </div>
-                )}
 
-                <button onClick={handlePayment} disabled={!selectedPaymentMode || paying || (selectedPaymentMode !== "especes" && !clientPhone)}
-                  className="w-full h-12 rounded-xl bg-brand-500 text-black font-black disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(212,168,83,0.3)] hover:shadow-[0_0_20px_rgba(212,168,83,0.5)] transition-all">
-                  {paying ? "Paiement en cours..." : "Valider le paiement"}
-                </button>
+                  <div className="grid grid-cols-3 gap-3 mb-6">
+                    {paymentModes.map((mode) => (
+                      <button key={mode.id} onClick={() => setSelectedPaymentMode(mode.id)}
+                        className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${
+                          selectedPaymentMode === mode.id ? "border-brand-500 bg-brand-500/10 shadow-[0_0_10px_rgba(212,168,83,0.2)]" : "border-white/5 bg-zinc-950 hover:bg-zinc-800"
+                        }`}>
+                        <mode.icon size={28} className={selectedPaymentMode === mode.id ? "text-brand-500 drop-shadow-[0_0_5px_rgba(212,168,83,0.5)]" : mode.color || "text-zinc-400"} />
+                        <span className={`text-xs font-bold ${selectedPaymentMode === mode.id ? "text-brand-500" : "text-zinc-400"}`}>{mode.label}</span>
+                      </button>
+                    ))}
+                  </div>
+
+                  {(selectedPaymentMode === "orange_money" || selectedPaymentMode === "mtn_momo") && (
+                    <div className="mb-6">
+                      <label className="text-xs font-bold text-zinc-400 mb-2 block uppercase tracking-wider">Numéro de téléphone</label>
+                      <input type="tel" value={clientPhone} onChange={(e) => setClientPhone(e.target.value)}
+                        placeholder="6XX XXX XXX" className="w-full h-12 rounded-xl bg-zinc-950 border border-white/10 px-4 text-zinc-50 font-bold focus:outline-none focus:border-brand-500 shadow-inner" />
+                    </div>
+                  )}
+
+                  <button onClick={handlePayment} disabled={!selectedPaymentMode || paying || (selectedPaymentMode !== "especes" && !clientPhone)}
+                    className="w-full h-12 rounded-xl bg-brand-500 text-black font-black disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(212,168,83,0.3)] hover:shadow-[0_0_20px_rgba(212,168,83,0.5)] transition-all">
+                    {paying ? "Paiement en cours..." : "Valider le paiement"}
+                  </button>
+                </div>
               </motion.div>
             </>
           )}
