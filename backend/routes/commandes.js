@@ -62,7 +62,12 @@ router.get("/", async (req, res) => {
 
     res.json({ success: true, commandes: rows });
   } catch (err) {
-    console.error("Erreur get commandes:", err);
+    console.error("Erreur get commandes:", {
+      code: err.code,
+      errno: err.errno,
+      sqlMessage: err.sqlMessage,
+      message: err.message,
+    });
     res.status(500).json({ success: false, message: "Erreur serveur" });
   }
 });
@@ -87,7 +92,12 @@ router.get("/en-cours", async (req, res) => {
 
     res.json({ success: true, commandes: rows });
   } catch (err) {
-    console.error("Erreur get commandes en-cours:", err);
+    console.error("Erreur get commandes en-cours:", {
+      code: err.code,
+      errno: err.errno,
+      sqlMessage: err.sqlMessage,
+      message: err.message,
+    });
     res.status(500).json({ success: false, message: "Erreur serveur" });
   }
 });

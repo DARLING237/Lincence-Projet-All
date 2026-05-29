@@ -3,8 +3,13 @@ const express = require("express");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const cors = require("cors");
+const { ensureRuntimeSchema } = require("./services/schemaMigrations");
 
 const app = express();
+
+ensureRuntimeSchema().catch((err) => {
+  console.error("Erreur migration schema runtime:", err);
+});
 
 // --- 1. CONFIGURATION CORS UNIQUE ET ROBUSTE ---
 const allowedOrigins = [
