@@ -7,7 +7,7 @@ const { ensureRuntimeSchema } = require("./services/schemaMigrations");
 
 const app = express();
 
-ensureRuntimeSchema().catch((err) => {
+const schemaReady = ensureRuntimeSchema().catch((err) => {
   console.error("Erreur migration schema runtime:", err);
 });
 
@@ -58,6 +58,17 @@ const limiter = rateLimit({
   legacyHeaders: false // Désactiver les headers X-RateLimit-*
 });
 app.use(limiter);
+
+app.use(async (req, res, next) => {
+  if (req.path === "/api/health" || req.path === "/") return next();
+
+  try {
+    await schemaReady;
+    next();
+  } catch (err) {
+    next(err);
+  }
+});
 
 // Logger simple pour le débogage dans le tableau de bord Vercel
 app.use((req, res, next) => {

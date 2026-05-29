@@ -36,6 +36,18 @@ async function addColumnIfMissing(conn, table, column, definition) {
 async function ensureRuntimeSchema() {
   const conn = await pool.getConnection();
   try {
+    await addColumnIfMissing(conn, "tables_salle", "places", "INT DEFAULT 2");
+    await addColumnIfMissing(conn, "tables_salle", "zone", "VARCHAR(50) DEFAULT NULL");
+    await addColumnIfMissing(
+      conn,
+      "tables_salle",
+      "statut",
+      "ENUM('libre','occupee','reservee') DEFAULT 'libre'"
+    );
+    await addColumnIfMissing(conn, "tables_salle", "qr_actif", "TINYINT(1) NOT NULL DEFAULT 1");
+
+    await addColumnIfMissing(conn, "utilisateurs", "last_seen", "DATETIME DEFAULT NULL");
+
     await addColumnIfMissing(
       conn,
       "commandes",
@@ -47,6 +59,13 @@ async function ensureRuntimeSchema() {
     await addColumnIfMissing(conn, "commandes", "est_differee", "TINYINT(1) NOT NULL DEFAULT 0");
     await addColumnIfMissing(conn, "commandes", "date_prevue", "DATE DEFAULT NULL");
     await addColumnIfMissing(conn, "commandes", "heure_prevue", "TIME DEFAULT NULL");
+
+    await addColumnIfMissing(
+      conn,
+      "commande_items",
+      "statut",
+      "ENUM('en attente','en preparation','pret','servi','annule') DEFAULT 'en attente'"
+    );
 
     if (!(await tableExists(conn, "paiements"))) {
       await conn.query(`
