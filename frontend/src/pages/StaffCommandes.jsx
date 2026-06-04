@@ -60,7 +60,7 @@ export function StaffCommandes() {
       } catch (e) { /* ignore */ }
     };
     checkNewQRCommandes();
-    const interval = setInterval(checkNewQRCommandes, 5000);
+    const interval = setInterval(checkNewQRCommandes, 15000);
     return () => clearInterval(interval);
   }, []);
 
@@ -68,7 +68,7 @@ export function StaffCommandes() {
     fetchCommandesEnCours();
     fetchTables();
     fetchProduits();
-    const interval = setInterval(fetchCommandesEnCours, 5000);
+    const interval = setInterval(fetchCommandesEnCours, 15000);
     return () => clearInterval(interval);
   }, [fetchCommandesEnCours, fetchTables, fetchProduits]);
 

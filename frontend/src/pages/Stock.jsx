@@ -32,7 +32,7 @@ export function Stock() {
   const fetchFournisseurs = useAppStore((s) => s.fetchFournisseurs);
 
   useEffect(() => {
-    console.log("Fetching stock, alertes, ravitaillements, fournisseurs...");
+   
     fetchStock();
     fetchAlertesStock();
     fetchRavitaillements();
@@ -42,7 +42,7 @@ export function Stock() {
   const filteredStock = stockProduits.filter((p) =>
     !searchStock || p.nom.toLowerCase().includes(searchStock.toLowerCase())
   );
-  console.log("📦 Produits chargés:", stockProduits.length, stockProduits);
+
   const filteredFournisseurs = fournisseurs.filter((f) =>
     !searchFournisseur || f.nom.toLowerCase().includes(searchFournisseur.toLowerCase())
   );

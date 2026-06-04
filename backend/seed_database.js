@@ -1,10 +1,23 @@
 const mysql = require('mysql2/promise');
+const path = require('path');
+
+// Charger les variables d'environnement
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 (async () => {
+  const dbHost = process.env.DB_HOST || 'localhost';
+  const dbUser = process.env.DB_USER || 'root';
+  const dbPassword = process.env.DB_PASSWORD || '';
+  const dbPort = parseInt(process.env.DB_PORT, 10) || 3306;
+  const dbName = process.env.DB_NAME || 'barrestaurant_db';
+
+  console.log(`🔄 Connexion à la base de données ${dbName} (${dbHost}:${dbPort}) pour le seeding...`);
   const conn = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'barrestaurant_db'
+    host: dbHost,
+    user: dbUser,
+    password: dbPassword,
+    port: dbPort,
+    database: dbName
   });
 
   console.log('=== DÉBUT DES INSERTIONS ===\n');

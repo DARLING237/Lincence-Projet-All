@@ -22,19 +22,20 @@ if (!DB_HOST || !DB_USER || !DB_NAME) {
 
 
 
+
+
+
 const pool = mysql.createPool({
-  host: DB_HOST, // Utilisation directe des variables destructurées au-dessus
-  user: DB_USER,
-  password: DB_PASSWORD,
-  database: DB_NAME,
-  port: DB_PORT,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-  // Option cruciale pour certains hébergeurs cloud comme Filess.io
-  ssl: {
-    rejectUnauthorized: false
-  }
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT || 3307, 
+  // --- LES LIGNES CRUCIALES POUR TOI ---
+  waitForConnections: true,  // Met les requêtes en attente au lieu de planter si le pool est plein
+  connectionLimit: 2,        // Ne JAMAIS ouvrir plus de 2 connexions simultanées sur Vercel
+  queueLimit: 0              // Pas de limite sur la file d'attente des requêtes en attente
 });
+
 
 module.exports = pool;
