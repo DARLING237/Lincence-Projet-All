@@ -2,106 +2,188 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useAppStore } from "../store/appStore";
 import { StatCard } from "../components/ui/statCard";
-import { SafeResponsiveContainer as ResponsiveContainer } from "../components/ui/SafeResponsiveContainer";
 import { Badge } from "../components/ui/badge";
-import { formatMontant, formatPourcentage } from "../data/mockData";
+import { ConnectionAlert } from "../components/ui/ConnectionAlert";
+import { SafeResponsiveContainer as ResponsiveContainer } from "../components/ui/SafeResponsiveContainer";
 import {
-  TrendingUp,
-  Wallet,
-  Receipt,
+  Calendar,
   Download,
-  BarChart3,
-  PieChart,
-  DollarSign,
-  CreditCard,
-  FileText,
   AlertTriangle,
-  ListChecks,
+  Clock,
+  User,
+  Search,
+  Filter,
+  BarChart3,
+  TrendingUp,
+  Activity,
+  FileSpreadsheet,
 } from "lucide-react";
 import {
   AreaChart,
   Area,
-  BarChart,
-  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  PieChart as RPieChart,
-  Pie,
-  Cell,
-  Legend,
+  BarChart,
+  Bar,
 } from "recharts";
 
 const GOLD = "#D4A853";
-const RED = "#EF4444";
 
 function CustomTooltip({ active, payload, label }) {
-  if (!active || !payload || !payload.length) return null;
+  if (!active || !payload) return null;
   return (
     <div className="rounded-xl border border-white/10 bg-zinc-950 p-4 shadow-xl backdrop-blur-md">
       <p className="mb-2 font-bold text-zinc-50">{label}</p>
       {payload.map((entry, i) => (
         <p key={i} className="text-sm font-semibold flex items-center justify-between gap-4" style={{ color: entry.color }}>
           <span>{entry.name}</span>
-          <span>{formatMontant(entry.value)}</span>
+          <span>{entry.value}</span>
         </p>
       ))}
     </div>
   );
 }
 
-function BeneficeTooltip({ active, payload, label }) {
-  if (!active || !payload || !payload.length) return null;
-  const val = payload[0]?.value ?? 0;
-  return (
-    <div className="rounded-xl border border-white/10 bg-zinc-950 p-4 shadow-xl backdrop-blur-md">
-      <p className="font-bold text-zinc-50 mb-2">{label}</p>
-      <p className="text-sm font-semibold flex items-center justify-between gap-4" style={{ color: val >= 0 ? GOLD : RED }}>
-        <span>Bénéfice</span>
-        <span>{formatMontant(Math.abs(val))}</span>
-      </p>
-    </div>
-  );
-}
+export function ConnectionHistory() {
+  const connectionHistory = useAppStore((s) => s.connectionHistory) || [];
+  const fetchConnectionHistory = useAppStore((s) => s.fetchConnectionHistory);
+  const personnel = useAppStore((s) => s.personnel) || [];
 
-export function Finances() {
-  const statsMensuelles = useAppStore((s) => s.statsMensuelles);
-  const revenusData = useAppStore((s) => s.revenusData);
-  const ventesParCategorie = useAppStore((s) => s.ventesParCategorie);
-  const impots = useAppStore((s) => s.impots);
-  const transactions = useAppStore((s) => s.transactions);
-  const fetchRevenus = useAppStore((s) => s.fetchRevenus);
-  const fetchImpots = useAppStore((s) => s.fetchImpots);
-  const fetchStats = useAppStore((s) => s.fetchStats);
-  const fetchTransactions = useAppStore((s) => s.fetchTransactions);
-  const [filterType, setFilterType] = useState("");
+  const [filters, setFilters] = useState({
+    dateDebut: "",
+    dateFin: "",
+    utilisateur: "",
+  });
+  const [stats, setStats] = useState({
+    totalConnexions: 0,
+    moyenneDuree: 0,
+    sessionsLongues: 0,
+    utilisateursActifs: 0,
+  });
+
+  const [sessionsLongues, setSessionsLongues] = useState([]);
 
   useEffect(() => {
-    fetchRevenus();
-    fetchImpots();
-    fetchStats();
-    fetchTransactions();
-  }, [fetchRevenus, fetchImpots, fetchStats, fetchTransactions]);
+    fetchConnectionHistory();
+  }, []);
 
-  const caTrend = formatPourcentage(statsMensuelles.ca, statsMensuelles.caMoisPrecedent);
-  const beneficeTrend = formatPourcentage(statsMensuelles.benefice, statsMensuelles.beneficeMoisPrecedent);
+  useEffect(() => {
+    if (connectionHistory.length > 0) {
+      calculerStats();
+    }
+  }, [connectionHistory]);
 
-  const beneficeMensuel = revenusData.map((d) => ({
-    mois: d.mois,
-    benefice: d.ca - d.depenses,
-  }));
+  const calculerStats = () => {
+    const totalConnexions = connectionHistory.length;
+    const durees = connectionHistory.map(h => h.duree_session || 0);
+    const moyenneDuree = totalConnexions > 0 ? (durees.reduce((a, b) => a + b, 0) / totalConnexions) : 0;
+    const sessionsLonguesFiltrées = connectionHistory.filter(h => (h.duree_session || 0) > 3600);
+    const utilisateursUniques = new Set(connectionHistory.map(h => h.utilisateur_id)).size;
 
-  const depensesBreakdown = [
-    { label: "Fournisseurs", amount: statsMensuelles.depensesFournisseurs, color: "bg-brand-500", hexColor: GOLD, icon: <CreditCard size={18} className="text-brand-500" /> },
-    { label: "Salaires", amount: statsMensuelles.depensesStaff, color: "bg-emerald-500", hexColor: "#10B981", icon: <FileText size={18} className="text-emerald-500" /> },
-    { label: "Impôts & Taxes", amount: statsMensuelles.depensesImpots, color: "bg-amber-500", hexColor: "#F59E0B", icon: <DollarSign size={18} className="text-amber-500" /> },
-  ];
+    setStats({
+      totalConnexions,
+      moyenneDuree: Math.round(moyenneDuree),
+      sessionsLongues: sessionsLonguesFiltrées.length,
+      utilisateursActifs: utilisateursUniques,
+    });
+    setSessionsLongues(sessionsLonguesFiltrées);
+  };
 
-  const totalDepenses = statsMensuelles.depenses;
-  const margeBrute = statsMensuelles.margeBrute;
-  const donutData = ventesParCategorie.map((c) => ({ name: c.nom, value: c.montant, fill: c.couleur }));
-  const impotsEnRetard = impots.filter((i) => i.statut === "en retard");
+  const handleFilter = () => {
+    fetchConnectionHistory(filters);
+  };
+
+  const exportToCSV = () => {
+    if (connectionHistory.length === 0) return;
+    const headers = ["ID", "Utilisateur", "Email", "Rôle", "Date de connexion", "Heure de connexion", "Durée (min)", "Adresse IP", "Appareil"];
+    const csvData = [
+      headers.join(","),
+      ...connectionHistory.map(h => [
+        h.id,
+        h.utilisateur_nom,
+        h.utilisateur_email,
+        h.utilisateur_role,
+        h.date_connexion,
+        h.heure_connexion,
+        h.duree_session ? Math.round(h.duree_session / 60) : 0,
+        h.adresse_ip,
+        `"${h.appareil?.replace(/"/g, '""') || ''}"`
+      ].join(","))
+    ].join("\n");
+
+    const blob = new Blob([csvData], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", `historique_connexions_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const preparerDonneesGraphique = () => {
+    const parJour = {};
+    connectionHistory.forEach(h => {
+      const jour = h.date_connexion;
+      if (jour) {
+        parJour[jour] = (parJour[jour] || 0) + 1;
+      }
+    });
+
+    return Object.entries(parJour).map(([date, count]) => ({
+      date,
+      connexions: count,
+    })).sort((a, b) => new Date(a.date) - new Date(b.date));
+  };
+
+  const preparerDonneesHeures = () => {
+    const parHeure = Array(24).fill(0);
+    connectionHistory.forEach(h => {
+      if (h.heure_connexion) {
+        // CORRECTION ICI : Extraction sûre de l'heure depuis une chaîne "HH:MM:SS"
+        const heure = parseInt(h.heure_connexion.split(":")[0], 10);
+        if (!isNaN(heure) && heure >= 0 && heure < 24) {
+          parHeure[heure]++;
+        }
+      }
+    });
+
+    return parHeure.map((count, heure) => ({
+      heure: `${heure}:00`,
+      connexions: count,
+    }));
+  };
+
+  const preparerDonneesUtilisateurs = () => {
+    const statsUtilisateurs = {};
+    connectionHistory.forEach(h => {
+      if (!h.utilisateur_nom) return;
+      if (!statsUtilisateurs[h.utilisateur_nom]) {
+        statsUtilisateurs[h.utilisateur_nom] = {
+          nom: h.utilisateur_nom,
+          role: h.utilisateur_role,
+          connexions: 0,
+          dureeTotale: 0,
+        };
+      }
+      statsUtilisateurs[h.utilisateur_nom].connexions++;
+      statsUtilisateurs[h.utilisateur_nom].dureeTotale += h.duree_session || 0;
+    });
+
+    return Object.values(statsUtilisateurs).map(u => ({
+      nom: u.nom,
+      role: u.role,
+      connexions: u.connexions,
+      dureeMoyenne: Math.round(u.dureeTotale / u.connexions / 60),
+    })).sort((a, b) => b.connexions - a.connexions).slice(0, 10);
+  };
+
+  const connexionsParJour = preparerDonneesGraphique();
+  const connexionsParHeure = preparerDonneesHeures();
+  const dataUtilisateurs = preparerDonneesUtilisateurs();
 
   const itemVariants = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } };
 
@@ -112,325 +194,227 @@ export function Finances() {
         <div>
           <div className="flex items-center gap-3 mb-1">
              <div className="bg-brand-500/10 p-2 rounded-xl">
-              <DollarSign className="text-brand-500" size={24} />
-            </div>
-            <h1 className="text-3xl font-bold text-zinc-50 tracking-tight">Finances</h1>
+               <Activity className="text-brand-500" size={24} />
+             </div>
+            <h1 className="text-3xl font-bold text-zinc-50 tracking-tight">Historique des Connexions</h1>
           </div>
-          <p className="text-sm font-medium text-zinc-400 mt-1 ml-[52px]">Tableau de bord financier — <span className="text-zinc-300 font-bold">Décembre 2025</span></p>
+          <p className="text-sm font-medium text-zinc-400 mt-1 ml-[52px]">Suivi des sessions utilisateur et statistiques</p>
         </div>
-        <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={() => window.print()}
-          className="flex items-center gap-2 h-11 px-5 rounded-xl bg-zinc-900/80 backdrop-blur-md border border-white/10 text-sm font-bold text-zinc-200 hover:border-brand-500/50 hover:bg-zinc-800 transition-all shadow-sm">
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={exportToCSV}
+          disabled={connectionHistory.length === 0}
+          className="flex items-center gap-2 h-11 px-5 rounded-xl bg-zinc-900/80 backdrop-blur-md border border-white/10 text-sm font-bold text-zinc-200 hover:border-brand-500/50 hover:bg-zinc-800 transition-all shadow-sm disabled:opacity-50"
+        >
           <Download size={18} />
-          Exporter le rapport
+          Exporter CSV
         </motion.button>
       </motion.div>
 
-      {/* Alert banner */}
-      {impotsEnRetard.length > 0 && (
-        <motion.div variants={itemVariants}
-          className="mb-8 flex items-center gap-3 rounded-2xl border border-red-500/30 bg-red-500/10 px-5 py-4 backdrop-blur-md shadow-lg">
-          <AlertTriangle size={20} className="text-red-500 shrink-0" />
-          <p className="text-sm text-red-200">
-            <span className="font-bold text-red-400">{impotsEnRetard.length} impôt(s) en retard :</span>{" "}
-            {impotsEnRetard.map((i) => i.libelle).join(", ")}
-          </p>
+      {/* Filtres */}
+      <motion.div variants={itemVariants} className="bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 mb-8 shadow-lg">
+        <h3 className="text-base font-bold text-zinc-50 mb-5 flex items-center gap-2">
+           <Filter size={18} className="text-zinc-400" /> Filtres de recherche
+        </h3>
+        <div className="grid gap-5 sm:grid-cols-3">
+          <div>
+            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Date de début</label>
+            <input
+              type="date"
+              value={filters.dateDebut}
+              onChange={(e) => setFilters({...filters, dateDebut: e.target.value})}
+              className="w-full h-11 px-4 rounded-xl bg-zinc-950 border border-white/10 text-sm font-medium text-zinc-50 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/50 transition-all shadow-inner"
+            />
+          </div>
+          <div>
+            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Date de fin</label>
+            <input
+              type="date"
+              value={filters.dateFin}
+              onChange={(e) => setFilters({...filters, dateFin: e.target.value})}
+              className="w-full h-11 px-4 rounded-xl bg-zinc-950 border border-white/10 text-sm font-medium text-zinc-50 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/50 transition-all shadow-inner"
+            />
+          </div>
+          <div>
+            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Utilisateur</label>
+            <select
+              value={filters.utilisateur}
+              onChange={(e) => setFilters({...filters, utilisateur: e.target.value})}
+              className="w-full h-11 px-4 rounded-xl bg-zinc-950 border border-white/10 text-sm font-medium text-zinc-50 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/50 transition-all shadow-inner appearance-none"
+            >
+              <option value="">Tous les utilisateurs</option>
+              {personnel.map(p => (
+                <option key={p.id} value={p.id}>{p.prenom} {p.nom}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div className="mt-6 flex justify-end">
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={handleFilter}
+            className="flex items-center gap-2 h-11 px-6 rounded-xl bg-brand-500/10 text-sm font-bold text-brand-500 border border-brand-500/20 hover:bg-brand-500/20 transition-colors shadow-sm"
+          >
+            <Search size={18} />
+            Rechercher
+          </motion.button>
+        </div>
+      </motion.div>
+
+      {/* Alertes sessions longues */}
+      {sessionsLongues.length > 0 && (
+        <motion.div variants={itemVariants} className="mb-8">
+          <h3 className="text-sm font-bold text-red-400 mb-4 flex items-center gap-2 uppercase tracking-wider">
+            <AlertTriangle className="text-red-500" size={18} />
+            Sessions anormalement longues
+          </h3>
+          <div className="space-y-3">
+            {sessionsLongues.slice(0, 5).map((connection) => (
+              <ConnectionAlert key={connection.id} connection={connection} />
+            ))}
+          </div>
         </motion.div>
       )}
 
-      {/* 4 Stat Cards */}
+      {/* Statistiques */}
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4 mb-8">
         <motion.div variants={itemVariants}>
-          <StatCard title="Chiffre d'Affaires" value={formatMontant(statsMensuelles.ca)} icon={<TrendingUp size={20} />} trend={caTrend ? parseFloat(caTrend) : 0} />
+           <StatCard title="Connexions totales" value={stats.totalConnexions} icon={<Activity size={20} />} trend={null} color="amber" />
         </motion.div>
         <motion.div variants={itemVariants}>
-          <StatCard title="Dépenses totales" value={formatMontant(statsMensuelles.depenses)} icon={<Receipt size={20} />} trend={null} />
+          <StatCard title="Durée moyenne" value={`${Math.round(stats.moyenneDuree / 60)} min`} icon={<Clock size={20} />} trend={null} color="stone" />
         </motion.div>
         <motion.div variants={itemVariants}>
-          <StatCard title="Bénéfice net" value={formatMontant(statsMensuelles.benefice)} icon={<Wallet size={20} />} trend={beneficeTrend ? parseFloat(beneficeTrend) : 0} />
+          <StatCard title="Sessions longues" value={stats.sessionsLongues} icon={<AlertTriangle size={20} />} trend={null} color="red" />
         </motion.div>
         <motion.div variants={itemVariants}>
-          <StatCard title="Marge brute" value={`${margeBrute}%`} icon={<BarChart3 size={20} />} trend={null} />
+          <StatCard title="Utilisateurs actifs" value={stats.utilisateursActifs} icon={<User size={20} />} trend={null} color="emerald" />
         </motion.div>
       </div>
 
-      {/* Charts */}
-      <div className="grid gap-5 xl:grid-cols-2 mb-8">
-        {/* CA vs Depenses */}
-        <motion.div variants={itemVariants} className="rounded-2xl border border-white/5 bg-zinc-900/50 backdrop-blur-md p-6 shadow-lg">
-          <div className="mb-6 flex items-center justify-between">
-            <div>
-              <h3 className="text-base font-bold text-zinc-50">CA vs Dépenses</h3>
-              <p className="mt-1 text-sm font-medium text-zinc-400">Comparaison sur 12 mois</p>
+      {/* Graphiques conditionnels */}
+      {connectionHistory.length > 0 ? (
+        <div className="grid min-w-0 gap-5 xl:grid-cols-5 mb-8">
+          {/* Connexions par jour */}
+          <motion.div variants={itemVariants} className="min-w-0 xl:col-span-3 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg">
+            <h3 className="text-base font-bold text-zinc-50 mb-1">Évolution des connexions</h3>
+            <p className="text-sm font-medium text-zinc-400 mb-6">Nombre de sessions par jour</p>
+            <div className="min-w-0 bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[260px]">
+               <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+                 <AreaChart data={connexionsParJour} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                   <defs>
+                     <linearGradient id="gradConnexions" x1="0" y1="0" x2="0" y2="1">
+                       <stop offset="0%" stopColor={GOLD} stopOpacity={0.4} />
+                       <stop offset="100%" stopColor={GOLD} stopOpacity={0} />
+                     </linearGradient>
+                   </defs>
+                   <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
+                   <XAxis dataKey="date" tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
+                   <YAxis tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dx={-10} />
+                   <Tooltip content={<CustomTooltip />} cursor={{stroke: 'rgba(255,255,255,0.1)'}} />
+                   <Area type="monotone" dataKey="connexions" name="Connexions" stroke={GOLD} strokeWidth={3} fill="url(#gradConnexions)" />
+                 </AreaChart>
+               </ResponsiveContainer>
             </div>
-            <div className="flex items-center gap-4 text-xs font-bold text-zinc-300 bg-zinc-950/50 px-3 py-1.5 rounded-lg border border-white/5">
-              <span className="flex items-center gap-1.5"><span className="h-3 w-3 rounded-full shadow-[0_0_8px_#D4A853]" style={{ background: GOLD }} /> CA</span>
-              <span className="flex items-center gap-1.5"><span className="h-3 w-3 rounded-full shadow-[0_0_8px_#EF4444]" style={{ background: RED }} /> Dépenses</span>
+          </motion.div>
+
+          {/* Connexions par heure */}
+          <motion.div variants={itemVariants} className="min-w-0 xl:col-span-2 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg">
+            <h3 className="text-base font-bold text-zinc-50 mb-1">Heures d'activité</h3>
+            <p className="text-sm font-medium text-zinc-400 mb-6">Connexions par heure</p>
+            <div className="min-w-0 bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[292px]">
+               <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+                 <BarChart data={connexionsParHeure} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                   <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
+                   <XAxis dataKey="heure" tick={{ fontSize: 11, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
+                   <YAxis tick={{ fontSize: 11, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} tickCount={4} dx={-10} />
+                   <Tooltip cursor={{fill: 'rgba(255,255,255,0.05)'}} contentStyle={{backgroundColor: '#09090b', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '0.75rem', fontWeight: 'bold', color: '#fafafa'}} itemStyle={{color: '#fafafa'}} />
+                   <Bar dataKey="connexions" name="Connexions" radius={[4, 4, 0, 0]} fill={GOLD} fillOpacity={0.9} maxBarSize={30} />
+                 </BarChart>
+               </ResponsiveContainer>
             </div>
-          </div>
-          <div className="bg-zinc-950/30 p-4 rounded-xl border border-white/5">
-              <ResponsiveContainer width="100%" height={280}>
-                <AreaChart data={revenusData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
-                  <defs>
-                    <linearGradient id="gradCA" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor={GOLD} stopOpacity={0.4} />
-                      <stop offset="100%" stopColor={GOLD} stopOpacity={0} />
-                    </linearGradient>
-                    <linearGradient id="gradDep" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor={RED} stopOpacity={0.25} />
-                      <stop offset="100%" stopColor={RED} stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
-                  <XAxis dataKey="mois" tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
-                  <YAxis tickFormatter={(v) => (v / 1000000).toFixed(1) + "M"} tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dx={-10} />
-                  <Tooltip content={<CustomTooltip />} cursor={{stroke: 'rgba(255,255,255,0.1)'}} />
-                  <Area type="monotone" dataKey="ca" name="Chiffre d'Affaires" stroke={GOLD} strokeWidth={3} fill="url(#gradCA)" />
-                  <Area type="monotone" dataKey="depenses" name="Dépenses" stroke={RED} strokeWidth={2} fill="url(#gradDep)" strokeDasharray="6 4" />
-                </AreaChart>
-              </ResponsiveContainer>
+          </motion.div>
+        </div>
+      ) : (
+        <div className="p-6 text-center text-zinc-500 font-medium bg-zinc-900/20 border border-white/5 rounded-2xl mb-8">
+          En attente des données historiques pour charger les graphiques...
+        </div>
+      )}
+
+      {/* Top utilisateurs sécurisé */}
+      {connectionHistory.length > 0 && (
+        <motion.div variants={itemVariants} className="min-w-0 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 mb-8 shadow-lg">
+          <h3 className="text-base font-bold text-zinc-50 mb-1">Top des utilisateurs</h3>
+          <p className="text-sm font-medium text-zinc-400 mb-6">Nombre de sessions par utilisateur</p>
+          <div className="min-w-0 bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[300px]">
+             <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+               {/* CORRECTION DU LAYOUT : Suppression de layout="horizontal" instable */}
+               <BarChart data={dataUtilisateurs} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                 <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
+                 <XAxis dataKey="nom" tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
+                 <YAxis tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dx={-10} />
+                 <Tooltip
+                   cursor={{fill: 'rgba(255,255,255,0.05)'}}
+                   contentStyle={{backgroundColor: '#09090b', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '0.75rem', fontWeight: 'bold', color: '#fafafa'}}
+                 />
+                 <Bar dataKey="connexions" name="Sessions" radius={[4, 4, 0, 0]} fill={GOLD} fillOpacity={0.9} maxBarSize={30} />
+               </BarChart>
+             </ResponsiveContainer>
           </div>
         </motion.div>
+      )}
 
-        {/* Benefice mensuel */}
-        <motion.div variants={itemVariants} className="rounded-2xl border border-white/5 bg-zinc-900/50 backdrop-blur-md p-6 shadow-lg">
-          <div className="mb-6">
-            <h3 className="text-base font-bold text-zinc-50">Bénéfice Mensuel</h3>
-            <p className="mt-1 text-sm font-medium text-zinc-400">Profit réalisé par mois</p>
-          </div>
-          <div className="bg-zinc-950/30 p-4 rounded-xl border border-white/5">
-              <ResponsiveContainer width="100%" height={280}>
-                <BarChart data={beneficeMensuel} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
-                  <XAxis dataKey="mois" tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
-                  <YAxis tickFormatter={(v) => (v / 1000).toFixed(0) + "k"} tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dx={-10} />
-                  <Tooltip content={<BeneficeTooltip />} cursor={{fill: 'rgba(255,255,255,0.05)'}} />
-                  <Bar dataKey="benefice" name="Bénéfice" radius={[6, 6, 0, 0]} maxBarSize={40}>
-                      {beneficeMensuel.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.benefice >= 0 ? "url(#colorGold)" : "url(#colorRed)"} />
-                      ))}
-                  </Bar>
-                  <defs>
-                      <linearGradient id="colorGold" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor={GOLD} stopOpacity={1}/>
-                        <stop offset="95%" stopColor="#C49742" stopOpacity={0.8}/>
-                      </linearGradient>
-                      <linearGradient id="colorRed" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor={RED} stopOpacity={1}/>
-                        <stop offset="95%" stopColor="#DC2626" stopOpacity={0.8}/>
-                      </linearGradient>
-                  </defs>
-                </BarChart>
-              </ResponsiveContainer>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Depenses breakdown + Ventes par categorie */}
-      <div className="grid gap-5 xl:grid-cols-2 mb-8">
-        <motion.div variants={itemVariants} className="rounded-2xl border border-white/5 bg-zinc-900/50 backdrop-blur-md p-6 shadow-lg">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="bg-brand-500/10 p-2 rounded-xl">
-               <Receipt size={24} className="text-brand-500" />
-            </div>
-            <div>
-              <h3 className="text-base font-bold text-zinc-50">Répartition des Dépenses</h3>
-              <p className="text-sm font-medium text-zinc-400 mt-1">Total : <span className="font-bold text-zinc-200">{formatMontant(totalDepenses)}</span></p>
-            </div>
-          </div>
-          <div className="space-y-6">
-            {depensesBreakdown.map((dep) => {
-              const pct = totalDepenses > 0 ? ((dep.amount / totalDepenses) * 100).toFixed(1) : 0;
-              return (
-                <div key={dep.label} className="flex items-center gap-4">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-950 border border-white/5 shadow-inner shrink-0`}>
-                      {dep.icon}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-bold text-zinc-200">{dep.label}</span>
-                      <div className="text-right">
-                        <span className="text-sm font-black text-zinc-50">{formatMontant(dep.amount)}</span>
-                        <span className="ml-2 text-xs font-bold text-zinc-500 bg-zinc-800/80 px-2 py-0.5 rounded-md">{pct}%</span>
-                      </div>
-                    </div>
-                    <div className="h-2.5 bg-zinc-950 rounded-full overflow-hidden shadow-inner border border-white/5">
-                      <motion.div initial={{ width: 0 }} animate={{ width: `${pct}%` }} transition={{ delay: 0.3, duration: 0.7 }} className={`h-full rounded-full ${dep.color}`} style={{boxShadow: `0 0 10px ${dep.hexColor}40`}} />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        {/* Ventes par Categorie */}
-        <motion.div variants={itemVariants} className="rounded-2xl border border-white/5 bg-zinc-900/50 backdrop-blur-md p-6 shadow-lg">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="bg-brand-500/10 p-2 rounded-xl">
-               <PieChart size={24} className="text-brand-500" />
-            </div>
-            <div>
-              <h3 className="text-base font-bold text-zinc-50">Ventes par Catégorie</h3>
-              <p className="text-sm font-medium text-zinc-400 mt-1">Répartition du chiffre d'affaires</p>
-            </div>
-          </div>
-          <div className="bg-zinc-950/30 rounded-xl p-4 border border-white/5 flex flex-col md:flex-row items-center gap-6">
-              <div className="w-full md:w-1/2 h-[220px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <RPieChart>
-                      <Pie data={donutData} cx="50%" cy="50%" innerRadius={60} outerRadius={90} paddingAngle={4} dataKey="value" stroke="rgba(0,0,0,0.2)">
-                        {donutData.map((entry, i) => (<Cell key={i} fill={entry.fill} />))}
-                      </Pie>
-                      <Tooltip formatter={(value) => formatMontant(value)} contentStyle={{backgroundColor: '#09090b', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '0.75rem', fontWeight: 'bold', color: '#fafafa'}} itemStyle={{color: '#fafafa'}} />
-                    </RPieChart>
-                  </ResponsiveContainer>
-              </div>
-              <div className="w-full md:w-1/2 space-y-3">
-                {ventesParCategorie.map((cat) => (
-                  <div key={cat.nom} className="flex items-center justify-between text-sm">
-                    <div className="flex items-center gap-3">
-                      <span className="h-3 w-3 rounded-full shrink-0 shadow-inner" style={{ backgroundColor: cat.couleur, boxShadow: `0 0 8px ${cat.couleur}60` }} />
-                      <span className="font-bold text-zinc-200">{cat.nom}</span>
-                    </div>
-                    <div className="text-right flex flex-col">
-                        <span className="font-black text-zinc-50">{formatMontant(cat.montant)}</span>
-                        <span className="text-xs font-semibold text-zinc-500">{cat.part}%</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Historique des Transactions */}
-      <motion.div variants={itemVariants} className="rounded-2xl border border-white/5 bg-zinc-900/50 backdrop-blur-md shadow-lg mb-8 overflow-hidden">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/5 px-6 py-5 bg-zinc-950/30 gap-4">
-          <div className="flex items-center gap-3">
-            <div className="bg-brand-500/10 p-2 rounded-xl">
-               <ListChecks size={20} className="text-brand-500" />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-zinc-50">Historique des Transactions</h3>
-              <p className="text-sm font-medium text-zinc-400 mt-0.5">{transactions.length} transaction(s)</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 bg-zinc-900/50 p-1.5 rounded-xl border border-white/5 w-fit">
-            <button onClick={() => { setFilterType(""); fetchTransactions(); }}
-              className={`text-xs px-4 py-2 rounded-lg font-bold transition-all ${!filterType ? "bg-brand-500 text-black shadow-md shadow-brand-500/20" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"}`}>
-              Tout
-            </button>
-            <button onClick={() => { setFilterType("entree"); fetchTransactions({ type_op: "entree" }); }}
-              className={`text-xs px-4 py-2 rounded-lg font-bold transition-all ${filterType === "entree" ? "bg-emerald-500/20 text-emerald-400 shadow-md shadow-emerald-500/10" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"}`}>
-              Entrées
-            </button>
-            <button onClick={() => { setFilterType("sortie"); fetchTransactions({ type_op: "sortie" }); }}
-              className={`text-xs px-4 py-2 rounded-lg font-bold transition-all ${filterType === "sortie" ? "bg-red-500/20 text-red-400 shadow-md shadow-red-500/10" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"}`}>
-              Sorties
-            </button>
-          </div>
+      {/* Tableau des connexions */}
+      <motion.div variants={itemVariants} className="bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 shadow-lg overflow-hidden">
+        <div className="px-6 py-5 border-b border-white/5 bg-zinc-950/30 flex items-center justify-between">
+           <div>
+             <h3 className="text-lg font-bold text-zinc-50">Détail des connexions</h3>
+             <p className="mt-0.5 text-sm font-medium text-zinc-400">Liste complète des sessions utilisateur</p>
+           </div>
+           <div className="bg-brand-500/10 p-2 rounded-xl">
+               <FileSpreadsheet size={20} className="text-brand-500" />
+           </div>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full">
             <thead>
-              <tr className="border-b border-white/5 bg-zinc-950/50">
-                <th className="text-left px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider">Date</th>
-                <th className="text-left px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider">Type</th>
-                <th className="text-left px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider">Catégorie</th>
-                <th className="text-left px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider hidden md:table-cell">Référence</th>
-                <th className="text-left px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider hidden lg:table-cell">Description</th>
-                <th className="text-right px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider">Montant</th>
+              <tr className="text-left text-xs font-bold uppercase tracking-wider text-zinc-400 bg-zinc-950/50 border-b border-white/5">
+                <th className="px-6 py-4">Utilisateur</th>
+                <th className="px-6 py-4">Rôle</th>
+                <th className="px-6 py-4">Date</th>
+                <th className="px-6 py-4">Heure</th>
+                <th className="px-6 py-4 text-right">Durée</th>
+                <th className="px-6 py-4">IP</th>
+                <th className="px-6 py-4">Appareil</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
-              {transactions.map((tx) => (
-                <tr key={tx.id} className="hover:bg-zinc-800/50 transition-colors">
-                  <td className="px-6 py-4 text-zinc-300 font-medium">{tx.date ? new Date(tx.date).toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" }) : "—"}</td>
-                  <td className="px-6 py-4">{tx.type_op === "entree" ? <Badge variant="success">Entrée</Badge> : <Badge variant="error">Sortie</Badge>}</td>
-                  <td className="px-6 py-4 font-bold text-zinc-100">{tx.categorie}</td>
-                  <td className="px-6 py-4 text-zinc-500 hidden md:table-cell font-mono text-xs font-bold bg-zinc-950 rounded-md w-fit inline-block mt-2 border border-white/5 px-2 py-1">{tx.reference || "—"}</td>
-                  <td className="px-6 py-4 text-zinc-400 hidden lg:table-cell max-w-[200px] truncate font-medium">{tx.description || "—"}</td>
-                  <td className={`px-6 py-4 text-right font-black ${tx.type_op === "entree" ? "text-emerald-400" : "text-red-400"}`}>
-                    {tx.type_op === "entree" ? "+" : "–"}{formatMontant(tx.montant)}
+              {connectionHistory.map((h) => (
+                <tr key={h.id} className="text-sm font-medium text-zinc-300 hover:bg-zinc-800/50 transition-colors">
+                  <td className="px-6 py-4 font-bold text-zinc-100">{h.utilisateur_nom}</td>
+                  <td className="px-6 py-4">
+                    <Badge variant={h.utilisateur_role === "admin" ? "default" : "secondary"}>
+                      {h.utilisateur_role}
+                    </Badge>
                   </td>
+                  <td className="px-6 py-4">{h.date_connexion}</td>
+                  <td className="px-6 py-4">{h.heure_connexion}</td>
+                  <td className="px-6 py-4 text-right font-black text-zinc-50">
+                    {h.duree_session ? Math.round(h.duree_session / 60) : 0} min
+                  </td>
+                  <td className="px-6 py-4 text-zinc-500 font-mono text-xs">{h.adresse_ip}</td>
+                  <td className="px-6 py-4 text-zinc-400 max-w-[200px] truncate" title={h.appareil}>{h.appareil}</td>
                 </tr>
               ))}
-              {transactions.length === 0 && (
-                <tr><td colSpan={6} className="text-center py-12 text-zinc-500 font-bold bg-zinc-950/20">Aucune transaction enregistrée</td></tr>
+              {connectionHistory.length === 0 && (
+                <tr>
+                  <td colSpan="7" className="px-6 py-12 text-center text-zinc-500 font-bold bg-zinc-950/20">Aucun historique trouvé</td>
+                </tr>
               )}
             </tbody>
           </table>
-        </div>
-        {transactions.length > 0 && (() => {
-          const totalEntrees = transactions.filter((t) => t.type_op === "entree").reduce((s, t) => s + Number(t.montant), 0);
-          const totalSorties = transactions.filter((t) => t.type_op === "sortie").reduce((s, t) => s + Number(t.montant), 0);
-          return (
-            <div className="border-t border-white/5 px-6 py-5 flex items-center justify-between bg-zinc-950/30">
-              <div className="flex gap-6 text-sm">
-                <span className="text-emerald-400 font-bold bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/20">Entrées: +{formatMontant(totalEntrees)}</span>
-                <span className="text-red-400 font-bold bg-red-500/10 px-3 py-1.5 rounded-lg border border-red-500/20">Sorties: –{formatMontant(totalSorties)}</span>
-              </div>
-              <span className="text-xl font-black text-zinc-50">Solde: <span className={totalEntrees - totalSorties >= 0 ? "text-emerald-400" : "text-red-400"}>{formatMontant(totalEntrees - totalSorties)}</span></span>
-            </div>
-          );
-        })()}
-      </motion.div>
-
-      {/* Impots & Taxes */}
-      <motion.div variants={itemVariants} className="rounded-2xl border border-white/5 bg-zinc-900/50 backdrop-blur-md shadow-lg overflow-hidden">
-        <div className="flex items-center justify-between border-b border-white/5 px-6 py-5 bg-zinc-950/30">
-          <div className="flex items-center gap-3">
-            <div className="bg-brand-500/10 p-2 rounded-xl">
-              <FileText size={20} className="text-brand-500" />
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-zinc-50">Impôts & Taxes</h3>
-              <p className="text-sm font-medium text-zinc-400 mt-0.5">{impots.length} échéance(s) à venir</p>
-            </div>
-          </div>
-          {impotsEnRetard.length > 0 && (
-            <span className="flex items-center gap-2 text-xs font-bold text-red-400 bg-red-500/15 px-3 py-1.5 rounded-lg border border-red-500/20">
-              <AlertTriangle size={14} />{impotsEnRetard.length} en retard
-            </span>
-          )}
-        </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-white/5 bg-zinc-950/50">
-                <th className="text-left px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider">Libellé</th>
-                <th className="text-right px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider">Montant</th>
-                <th className="text-left px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider hidden sm:table-cell">Échéance</th>
-                <th className="text-center px-6 py-4 text-xs font-bold text-zinc-400 uppercase tracking-wider">Statut</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-white/5">
-              {impots.map((imp) => {
-                const isLate = imp.statut === "en retard";
-                const echeance = new Date(imp.echeance).toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
-                return (
-                  <tr key={imp.id} className="hover:bg-zinc-800/50 transition-colors">
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
-                        {isLate && <div className="bg-red-500/20 p-1.5 rounded-lg border border-red-500/30"><AlertTriangle size={16} className="text-red-400 shrink-0" /></div>}
-                        <span className="font-bold text-zinc-100">{imp.libelle}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-right font-black text-zinc-50">{formatMontant(imp.montant)}</td>
-                    <td className="px-6 py-4 text-zinc-400 font-medium hidden sm:table-cell bg-zinc-950 rounded-md w-fit inline-block mt-2 border border-white/5 px-3 py-1.5">{echeance}</td>
-                    <td className="px-6 py-4 text-center"><Badge variant={imp.statut}>{imp.statut}</Badge></td>
-                  </tr>
-                );
-              })}
-              {impots.length === 0 && (
-                <tr><td colSpan={4} className="text-center py-12 text-zinc-500 font-bold bg-zinc-950/20">Aucun impôt enregistré</td></tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-        <div className="border-t border-white/5 px-6 py-5 flex items-center justify-between bg-zinc-950/30">
-          <span className="text-sm font-bold text-zinc-300">Total</span>
-          <span className="text-xl font-black text-zinc-50">{formatMontant(impots.reduce((sum, i) => sum + i.montant, 0))}</span>
         </div>
       </motion.div>
     </motion.div>

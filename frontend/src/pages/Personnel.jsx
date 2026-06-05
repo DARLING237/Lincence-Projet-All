@@ -19,8 +19,8 @@ export function Personnel() {
   useEffect(() => {
     fetchPersonnel();
     fetchSalaires();
-    // refresh toutes les 5s pour voir les connexions/deconnexions
-    const interval = setInterval(fetchPersonnel, 5000);
+    // refresh toutes les 30s pour voir les connexions/deconnexions
+    const interval = setInterval(fetchPersonnel, 30000);
     return () => clearInterval(interval);
   }, [fetchPersonnel, fetchSalaires]);
   const [search, setSearch] = useState("");

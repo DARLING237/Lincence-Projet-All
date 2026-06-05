@@ -130,7 +130,7 @@ export function ClientQRPage() {
       } catch (err) {
         console.error("Erreur polling:", err);
       }
-    }, 3000);
+    }, 15000);
 
     return () => clearInterval(interval);
   }, [orderPlaced, orderNumber]);
