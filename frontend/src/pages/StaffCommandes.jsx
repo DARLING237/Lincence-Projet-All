@@ -111,7 +111,7 @@ export function StaffCommandes() {
     addCommande({
       table_id: selectedTable?.id || null,
       items: cartItems.map((item) => ({
-        produit_menu_id: item.id, quantite: item.qte, prix_unitaire: parseFloat(item.prix), type_poste: item.type_poste,
+         produit_menu_id: item.id, quantite: item.qte, prix_unitaire: parseFloat(item.prix), type_poste: item.type_poste,
       })),
       source: "staff",
     }).then((d) => {

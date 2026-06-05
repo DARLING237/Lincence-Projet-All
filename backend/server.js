@@ -11,7 +11,7 @@ const schemaReady = ensureRuntimeSchema().catch((err) => {
   console.error("Erreur migration schema runtime:", err);
 });
 
-// --- 1. CONFIGURATION CORS UNIQUE ET ROBUSTE ---
+
 const allowedOrigins = [
   "https://lincence-projet.vercel.app",
   "http://localhost:5173"
@@ -122,11 +122,11 @@ app.use((req, res) => {
 
 // --- 7. GESTION GLOBALE DES ERREURS SERVEUR (500) ---
 app.use((err, req, res, next) => {
-  console.error("❌ Erreur serveur générale :", err);
+  console.error(" Erreur serveur générale :", err);
   
   // Gestion spécifique des erreurs de limite de connexions MySQL
   if (err.code === 'ER_USER_LIMIT_REACHED' || err.errno === 1226) {
-    console.warn("⚠️ Limite de connexions MySQL atteinte - Retourner 503 Service Unavailable");
+    console.warn(" Limite de connexions MySQL atteinte - Retourner 503 Service Unavailable");
     return res.status(503).json({ 
       success: false, 
       message: "Le serveur est temporairement surchargé. Veuillez réessayer dans quelques secondes." 
@@ -143,5 +143,5 @@ module.exports = app;
 // Démarrage de l'écoute uniquement en mode développement local
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => console.log(`🚀 Serveur local lancé sur : http://localhost:${PORT}`));
+  app.listen(PORT, () => console.log(` Serveur local lancé sur : http://localhost:${PORT}`));
 }
