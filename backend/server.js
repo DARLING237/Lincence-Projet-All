@@ -51,11 +51,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Limiteur de requêtes (Rate Limiter)
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 500, // Augmenté de 100 à 500 requêtes par fenêtre (pour éviter le 429)
-  skip: (req) => req.method === "OPTIONS", // Ne pas limiter les requêtes Preflight
-  standardHeaders: true, // Retourner les limites en headers RateLimit-*
-  legacyHeaders: false // Désactiver les headers X-RateLimit-*
+  windowMs: 15 * 60 * 10000, // 15 minutes
+  max: 500, // Limite chaque IP à 100 requêtes par fenêtre
+  skip: (req) => req.method === "OPTIONS" // Ne pas limiter les requêtes Preflight
 });
 app.use(limiter);
 
@@ -125,6 +123,17 @@ app.use((req, res) => {
 // --- 7. GESTION GLOBALE DES ERREURS SERVEUR (500) ---
 app.use((err, req, res, next) => {
   console.error("❌ Erreur serveur générale :", err);
+  
+  // Gestion spécifique des erreurs de limite de connexions MySQL
+  if (err.code === 'ER_USER_LIMIT_REACHED' || err.errno === 1226) {
+    console.warn("⚠️ Limite de connexions MySQL atteinte - Retourner 503 Service Unavailable");
+    return res.status(503).json({ 
+      success: false, 
+      message: "Le serveur est temporairement surchargé. Veuillez réessayer dans quelques secondes." 
+    });
+  }
+  
+  // Erreur par défaut
   res.status(500).json({ success: false, message: "Erreur interne du serveur" });
 });
 

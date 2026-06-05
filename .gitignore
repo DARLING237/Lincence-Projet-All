@@ -1,0 +1,44 @@
+# ====================================================
+# BarResto - Global .gitignore
+# ====================================================
+
+# Dépendances Node.js (partout dans le projet)
+node_modules/
+**/node_modules/
+
+# Variables d'environnement locales (fichiers contenant des secrets)
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+**/ .env.example
+
+# Dossiers de Build (Vite, React)
+dist/
+**/dist/
+build/
+**/build/
+out/
+**/out/
+
+# Fichiers de Logs
+logs/
+**/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Fichiers système et IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.openclaude/

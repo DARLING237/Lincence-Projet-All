@@ -8,6 +8,13 @@ import { SafeResponsiveContainer as ResponsiveContainer } from "../components/ui
 import {
   Calendar,
   Download,
+  ArrowUpRight,
+  ArrowDownRight,
+  BarChart3,
+  PieChart,
+  DollarSign,
+  CreditCard,
+  FileText,
   AlertTriangle,
   Clock,
   User,
@@ -18,6 +25,7 @@ import {
   Activity,
   FileSpreadsheet,
 } from "lucide-react";
+import { SafeResponsiveContainer as ResponsiveContainer } from "../components/ui/SafeResponsiveContainer";
 import {
   AreaChart,
   Area,
@@ -29,41 +37,48 @@ import {
   Bar,
 } from "recharts";
 
-const GOLD = "#D4A853";
+/* ── Tooltip helpers ── */
 
 function CustomTooltip({ active, payload, label }) {
   if (!active || !payload) return null;
   return (
-    <div className="rounded-xl border border-white/10 bg-zinc-950 p-4 shadow-xl backdrop-blur-md">
-      <p className="mb-2 font-bold text-zinc-50">{label}</p>
+    <div className="rounded-xl border border-gray-200 bg-white p-3 shadow-lg">
+      <p className="mb-2 font-semibold text-gray-900">{label}</p>
       {payload.map((entry, i) => (
-        <p key={i} className="text-sm font-semibold flex items-center justify-between gap-4" style={{ color: entry.color }}>
-          <span>{entry.name}</span>
-          <span>{entry.value}</span>
+        <p key={i} className="text-sm" style={{ color: entry.color }}>
+          {entry.name}: {formatMontant(entry.value)}
         </p>
       ))}
     </div>
   );
 }
 
-export function ConnectionHistory() {
-  const connectionHistory = useAppStore((s) => s.connectionHistory) || [];
-  const fetchConnectionHistory = useAppStore((s) => s.fetchConnectionHistory);
-  const personnel = useAppStore((s) => s.personnel) || [];
+function BeneficeTooltip({ active, payload, label }) {
+  if (!active || !payload || !payload.length) return null;
+  const val = payload[0]?.value ?? 0;
+  return (
+    <div className="rounded-xl border border-gray-200 bg-white p-3 shadow-lg">
+      <p className="font-semibold text-gray-900">{label}</p>
+      <p className="text-sm" style={{ color: val >= 0 ? "#10B981" : "#EF4444" }}>
+        B&eacute;n&eacute;fice : {formatMontant(Math.abs(val))}
+      </p>
+    </div>
+  );
+}
 
-  const [filters, setFilters] = useState({
-    dateDebut: "",
-    dateFin: "",
-    utilisateur: "",
-  });
-  const [stats, setStats] = useState({
-    totalConnexions: 0,
-    moyenneDuree: 0,
-    sessionsLongues: 0,
-    utilisateursActifs: 0,
-  });
+/* ── Page ── */
 
-  const [sessionsLongues, setSessionsLongues] = useState([]);
+export function Finances() {
+  const statsMensuelles = useAppStore((s) => s.statsMensuelles);
+  const revenusData = useAppStore((s) => s.revenusData);
+  const ventesParCategorie = useAppStore((s) => s.ventesParCategorie);
+  const impots = useAppStore((s) => s.impots);
+  const transactions = useAppStore((s) => s.transactions);
+  const fetchRevenus = useAppStore((s) => s.fetchRevenus);
+  const fetchImpots = useAppStore((s) => s.fetchImpots);
+  const fetchStats = useAppStore((s) => s.fetchStats);
+  const fetchTransactions = useAppStore((s) => s.fetchTransactions);
+  const [filterType, setFilterType] = useState("");
 
   useEffect(() => {
     fetchConnectionHistory();
@@ -75,329 +90,487 @@ export function ConnectionHistory() {
     }
   }, [connectionHistory]);
 
-  const calculerStats = () => {
-    const totalConnexions = connectionHistory.length;
-    const durees = connectionHistory.map(h => h.duree_session || 0);
-    const moyenneDuree = totalConnexions > 0 ? (durees.reduce((a, b) => a + b, 0) / totalConnexions) : 0;
-    const sessionsLonguesFiltrées = connectionHistory.filter(h => (h.duree_session || 0) > 3600);
-    const utilisateursUniques = new Set(connectionHistory.map(h => h.utilisateur_id)).size;
+  /* benefice mensuel derivee */
+  const beneficeMensuel = revenusData.map((d) => ({
+    mois: d.mois,
+    benefice: d.ca - d.depenses,
+  }));
 
-    setStats({
-      totalConnexions,
-      moyenneDuree: Math.round(moyenneDuree),
-      sessionsLongues: sessionsLonguesFiltrées.length,
-      utilisateursActifs: utilisateursUniques,
-    });
-    setSessionsLongues(sessionsLonguesFiltrées);
+  /* depenses breakdown */
+  const depensesBreakdown = [
+    {
+      label: "Fournisseurs",
+      amount: statsMensuelles.depensesFournisseurs,
+      color: "bg-indigo-500",
+      hexColor: "#6366F1",
+      icon: <CreditCard size={14} className="text-indigo-600" />,
+    },
+    {
+      label: "Salaires",
+      amount: statsMensuelles.depensesStaff,
+      color: "bg-emerald-500",
+      hexColor: "#10B981",
+      icon: <FileText size={14} className="text-emerald-600" />,
+    },
+    {
+      label: "Imp&ocirc;ts & Taxes",
+      amount: statsMensuelles.depensesImpots,
+      color: "bg-amber-500",
+      hexColor: "#F59E0B",
+      icon: <DollarSign size={14} className="text-amber-600" />,
+    },
+  ];
+
+  const totalDepenses = statsMensuelles.depenses;
+  const margeBrute = statsMensuelles.margeBrute;
+
+  /* donut data */
+  const donutData = ventesParCategorie.map((c) => ({
+    name: c.nom,
+    value: c.montant,
+    fill: c.couleur,
+  }));
+
+  /* impots en retard */
+  const impotsEnRetard = impots.filter((i) => i.statut === "en retard");
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08 },
+    },
   };
 
-  const handleFilter = () => {
-    fetchConnectionHistory(filters);
+  const itemVariants = {
+    hidden: { opacity: 0, y: 16 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   };
-
-  const exportToCSV = () => {
-    if (connectionHistory.length === 0) return;
-    const headers = ["ID", "Utilisateur", "Email", "Rôle", "Date de connexion", "Heure de connexion", "Durée (min)", "Adresse IP", "Appareil"];
-    const csvData = [
-      headers.join(","),
-      ...connectionHistory.map(h => [
-        h.id,
-        h.utilisateur_nom,
-        h.utilisateur_email,
-        h.utilisateur_role,
-        h.date_connexion,
-        h.heure_connexion,
-        h.duree_session ? Math.round(h.duree_session / 60) : 0,
-        h.adresse_ip,
-        `"${h.appareil?.replace(/"/g, '""') || ''}"`
-      ].join(","))
-    ].join("\n");
-
-    const blob = new Blob([csvData], { type: "text/csv;charset=utf-8;" });
-    const link = document.createElement("a");
-    const url = URL.createObjectURL(blob);
-    link.setAttribute("href", url);
-    link.setAttribute("download", `historique_connexions_${new Date().toISOString().split('T')[0]}.csv`);
-    link.style.visibility = "hidden";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const preparerDonneesGraphique = () => {
-    const parJour = {};
-    connectionHistory.forEach(h => {
-      const jour = h.date_connexion;
-      if (jour) {
-        parJour[jour] = (parJour[jour] || 0) + 1;
-      }
-    });
-
-    return Object.entries(parJour).map(([date, count]) => ({
-      date,
-      connexions: count,
-    })).sort((a, b) => new Date(a.date) - new Date(b.date));
-  };
-
-  const preparerDonneesHeures = () => {
-    const parHeure = Array(24).fill(0);
-    connectionHistory.forEach(h => {
-      if (h.heure_connexion) {
-        // CORRECTION ICI : Extraction sûre de l'heure depuis une chaîne "HH:MM:SS"
-        const heure = parseInt(h.heure_connexion.split(":")[0], 10);
-        if (!isNaN(heure) && heure >= 0 && heure < 24) {
-          parHeure[heure]++;
-        }
-      }
-    });
-
-    return parHeure.map((count, heure) => ({
-      heure: `${heure}:00`,
-      connexions: count,
-    }));
-  };
-
-  const preparerDonneesUtilisateurs = () => {
-    const statsUtilisateurs = {};
-    connectionHistory.forEach(h => {
-      if (!h.utilisateur_nom) return;
-      if (!statsUtilisateurs[h.utilisateur_nom]) {
-        statsUtilisateurs[h.utilisateur_nom] = {
-          nom: h.utilisateur_nom,
-          role: h.utilisateur_role,
-          connexions: 0,
-          dureeTotale: 0,
-        };
-      }
-      statsUtilisateurs[h.utilisateur_nom].connexions++;
-      statsUtilisateurs[h.utilisateur_nom].dureeTotale += h.duree_session || 0;
-    });
-
-    return Object.values(statsUtilisateurs).map(u => ({
-      nom: u.nom,
-      role: u.role,
-      connexions: u.connexions,
-      dureeMoyenne: Math.round(u.dureeTotale / u.connexions / 60),
-    })).sort((a, b) => b.connexions - a.connexions).slice(0, 10);
-  };
-
-  const connexionsParJour = preparerDonneesGraphique();
-  const connexionsParHeure = preparerDonneesHeures();
-  const dataUtilisateurs = preparerDonneesUtilisateurs();
-
-  const itemVariants = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0, transition: { duration: 0.4 } } };
 
   return (
-    <motion.div className="max-w-7xl mx-auto" initial="hidden" animate="show" variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.08 } } }}>
-      {/* Header */}
+    <motion.div
+      className="p-6 lg:p-8"
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+    >
+      {/* ── Header ── */}
       <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
         <div>
-          <div className="flex items-center gap-3 mb-1">
-             <div className="bg-brand-500/10 p-2 rounded-xl">
-               <Activity className="text-brand-500" size={24} />
-             </div>
-            <h1 className="text-3xl font-bold text-zinc-50 tracking-tight">Historique des Connexions</h1>
+          <div className="flex items-center gap-2 mb-1">
+            <DollarSign className="text-indigo-500" size={22} />
+            <h1 className="text-2xl font-bold text-gray-900">Finances</h1>
           </div>
-          <p className="text-sm font-medium text-zinc-400 mt-1 ml-[52px]">Suivi des sessions utilisateur et statistiques</p>
+          <p className="text-sm text-gray-500">
+            Tableau de bord financier — D&eacute;cembre 2025
+          </p>
         </div>
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          onClick={exportToCSV}
-          disabled={connectionHistory.length === 0}
-          className="flex items-center gap-2 h-11 px-5 rounded-xl bg-zinc-900/80 backdrop-blur-md border border-white/10 text-sm font-bold text-zinc-200 hover:border-brand-500/50 hover:bg-zinc-800 transition-all shadow-sm disabled:opacity-50"
+          onClick={() => window.print()}
+          className="flex items-center gap-2 h-10 px-4 rounded-xl bg-white border border-gray-200 text-sm font-medium text-gray-700 hover:border-gray-300 transition-colors shadow-sm"
         >
-          <Download size={18} />
-          Exporter CSV
+          <Download size={16} />
+          Exporter le rapport
         </motion.button>
       </motion.div>
 
-      {/* Filtres */}
-      <motion.div variants={itemVariants} className="bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 mb-8 shadow-lg">
-        <h3 className="text-base font-bold text-zinc-50 mb-5 flex items-center gap-2">
-           <Filter size={18} className="text-zinc-400" /> Filtres de recherche
-        </h3>
-        <div className="grid gap-5 sm:grid-cols-3">
-          <div>
-            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Date de début</label>
-            <input
-              type="date"
-              value={filters.dateDebut}
-              onChange={(e) => setFilters({...filters, dateDebut: e.target.value})}
-              className="w-full h-11 px-4 rounded-xl bg-zinc-950 border border-white/10 text-sm font-medium text-zinc-50 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/50 transition-all shadow-inner"
-            />
-          </div>
-          <div>
-            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Date de fin</label>
-            <input
-              type="date"
-              value={filters.dateFin}
-              onChange={(e) => setFilters({...filters, dateFin: e.target.value})}
-              className="w-full h-11 px-4 rounded-xl bg-zinc-950 border border-white/10 text-sm font-medium text-zinc-50 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/50 transition-all shadow-inner"
-            />
-          </div>
-          <div>
-            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 block">Utilisateur</label>
-            <select
-              value={filters.utilisateur}
-              onChange={(e) => setFilters({...filters, utilisateur: e.target.value})}
-              className="w-full h-11 px-4 rounded-xl bg-zinc-950 border border-white/10 text-sm font-medium text-zinc-50 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500/50 transition-all shadow-inner appearance-none"
-            >
-              <option value="">Tous les utilisateurs</option>
-              {personnel.map(p => (
-                <option key={p.id} value={p.id}>{p.prenom} {p.nom}</option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <div className="mt-6 flex justify-end">
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={handleFilter}
-            className="flex items-center gap-2 h-11 px-6 rounded-xl bg-brand-500/10 text-sm font-bold text-brand-500 border border-brand-500/20 hover:bg-brand-500/20 transition-colors shadow-sm"
-          >
-            <Search size={18} />
-            Rechercher
-          </motion.button>
-        </div>
-      </motion.div>
-
-      {/* Alertes sessions longues */}
-      {sessionsLongues.length > 0 && (
-        <motion.div variants={itemVariants} className="mb-8">
-          <h3 className="text-sm font-bold text-red-400 mb-4 flex items-center gap-2 uppercase tracking-wider">
-            <AlertTriangle className="text-red-500" size={18} />
-            Sessions anormalement longues
-          </h3>
-          <div className="space-y-3">
-            {sessionsLongues.slice(0, 5).map((connection) => (
-              <ConnectionAlert key={connection.id} connection={connection} />
-            ))}
-          </div>
+      {/* ── Alert banner for overdue taxes ── */}
+      {impotsEnRetard.length > 0 && (
+        <motion.div
+          variants={itemVariants}
+          className="mb-6 flex items-center gap-3 rounded-2xl border border-red-200 bg-red-50 px-5 py-3"
+        >
+          <AlertTriangle size={18} className="text-red-500 shrink-0" />
+          <p className="text-sm text-red-700">
+            <span className="font-semibold">{impotsEnRetard.length} imp&ocirc;t(s) en retard :</span>{" "}
+            {impotsEnRetard.map((i) => i.libelle).join(", ")}
+          </p>
         </motion.div>
       )}
 
-      {/* Statistiques */}
-      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4 mb-8">
+      {/* ── 4 Stat Cards ── */}
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 mb-8">
         <motion.div variants={itemVariants}>
-           <StatCard title="Connexions totales" value={stats.totalConnexions} icon={<Activity size={20} />} trend={null} color="amber" />
+          <StatCard
+            title="Chiffre d'Affaires"
+            value={formatMontant(statsMensuelles.ca)}
+            icon={<TrendingUp size={20} />}
+            trend={caTrend ? parseFloat(caTrend) : 0}
+            color="indigo"
+          />
         </motion.div>
         <motion.div variants={itemVariants}>
-          <StatCard title="Durée moyenne" value={`${Math.round(stats.moyenneDuree / 60)} min`} icon={<Clock size={20} />} trend={null} color="stone" />
+          <StatCard
+            title="D&eacute;penses totales"
+            value={formatMontant(statsMensuelles.depenses)}
+            icon={<Receipt size={20} />}
+            trend={null}
+            color="rose"
+          />
         </motion.div>
         <motion.div variants={itemVariants}>
-          <StatCard title="Sessions longues" value={stats.sessionsLongues} icon={<AlertTriangle size={20} />} trend={null} color="red" />
+          <StatCard
+            title="B&eacute;n&eacute;fice net"
+            value={formatMontant(statsMensuelles.benefice)}
+            icon={<Wallet size={20} />}
+            trend={beneficeTrend ? parseFloat(beneficeTrend) : 0}
+            color="emerald"
+          />
         </motion.div>
         <motion.div variants={itemVariants}>
-          <StatCard title="Utilisateurs actifs" value={stats.utilisateursActifs} icon={<User size={20} />} trend={null} color="emerald" />
+          <StatCard
+            title="Marge brute"
+            value={`${margeBrute}%`}
+            icon={<BarChart3 size={20} />}
+            trend={null}
+            color="violet"
+          />
         </motion.div>
       </div>
 
-      {/* Graphiques conditionnels */}
-      {connectionHistory.length > 0 ? (
-        <div className="grid min-w-0 gap-5 xl:grid-cols-5 mb-8">
-          {/* Connexions par jour */}
-          <motion.div variants={itemVariants} className="min-w-0 xl:col-span-3 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg">
-            <h3 className="text-base font-bold text-zinc-50 mb-1">Évolution des connexions</h3>
-            <p className="text-sm font-medium text-zinc-400 mb-6">Nombre de sessions par jour</p>
-            <div className="min-w-0 bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[260px]">
-               <ResponsiveContainer width="100%" height="100%" minWidth={0}>
-                 <AreaChart data={connexionsParJour} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                   <defs>
-                     <linearGradient id="gradConnexions" x1="0" y1="0" x2="0" y2="1">
-                       <stop offset="0%" stopColor={GOLD} stopOpacity={0.4} />
-                       <stop offset="100%" stopColor={GOLD} stopOpacity={0} />
-                     </linearGradient>
-                   </defs>
-                   <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
-                   <XAxis dataKey="date" tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
-                   <YAxis tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dx={-10} />
-                   <Tooltip content={<CustomTooltip />} cursor={{stroke: 'rgba(255,255,255,0.1)'}} />
-                   <Area type="monotone" dataKey="connexions" name="Connexions" stroke={GOLD} strokeWidth={3} fill="url(#gradConnexions)" />
-                 </AreaChart>
-               </ResponsiveContainer>
+      {/* ── CA vs Depenses area chart + Benefice mensuel bar chart ── */}
+      <div className="grid gap-4 xl:grid-cols-2 mb-8">
+        {/* CA vs Depenses */}
+        <motion.div
+          variants={itemVariants}
+          className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+        >
+          <div className="mb-6 flex items-center justify-between">
+            <div>
+              <h3 className="text-sm font-semibold text-gray-900">
+                CA vs D&eacute;penses
+              </h3>
+              <p className="mt-0.5 text-xs text-gray-400">
+                Comparaison sur 12 mois
+              </p>
             </div>
-          </motion.div>
-
-          {/* Connexions par heure */}
-          <motion.div variants={itemVariants} className="min-w-0 xl:col-span-2 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 shadow-lg">
-            <h3 className="text-base font-bold text-zinc-50 mb-1">Heures d'activité</h3>
-            <p className="text-sm font-medium text-zinc-400 mb-6">Connexions par heure</p>
-            <div className="min-w-0 bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[292px]">
-               <ResponsiveContainer width="100%" height="100%" minWidth={0}>
-                 <BarChart data={connexionsParHeure} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                   <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
-                   <XAxis dataKey="heure" tick={{ fontSize: 11, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
-                   <YAxis tick={{ fontSize: 11, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} tickCount={4} dx={-10} />
-                   <Tooltip cursor={{fill: 'rgba(255,255,255,0.05)'}} contentStyle={{backgroundColor: '#09090b', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '0.75rem', fontWeight: 'bold', color: '#fafafa'}} itemStyle={{color: '#fafafa'}} />
-                   <Bar dataKey="connexions" name="Connexions" radius={[4, 4, 0, 0]} fill={GOLD} fillOpacity={0.9} maxBarSize={30} />
-                 </BarChart>
-               </ResponsiveContainer>
+            <div className="flex items-center gap-4 text-xs">
+              <span className="flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-indigo-500" />{" "}
+                CA
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />{" "}
+                D&eacute;penses
+              </span>
             </div>
-          </motion.div>
-        </div>
-      ) : (
-        <div className="p-6 text-center text-zinc-500 font-medium bg-zinc-900/20 border border-white/5 rounded-2xl mb-8">
-          En attente des données historiques pour charger les graphiques...
-        </div>
-      )}
-
-      {/* Top utilisateurs sécurisé */}
-      {connectionHistory.length > 0 && (
-        <motion.div variants={itemVariants} className="min-w-0 bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 p-6 mb-8 shadow-lg">
-          <h3 className="text-base font-bold text-zinc-50 mb-1">Top des utilisateurs</h3>
-          <p className="text-sm font-medium text-zinc-400 mb-6">Nombre de sessions par utilisateur</p>
-          <div className="min-w-0 bg-zinc-950/30 p-4 rounded-xl border border-white/5 h-[300px]">
-             <ResponsiveContainer width="100%" height="100%" minWidth={0}>
-               {/* CORRECTION DU LAYOUT : Suppression de layout="horizontal" instable */}
-               <BarChart data={dataUtilisateurs} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                 <CartesianGrid strokeDasharray="3 4" stroke="#27272a" vertical={false} />
-                 <XAxis dataKey="nom" tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dy={10} />
-                 <YAxis tick={{ fontSize: 12, fill: "#a1a1aa", fontWeight: 600 }} axisLine={false} tickLine={false} dx={-10} />
-                 <Tooltip
-                   cursor={{fill: 'rgba(255,255,255,0.05)'}}
-                   contentStyle={{backgroundColor: '#09090b', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '0.75rem', fontWeight: 'bold', color: '#fafafa'}}
-                 />
-                 <Bar dataKey="connexions" name="Sessions" radius={[4, 4, 0, 0]} fill={GOLD} fillOpacity={0.9} maxBarSize={30} />
-               </BarChart>
-             </ResponsiveContainer>
           </div>
+          <ResponsiveContainer width="100%" height={280}>
+            <AreaChart data={revenusData}>
+              <defs>
+                <linearGradient id="gradCA" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#6366F1" stopOpacity={0.3} />
+                  <stop offset="100%" stopColor="#6366F1" stopOpacity={0} />
+                </linearGradient>
+                <linearGradient id="gradDep" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#F43F5E" stopOpacity={0.15} />
+                  <stop offset="100%" stopColor="#F43F5E" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 4" stroke="#f3f4f6" />
+              <XAxis
+                dataKey="mois"
+                tick={{ fontSize: 11, fill: "#9CA3AF" }}
+                axisLine={false}
+                tickLine={false}
+              />
+              <YAxis
+                tickFormatter={(v) => (v / 1000000).toFixed(1) + "M"}
+                tick={{ fontSize: 11, fill: "#9CA3AF" }}
+                axisLine={false}
+                tickLine={false}
+              />
+              <Tooltip content={<CustomTooltip />} />
+              <Area
+                type="monotone"
+                dataKey="ca"
+                name="Chiffre d'Affaires"
+                stroke="#6366F1"
+                strokeWidth={2.5}
+                fill="url(#gradCA)"
+              />
+              <Area
+                type="monotone"
+                dataKey="depenses"
+                name="D&eacute;penses"
+                stroke="#F43F5E"
+                strokeWidth={2}
+                fill="url(#gradDep)"
+                strokeDasharray="5 3"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
         </motion.div>
       )}
 
-      {/* Tableau des connexions */}
-      <motion.div variants={itemVariants} className="bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/5 shadow-lg overflow-hidden">
-        <div className="px-6 py-5 border-b border-white/5 bg-zinc-950/30 flex items-center justify-between">
-           <div>
-             <h3 className="text-lg font-bold text-zinc-50">Détail des connexions</h3>
-             <p className="mt-0.5 text-sm font-medium text-zinc-400">Liste complète des sessions utilisateur</p>
-           </div>
-           <div className="bg-brand-500/10 p-2 rounded-xl">
-               <FileSpreadsheet size={20} className="text-brand-500" />
-           </div>
+        {/* Benefice mensuel */}
+        <motion.div
+          variants={itemVariants}
+          className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+        >
+          <div className="mb-6">
+            <h3 className="text-sm font-semibold text-gray-900">
+              B&eacute;n&eacute;fice Mensuel
+            </h3>
+            <p className="mt-0.5 text-xs text-gray-400">
+              Profit r&eacute;alis&eacute; par mois
+            </p>
+          </div>
+          <ResponsiveContainer width="100%" height={280}>
+            <BarChart data={beneficeMensuel}>
+              <CartesianGrid strokeDasharray="3 4" stroke="#f3f4f6" vertical={false} />
+              <XAxis
+                dataKey="mois"
+                tick={{ fontSize: 11, fill: "#9CA3AF" }}
+                axisLine={false}
+                tickLine={false}
+              />
+              <YAxis
+                tickFormatter={(v) => (v / 1000).toFixed(0) + "k"}
+                tick={{ fontSize: 11, fill: "#9CA3AF" }}
+                axisLine={false}
+                tickLine={false}
+              />
+              <Tooltip content={<BeneficeTooltip />} />
+              <Bar
+                dataKey="benefice"
+                name="B&eacute;n&eacute;fice"
+                radius={[6, 6, 0, 0]}
+                fill="#10B981"
+                fillOpacity={0.85}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </motion.div>
+      </div>
+
+      {/* ── Depenses breakdown + Ventes par categorie ── */}
+      <div className="grid gap-4 xl:grid-cols-2 mb-8">
+        {/* Depenses Breakdown */}
+        <motion.div
+          variants={itemVariants}
+          className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+        >
+          <div className="flex items-center gap-2 mb-6">
+            <Receipt size={18} className="text-rose-500" />
+            <div>
+              <h3 className="text-sm font-semibold text-gray-900">
+                R&eacute;partition des D&eacute;penses
+              </h3>
+              <p className="text-xs text-gray-400">
+                Total : {formatMontant(totalDepenses)}
+              </p>
+            </div>
+          </div>
+          <div className="space-y-5">
+            {depensesBreakdown.map((dep) => {
+              const pct = totalDepenses > 0 ? ((dep.amount / totalDepenses) * 100).toFixed(1) : 0;
+              return (
+                <div key={dep.label} className="flex items-center gap-3">
+                  <div className={`flex h-9 w-9 items-center justify-center rounded-lg bg-gray-50 shrink-0`}>
+                    {dep.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex justify-between mb-1.5">
+                      <span className="text-sm font-medium text-gray-700">
+                        {dep.label}
+                      </span>
+                      <div className="text-right">
+                        <span className="text-sm font-semibold text-gray-900">
+                          {formatMontant(dep.amount)}
+                        </span>
+                        <span className="ml-1 text-xs text-gray-400">
+                          ({pct}%)
+                        </span>
+                      </div>
+                    </div>
+                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${pct}%` }}
+                        transition={{ delay: 0.3, duration: 0.7 }}
+                        className={`h-full rounded-full ${dep.color}`}
+                      />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Ventes par Categorie – Donut */}
+        <motion.div
+          variants={itemVariants}
+          className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <PieChart size={18} className="text-indigo-500" />
+            <div>
+              <h3 className="text-sm font-semibold text-gray-900">
+                Ventes par Cat&eacute;gorie
+              </h3>
+              <p className="text-xs text-gray-400">
+                R&eacute;partition du chiffre d&apos;affaires
+              </p>
+            </div>
+          </div>
+          <ResponsiveContainer width="100%" height={200}>
+            <RPieChart>
+              <Pie
+                data={donutData}
+                cx="50%"
+                cy="50%"
+                innerRadius={55}
+                outerRadius={80}
+                paddingAngle={3}
+                dataKey="value"
+              >
+                {donutData.map((entry, i) => (
+                  <Cell key={i} fill={entry.fill} />
+                ))}
+              </Pie>
+              <Tooltip formatter={(value) => formatMontant(value)} />
+              <Legend
+                verticalAlign="bottom"
+                height={36}
+                iconType="circle"
+                iconSize={8}
+                formatter={(value) => (
+                  <span className="text-xs text-gray-600">{value}</span>
+                )}
+              />
+            </RPieChart>
+          </ResponsiveContainer>
+          <div className="space-y-2 mt-2">
+            {ventesParCategorie.map((cat) => (
+              <div key={cat.nom} className="flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2">
+                  <span
+                    className="h-2.5 w-2.5 rounded-full shrink-0"
+                    style={{ backgroundColor: cat.couleur }}
+                  />
+                  <span className="text-gray-600">{cat.nom}</span>
+                </div>
+                <span className="font-semibold text-gray-900">
+                  {cat.part}% — {formatMontant(cat.montant)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* ── Historique des Transactions ── */}
+      <motion.div
+        variants={itemVariants}
+        className="rounded-2xl border border-gray-200 bg-white shadow-sm mb-8"
+      >
+        <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4">
+          <div className="flex items-center gap-2">
+            <ListChecks size={18} className="text-indigo-500" />
+            <div>
+              <h3 className="text-sm font-semibold text-gray-900">
+                Historique des Transactions
+              </h3>
+              <p className="text-xs text-gray-400">
+                {transactions.length} transaction(s)
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => { setFilterType(""); fetchTransactions(); }}
+              className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
+                !filterType
+                  ? "bg-indigo-100 text-indigo-700"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+            >
+              Tout
+            </button>
+            <button
+              onClick={() => { setFilterType("entree"); fetchTransactions({ type_op: "entree" }); }}
+              className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
+                filterType === "entree"
+                  ? "bg-emerald-100 text-emerald-700"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+            >
+              Entrées
+            </button>
+            <button
+              onClick={() => { setFilterType("sortie"); fetchTransactions({ type_op: "sortie" }); }}
+              className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
+                filterType === "sortie"
+                  ? "bg-rose-100 text-rose-700"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              }`}
+            >
+              Sorties
+            </button>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="text-left text-xs font-bold uppercase tracking-wider text-zinc-400 bg-zinc-950/50 border-b border-white/5">
-                <th className="px-6 py-4">Utilisateur</th>
-                <th className="px-6 py-4">Rôle</th>
-                <th className="px-6 py-4">Date</th>
-                <th className="px-6 py-4">Heure</th>
-                <th className="px-6 py-4 text-right">Durée</th>
-                <th className="px-6 py-4">IP</th>
-                <th className="px-6 py-4">Appareil</th>
+              <tr className="border-b border-gray-100">
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  Date
+                </th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  Type
+                </th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  Catégorie
+                </th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden md:table-cell">
+                  Référence
+                </th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden lg:table-cell">
+                  Description
+                </th>
+                <th className="text-right px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  Montant
+                </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5">
-              {connectionHistory.map((h) => (
-                <tr key={h.id} className="text-sm font-medium text-zinc-300 hover:bg-zinc-800/50 transition-colors">
-                  <td className="px-6 py-4 font-bold text-zinc-100">{h.utilisateur_nom}</td>
+            <tbody className="divide-y divide-gray-50">
+              {transactions.map((tx) => (
+                <tr key={tx.id} className="hover:bg-gray-50/60 transition-colors">
+                  <td className="px-6 py-4 text-gray-500">
+                    {tx.date
+                      ? new Date(tx.date).toLocaleDateString("fr-FR", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })
+                      : "—"}
+                  </td>
                   <td className="px-6 py-4">
-                    <Badge variant={h.utilisateur_role === "admin" ? "default" : "secondary"}>
-                      {h.utilisateur_role}
-                    </Badge>
+                    {tx.type_op === "entree" ? (
+                      <Badge variant="success">Entrée</Badge>
+                    ) : (
+                      <Badge variant="error">Sortie</Badge>
+                    )}
+                  </td>
+                  <td className="px-6 py-4 font-medium text-gray-900">
+                    {tx.categorie}
+                  </td>
+                  <td className="px-6 py-4 text-gray-500 hidden md:table-cell font-mono text-xs">
+                    {tx.reference || "—"}
+                  </td>
+                  <td className="px-6 py-4 text-gray-500 hidden lg:table-cell max-w-[200px] truncate">
+                    {tx.description || "—"}
+                  </td>
+                  <td className={`px-6 py-4 text-right font-semibold ${
+                    tx.type_op === "entree"
+                      ? "text-emerald-600"
+                      : "text-rose-600"
+                  }`}>
+                    {tx.type_op === "entree" ? "+" : "–"}{formatMontant(tx.montant)}
                   </td>
                   <td className="px-6 py-4">{h.date_connexion}</td>
                   <td className="px-6 py-4">{h.heure_connexion}</td>
@@ -408,13 +581,123 @@ export function ConnectionHistory() {
                   <td className="px-6 py-4 text-zinc-400 max-w-[200px] truncate" title={h.appareil}>{h.appareil}</td>
                 </tr>
               ))}
-              {connectionHistory.length === 0 && (
+              {transactions.length === 0 && (
                 <tr>
-                  <td colSpan="7" className="px-6 py-12 text-center text-zinc-500 font-bold bg-zinc-950/20">Aucun historique trouvé</td>
+                  <td colSpan={6} className="text-center py-8 text-gray-400">
+                    Aucune transaction enregistrée
+                  </td>
                 </tr>
               )}
             </tbody>
           </table>
+        </div>
+        {/* Total row */}
+        {transactions.length > 0 && (() => {
+          const totalEntrees = transactions.filter((t) => t.type_op === "entree").reduce((s, t) => s + Number(t.montant), 0);
+          const totalSorties = transactions.filter((t) => t.type_op === "sortie").reduce((s, t) => s + Number(t.montant), 0);
+          return (
+            <div className="border-t border-gray-100 px-6 py-4 flex items-center justify-between bg-gray-50/50 rounded-b-2xl">
+              <div className="flex gap-6 text-sm">
+                <span>
+                  <span className="text-emerald-600 font-medium">Entrées: +{formatMontant(totalEntrees)}</span>
+                </span>
+                <span>
+                  <span className="text-rose-600 font-medium">Sorties: –{formatMontant(totalSorties)}</span>
+                </span>
+              </div>
+              <span className="text-lg font-bold text-gray-900">
+                Solde: {formatMontant(totalEntrees - totalSorties)}
+              </span>
+            </div>
+          );
+        })()}
+      </motion.div>
+
+      {/* ── Impots & Taxes Table ── */}
+      <motion.div
+        variants={itemVariants}
+        className="rounded-2xl border border-gray-200 bg-white shadow-sm"
+      >
+        <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4">
+          <div className="flex items-center gap-2">
+            <FileText size={18} className="text-amber-500" />
+            <div>
+              <h3 className="text-sm font-semibold text-gray-900">
+                Imp&ocirc;ts & Taxes
+              </h3>
+              <p className="text-xs text-gray-400">
+                {impots.length} &eacute;ch&eacute;ances &agrave; venir
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            {impotsEnRetard.length > 0 && (
+              <span className="flex items-center gap-1 text-xs font-medium text-red-600 bg-red-50 px-2.5 py-1 rounded-full">
+                <AlertTriangle size={12} />
+                {impotsEnRetard.length} en retard
+              </span>
+            )}
+          </div>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-gray-100">
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  Libell&eacute;
+                </th>
+                <th className="text-right px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  Montant
+                </th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden sm:table-cell">
+                  &Eacute;ch&eacute;ance
+                </th>
+                <th className="text-center px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  Statut
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {impots.map((imp) => {
+                const isLate = imp.statut === "en retard";
+                const echeanceFormatted = new Date(imp.echeance).toLocaleDateString("fr-FR", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                });
+                return (
+                  <tr key={imp.id} className="hover:bg-gray-50/60 transition-colors">
+                    <td className="px-6 py-4">
+                      <div className="flex items-center gap-2">
+                        {isLate && (
+                          <AlertTriangle size={14} className="text-red-400 shrink-0" />
+                        )}
+                        <span className="font-medium text-gray-900">
+                          {imp.libelle}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 text-right font-semibold text-gray-900">
+                      {formatMontant(imp.montant)}
+                    </td>
+                    <td className="px-6 py-4 text-gray-500 hidden sm:table-cell">
+                      {echeanceFormatted}
+                    </td>
+                    <td className="px-6 py-4 text-center">
+                      <Badge variant={imp.statut}>{imp.statut}</Badge>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        {/* Total row */}
+        <div className="border-t border-gray-100 px-6 py-4 flex items-center justify-between bg-gray-50/50 rounded-b-2xl">
+          <span className="text-sm font-semibold text-gray-700">Total</span>
+          <span className="text-lg font-bold text-gray-900">
+            {formatMontant(impots.reduce((sum, i) => sum + i.montant, 0))}
+          </span>
         </div>
       </motion.div>
     </motion.div>
