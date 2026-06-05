@@ -91,7 +91,14 @@ export function StaffCommandes() {
     setCartItems((prev) => {
       const exists = prev.find((i) => i.id === produit.id);
       if (exists) return prev.map((i) => i.id === produit.id ? { ...i, qte: i.qte + 1 } : i);
-      return [...prev, { id: produit.id, nom: produit.nom, prix: produit.prix, qte: 1, type_poste: produit.type_poste }];
+      return [...prev, {
+        id: produit.id,
+        nom: produit.nom,
+        prix: produit.prix,
+        qte: 1,
+        type_poste: produit.categorie_type || produit.type_poste || "bar",
+        categorie_type: produit.categorie_type || produit.type_poste || "bar",
+      }];
     });
   };
 
@@ -111,7 +118,10 @@ export function StaffCommandes() {
     addCommande({
       table_id: selectedTable?.id || null,
       items: cartItems.map((item) => ({
-         produit_menu_id: item.id, quantite: item.qte, prix_unitaire: parseFloat(item.prix), type_poste: item.type_poste,
+        produit_menu_id: parseInt(item.id, 10),
+        quantite: parseInt(item.qte, 10),
+        prix_unitaire: parseFloat(item.prix),
+        type_poste: item.categorie_type || item.type_poste || "bar",
       })),
       source: "staff",
     }).then((d) => {
@@ -225,10 +235,10 @@ export function StaffCommandes() {
     const selectedTable = tables.find((t) => t.numero === newOrderTable);
     const prod = addItemModal.selectedProd;
     ajouterItemCommande(addItemModal.commandeId, {
-      produit_menu_id: prod.id,
+      produit_menu_id: parseInt(prod.id, 10),
       quantite: 1,
-      prix_unitaire: prod.prix,
-      type_poste: prod.type_poste,
+      prix_unitaire: parseFloat(prod.prix),
+      type_poste: prod.categorie_type || prod.type_poste || "bar",
     }).then((d) => {
       if (d.success) {
         setAddItemModal(null);
