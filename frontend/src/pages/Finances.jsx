@@ -20,12 +20,10 @@ import {
   User,
   Search,
   Filter,
-  BarChart3,
   TrendingUp,
   Activity,
   FileSpreadsheet,
 } from "lucide-react";
-import { SafeResponsiveContainer as ResponsiveContainer } from "../components/ui/SafeResponsiveContainer";
 import {
   AreaChart,
   Area,
@@ -303,7 +301,6 @@ export function Finances() {
             </AreaChart>
           </ResponsiveContainer>
         </motion.div>
-      )}
 
         {/* Benefice mensuel */}
         <motion.div
