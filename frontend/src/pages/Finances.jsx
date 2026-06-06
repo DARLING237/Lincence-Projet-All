@@ -35,7 +35,7 @@ import {
   Bar,
 } from "recharts";
 
-/* ── Tooltip helpers ── */
+/* ÔöÇÔöÇ Tooltip helpers ÔöÇÔöÇ */
 
 function CustomTooltip({ active, payload, label }) {
   if (!active || !payload) return null;
@@ -64,7 +64,7 @@ function BeneficeTooltip({ active, payload, label }) {
   );
 }
 
-/* ── Page ── */
+/* ÔöÇÔöÇ Page ÔöÇÔöÇ */
 
 export function Finances() {
   const statsMensuelles = useAppStore((s) => s.statsMensuelles);
@@ -152,7 +152,7 @@ export function Finances() {
       initial="hidden"
       animate="show"
     >
-      {/* ── Header ── */}
+      {/* ÔöÇÔöÇ Header ÔöÇÔöÇ */}
       <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
@@ -160,7 +160,7 @@ export function Finances() {
             <h1 className="text-2xl font-bold text-gray-900">Finances</h1>
           </div>
           <p className="text-sm text-gray-500">
-            Tableau de bord financier — D&eacute;cembre 2025
+            Tableau de bord financier ÔÇö D&eacute;cembre 2025
           </p>
         </div>
         <motion.button
@@ -174,7 +174,7 @@ export function Finances() {
         </motion.button>
       </motion.div>
 
-      {/* ── Alert banner for overdue taxes ── */}
+      {/* ÔöÇÔöÇ Alert banner for overdue taxes ÔöÇÔöÇ */}
       {impotsEnRetard.length > 0 && (
         <motion.div
           variants={itemVariants}
@@ -188,7 +188,7 @@ export function Finances() {
         </motion.div>
       )}
 
-      {/* ── 4 Stat Cards ── */}
+      {/* ÔöÇÔöÇ 4 Stat Cards ÔöÇÔöÇ */}
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 mb-8">
         <motion.div variants={itemVariants}>
           <StatCard
@@ -228,7 +228,7 @@ export function Finances() {
         </motion.div>
       </div>
 
-      {/* ── CA vs Depenses area chart + Benefice mensuel bar chart ── */}
+      {/* ÔöÇÔöÇ CA vs Depenses area chart + Benefice mensuel bar chart ÔöÇÔöÇ */}
       <div className="grid gap-4 xl:grid-cols-2 mb-8">
         {/* CA vs Depenses */}
         <motion.div
@@ -343,7 +343,7 @@ export function Finances() {
         </motion.div>
       </div>
 
-      {/* ── Depenses breakdown + Ventes par categorie ── */}
+      {/* ÔöÇÔöÇ Depenses breakdown + Ventes par categorie ÔöÇÔöÇ */}
       <div className="grid gap-4 xl:grid-cols-2 mb-8">
         {/* Depenses Breakdown */}
         <motion.div
@@ -398,7 +398,7 @@ export function Finances() {
           </div>
         </motion.div>
 
-        {/* Ventes par Categorie – Donut */}
+        {/* Ventes par Categorie ÔÇô Donut */}
         <motion.div
           variants={itemVariants}
           className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
@@ -452,7 +452,7 @@ export function Finances() {
                   <span className="text-gray-600">{cat.nom}</span>
                 </div>
                 <span className="font-semibold text-gray-900">
-                  {cat.part}% — {formatMontant(cat.montant)}
+                  {cat.part}% ÔÇö {formatMontant(cat.montant)}
                 </span>
               </div>
             ))}
@@ -460,7 +460,7 @@ export function Finances() {
         </motion.div>
       </div>
 
-      {/* ── Historique des Transactions ── */}
+      {/* ÔöÇÔöÇ Historique des Transactions ÔöÇÔöÇ */}
       <motion.div
         variants={itemVariants}
         className="rounded-2xl border border-gray-200 bg-white shadow-sm mb-8"
@@ -496,7 +496,7 @@ export function Finances() {
                   : "bg-gray-100 text-gray-500 hover:bg-gray-200"
               }`}
             >
-              Entrées
+              Entr├®es
             </button>
             <button
               onClick={() => { setFilterType("sortie"); fetchTransactions({ type_op: "sortie" }); }}
@@ -521,10 +521,10 @@ export function Finances() {
                   Type
                 </th>
                 <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                  Catégorie
+                  Cat├®gorie
                 </th>
                 <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden md:table-cell">
-                  Référence
+                  R├®f├®rence
                 </th>
                 <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden lg:table-cell">
                   Description
@@ -544,11 +544,11 @@ export function Finances() {
                           month: "short",
                           year: "numeric",
                         })
-                      : "—"}
+                      : "ÔÇö"}
                   </td>
                   <td className="px-6 py-4">
                     {tx.type_op === "entree" ? (
-                      <Badge variant="success">Entrée</Badge>
+                      <Badge variant="success">Entr├®e</Badge>
                     ) : (
                       <Badge variant="error">Sortie</Badge>
                     )}
@@ -557,17 +557,17 @@ export function Finances() {
                     {tx.categorie}
                   </td>
                   <td className="px-6 py-4 text-gray-500 hidden md:table-cell font-mono text-xs">
-                    {tx.reference || "—"}
+                    {tx.reference || "ÔÇö"}
                   </td>
                   <td className="px-6 py-4 text-gray-500 hidden lg:table-cell max-w-[200px] truncate">
-                    {tx.description || "—"}
+                    {tx.description || "ÔÇö"}
                   </td>
                   <td className={`px-6 py-4 text-right font-semibold ${
                     tx.type_op === "entree"
                       ? "text-emerald-600"
                       : "text-rose-600"
                   }`}>
-                    {tx.type_op === "entree" ? "+" : "–"}{formatMontant(tx.montant)}
+                    {tx.type_op === "entree" ? "+" : "ÔÇô"}{formatMontant(tx.montant)}
                   </td>
                   <td className="px-6 py-4">{h.date_connexion}</td>
                   <td className="px-6 py-4">{h.heure_connexion}</td>
@@ -581,7 +581,7 @@ export function Finances() {
               {transactions.length === 0 && (
                 <tr>
                   <td colSpan={6} className="text-center py-8 text-gray-400">
-                    Aucune transaction enregistrée
+                    Aucune transaction enregistr├®e
                   </td>
                 </tr>
               )}
@@ -596,10 +596,10 @@ export function Finances() {
             <div className="border-t border-gray-100 px-6 py-4 flex items-center justify-between bg-gray-50/50 rounded-b-2xl">
               <div className="flex gap-6 text-sm">
                 <span>
-                  <span className="text-emerald-600 font-medium">Entrées: +{formatMontant(totalEntrees)}</span>
+                  <span className="text-emerald-600 font-medium">Entr├®es: +{formatMontant(totalEntrees)}</span>
                 </span>
                 <span>
-                  <span className="text-rose-600 font-medium">Sorties: –{formatMontant(totalSorties)}</span>
+                  <span className="text-rose-600 font-medium">Sorties: ÔÇô{formatMontant(totalSorties)}</span>
                 </span>
               </div>
               <span className="text-lg font-bold text-gray-900">
@@ -610,7 +610,7 @@ export function Finances() {
         })()}
       </motion.div>
 
-      {/* ── Impots & Taxes Table ── */}
+      {/* ÔöÇÔöÇ Impots & Taxes Table ÔöÇÔöÇ */}
       <motion.div
         variants={itemVariants}
         className="rounded-2xl border border-gray-200 bg-white shadow-sm"
